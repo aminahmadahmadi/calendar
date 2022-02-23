@@ -1,6 +1,4 @@
-﻿from re import T
-from tkinter import Y
-from aaaSvg import Svg
+﻿from aaaSvg import Svg
 
 
 class Page():
