@@ -5,7 +5,7 @@ import os
 class Notebook():
     def __init__(self, **kwargs) -> None:
         # general
-        self.name = kwargs.get('name', 'Untitle')
+        self.name = kwargs.get('name', 'Untitle-Notebook')
         self.rtl = kwargs.get('rtl', True)
         self.width = kwargs.get('width', 148)
         self.height = kwargs.get('height', 210)
