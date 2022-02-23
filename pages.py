@@ -11,26 +11,39 @@ class Page():
         self.height = kwargs.get('height', 210)
         self.scale = kwargs.get('scale', 2.83465)
 
+        # margin and padding
+        self.margin = kwargs.get(
+            'margin',
+            {'top': 5, 'outside': 5, 'bottom': 5, 'inside': 0}
+        )
+        if isinstance(self.margin, list):
+            nameList = ['top', 'outside', 'bottom', 'inside']
+            self.margin = dict(zip(nameList, self.margin))
+
+        # colors
+        self.bgColor = kwargs.get('bgColor', 'none')
+
+        # SVG
         self.svgWidth = self.width + \
             self.margin['outside'] + self.margin['inside']
         self.svgHeight = self.height + \
             self.margin['top'] + self.margin['bottom']
 
-        # margin and padding
-        nameList = ['top', 'outside', 'bottom', 'inside']
-        margin = kwargs.get('margin', [5, 5, 5, 0])
-        self.margin = dict(zip(nameList, margin))
+        # info on page
+        self.guide = kwargs.get('guide', False)
 
-        # colors
-        self.bgColor = kwargs.get('bgColor', 'none')
+    @property
+    def page(self):
+        self.pages = {}
+        self.makePages()
+        return self.pages
 
-    # pages
     def makePages(self):
         for loc in ['right', 'left']:
             self.definePage(loc)
+            self.drawGuide(loc)
 
     def definePage(self, loc):
-        self.pages = {}
         self.pages[loc] = Svg(
             self.name+'-'+loc, self.svgWidth*self.scale, self.svgHeight*self.scale)
 
@@ -43,9 +56,29 @@ class Page():
         self.pages[loc].addRect(
             0,
             0,
+            self.width+self.margin['outside'] + self.margin['inside'],
+            self.height+self.margin['top'] + self.margin['bottom'],
+            class_='bg',
+            transform=f'scale({self.scale})'
+        )
+
+    def drawGuide(self, loc):
+        if not self.guide:
+            return
+
+        _dir = {
+            'right': ['inside', 'outside'],
+            'left': ['outside', 'inside']
+        }
+
+        self.pages[loc].addRect(
+            self.margin[_dir[loc][0]],
+            self.margin['top'],
             self.width,
             self.height,
-            class_='bg',
+            stroke='#0ff',
+            fill='none',
+            style='stroke-width:0.25;',
             transform=f'scale({self.scale})'
         )
 
@@ -55,27 +88,35 @@ class LinePage(Page):
         super().__init__(name, **kwargs)
 
         # margin and padding
-        nameList = ['top', 'outside', 'bottom', 'inside']
-        padding = kwargs.get('padding', [32, 0, 0, 0])
-        self.padding = dict(zip(nameList, padding))
+        self.padding = kwargs.get(
+            'padding',
+            {'top': 32, 'outside': 0, 'bottom': 0, 'inside': 0}
+        )
+        if isinstance(self.padding, list):
+            nameList = ['top', 'outside', 'bottom', 'inside']
+            self.padding = dict(zip(nameList, self.padding))
 
         # line and dot peroperty
         self.lineHeight = kwargs.get('lineHeight', 6)
         self.lineWidth = kwargs.get('lineWidth', 0.05)
 
         # colors
-        self.lineColor = kwargs.get('lineColor', '#000')
+        self.lineColor = kwargs.get('lineColor', '#555')
 
-        # pages
+    @property
+    def page(self):
         self.pages = {}
+        self.makePages()
+        return self.pages
 
     def makePages(self):
         for loc in ['right', 'left']:
             self.definePage(loc)
             self.drawlines(loc)
+            self.drawGuide(loc)
 
     def drawlines(self, loc):
-        self.svg.addStyle(
+        self.pages[loc].addStyle(
             'line',
             'fill:none;'
             f'stroke:{self.lineColor};'
@@ -92,15 +133,15 @@ class LinePage(Page):
             y += self.lineHeight
 
     def xloc(self, loc):
-        dir = {
+        _dir = {
             'right': ['inside', 'outside'],
             'left': ['outside', 'inside']
         }
-        xLeft = 0 if self.padding[dir[loc][0]] == 0 else self.padding[dir[loc][0]] + \
-            self.margin[dir[loc][0]]
+        xLeft = 0 if self.padding[_dir[loc][0]] == 0 else self.padding[_dir[loc][0]] + \
+            self.margin[_dir[loc][0]]
         xRight = self.svgWidth
-        xRight -= 0 if self.padding[dir[loc][1]] == 0 else self.padding[dir[loc][1]] + \
-            self.margin[dir[loc][1]]
+        xRight -= 0 if self.padding[_dir[loc][1]] == 0 else self.padding[_dir[loc][1]] + \
+            self.margin[_dir[loc][1]]
 
         return (xLeft, xRight)
 
