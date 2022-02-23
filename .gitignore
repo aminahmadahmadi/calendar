@@ -1,6 +1,11 @@
 # vs code
 .vscode/
 
+# test folders
+test*/
+Untitle*/
+test.py
+
 # tmp files 
 pages/
 calendar-*.json
