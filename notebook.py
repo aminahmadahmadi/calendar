@@ -30,7 +30,7 @@ class Notebook():
 
         # line and dot peroperty
         self.lineHeight = kwargs.get('lineHeight', 6)
-        self.lineWidth = kwargs.get('lineWidth', 0.125)
+        self.lineWidth = kwargs.get('lineWidth', 0.05)
 
         # colors
         self.bgColor = kwargs.get('bgColor', 'none')
