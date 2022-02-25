@@ -61,7 +61,8 @@ class Notebook():
         if not os.path.exists('\\'.join([Dir, self.name, 'pages'])):
             os.mkdir('\\'.join([Dir, self.name, 'pages']))
 
-        htmlTxt = '<html>\n<head>\n<style>\nhtml,body{margin:0;padding: 0;}\n</style>\n</head>\n<body>\n'
+        _direction = "rtl" if self.rtl else "ltr"
+        htmlTxt = f'<html>\n<head>\n<style>\nhtml,body{{margin:0;padding:0;direction:{_direction};}}\n</style>\n</head>\n<body>\n'
         for i in range(len(self.pages)):
             if i % 2 == 0 ^ self.rtl:
                 pageDir = 'right'
@@ -78,7 +79,9 @@ class Notebook():
                 height=f'{self.pages[i].svgHeight}mm'
             )
             path = "\\".join(['pages', f"{svg.name}.svg"])
-            htmlTxt += f'<img src="{path}">\n'
+
+            firstPageStyle = 'style="display: block;margin:0 auto;"' if i == 0 else ''
+            htmlTxt += f'<img src="{path}" {firstPageStyle} >\n'
 
         htmlTxt += '</body>\n</html>'
 
