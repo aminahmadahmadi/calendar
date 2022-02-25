@@ -152,3 +152,35 @@ class DotPage(Page):
 class WeekPage(LinePage):
     def __init__(self, name='Untitle-WeekPage', **kwargs) -> None:
         super().__init__(name, **kwargs)
+        self.rightAlign = kwargs.get('rightAlign', '#555')
+
+    @property
+    def page(self):
+        self.pages = {}
+        self.makePages()
+        return self.pages
+
+    def makePages(self):
+        for loc in ['right', 'left']:
+            self.definePage(loc)
+            self.drawlines(loc)
+            self.addFirstCal(loc)
+            self.addSecondCal(loc)
+            self.addthirdCal(loc)
+            self.addEventOfDays(loc)
+            self.drawGuide(loc)
+
+    def drawlines(self, loc):
+        pass
+
+    def addFirstCal(self, loc):
+        pass
+
+    def addSecondCal(self, loc):
+        pass
+
+    def addthirdCal(self, loc):
+        pass
+
+    def addEventOfDays(self, loc):
+        pass
