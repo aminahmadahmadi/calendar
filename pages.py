@@ -157,15 +157,18 @@ class DotPage(Page):
 
 
 class WeekPage(LinePage):
-    def __init__(self, weekKeys, name='Untitle-WeekPage', **kwargs) -> None:
+    def __init__(self, weekNo, weekKeys, name='Untitle-WeekPage', **kwargs) -> None:
         super().__init__(name, **kwargs)
 
         self.dataJson = kwargs.get('dataJson', 'left')
         self.weekKeys = weekKeys
+        self.weekNo = weekNo
+        self.divider = kwargs.get('divider', ' / ')
 
         self.layout = kwargs.get('layout', 'left')
         self.daysHeight = kwargs.get('daysHeight', 4)
         self.lineShiftDown = kwargs.get('lineShiftDown', 0)
+        self.weekend = kwargs.get('weekend', 0)
 
         # font style
         self.fontHeightScl = kwargs.get('fontHeightScl', 0.66)
@@ -182,7 +185,7 @@ class WeekPage(LinePage):
         self.showEvents = kwargs.get('showEvents', True)
         self.showWeekdays = kwargs.get('showWeekdays', False)
         self.showFullCalendar = kwargs.get('showFullCalendar', False)
-        self.weekend = kwargs.get('weekend', 0)
+        self.showWeekNo = kwargs.get('showWeekNo', True)
 
     @property
     def page(self):
@@ -197,7 +200,9 @@ class WeekPage(LinePage):
             self.addFirstCal(loc)
             self.addSecondCal(loc)
             self.addThirdCal(loc)
-            self.addEventOfDays(loc)
+            if self.showEvents:
+                self.addEventOfDays(loc)
+            self.addMonthandWeek(loc)
             self.drawGuide(loc)
 
     def drawlines(self, loc):
@@ -409,14 +414,14 @@ class WeekPage(LinePage):
             eventList = list(map(lambda e: e['occasion'], events))
             eventList = list(
                 map(lambda x: x if len(x) < 120 else '', eventList))
-            eventText = ' / '.join(eventList)
+            eventText = self.divider.join(eventList)
             eventText2 = ''
             l = 875 / self.fontSize['events']
             if len(eventText) > l:
                 i = 1
-                while (len(' / '.join(eventList[-i:])) < l and i < len(eventList)):
-                    eventText2 = ' / '.join(eventList[:-i])
-                    eventText = ' / '.join(eventList[-i:])
+                while (len(self.divider.join(eventList[-i:])) < l and i < len(eventList)):
+                    eventText2 = self.divider.join(eventList[:-i])
+                    eventText = self.divider.join(eventList[-i:])
                     i += 1
 
             # x and y location
@@ -442,3 +447,43 @@ class WeekPage(LinePage):
                 class_='events',
             )
         pass
+
+    def addMonthandWeek(self, loc):
+        self.pages[loc].addStyle(
+            'monthAndWeek',
+            f'fill:{self.primaryColor};'
+            f'stroke:None;'
+            f'font-family:"{self.fontFamily} {self.fontWeight.get("monthAndWeek","")}";'
+            f'font-size:{self.fontSize.get("monthAndWeek", 8)/self.scale}px;'
+            f'text-anchor:{"start" if self.layout=="left" else "end"};'
+        )
+
+        calID = self.calendarOrder[0]
+        startMonth = self.dataJson[self.weekKeys[0]][calID]['monthName']
+        endMonth = self.dataJson[self.weekKeys[-1]][calID]['monthName']
+        if isinstance(startMonth, list):
+            startMonth = startMonth[1]
+            endMonth = endMonth[1]
+
+        monthes = [startMonth] if startMonth == endMonth else [
+            startMonth, endMonth]
+
+        weekText = f'هفته {perNo(self.weekNo)}  {self.divider}  ' if self.showWeekNo else ''
+        monthText = " و ".join(monthes)
+        text = weekText+monthText
+
+        # x and y location
+        calH = self.fontHeightScl * \
+            self.fontSize.get("monthAndWeek", 8)/self.scale
+        y = self.daysY[0] - self.lineHeight * 0.5 + calH/2
+        space = self.lineHeight*self.daysHeight
+        xLeftSpace, xRightSpace = self.xloc(loc, space+0.5)
+        x = xLeftSpace if self.layout == "left" else xRightSpace
+
+        self.pages[loc].addText(
+            x,
+            y,
+            text,
+            transform=f'scale({self.scale})',
+            class_='monthAndWeek'
+        )

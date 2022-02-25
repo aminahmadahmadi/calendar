@@ -12,6 +12,7 @@ class Calendar(Notebook):
         self.readDataJson()
         self.startWeekday = kwargs.get('startWeekday', 'Sat')
         self.weekend = kwargs.get('weekend', 0)
+        self.divider = kwargs.get('divider', ' / ')
 
         # design
         self.layout = kwargs.get('layout', 'left')
@@ -23,6 +24,7 @@ class Calendar(Notebook):
         self.showEvents = kwargs.get('showEvents', True)
         self.showWeekdays = kwargs.get('showWeekdays', False)
         self.showFullCalendar = kwargs.get('showFullCalendar', False)
+        self.showWeekNo = kwargs.get('showWeekNo', True)
 
         # font style
         self.fontHeightScl = kwargs.get('fontHeightScl', 0.67)
@@ -70,15 +72,15 @@ class Calendar(Notebook):
             print('JSON file is not exist.')
             exit()
 
-    def weekKeys(self, i):
+    def weekKeys(self, weekNo):
         key = list(self.dataJson.keys())
         for dayNo in range(7):
             if self.dataJson[key[dayNo]]['wc']['weekday'][0] == self.startWeekday:
                 key = key[dayNo:]
                 break
 
-        return key[(i-1)*7:i*7]
+        return key[(weekNo-1)*7:weekNo*7]
 
-    def addWeekPage(self, i):
-        page = WeekPage(self.weekKeys(i), **self.__dict__)
+    def addWeekPage(self, weekNo):
+        page = WeekPage(weekNo, self.weekKeys(weekNo), **self.__dict__)
         self.pages.append(page)
