@@ -130,18 +130,24 @@ class LinePage(Page):
             )
             y += self.lineHeight
 
-    def xloc(self, loc):
+    def xloc(self, loc, space=None):
         _dir = {
             'right': ['inside', 'outside'],
             'left': ['outside', 'inside']
         }
-        xLeft = 0 if self.padding[_dir[loc][0]] == 0 else self.padding[_dir[loc][0]] + \
-            self.margin[_dir[loc][0]]
-        xRight = self.svgWidth
-        xRight -= 0 if self.padding[_dir[loc][1]] == 0 else self.padding[_dir[loc][1]] + \
-            self.margin[_dir[loc][1]]
-
-        return (xLeft, xRight)
+        if space:
+            xLeftSpace = self.padding[_dir[loc][0]] + \
+                self.margin[_dir[loc][0]]+space
+            xRightSpace = self.svgWidth - \
+                (self.padding[_dir[loc][1]]+self.margin[_dir[loc][1]]+space)
+            return (xLeftSpace, xRightSpace)
+        else:
+            xLeft = 0 if self.padding[_dir[loc][0]] == 0 else self.padding[_dir[loc][0]] + \
+                self.margin[_dir[loc][0]]
+            xRight = self.svgWidth
+            xRight -= 0 if self.padding[_dir[loc][1]] == 0 else self.padding[_dir[loc][1]] + \
+                self.margin[_dir[loc][1]]
+            return (xLeft, xRight)
 
 
 class DotPage(Page):
@@ -152,7 +158,9 @@ class DotPage(Page):
 class WeekPage(LinePage):
     def __init__(self, name='Untitle-WeekPage', **kwargs) -> None:
         super().__init__(name, **kwargs)
-        self.rightAlign = kwargs.get('rightAlign', '#555')
+
+        self.layout = kwargs.get('layout', 'left')
+        self.daysHeight = kwargs.get('daysHeight', 4)
 
     @property
     def page(self):
