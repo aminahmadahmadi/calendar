@@ -22,7 +22,7 @@ class Notebook():
 
         self.padding = kwargs.get(
             'padding',
-            {'top': 32, 'outside': 0, 'bottom': 0, 'inside': 0}
+            {'top': 32, 'outside': 0, 'bottom': 10, 'inside': 0}
         )
         if isinstance(self.padding, list):
             lst = ['top', 'outside', 'bottom', 'inside']

@@ -88,7 +88,7 @@ class LinePage(Page):
         # margin and padding
         self.padding = kwargs.get(
             'padding',
-            {'top': 32, 'outside': 0, 'bottom': 0, 'inside': 0}
+            {'top': 32, 'outside': 0, 'bottom': 10, 'inside': 0}
         )
         if isinstance(self.padding, list):
             nameList = ['top', 'outside', 'bottom', 'inside']
@@ -161,6 +161,7 @@ class WeekPage(LinePage):
 
         self.layout = kwargs.get('layout', 'left')
         self.daysHeight = kwargs.get('daysHeight', 4)
+        self.lineShiftDown = kwargs.get('lineShiftDown', 0)
 
     @property
     def page(self):
@@ -179,7 +180,35 @@ class WeekPage(LinePage):
             self.drawGuide(loc)
 
     def drawlines(self, loc):
-        pass
+        self.pages[loc].addStyle(
+            'line',
+            'fill:none;'
+            f'stroke:{self.lineColor};'
+            f'stroke-width:{self.lineWidth};'
+        )
+
+        xLeft, xRight = self.xloc(loc)
+        space = self.lineHeight*self.daysHeight
+        xLeftSpace, xRightSpace = self.xloc(loc, space)
+
+        y = self.margin['top'] + self.padding['top']
+        lineNo = 0
+        while y <= self.svgHeight - self.margin['bottom'] - self.padding['bottom']:
+            if lineNo < self.lineShiftDown or lineNo % self.daysHeight == self.lineShiftDown % self.lineHeight:
+                xl, xr = xLeft, xRight
+            else:
+                if self.layout == 'left':
+                    xl, xr = xLeftSpace, xRight
+                else:
+                    xl, xr = xLeft, xRightSpace
+
+            self.pages[loc].addLine(
+                xl, y, xr, y,
+                transform=f'scale({self.scale})',
+                class_='line'
+            )
+            y += self.lineHeight
+            lineNo += 1
 
     def addFirstCal(self, loc):
         pass

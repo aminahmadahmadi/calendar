@@ -14,6 +14,7 @@ class Calendar(Notebook):
         # design
         self.layout = kwargs.get('layout', 'left')
         self.daysHeight = kwargs.get('daysHeight', 4)
+        self.lineShiftDown = kwargs.get('lineShiftDown', 0)
 
         # Data show
         self.calendarOrder = kwargs.get('layout', ['sh', 'wc', 'ic'])
