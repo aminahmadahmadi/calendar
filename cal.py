@@ -10,6 +10,7 @@ class Calendar(Notebook):
         self.name = kwargs.get('name', 'Untitle-Calendar')
         self.dataJsonPath = dataJsonPath
         self.readDataJson()
+        self.startWeekday = 'Sat'
 
         # design
         self.layout = kwargs.get('layout', 'left')
@@ -69,7 +70,13 @@ class Calendar(Notebook):
             exit()
 
     def weekKeys(self, i):
-        pass
+        key = list(self.dataJson.keys())
+        for dayNo in range(7):
+            if self.dataJson[key[dayNo]]['wc']['weekday'][0] == self.startWeekday:
+                key = key[dayNo:]
+                break
+
+        return key[(i-1)*7:i*7]
 
     def addWeekPage(self, i):
         page = WeekPage(self.weekKeys(i), **self.__dict__)
