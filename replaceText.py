@@ -21,7 +21,7 @@
 def arbNo(txt):
     txt = str(txt)
 
-    arbTxt = {
+    arbTxt = [
         ['0', '٠'],
         ['1', '١'],
         ['2', '٢'],
@@ -32,8 +32,7 @@ def arbNo(txt):
         ['7', '٧'],
         ['8', '٨'],
         ['9', '٩']
-    }
+    ]
     for a, b in arbTxt:
         txt = txt.replace(a, b)
-
     return txt
