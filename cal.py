@@ -10,7 +10,8 @@ class Calendar(Notebook):
         self.name = kwargs.get('name', 'Untitle-Calendar')
         self.dataJsonPath = dataJsonPath
         self.readDataJson()
-        self.startWeekday = 'Sat'
+        self.startWeekday = kwargs.get('startWeekday', 'Sat')
+        self.weekend = kwargs.get('weekend', 0)
 
         # design
         self.layout = kwargs.get('layout', 'left')

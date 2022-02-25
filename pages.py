@@ -182,6 +182,7 @@ class WeekPage(LinePage):
         self.showEvents = kwargs.get('showEvents', True)
         self.showWeekdays = kwargs.get('showWeekdays', False)
         self.showFullCalendar = kwargs.get('showFullCalendar', False)
+        self.weekend = kwargs.get('weekend', 0)
 
     @property
     def page(self):
@@ -295,6 +296,8 @@ class WeekPage(LinePage):
             for e in self.dataJson[dayKey]['event']['values']:
                 if e["dayoff"] == True:
                     holiday = True
+            if i > 6-self.weekend:
+                holiday = True
 
             # text of cal
             textCal = self.dataJson[dayKey][calID]['date'][2]
