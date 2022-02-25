@@ -196,7 +196,7 @@ class WeekPage(LinePage):
             self.drawlines(loc)
             self.addFirstCal(loc)
             self.addSecondCal(loc)
-            self.addthirdCal(loc)
+            self.addThirdCal(loc)
             self.addEventOfDays(loc)
             self.drawGuide(loc)
 
@@ -389,8 +389,56 @@ class WeekPage(LinePage):
     def addSecondCal(self, loc):
         self.addOtherCal(loc, 'secondCal')
 
-    def addthirdCal(self, loc):
+    def addThirdCal(self, loc):
         self.addOtherCal(loc, 'thirdCal')
 
     def addEventOfDays(self, loc):
+        self.pages[loc].addStyle(
+            'events',
+            f'fill:{self.primaryColor};'
+            f'stroke:None;'
+            f'font-family:"{self.fontFamily} {self.fontWeight.get("events","")}";'
+            f'font-size:{self.fontSize.get("events", 5)/self.scale}px;'
+            'text-anchor:end;'
+        )
+
+        for i in range(len(self.weekKeys)):
+            dayKey = self.weekKeys[i]
+            events = self.dataJson[dayKey]['event']['values']
+
+            eventList = list(map(lambda e: e['occasion'], events))
+            eventList = list(
+                map(lambda x: x if len(x) < 120 else '', eventList))
+            eventText = ' / '.join(eventList)
+            eventText2 = ''
+            l = 875 / self.fontSize['events']
+            if len(eventText) > l:
+                i = 1
+                while (len(' / '.join(eventList[-i:])) < l and i < len(eventList)):
+                    eventText2 = ' / '.join(eventList[:-i])
+                    eventText = ' / '.join(eventList[-i:])
+                    i += 1
+
+            # x and y location
+            space = self.lineHeight if self.layout == 'left' else self.daysHeight*self.lineHeight
+            _, xRightSpace = self.xloc(loc, space+0.5)
+            calH = self.fontHeightScl * \
+                self.fontSize.get('events', 5)/self.scale
+            y1 = self.daysY[i+1] - self.lineHeight * 0.5 + calH/2
+            y2 = self.daysY[i+1] - self.lineHeight * 1.5 + calH/2
+
+            self.pages[loc].addText(
+                xRightSpace,
+                y1,
+                eventText,
+                transform=f'scale({self.scale})',
+                class_='events',
+            )
+            self.pages[loc].addText(
+                xRightSpace,
+                y2,
+                eventText2,
+                transform=f'scale({self.scale})',
+                class_='events',
+            )
         pass

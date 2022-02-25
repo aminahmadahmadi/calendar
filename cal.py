@@ -37,7 +37,7 @@ class Calendar(Notebook):
             'secondCal': 'Thin',
             'thirdCal': 'Thin',
             'monthAndWeek': 'Light',
-            'Events': 'ExtraLight',
+            'events': 'ExtraLight',
         }
         self.fontWeight = {}
         for k, v in defaultFontWeight.items():
@@ -52,7 +52,7 @@ class Calendar(Notebook):
             'secondCal': 8,
             'thirdCal': 8,
             'monthAndWeek': 8,
-            'Events': 5,
+            'events': 5,
         }
         self.fontSize = {}
         for k, v in defaultFontSize.items():
