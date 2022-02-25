@@ -235,6 +235,28 @@ class WeekPage(LinePage):
             y += self.lineHeight
             lineNo += 1
 
+    def calendarText(self, calID, dayKey, full=False):
+        if full:
+            if calID == 'sh':
+                sh = self.dataJson[dayKey][calID]
+                textCal = sh['date'][2]
+            elif calID == 'wc':
+                wc = self.dataJson[dayKey][calID]
+                textCal = f"{wc['monthName'][1]} {wc['date'][2]}, {wc['date'][0]}"
+            elif calID == 'ic':
+                ic = self.dataJson[dayKey][calID]
+                textCal = f"{ic['date'][2]} {ic['monthName']} {ic['date'][0]}"
+        else:
+            cal = self.dataJson[dayKey][calID]
+            textCal = str(cal['date'][2])
+
+        if calID == 'sh':
+            return perNo(textCal)
+        elif calID == 'wc':
+            return textCal
+        elif calID == 'ic':
+            return arbNo(textCal)
+
     def addFirstCal(self, loc):
         calID = self.calendarOrder[0]
 
@@ -300,12 +322,7 @@ class WeekPage(LinePage):
                 holiday = True
 
             # text of cal
-            textCal = self.dataJson[dayKey][calID]['date'][2]
-            if calID == 'sh':
-                textCal = perNo(textCal)
-            elif calID == 'ic':
-                textCal = arbNo(textCal)
-
+            textCal = self.calendarText(calID, dayKey)
             textWeekday = self.dataJson[dayKey][calID]['weekday']
 
             if isinstance(textWeekday, list):
@@ -328,11 +345,52 @@ class WeekPage(LinePage):
                     class_='firstCalWeekdaysHoliday' if holiday else 'firstCalWeekdays'
                 )
 
+    def addOtherCal(self, loc, order):
+        if order == 'secondCal':
+            calID = self.calendarOrder[1]
+            downH = 0.5
+        elif order == 'thirdCal':
+            calID = self.calendarOrder[2]
+            downH = 1.5
+
+        try:
+            self.pages[loc].addStyle(
+                order,
+                f'fill:{self.primaryColor};'
+                f'stroke:None;'
+                f'font-family:"{self.fontFamily} {self.fontWeight.get(order,"")}";'
+                f'font-size:{self.fontSize.get(order, 8)/self.scale}px;'
+                f'text-anchor:{"start" if self.layout=="left" else "end"};'
+            )
+
+            for i in range(len(self.weekKeys)):
+                dayKey = self.weekKeys[i]
+                cal = self.dataJson[dayKey][calID]
+
+                # x and y location
+                calH = self.fontHeightScl * \
+                    self.fontSize.get(order, 8)/self.scale
+                y = self.daysY[i] + self.lineHeight * downH + calH/2
+                space = self.lineHeight*self.daysHeight
+                xLeftSpace, xRightSpace = self.xloc(loc, space+0.5)
+                x = xLeftSpace if self.layout == "left" else xRightSpace
+
+                isfull = self.showFullCalendar or cal['date'][2] == 1 or i == 0
+                self.pages[loc].addText(
+                    x,
+                    y,
+                    self.calendarText(calID, dayKey, isfull),
+                    transform=f'scale({self.scale})',
+                    class_=order
+                )
+        except:
+            pass
+
     def addSecondCal(self, loc):
-        pass
+        self.addOtherCal(loc, 'secondCal')
 
     def addthirdCal(self, loc):
-        pass
+        self.addOtherCal(loc, 'thirdCal')
 
     def addEventOfDays(self, loc):
         pass
