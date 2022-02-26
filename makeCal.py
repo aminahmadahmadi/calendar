@@ -1,5 +1,4 @@
-﻿from unicodedata import name
-from cal import Calendar
+﻿from cal import Calendar
 import os
 
 rootPath = os.getcwd()
