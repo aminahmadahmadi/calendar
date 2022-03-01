@@ -272,7 +272,7 @@ class WeekPage(LinePage):
         self.daysY = []
         y = self.margin['top'] + self.padding['top']
         lineNo = 0
-        while y <= self.svgHeight - self.margin['bottom'] - self.padding['bottom']:
+        while lineNo < self.daysHeight*7+1+self.lineShiftDown:
             if lineNo < self.lineShiftDown:
                 xl, xr = xLeft, xRight
             elif lineNo % self.daysHeight == self.lineShiftDown % self.lineHeight:
