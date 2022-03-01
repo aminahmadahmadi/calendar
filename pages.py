@@ -235,6 +235,7 @@ class WeekPage(LinePage):
         self.showWeekdays = kwargs.get('showWeekdays', False)
         self.showFullCalendar = kwargs.get('showFullCalendar', False)
         self.showWeekNo = kwargs.get('showWeekNo', True)
+        self.showTime = kwargs.get('showTime', False)
 
     @property
     def page(self):
@@ -249,6 +250,7 @@ class WeekPage(LinePage):
             self.addFirstCal(loc)
             self.addSecondCal(loc)
             self.addThirdCal(loc)
+            self.drawTime(loc)
             if self.showEvents:
                 self.addEventOfDays(loc)
             self.addMonthandWeek(loc)
@@ -399,6 +401,51 @@ class WeekPage(LinePage):
                     transform=f'scale({self.scale})',
                     class_='firstCalWeekdaysHoliday' if holiday else 'firstCalWeekdays'
                 )
+
+    def drawTime(self, loc, pattern='01'):
+        if not self.showTime:
+            return
+
+        self.pages[loc].addStyle(
+            'time',
+            f'fill:{self.primaryColor};'
+            f'stroke:None;'
+            f'font-family:"{self.fontFamily} {self.fontWeight.get("time","")}";'
+            f'font-size:{self.fontSize.get("time", 5)/self.scale}px;'
+            'text-anchor:middle;'
+        )
+        xLeft, xRight = self.xloc(loc)
+        space = self.lineHeight*self.daysHeight*1.75
+        xLeftSpace, xRightSpace = self.xloc(loc, space)
+
+        if self.layout == 'left':
+            xl, xr = xLeftSpace, xRight
+        else:
+            xl, xr = xLeft, xRightSpace
+
+        for y in self.daysY[:-1]:
+            calH = self.fontHeightScl * \
+                self.fontSize.get('time', 5)/self.scale
+
+            y1 = y
+            y2 = y1+1
+            y3 = y2 + calH + 0.5
+
+            for i in range(17):
+                x = xl + (xr-xl)*i/17
+                self.pages[loc].addLine(
+                    x, y1, x, y2,
+                    transform=f'scale({self.scale})',
+                    class_='line'
+                )
+                if pattern[i % len(pattern)] == '1':
+                    self.pages[loc].addText(
+                        x,
+                        y3,
+                        perNo(i+6),
+                        transform=f'scale({self.scale})',
+                        class_='time',
+                    )
 
     def addOtherCal(self, loc, order):
         if order == 'secondCal':
