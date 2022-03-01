@@ -438,14 +438,14 @@ class WeekPage(LinePage):
             self.pages[loc].addText(
                 xRightSpace,
                 y1,
-                eventText,
+                perNo(eventText),
                 transform=f'scale({self.scale})',
                 class_='events',
             )
             self.pages[loc].addText(
                 xRightSpace,
                 y2,
-                eventText2,
+                perNo(eventText2),
                 transform=f'scale({self.scale})',
                 class_='events',
             )
