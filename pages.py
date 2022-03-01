@@ -359,13 +359,15 @@ class WeekPage(LinePage):
             downH = 1.5
 
         try:
+            startAnchor = (self.layout == "right") ^ (calID == "wc")
             self.pages[loc].addStyle(
                 order,
                 f'fill:{self.primaryColor};'
                 f'stroke:None;'
                 f'font-family:"{self.fontFamily} {self.fontWeight.get(order,"")}";'
                 f'font-size:{self.fontSize.get(order, 8)/self.scale}px;'
-                f'text-anchor:{"start" if self.layout=="left" else "end"};'
+                f'text-anchor:{"start" if startAnchor else "end"};'
+                f'direction:{"ltr" if calID=="wc" else "rtl"};'
             )
 
             for i in range(len(self.weekKeys)):
@@ -404,7 +406,8 @@ class WeekPage(LinePage):
             f'stroke:None;'
             f'font-family:"{self.fontFamily} {self.fontWeight.get("events","")}";'
             f'font-size:{self.fontSize.get("events", 5)/self.scale}px;'
-            'text-anchor:end;'
+            'text-anchor:start;'
+            'direction: rtl'
         )
 
         for i in range(len(self.weekKeys)):
