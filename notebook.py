@@ -11,6 +11,10 @@ class Notebook():
         self.height = kwargs.get('height', 210)
         self.scale = kwargs.get('scale', 2.83465)
 
+        # Trim Mark
+        self.trimMarkMargin = kwargs.get('trimMarkMargin', 3)
+        self.trimMark = kwargs.get('trimMark', 0)
+
         # margin and padding
         self.margin = kwargs.get(
             'margin',

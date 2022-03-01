@@ -10,6 +10,10 @@ class Page():
         self.height = kwargs.get('height', 210)
         self.scale = kwargs.get('scale', 2.83465)
 
+        # Trim Mark
+        self.trimMarkMargin = kwargs.get('trimMarkMargin', 3)
+        self.trimMark = kwargs.get('trimMark', 0)
+
         # margin and padding
         self.margin = kwargs.get(
             'margin',
@@ -41,6 +45,7 @@ class Page():
         for loc in ['right', 'left']:
             self.definePage(loc)
             self.drawGuide(loc)
+            self.drawTrimMark(loc)
 
     def definePage(self, loc):
         self.pages[loc] = Svg(
@@ -80,6 +85,49 @@ class Page():
             style='stroke-width:0.25;',
             transform=f'scale({self.scale})'
         )
+
+    def drawTrimMark(self, loc):
+        if self.trimMark == 0:
+            return
+
+        _dir = {
+            'right': ['inside', 'outside'],
+            'left': ['outside', 'inside']
+        }
+        self.pages[loc].addStyle(
+            'trimMark',
+            'fill:none;'
+            'stroke:#000;'
+            'stroke-width:0.05;'
+            f'transform:scale({self.scale});'
+        )
+
+        for x in [self.margin[_dir[loc][0]], self.width+self.margin[_dir[loc][0]]]:
+            y1 = self.margin['top']-self.trimMarkMargin
+            y2 = self.height + self.margin['top'] + self.trimMarkMargin
+
+            self.pages[loc].addLine(
+                x, y1 - self.trimMark, x, y1,
+                class_='trimMark'
+            )
+            self.pages[loc].addLine(
+                x, y2, x, y2 + self.trimMark,
+                class_='trimMark'
+            )
+
+        for y in [self.margin['top'], self.height+self.margin['top']]:
+            x1 = self.margin[_dir[loc][0]]-self.trimMarkMargin
+            x2 = self.width + self.margin[_dir[loc][0]] + self.trimMarkMargin
+
+            self.pages[loc].addLine(
+                x1 - self.trimMark, y, x1, y,
+                class_='trimMark'
+            )
+            end = self.width + self.margin['inside'] + self.margin['outside']
+            self.pages[loc].addLine(
+                x2, y, x2 + self.trimMark, y,
+                class_='trimMark'
+            )
 
 
 class LinePage(Page):
