@@ -98,3 +98,7 @@ class Calendar(Notebook):
     def addWeekPage(self, weekNo):
         page = WeekPage(weekNo, self.weekKeys(weekNo), **self.__dict__)
         self.pages.append(page)
+
+    def addFirstPage(self):
+        page = FirstPage(**self.__dict__)
+        self.pages.append(page)

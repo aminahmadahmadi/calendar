@@ -58,6 +58,10 @@ class Notebook():
         page = DotPage(**self.__dict__)
         self.pages.append(page)
 
+    def addChecklistPage(self, **kwargs):
+        page = ChecklistPage(**self.__dict__, **kwargs)
+        self.pages.append(page)
+
     def toHTML(self, Dir=''):
         if not os.path.exists('\\'.join([Dir, self.name])):
             os.mkdir('\\'.join([Dir, self.name]))
