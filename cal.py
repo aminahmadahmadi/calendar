@@ -13,6 +13,7 @@ class Calendar(Notebook):
         self.startWeekday = kwargs.get('startWeekday', 'Sat')
         self.weekend = kwargs.get('weekend', 0)
         self.divider = kwargs.get('divider', ' / ')
+        self.sentence = kwargs.get('sentence', [])
 
         # design
         self.layout = kwargs.get('layout', 'left')
@@ -25,6 +26,7 @@ class Calendar(Notebook):
         self.showWeekdays = kwargs.get('showWeekdays', False)
         self.showFullCalendar = kwargs.get('showFullCalendar', False)
         self.showWeekNo = kwargs.get('showWeekNo', True)
+        self.showTime = kwargs.get('showTime', False)
 
         # font style
         self.fontHeightScl = kwargs.get('fontHeightScl', 0.67)
@@ -42,7 +44,7 @@ class Calendar(Notebook):
             'events': 'ExtraLight',
             'time': 'Regular',
             'firstPageTitle': 'Thin',
-            'newYearInfo':  'Thin',
+            'turnOfYear':  'Thin',
             'firstPageOther': 'Light',
             'name': 'Black',
             'sentence': 'Light',
@@ -63,7 +65,7 @@ class Calendar(Notebook):
             'time': 5,
             'events': 5,
             'firstPageTitle':  self.lineHeight * self.daysHeight * 4,
-            'newYearInfo':  7,
+            'turnOfYear':  7,
             'firstPageOther': 9,
             'name': 9,
             'sentence': 9,
