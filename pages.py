@@ -244,7 +244,7 @@ class WeekPage(LinePage):
         if full:
             if calID == 'sh':
                 sh = self.dataJson[dayKey][calID]
-                textCal = sh['date'][2]
+                textCal = f"{sh['date'][2]} {sh['monthName']} {sh['date'][0]}"
             elif calID == 'wc':
                 wc = self.dataJson[dayKey][calID]
                 textCal = f"{wc['monthName'][1]} {wc['date'][2]}, {wc['date'][0]}"
