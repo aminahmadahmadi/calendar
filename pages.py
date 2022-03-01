@@ -640,3 +640,40 @@ class LinePageWithTitle(LinePage):
             transform=f'scale({self.scale})',
             class_='titleofpage'
         )
+
+
+class ChecklistPage(LinePageWithTitle):
+    def __init__(self, title='', name='Untitle-LinePage', pattern='010', checkboxscale=0.6, **kwargs) -> None:
+        super().__init__(title, name, **kwargs)
+
+        self.pattern = pattern
+        self.checkboxscale = checkboxscale
+
+    def makePages(self):
+        super().makePages()
+        for loc in ['right', 'left']:
+            self.addCheckBox(loc)
+
+    def addCheckBox(self, loc):
+        self.pages[loc].addStyle(
+            'checkbox',
+            'fill:white;'
+            f'stroke:{self.lineColor};'
+            f'stroke-width:{self.lineWidth};'
+        )
+        lines = (self.height-self.padding['top'] -
+                 self.padding['bottom']) // self.lineHeight+1
+        space = self.lineHeight*2
+        xLeftSpace, xRightSpace = self.xloc(loc, space+0.5)
+        x = xRightSpace
+        w = self.lineHeight*self.checkboxscale
+        for i in range(lines):
+            if self.pattern[i % len(self.pattern)] == '1':
+                self.pages[loc].addRect(
+                    x-w,
+                    self.padding['top']+i*self.lineHeight-w/2,
+                    w,
+                    w,
+                    transform=f'scale({self.scale})',
+                    class_='checkbox',
+                )
