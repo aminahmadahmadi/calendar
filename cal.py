@@ -40,6 +40,12 @@ class Calendar(Notebook):
             'thirdCal': 'Thin',
             'monthAndWeek': 'Light',
             'events': 'ExtraLight',
+            'time': 'Regular',
+            'firstPageTitle': 'Thin',
+            'newYearInfo':  'Thin',
+            'firstPageOther': 'Light',
+            'name': 'Black',
+            'sentence': 'Light',
         }
         self.fontWeight = {}
         for k, v in defaultFontWeight.items():
@@ -49,12 +55,18 @@ class Calendar(Notebook):
         defaultFontSize = {
             'firstCal':  self.lineHeight * self.daysHeight * 2,
             'holiday':  self.lineHeight * self.daysHeight * 2,
-            'firstCalWeekdays': 8,
-            'firstCalWeekdaysHoliday': 8,
-            'secondCal': 8,
-            'thirdCal': 8,
-            'monthAndWeek': 8,
+            'firstCalWeekdays': 7,
+            'firstCalWeekdaysHoliday': 7,
+            'secondCal': 7,
+            'thirdCal': 7,
+            'monthAndWeek': 7,
+            'time': 5,
             'events': 5,
+            'firstPageTitle':  self.lineHeight * self.daysHeight * 4,
+            'newYearInfo':  7,
+            'firstPageOther': 9,
+            'name': 9,
+            'sentence': 9,
         }
         self.fontSize = {}
         for k, v in defaultFontSize.items():

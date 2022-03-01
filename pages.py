@@ -272,7 +272,7 @@ class WeekPage(LinePage):
         self.daysY = []
         y = self.margin['top'] + self.padding['top']
         lineNo = 0
-        while lineNo < self.daysHeight*7+1+self.lineShiftDown:
+        while lineNo < self.daysHeight*7+1+self.lineShiftDown or y <= self.svgHeight - self.margin['bottom'] - self.padding['bottom']:
             if lineNo < self.lineShiftDown:
                 xl, xr = xLeft, xRight
             elif lineNo % self.daysHeight == self.lineShiftDown % self.lineHeight:
@@ -677,3 +677,105 @@ class ChecklistPage(LinePageWithTitle):
                     transform=f'scale({self.scale})',
                     class_='checkbox',
                 )
+
+
+class FirstPage(LinePage):
+    def __init__(self, name='John Smith', sentence=[], years=['1401', '2022 - 2023', '1444 - 1443'], turnOfYear=['یک شنبه ۲۹ اسفندماه ۱۴۰۰', 'ساعت ۱۹:۰۳:۲۶'], **kwargs) -> None:
+        super().__init__(name, **kwargs)
+
+        self.sentence = sentence
+        self.years = years
+        self.turnOfYear = turnOfYear
+
+        # colors
+        self.primaryColor = kwargs.get('primaryColor', '#000')
+
+        # font style
+        self.fontHeightScl = kwargs.get('fontHeightScl', 0.66)
+        self.fontFamily = kwargs.get('fontFamily', 'Anjoman')
+        self.fontWeight = kwargs.get('fontWeight', {})
+        self.fontSize = kwargs.get('fontSize', {})
+
+        self.daysHeight = kwargs.get('daysHeight', 4)
+
+    def makePages(self):
+        for loc in ['right', 'left']:
+            self.definePage(loc)
+            self.addYears(loc, self.years)
+            self.addNameSentence(loc)
+            self.drawGuide(loc)
+            self.drawTrimMark(loc)
+
+    def addYears(self, loc, years, turnOfYear):
+        first, second, third = tuple(years)
+        self.pages[loc].addStyle(
+            'firstInfo',
+            f'fill:{self.primaryColor};'
+            f'stroke:None;'
+            f'font-family:"{self.fontFamily} {self.fontWeight.get("firstPageTitle","")}";'
+            f'font-size:{self.fontSize.get("firstPageTitle", self.lineHeight*self.daysHeight*4)/self.scale}px;'
+            f'text-anchor:{"start" if loc=="left" else "end"};'
+        )
+        self.pages[loc].addStyle(
+            'secondInfo',
+            f'fill:{self.primaryColor};'
+            f'stroke:None;'
+            f'font-family:"{self.fontFamily} {self.fontWeight.get("firstPageOther","")}";'
+            f'font-size:{self.fontSize.get("firstPageOther", 9)/self.scale}px;'
+            f'text-anchor:{"start" if loc=="left" else "end"};'
+        )
+        self.pages[loc].addStyle(
+            'turnOfYear',
+            f'fill:{self.primaryColor};'
+            f'stroke:None;'
+            f'font-family:"{self.fontFamily} {self.fontWeight.get("turnOfYear","")}";'
+            f'font-size:{self.fontSize.get("turnOfYear", 9)/self.scale}px;'
+            f'text-anchor:{"start" if loc=="right" else "end"};'
+            'direction:rtl;'
+
+        )
+
+        space = self.lineHeight * self.daysHeight
+        xLeftSpace, xRightSpace = self.xloc(loc, space)
+
+        x = xLeftSpace if loc == 'left' else xRightSpace
+        y = self.margin['top']+self.padding['top'] + \
+            self.lineHeight*self.daysHeight*0.9
+
+        self.pages[loc].addText(
+            x-self.lineHeight * self.daysHeight / 7,
+            y,
+            perNo(first),
+            transform=f'scale({self.scale})',
+            class_='firstInfo'
+        )
+        self.pages[loc].addText(
+            x,
+            y+self.lineHeight*1.2,
+            second,
+            transform=f'scale({self.scale})',
+            class_='secondInfo'
+        )
+        self.pages[loc].addText(
+            x,
+            y+self.lineHeight*2,
+            arbNo(third),
+            transform=f'scale({self.scale})',
+            class_='secondInfo'
+        )
+
+        for txt in self.turnOfYear:
+            self.pages[loc].addText(
+                x,
+                y+self.lineHeight*5+0.7*,
+                perNo(txt),
+                transform=f'scale({self.scale})',
+                class_='newYearInfo'
+            )
+        self.pages[loc].addText(
+            x,
+            y+self.lineHeight*5.7,
+            perNo('ساعت ۱۹:۰۳:۲۶'),
+            transform=f'scale({self.scale})',
+            class_='newYearInfo'
+        )
