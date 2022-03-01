@@ -767,7 +767,7 @@ class FirstPage(LinePage):
         for i in range(len(self.turnOfYear)):
             self.pages[loc].addText(
                 x,
-                y+self.lineHeight*5+0.1*self.fontSize.get("turnOfYear", 7)*i,
+                y+self.lineHeight*(5+0.1*self.fontSize.get("turnOfYear", 7)*i),
                 perNo(self.turnOfYear[i]),
                 transform=f'scale({self.scale})',
                 class_='turnOfYear'
