@@ -80,8 +80,7 @@ class Notebook():
             )
             path = "\\".join(['pages', f"{svg.name}.svg"])
 
-            firstPageStyle = 'style="display: block;margin:0 auto;"' if i == 0 else ''
-            htmlTxt += f'<img src="{path}" {firstPageStyle} >\n'
+            htmlTxt += f'<img src="{path}" >\n'
 
         htmlTxt += '</body>\n</html>'
 
