@@ -729,7 +729,7 @@ class FirstPage(LinePage):
             f'fill:{self.primaryColor};'
             f'stroke:None;'
             f'font-family:"{self.fontFamily} {self.fontWeight.get("turnOfYear","")}";'
-            f'font-size:{self.fontSize.get("turnOfYear", 9)/self.scale}px;'
+            f'font-size:{self.fontSize.get("turnOfYear", 7)/self.scale}px;'
             f'text-anchor:{"start" if loc=="right" else "end"};'
             'direction:rtl;'
 
@@ -764,18 +764,11 @@ class FirstPage(LinePage):
             class_='secondInfo'
         )
 
-        for txt in self.turnOfYear:
+        for i in range(len(self.turnOfYear)):
             self.pages[loc].addText(
                 x,
-                y+self.lineHeight*5+0.7*,
-                perNo(txt),
+                y+self.lineHeight*5+0.1*self.fontSize.get("turnOfYear", 7)*i,
+                perNo(self.turnOfYear[i]),
                 transform=f'scale({self.scale})',
-                class_='newYearInfo'
+                class_='turnOfYear'
             )
-        self.pages[loc].addText(
-            x,
-            y+self.lineHeight*5.7,
-            perNo('ساعت ۱۹:۰۳:۲۶'),
-            transform=f'scale({self.scale})',
-            class_='newYearInfo'
-        )
