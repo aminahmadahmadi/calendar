@@ -516,13 +516,17 @@ class WeekPage(LinePage):
                 map(lambda x: x if len(x) < 120 else '', eventList))
             eventText = self.divider.join(eventList)
             eventText2 = ''
-            l = 875 / self.fontSize['events']
+            textArea = self.width - \
+                self.padding['inside']-self.padding['outside'] - \
+                self.lineHeight*(1+self.daysHeight)
+            l = 7.8 * (textArea) / self.fontSize['events']
+
             if len(eventText) > l:
-                i = 1
-                while (len(self.divider.join(eventList[-i:])) < l and i < len(eventList)):
-                    eventText2 = self.divider.join(eventList[:-i])
-                    eventText = self.divider.join(eventList[-i:])
-                    i += 1
+                j = 1
+                while (len(self.divider.join(eventList[-j:])) < l and j < len(eventList)):
+                    eventText2 = self.divider.join(eventList[:-j])
+                    eventText = self.divider.join(eventList[-j:])
+                    j += 1
 
             # x and y location
             space = self.lineHeight if self.layout == 'left' else self.daysHeight*self.lineHeight
@@ -586,4 +590,53 @@ class WeekPage(LinePage):
             text,
             transform=f'scale({self.scale})',
             class_='monthAndWeek'
+        )
+
+
+class LinePageWithTitle(LinePage):
+    def __init__(self, title='', name='Untitle-LinePage', **kwargs) -> None:
+        super().__init__(name, **kwargs)
+
+        self.title = title
+
+        # colors
+        self.primaryColor = kwargs.get('primaryColor', '#000')
+
+        # font style
+        self.fontHeightScl = kwargs.get('fontHeightScl', 0.66)
+        self.fontFamily = kwargs.get('fontFamily', 'Anjoman')
+        self.fontWeight = kwargs.get('fontWeight', {})
+        self.fontSize = kwargs.get('fontSize', {})
+
+    def makePages(self):
+        super().makePages()
+        for loc in ['right', 'left']:
+            self.addTitle(loc)
+
+    def addTitle(self, loc):
+        self.pages[loc].addStyle(
+            'titleofpage',
+            f'fill:{self.primaryColor};'
+            f'stroke:None;'
+            f'font-family:"{self.fontFamily} {self.fontWeight.get("monthAndWeek","")}";'
+            f'font-size:{self.fontSize.get("monthAndWeek", 8)/self.scale}px;'
+            'text-anchor:start;'
+            'direction:rtl;'
+        )
+
+        # x and y location
+        calH = self.fontHeightScl * \
+            self.fontSize.get("monthAndWeek", 8)/self.scale
+        y = self.margin['top']+self.padding['top'] - \
+            self.lineHeight * 0.5 + calH/2
+        space = self.lineHeight*2
+        xLeftSpace, xRightSpace = self.xloc(loc, space+0.5)
+        x = xRightSpace
+
+        self.pages[loc].addText(
+            x,
+            y,
+            self.title,
+            transform=f'scale({self.scale})',
+            class_='titleofpage'
         )
