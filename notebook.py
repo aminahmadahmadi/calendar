@@ -34,7 +34,7 @@ class Notebook():
 
         # colors
         self.bgColor = kwargs.get('bgColor', 'none')
-        self.lineColor = kwargs.get('lineColor', '#555')
+        self.lineColor = kwargs.get('lineColor', '#999')
 
         # pages
         self.pages = kwargs.get('pages', [])

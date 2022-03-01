@@ -100,7 +100,7 @@ class LinePage(Page):
         self.lineWidth = kwargs.get('lineWidth', 0.05)
 
         # colors
-        self.lineColor = kwargs.get('lineColor', '#555')
+        self.lineColor = kwargs.get('lineColor', '#999')
 
     @property
     def page(self):
