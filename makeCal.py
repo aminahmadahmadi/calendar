@@ -4,7 +4,7 @@ import os
 rootPath = os.getcwd()
 
 newBook = Calendar('cal1401.json',
-                   name='cal-1401',
+                   name='test-cal-1401',
                    margin=[0, 0, 0, 0],
                    showWeekdays=True,
                    secondColor='#f00',
