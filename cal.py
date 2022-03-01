@@ -39,6 +39,8 @@ class Calendar(Notebook):
             'firstCalWeekdays': 'ExtraLight',
             'firstCalWeekdaysHoliday': 'ExtraLight',
             'secondCal': 'Thin',
+            'holidaysPage': 'Thin',
+            'holidaysPageNo': 'Medium',
             'thirdCal': 'Thin',
             'monthAndWeek': 'Light',
             'events': 'ExtraLight',
@@ -60,6 +62,8 @@ class Calendar(Notebook):
             'firstCalWeekdays': 7,
             'firstCalWeekdaysHoliday': 7,
             'secondCal': 7,
+            'holidaysPage': 7,
+            'holidaysPageNo': 7,
             'thirdCal': 7,
             'monthAndWeek': 7,
             'time': 5,
@@ -101,4 +105,8 @@ class Calendar(Notebook):
 
     def addFirstPage(self):
         page = FirstPage(**self.__dict__)
+        self.pages.append(page)
+
+    def addHolidaysPage(self, **kwargs):
+        page = HolidaysPage(**self.__dict__, **kwargs)
         self.pages.append(page)

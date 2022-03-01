@@ -820,3 +820,102 @@ class FirstPage(LinePage):
                 transform=f'scale({self.scale})',
                 class_='sentence'
             )
+
+
+class HolidaysPage(LinePageWithTitle):
+    def __init__(self, year=1401, shiftDownHolidays=2, title='تعطیلات رسمی ۱۴۰۱', name='Untitle-LinePage', **kwargs) -> None:
+        super().__init__(title, name, **kwargs)
+        self.dataJson = kwargs.get('dataJson', '')
+        self.shiftDownHolidays = shiftDownHolidays
+        self.holidays = []
+        for day in self.dataJson.keys():
+            dayYear = self.dataJson[day]['sh']['date'][0]
+            if self.dataJson[day]['sh']['date'][0] == year:
+                events = self.dataJson[day]['event']['values']
+                for e in events:
+                    if e['dayoff'] == True:
+                        self.holidays.append((day, e['occasion']))
+                        break
+
+    def makePages(self):
+        super().makePages()
+        for loc in ['right', 'left']:
+            self.addHolidays(loc)
+
+    def addHolidays(self, loc):
+
+        self.pages[loc].addStyle(
+            'holiday',
+            f'fill:{self.primaryColor};'
+            f'stroke:None;'
+            f'font-family:"{self.fontFamily} {self.fontWeight.get("holidaysPage","")}";'
+            f'font-size:{self.fontSize.get("holidaysPage", 7)/self.scale}px;'
+            'text-anchor:start;'
+            'direction:rtl;'
+        )
+        self.pages[loc].addStyle(
+            'holiday',
+            f'fill:{self.primaryColor};'
+            f'stroke:None;'
+            f'font-family:"{self.fontFamily} {self.fontWeight.get("holidaysPage","")}";'
+            f'font-size:{self.fontSize.get("holidaysPage", 7)/self.scale}px;'
+            'text-anchor:start;'
+            'direction:rtl;'
+        )
+        self.pages[loc].addStyle(
+            'holidayNo',
+            f'fill:{self.primaryColor};'
+            f'stroke:None;'
+            f'font-family:"{self.fontFamily} {self.fontWeight.get("holidaysPageNo","")}";'
+            f'font-size:{self.fontSize.get("holidaysPageNo", 7)/self.scale}px;'
+            'text-anchor:middle;'
+            'direction:rtl;'
+        )
+
+        calH = self.fontHeightScl * \
+            self.fontSize.get("holidaysPage", 7)/self.scale
+        y = self.margin['top']+self.padding['top'] + \
+            self.lineHeight * (self.shiftDownHolidays+0.5) + calH/2
+
+        _, x1 = self.xloc(loc, 2*self.lineHeight+0.5)
+        _, x2 = self.xloc(loc, 5*self.lineHeight+0.5)
+        _, x3 = self.xloc(loc, 6*self.lineHeight+0.5)
+        _, x4 = self.xloc(loc, 9*self.lineHeight+0.5)
+
+        lastMonth = ''
+        for day, event in self.holidays:
+            monthName = self.dataJson[day]['sh']['monthName']
+            dateInfo = self.dataJson[day]['sh']
+
+            # x and y location
+            if monthName != lastMonth:
+                self.pages[loc].addText(
+                    x1,
+                    y,
+                    perNo(monthName),
+                    transform=f'scale({self.scale})',
+                    class_='holiday'
+                )
+                lastMonth = monthName
+            self.pages[loc].addText(
+                x2,
+                y,
+                perNo(dateInfo['date'][2]),
+                transform=f'scale({self.scale})',
+                class_='holidayNo'
+            )
+            self.pages[loc].addText(
+                x3,
+                y,
+                perNo(dateInfo['weekday']),
+                transform=f'scale({self.scale})',
+                class_='holiday'
+            )
+            self.pages[loc].addText(
+                x4,
+                y,
+                perNo(event),
+                transform=f'scale({self.scale})',
+                class_='holiday'
+            )
+            y += self.lineHeight
