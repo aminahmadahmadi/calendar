@@ -161,6 +161,7 @@ class LinePage(Page):
             self.definePage(loc)
             self.drawlines(loc)
             self.drawGuide(loc)
+            self.drawTrimMark(loc)
 
     def drawlines(self, loc):
         self.pages[loc].addStyle(
@@ -252,6 +253,7 @@ class WeekPage(LinePage):
                 self.addEventOfDays(loc)
             self.addMonthandWeek(loc)
             self.drawGuide(loc)
+            self.drawTrimMark(loc)
 
     def drawlines(self, loc):
         self.pages[loc].addStyle(
