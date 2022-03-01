@@ -701,13 +701,13 @@ class FirstPage(LinePage):
     def makePages(self):
         for loc in ['right', 'left']:
             self.definePage(loc)
-            self.addYears(loc, self.years)
+            self.addYears(loc)
             self.addNameSentence(loc)
             self.drawGuide(loc)
             self.drawTrimMark(loc)
 
-    def addYears(self, loc, years, turnOfYear):
-        first, second, third = tuple(years)
+    def addYears(self, loc):
+        first, second, third = tuple(self.years)
         self.pages[loc].addStyle(
             'firstInfo',
             f'fill:{self.primaryColor};'
@@ -771,4 +771,52 @@ class FirstPage(LinePage):
                 perNo(self.turnOfYear[i]),
                 transform=f'scale({self.scale})',
                 class_='turnOfYear'
+            )
+
+    def addNameSentence(self, loc):
+        self.pages[loc].addStyle(
+            'name',
+            f'fill:{self.primaryColor};'
+            f'stroke:None;'
+            f'font-family:"{self.fontFamily} {self.fontWeight.get("name","")}";'
+            f'font-size:{self.fontSize.get("name", 79)/self.scale}px;'
+            f'text-anchor:{"start" if loc=="right" else "end"};'
+            'direction:rtl;'
+        )
+        self.pages[loc].addStyle(
+            'sentence',
+            f'fill:{self.primaryColor};'
+            f'stroke:None;'
+            f'font-family:"{self.fontFamily} {self.fontWeight.get("sentence","")}";'
+            f'font-size:{self.fontSize.get("sentence", 9)/self.scale}px;'
+            f'text-anchor:{"start" if loc=="right" else "end"};'
+            'direction:rtl;'
+
+        )
+
+        space = self.lineHeight * self.daysHeight
+        xLeftSpace, xRightSpace = self.xloc(loc, space)
+
+        x = xLeftSpace if loc == 'left' else xRightSpace
+        y = self.height + \
+            self.margin['top'] - self.padding['bottom'] - \
+            (len(self.sentence)+3)*self.lineHeight
+
+        self.pages[loc].addText(
+            x,
+            y,
+            perNo(self.name),
+            transform=f'scale({self.scale})',
+            class_='name'
+        )
+
+        y += self.lineHeight
+        for line in self.sentence:
+            y += self.lineHeight
+            self.pages[loc].addText(
+                x,
+                y,
+                perNo(line),
+                transform=f'scale({self.scale})',
+                class_='sentence'
             )
