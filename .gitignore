@@ -4,7 +4,7 @@
 # test folders
 test*/
 Untitle*/
-test.py
+test*
 
 # tmp files 
 pages/
