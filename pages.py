@@ -823,7 +823,7 @@ class FirstPage(LinePage):
 
 
 class HolidaysPage(LinePageWithTitle):
-    def __init__(self, year=1401, shiftDownHolidays=2, title='تعطیلات رسمی ۱۴۰۱', name='Untitle-LinePage', **kwargs) -> None:
+    def __init__(self, year=1401, shiftDownHolidays=1, title='تعطیلات رسمی ۱۴۰۱', name='Untitle-LinePage', **kwargs) -> None:
         super().__init__(title, name, **kwargs)
         self.dataJson = kwargs.get('dataJson', '')
         self.shiftDownHolidays = shiftDownHolidays
@@ -919,3 +919,147 @@ class HolidaysPage(LinePageWithTitle):
                 class_='holiday'
             )
             y += self.lineHeight
+
+
+class OneYearPage(LinePageWithTitle):
+    def __init__(self, year=1401, title='سال ۱۴۰۱', name='Untitle-LinePage', **kwargs) -> None:
+        super().__init__(title, name, **kwargs)
+        self.dataJson = kwargs.get('dataJson', '')
+        self.year = year
+        self.startWeekday = kwargs.get('startWeekday', 'Sat')
+        self.weekend = kwargs.get('weekend', 0)
+        self.secondColor = kwargs.get('secondColor', '#ddd')
+
+        self.holidays = []
+        for day in self.dataJson.keys():
+            dayYear = self.dataJson[day]['sh']['date'][0]
+            if self.dataJson[day]['sh']['date'][0] == year:
+                events = self.dataJson[day]['event']['values']
+                for e in events:
+                    if e['dayoff'] == True:
+                        self.holidays.append(day)
+                        break
+
+    def makePages(self):
+        super().makePages()
+        for loc in ['right', 'left']:
+            self.addMonths(loc)
+
+    def addMonths(self, loc):
+        self.pages[loc].addStyle(
+            'onePageYear',
+            f'fill:{self.primaryColor};'
+            f'stroke:None;'
+            f'font-family:"{self.fontFamily} {self.fontWeight.get("onePageYear","")}";'
+            f'font-size:{self.fontSize.get("onePageYear", 7)/self.scale}px;'
+            'text-anchor:middle;'
+            'direction:rtl;'
+        )
+        self.pages[loc].addStyle(
+            'onePageYearHolidays',
+            f'fill:{self.secondColor};'
+            f'stroke:None;'
+            f'font-family:"{self.fontFamily} {self.fontWeight.get("onePageYearHolidays","")}";'
+            f'font-size:{self.fontSize.get("onePageYearHolidays", 7)/self.scale}px;'
+            'text-anchor:middle;'
+            'direction:rtl;'
+        )
+        self.pages[loc].addStyle(
+            'onePageYearMonth',
+            f'fill:{self.primaryColor};'
+            f'stroke:None;'
+            f'font-family:"{self.fontFamily} {self.fontWeight.get("onePageYearMonth","")}";'
+            f'font-size:{self.fontSize.get("onePageYearMonth", 7)/self.scale}px;'
+            'text-anchor:start;'
+            'direction:rtl;'
+        )
+        xLeft, xRight = self.xloc(loc, 2*self.lineHeight)
+        yTop = self.margin['top']+self.padding['top']
+        yBottom = self.margin['top'] + self.height - self.padding['bottom']
+
+        w = (((yBottom-yTop)/4)//self.lineHeight)*self.lineHeight
+
+        weekDays = ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri']
+        weekShift = weekDays.index(self.startWeekday)
+        weekDays = weekDays[weekShift:] + weekDays[:weekShift]
+
+        calKeysDict = {}
+        monthList = {}
+        for date_ in self.dataJson:
+            day = self.dataJson[date_]['sh']
+
+            if day['date'][0] == self.year:
+                if day['date'][2] == 1:
+                    monthList[day['date'][1]] = day['monthName']
+                    calKeysDict[day['date'][1]] = [date_]
+                else:
+                    calKeysDict[day['date'][1]].append(date_)
+
+        for m in range(1, 13):
+            j = (m-1)//3
+            i = (m-1) % 3
+
+            self.addMonth(
+                loc,
+                xLeft+(2-i)*(xRight-xLeft)/3,
+                yTop+j*w+self.lineHeight,
+                (xRight-xLeft)/3,
+                w,
+                monthList[m],
+                calKeysDict[m],
+                weekDays
+            )
+
+    def addMonth(self, loc, xLeft, yTop, w, h, monthName, days, weekDays):
+        colWidth = self.lineHeight if self.lineHeight <= w/7 else w/7
+
+        if self.lineHeight <= h/8:
+            lineHeight = self.lineHeight
+            self.pages[loc].addRect(
+                xLeft+w-colWidth,
+                yTop+1,
+                colWidth,
+                h-2-lineHeight,
+                transform=f'scale({self.scale})',
+                fill="white",
+            )
+        else:
+            lineHeight = (h-self.lineHeight)/7
+            self.pages[loc].addRect(
+                xLeft, yTop+1, w, h-self.lineHeight-2,
+                transform=f'scale({self.scale})',
+                fill="white",
+            )
+
+        calH = self.fontHeightScl * \
+            self.fontSize.get("onePageYear", 7)/self.scale
+
+        a = 0
+        for date_ in days:
+            day = self.dataJson[date_]
+            b = weekDays.index(day['wc']['weekday'][0])
+
+            x = xLeft + w - colWidth * (a + 1.5)
+            y = yTop + lineHeight * (b + 0.5) + calH/2
+
+            isHoliday = (date_ in self.holidays) or (b > 6-self.weekend)
+
+            self.pages[loc].addText(
+                x,
+                y,
+                perNo(day['sh']['date'][2]),
+                transform=f'scale({self.scale})',
+                class_='onePageYearHolidays' if isHoliday else 'onePageYear'
+            )
+            a += 1 if b == 6 else 0
+
+        monthH = self.fontHeightScl * \
+            self.fontSize.get("onePageYear", 7)/self.scale
+
+        self.pages[loc].addText(
+            0,
+            0,
+            monthName,
+            transform=f' scale({self.scale}) translate({xLeft+w-colWidth/2+monthH/2} {yTop+1}) rotate(-90)',
+            class_='onePageYearMonth'
+        )
