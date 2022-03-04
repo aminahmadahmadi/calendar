@@ -50,6 +50,9 @@ class Calendar(Notebook):
             'firstPageOther': 'Light',
             'name': 'Black',
             'sentence': 'Light',
+            'onePageYear': 'Light',
+            'onePageYearHolidays': 'Medium',
+            'onePageYearMonth': 'Black',
         }
         self.fontWeight = {}
         for k, v in defaultFontWeight.items():
@@ -73,6 +76,9 @@ class Calendar(Notebook):
             'firstPageOther': 9,
             'name': 9,
             'sentence': 9,
+            'onePageYear': 7,
+            'onePageYearHolidays': 7,
+            'onePageYearMonth': 7,
         }
         self.fontSize = {}
         for k, v in defaultFontSize.items():
