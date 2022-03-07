@@ -14,11 +14,13 @@ class Calendar(Notebook):
         self.weekend = kwargs.get('weekend', 0)
         self.divider = kwargs.get('divider', ' / ')
         self.sentence = kwargs.get('sentence', [])
+        self.personalEvents = kwargs.get('personalEvents', {})
 
         # design
         self.layout = kwargs.get('layout', 'left')
         self.daysHeight = kwargs.get('daysHeight', 4)
         self.lineShiftDown = kwargs.get('lineShiftDown', 0)
+        self.iconSize = kwargs.get('iconSize', self.lineHeight*0.8)
 
         # Data show
         self.calendarOrder = kwargs.get('calendarOrder', ['sh', 'wc', 'ic'])
@@ -53,6 +55,7 @@ class Calendar(Notebook):
             'onePageYear': 'Light',
             'onePageYearHolidays': 'Medium',
             'onePageYearMonth': 'Black',
+            'personalEvents': 'ExtraLight'
         }
         self.fontWeight = {}
         for k, v in defaultFontWeight.items():
@@ -79,6 +82,7 @@ class Calendar(Notebook):
             'onePageYear': 7,
             'onePageYearHolidays': 7,
             'onePageYearMonth': 7,
+            'personalEvents': 6
         }
         self.fontSize = {}
         for k, v in defaultFontSize.items():
