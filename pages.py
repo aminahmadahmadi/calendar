@@ -759,9 +759,10 @@ class ChecklistPage(LinePageWithTitle):
         w = self.lineHeight*self.checkboxscale
         for i in range(lines):
             if self.pattern[i % len(self.pattern)] == '1':
+                y=self.margin['top']+self.padding['top']+i*self.lineHeight-w/2
                 self.pages[loc].addRect(
                     x-w,
-                    self.padding['top']+i*self.lineHeight-w/2,
+                    y,
                     w,
                     w,
                     transform=f'scale({self.scale})',
