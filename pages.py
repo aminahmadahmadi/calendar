@@ -180,7 +180,7 @@ class LinePage(Page):
             )
             y += self.lineHeight
 
-    def xloc(self, loc, space=None):
+    def xloc(self, loc, space=None, margin=False):
         _dir = {
             'right': ['inside', 'outside'],
             'left': ['outside', 'inside']
@@ -191,6 +191,13 @@ class LinePage(Page):
             xRightSpace = self.svgWidth - \
                 (self.padding[_dir[loc][1]]+self.margin[_dir[loc][1]]+space)
             return (xLeftSpace, xRightSpace)
+        elif margin:
+            xLeft = self.margin[_dir[loc][0]] if self.padding[_dir[loc][0]] == 0 else self.padding[_dir[loc][0]] + \
+                self.margin[_dir[loc][0]]
+            xRight = self.svgWidth
+            xRight -= self.margin[_dir[loc][1]] if self.padding[_dir[loc][1]] == 0 else self.padding[_dir[loc][1]] + \
+                self.margin[_dir[loc][1]]
+            return (xLeft, xRight)
         else:
             xLeft = 0 if self.padding[_dir[loc][0]] == 0 else self.padding[_dir[loc][0]] + \
                 self.margin[_dir[loc][0]]
@@ -504,7 +511,7 @@ class WeekPage(LinePage):
             f'font-size:{self.fontSize.get("time", 5)/self.scale}px;'
             'text-anchor:middle;'
         )
-        xLeft, xRight = self.xloc(loc)
+        xLeft, xRight = self.xloc(loc, margin=True)
         space = self.lineHeight*self.daysHeight*1.75
         xLeftSpace, xRightSpace = self.xloc(loc, space)
 
@@ -759,7 +766,8 @@ class ChecklistPage(LinePageWithTitle):
         w = self.lineHeight*self.checkboxscale
         for i in range(lines):
             if self.pattern[i % len(self.pattern)] == '1':
-                y=self.margin['top']+self.padding['top']+i*self.lineHeight-w/2
+                y = self.margin['top'] + \
+                    self.padding['top']+i*self.lineHeight-w/2
                 self.pages[loc].addRect(
                     x-w,
                     y,
