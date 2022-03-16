@@ -99,5 +99,43 @@ class Notebook():
         with open('\\'.join([Dir, self.name, 'index.html']), "w") as f:
             f.write(htmlTxt)
 
+    def toPrintHTML(self, Dir='', loopPaper=5):
+        if not os.path.exists('\\'.join([Dir, self.name])):
+            os.mkdir('\\'.join([Dir, self.name]))
+
+        if not os.path.exists('\\'.join([Dir, self.name, 'pages'])):
+            os.mkdir('\\'.join([Dir, self.name, 'pages']))
+
+        _direction = "rtl" if self.rtl else "ltr"
+        htmlTxt = f'<html>\n<head>\n<style>\nhtml,body{{margin:0;padding:0;direction:{_direction};}}\n</style>\n</head>\n<body>\n'
+
+        for i in range(len(self.pages)):
+            if i % 2 == 0 ^ self.rtl:
+                pageDir = 'right'
+            else:
+                pageDir = 'left'
+            print(
+                f'#{i+1:>3}: {str(self.pages[i].__class__)[8:-2].split(".")[-1]}({pageDir[:1]})')
+
+            svg = self.pages[i].page[pageDir]
+            svg.name = f'p{i:03}'
+            svg.save(
+                "\\".join([Dir, self.name, 'pages']),
+                width=f'{self.pages[i].svgWidth}mm',
+                height=f'{self.pages[i].svgHeight}mm'
+            )
+
+        for d in range(0, len(self.pages)-1, loopPaper*4):
+            for i in range(0, loopPaper*2, 2):
+                for p in [d+loopPaper*4-i-1, d+i, d+i+1, d+loopPaper*4-i-2]:
+                    name = f'p{p:03}'
+                    path = "\\".join(['pages', f"{name}.svg"])
+                    htmlTxt += f'<img src="{path}" >\n'
+
+        htmlTxt += '</body>\n</html>'
+
+        with open('\\'.join([Dir, self.name, 'index.html']), "w") as f:
+            f.write(htmlTxt)
+
     def toPDF():
         pass
