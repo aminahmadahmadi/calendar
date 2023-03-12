@@ -1,0 +1,4153 @@
+{
+    "wc-11-22": [{
+        "category": "WWII",
+        "occasion": "رومانی به متحدین پیوست ",
+        "dayoff": false,
+        "year": 1940
+    }],
+    "sh-10-26": [{
+        "category": "iran",
+        "occasion": "فرار شاه از ایران",
+        "dayoff": false,
+        "year": 1357
+    }],
+    "wc-5-23": [{
+            "category": "UnitedNations",
+            "occasion": "روز جهانی مقابله با فیستول واژن",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWI",
+            "occasion": "اعلام جنگ ایتالیا به آلمان و اتریش",
+            "dayoff": false,
+            "year": 1915
+        }
+    ],
+    "wc-4-1": [{
+        "category": "WorldwideHolidays",
+        "occasion": "دروغ اول آوریل",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-2-19": [{
+            "category": "iran-history",
+            "occasion": "خروج نیروهای شوروی از ایران",
+            "dayoff": false,
+            "year": 1325
+        },
+        {
+            "category": "iran",
+            "occasion": "روز بزرگداشت شیخ کلینی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "روز اسناد ملی و میراث مکتوب",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-5-25": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز استقلال آفریقا",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-12-7": [{
+            "category": "WWII",
+            "occasion": "ژاپن پرل هاربر را بمباران کرد",
+            "dayoff": false,
+            "year": 1941
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز بین‌المللی هوانوردی غیر نظامی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWI",
+            "occasion": "لویید جورج نخست وزیر بریتانیا شد",
+            "dayoff": false,
+            "year": 1916
+        }
+    ],
+    "sh-8-17": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «کمیل امیرخانلو»، «امیرمهدی پالای» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "wc-9-23": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی دوجنسه‌ها",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-7-24": [{
+            "category": "iran",
+            "occasion": "روز پیوند اولیا و مربیان",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "روز ملی پارالمپیک",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «حسین جزی»، «پوریا کیانی» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "sh-5-14": [{
+            "category": "iran",
+            "occasion": "صدور فرمان مشروطیت",
+            "dayoff": false,
+            "year": 1285
+        },
+        {
+            "category": "iran",
+            "occasion": "روز حقوق بشر اسلامی و کرامت انسانی",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "sh-5-31": [{
+            "category": "iran",
+            "occasion": "روز صنعت دفاعی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran-history",
+            "occasion": "نبرد چالدران - شکست ارتش ایران در مقابل ارتش عثمانی",
+            "dayoff": false,
+            "year": 893
+        }
+    ],
+    "sh-3-1": [{
+            "category": "iran",
+            "occasion": "روز بزرگداشت ملاصدرا",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "روز بهره وری و بهینه سازی مصرف",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "sh-12-25": [{
+            "category": "iran",
+            "occasion": "بمباران شیمیایی حلبچه به دست ارتش بعث عراق",
+            "dayoff": false,
+            "year": 1366
+        },
+        {
+            "category": "iran",
+            "occasion": "روز بزرگداشت پروین اعتصامی",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-3-9": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی کلیه",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-9-19": [{
+        "category": "WWI",
+        "occasion": "شکست نیروهای ترک در مگیدو",
+        "dayoff": false,
+        "year": 1918
+    }],
+    "wc-5-2": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی ماهی تن",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-12-3": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی معلولین",
+        "dayoff": false,
+        "year": null
+    }],
+    "ic-9-18": [{
+        "category": "ShiaDays",
+        "occasion": "شب قدر",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-1-4": [{
+            "category": "WWI",
+            "occasion": "کنفرانس صلح پاریس",
+            "dayoff": false,
+            "year": 1919
+        },
+        {
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی خط بریل",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-6-22": [{
+            "category": "WWII",
+            "occasion": "روس‌ها حمله بزرگی را در بلاروس شرقی آغاز کردند و با از بین بردن «مرکز گروهی ارتش آلمان»، به سمت غرب تا رودخانه ویستولا در آن سوی ورشو در مرکز لهستان پیشروی کردند",
+            "dayoff": false,
+            "year": 1944
+        },
+        {
+            "category": "WWII",
+            "occasion": "آلمان نازی و دیگر نیروهای متحدین (به غیر از بلغارستان) به اتحاد جماهیر شوروی حمله کردند",
+            "dayoff": false,
+            "year": 1941
+        }
+    ],
+    "sh-8-23": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «محمدرضا مشهدی فراهانی»، «علی اکبر جعفری»، «سپهر اسماعیلی»، «سامان رحمانی» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-1-2": [{
+            "category": "iran",
+            "occasion": "آغاز عملیات فتح المبین",
+            "dayoff": false,
+            "year": 1361
+        },
+        {
+            "category": "iran",
+            "occasion": "هجوم مأموران پهلوی به مدرسه فیضیه قم",
+            "dayoff": false,
+            "year": 1342
+        },
+        {
+            "category": "iran",
+            "occasion": "عید نوروز",
+            "dayoff": true,
+            "year": null
+        }
+    ],
+    "sh-7-20": [{
+            "category": "iran",
+            "occasion": "روز بزرگداشت حافظ",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «سینا نادری»، «آرمین صیادی»، «عزیز مرادی»، «کمال فقهی»، «مهرگان زحمتکش»، «سیدمحمد حسینی»، «اسرا پناهی»، «نگین عبدالملکی»، «فرزانه کاظمی» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "wc-5-20": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی مبارزه با آرتروز اتوایمون",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-12-4": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «ابراهیم ریگی» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-7-2": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «لینا نامور»، «محراب دولت‌پناه» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-2-10": [{
+            "category": "iran",
+            "occasion": "روز ملی خلیج فارس",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "آغاز عملیات بیت المقدس",
+            "dayoff": false,
+            "year": 1361
+        }
+    ],
+    "ic-10-25": [{
+        "category": "ShiaDays",
+        "occasion": "شهادت امام جعفر صادق (ع)",
+        "dayoff": true,
+        "year": 148
+    }],
+    "sh-6-4": [{
+        "category": "iran",
+        "occasion": "روز کارمند",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-7-14": [{
+            "category": "iran",
+            "occasion": "روز دامپزشکی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «امید مهدوی»، «عماد حیدری» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "wc-12-16": [{
+        "category": "WWII",
+        "occasion": "آلمان‌ها حمله نهایی خود در غرب، معروف به «نبرد بالژ»، را آغاز کردند",
+        "dayoff": false,
+        "year": 1944
+    }],
+    "sh-3-4": [{
+        "category": "iran",
+        "occasion": "روز دزفول - روز مقاومت و پایداری",
+        "dayoff": false,
+        "year": null
+    }],
+    "ic-3-1": [{
+        "category": "ShiaDays",
+        "occasion": "هجرت حضرت محمد(ص) از مکه به مدینه",
+        "dayoff": false,
+        "year": 0
+    }],
+    "wc-6-16": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی درآمد خانواده",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-3-21": [{
+            "category": "UnitedNations",
+            "occasion": "روز بین‌المللی نوروز",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی شعر",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی جنگل‌ها",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز بين‌المللی رفع تبعيض نژادی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی سندرم داون",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWI",
+            "occasion": "نفوذ نیروهای آلمانی به سام",
+            "dayoff": false,
+            "year": 1918
+        }
+    ],
+    "sh-1-7": [{
+        "category": "iran",
+        "occasion": "روز هنرهای نمایشی",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-4-27": [{
+        "category": "iran",
+        "occasion": "اعلام پذیرش قطعنامه 598 شورای امنیت سازمان ملل از سوی ایران",
+        "dayoff": false,
+        "year": 1367
+    }],
+    "wc-9-4": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی سلامت جنسی",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-12-20": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی همبستگی بین‌المللی",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-8-26": [{
+            "category": "iran",
+            "occasion": "سالروز آزادسازی سوسنگرد",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «آرام حبیبی»، «شاهو بهمنی»، «سعید پیرمغانی»، «حامد صدیقی»، «ادریس غریب‌زاده»، «مصطفی شعبانی»، «جواد موسوی»، «آسو قادری»، «دوران توتازهی»، «حامد مولایی دشتی»، «آزاد حسین‌پوری»، «هیوا جانان»، «امجد عنایتی»، «هژارمام خسروی»، «عبدالرحمان بختیاری»، «غفور مولودی» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "sh-8-16": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «سینا فیروزآبادی»، «میلاد خوش‌کام» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "wc-5-1": [{
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی کارگر",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWII",
+            "occasion": "سربازان متفقین، اوکیناوا آخرین جزیره از جزایر ژاپن را فتح کردند",
+            "dayoff": false,
+            "year": 1945
+        }
+    ],
+    "wc-5-4": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی آتشنشانان",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-8-26": [{
+        "category": "WWI",
+        "occasion": "شکست ارتش روسیه در نبرد تاننبرگ و دریاچه ماسوریان",
+        "dayoff": false,
+        "year": 1914
+    }],
+    "wc-9-27": [{
+            "category": "WWII",
+            "occasion": "آلمان، ایتالیا و ژاپن یک قرارداد سه جانبه امضا کردند",
+            "dayoff": false,
+            "year": 1940
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی توریسم",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWII",
+            "occasion": "ورشو تسلیم شد. هیئت دولت لهستان از طریق رومانی به تبعید گریخت. آلمان و اتحاد جماهیر شوروی، لهستان را بین خود تقسیم کردند",
+            "dayoff": false,
+            "year": 1339
+        }
+    ],
+    "ic-12-20": [{
+        "category": "ShiaDays",
+        "occasion": "ولادت امام موسی کاظم (ع)",
+        "dayoff": false,
+        "year": 128
+    }],
+    "ic-8-4": [{
+        "category": "ShiaDays",
+        "occasion": "ولادت حضرت ابوالفضل العباس (ع)",
+        "dayoff": false,
+        "year": 26
+    }],
+    "wc-4-20": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی زبان چینی",
+        "dayoff": false,
+        "year": null
+    }],
+    "ic-1-10": [{
+        "category": "ShiaDays",
+        "occasion": "عاشورای حسینی",
+        "dayoff": true,
+        "year": null
+    }],
+    "sh-6-27": [{
+            "category": "iran",
+            "occasion": "روز شعر و ادب فارسی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "رزو بزرگداشت محمد حسین شهریار",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "ic-6-20": [{
+        "category": "ShiaDays",
+        "occasion": "ولادت حضرت فاطمه زهرا (س)",
+        "dayoff": false,
+        "year": -8
+    }],
+    "wc-10-16": [{
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی کارفرمایان",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی غذا",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "sh-11-12": [{
+        "category": "iran",
+        "occasion": "بازگشت امام خمینی(ره) به ایران و آغاز دهه فجر",
+        "dayoff": false,
+        "year": 1357
+    }],
+    "wc-4-7": [{
+            "category": "UnitedNations",
+            "occasion": "روز جهانی یادبود نسل کشی در رواندا",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی سلامت",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWII",
+            "occasion": "ایتالیای فاشیستی به آلبانی حمله و آنجا را ضمیمه خود کرد",
+            "dayoff": false,
+            "year": 1339
+        }
+    ],
+    "wc-1-31": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز کودکان خیابانی",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-7-22": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «رضا اسماعیل‌زاده»، «پریسا عسگری» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-12-15": [{
+        "category": "iran",
+        "occasion": "روز درختکاری",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-10-19": [{
+        "category": "iran",
+        "occasion": "قیام مردم قم",
+        "dayoff": false,
+        "year": 1356
+    }],
+    "wc-8-6": [{
+        "category": "WWII",
+        "occasion": "ایالات متحده یک بمب اتمی بر روی هیروشیما انداخت",
+        "dayoff": false,
+        "year": 1945
+    }],
+    "sh-2-31": [{
+            "category": "iran-history",
+            "occasion": " امضاء معاهده استانبول بین ایران و عثمانی و واگزاری سرزمین‌های قفقاز به دولت عثمانی به مدت چندین سال ",
+            "dayoff": false,
+            "year": 969
+        },
+        {
+            "category": "iran",
+            "occasion": "روز اهدای عضو، اهدای زندگی",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-6-19": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی برای از بین بردن خشونت جنسی در درگیری‌ها",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-11-15": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی نویسندگان زندانی",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-8-7": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «محمود کشوری»، «سامان قادرپور»، «امیر (عارف) قربانپور»، «رسول محمدآقا»، «دیانا محمودی»، «حمید صانعی‌پور» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-12-29": [{
+        "category": "iran",
+        "occasion": "روز ملی شدن صنعت نفت",
+        "dayoff": true,
+        "year": 1329
+    }],
+    "sh-4-18": [{
+        "category": "iran",
+        "occasion": "روز ادبیات کودکان و نوجوانان",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-9-10": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی پیشگیری از خودکشی",
+        "dayoff": false,
+        "year": null
+    }],
+    "ic-7-1": [{
+        "category": "ShiaDays",
+        "occasion": "ولادت امام محمد باقر (ع)",
+        "dayoff": false,
+        "year": 57
+    }],
+    "sh-3-7": [{
+        "category": "iran",
+        "occasion": "افتتاح اولین دوره مجلس شورای اسلامی",
+        "dayoff": false,
+        "year": 1359
+    }],
+    "ic-8-15": [{
+        "category": "ShiaDays",
+        "occasion": "ولادت حضرت مهدی (عج)",
+        "dayoff": true,
+        "year": 255
+    }],
+    "sh-4-11": [{
+            "category": "iran",
+            "occasion": "شهادت ایت الله صدوقی",
+            "dayoff": false,
+            "year": 1361
+        },
+        {
+            "category": "iran",
+            "occasion": "روز بزرگداشت علامه امینی",
+            "dayoff": false,
+            "year": 1349
+        }
+    ],
+    "sh-6-21": [{
+            "category": "iran-history",
+            "occasion": "امضاء معاهده سنت پترزبورگ بین ایران و روسیه",
+            "dayoff": false,
+            "year": 1102
+        },
+        {
+            "category": "iran",
+            "occasion": "روز سینما",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-3-23": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی هواشناسی",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-3-3": [{
+            "category": "WWI",
+            "occasion": "امضاء معاهده برس لیتوفسک بین روسیه و آلمان",
+            "dayoff": false,
+            "year": 1918
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی حیاط وحش",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-3-15": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی حفاظت از حقوق مصرف کنندگان",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-9-7": [{
+            "category": "iran",
+            "occasion": "روز نیروی دریای",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «امیرجواد اسعدزاد» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "ic-2-28": [{
+            "category": "ShiaDays",
+            "occasion": "شهادت امام حسن مجتبی (ع)",
+            "dayoff": false,
+            "year": 50
+        },
+        {
+            "category": "ShiaDays",
+            "occasion": "رحلت حضرت محمد (ص)",
+            "dayoff": true,
+            "year": 11
+        }
+    ],
+    "sh-9-27": [{
+            "category": "iran",
+            "occasion": "روز جهان عاری از خشونت و افراطی گری",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "شهادت دکتر مفتح",
+            "dayoff": false,
+            "year": 1358
+        },
+        {
+            "category": "iran",
+            "occasion": "روز وحدت حوزه و دانشگاه",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-1-22": [{
+        "category": "WWII",
+        "occasion": "سربازان متفقین با موفقیت در نزدیکی آنتسیو در جنوب رم پیاده شدند",
+        "dayoff": false,
+        "year": 1944
+    }],
+    "sh-10-22": [{
+        "category": "iran",
+        "occasion": "تشکیل شورای انقلاب",
+        "dayoff": false,
+        "year": 1357
+    }],
+    "wc-10-31": [{
+            "category": "WorldwideHolidays",
+            "occasion": "جشن هالووین",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی شهرها",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "sh-8-12": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «عرفان زمانی»، «نیما نوری»، «پرستو مرادخانی»، «مهران شکاری»، «محمدامین حشمتیان»، «مهدی حضرتی»، «محمدرضا سروی»، «محمدرضا بالی لاشک»، «مهدیس حسینی»، «شعیب درغاله»، «یاسر نارویی»، «عباس شفیعی»، «دریا نظم‌ده» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-2-7": [{
+        "category": "iran",
+        "occasion": "روز ایمنی و حمل و نقل",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-7-11": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «محمد مهردادی» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "wc-12-6": [{
+        "category": "WWII",
+        "occasion": "آلمان‌ها با ضد حمله روس‌ها، مجبور به عقب نشینی نامنظم از حومه مسکو شدند",
+        "dayoff": false,
+        "year": 1941
+    }],
+    "wc-5-30": [{
+        "category": "WWII",
+        "occasion": "بریتانیا با بمباران کلن برای نخستین بار جنگ را به درون مرزهای کشور آلمان کشاند",
+        "dayoff": false,
+        "year": 1942
+    }],
+    "wc-8-1": [{
+            "category": "WWI",
+            "occasion": "اعلام جنگ آلمان به روسیه",
+            "dayoff": false,
+            "year": 1914
+        },
+        {
+            "category": "WWII",
+            "occasion": "سربازان ایالات متحده پیشروی جزیره به جزیره ژاپنی‌ها بسوی استرالیا را در گوئادال کانال- واقع در جزایر سولومون- متوقف کردند",
+            "dayoff": false,
+            "year": 1942
+        }
+    ],
+    "sh-6-20": [{
+        "category": "iran-history",
+        "occasion": "نبرد کرتسانیسی بین آقامحمدخان قاجار و هراکلیوس دوم (حاکم گرجستان) و پیروزی آقا محمدخان و پیوستن دوباره منطقه قفقاز به ایران",
+        "dayoff": false,
+        "year": 1174
+    }],
+    "wc-9-28": [{
+            "category": "UnitedNations",
+            "occasion": "روز جهانی دریانوردی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی حق دانستن",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-10-9": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی پست",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-2-15": [{
+        "category": "iran",
+        "occasion": "روز بزرگداشت شیخ صدوق",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-9-4": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «مهدی بهرنژاد»، «اویس مسعودی‌زاده» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "wc-2-21": [{
+            "category": "UnitedNations",
+            "occasion": "روز بین‌المللی زبان مادری",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWI",
+            "occasion": "آغاز نبرد وردان",
+            "dayoff": false,
+            "year": 1916
+        }
+    ],
+    "ic-12-18": [{
+        "category": "ShiaDays",
+        "occasion": "عید غدیر خم",
+        "dayoff": true,
+        "year": 10
+    }],
+    "wc-10-27": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی میراث صوتی و تصویری",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-3-25": [{
+            "category": "UnitedNations",
+            "occasion": "روز بین‌المللی یاد بود قربانیان بردگی و تجارت برده",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WorldwideHolidays",
+            "occasion": "ساعت زمین",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": " روز جهانی همبستگی با کارکنان بازداشت شده و گمشده سازمان ملل",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "sh-2-27": [{
+        "category": "iran",
+        "occasion": "روز ارتباطات و روابط عمومی",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-6-1": [{
+            "category": "UnitedNations",
+            "occasion": "روز جهانی والدین",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWII",
+            "occasion": "نیروی دریایی بریتانیا و ایالات متحده در «میدوی» پیشروی نیروی دریایی ژاپن در مرکز اقیانوس آرام را متوقف کرد",
+            "dayoff": false,
+            "year": 1942
+        }
+    ],
+    "wc-12-12": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی بیطرفی",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-7-25": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «حامد باجی‌زهی» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "wc-7-30": [{
+            "category": "UnitedNations",
+            "occasion": "روز جهانی دوستی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی مبارزه با قاچاق انسان",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-11-2": [{
+        "category": "UnitedNations",
+        "occasion": "روز بین‌المللی برای پایان دادن به مصونیت از مجازات برای جرایم علیه روزنامه نگاران",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-6-18": [{
+        "category": "UnitedNations",
+        "occasion": "روز غذای پایدار",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-3-3": [{
+        "category": "iran",
+        "occasion": "فتح خرمشهر در عملیات بیت المقدس",
+        "dayoff": false,
+        "year": 1361
+    }],
+    "ic-4-10": [{
+        "category": "ShiaDays",
+        "occasion": "وفات حضرت معصومه (س)",
+        "dayoff": false,
+        "year": 201
+    }],
+    "sh-7-7": [{
+            "category": "iran",
+            "occasion": "روز بزرگداشت شمس تبریزی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "رزو بزرگداشت فرماندهان شهید جنگ تحمیلی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "روز آتش نشانی و ایمنی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «عرفان نظربیگی» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "wc-7-7": [{
+            "category": "WWII",
+            "occasion": "ژاپن با حمله به چین، جنگ جهانی دوم را در اقیانوس آرام آغاز کرد",
+            "dayoff": false,
+            "year": 1937
+        },
+        {
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی شکلات",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-10-25": [{
+        "category": "WWII",
+        "occasion": "آلمان نازی وایتالیای فاشیستی یک پیمان همکاری امضا کردند. در 1 نوامبر محور رم- برلین اعلام شد",
+        "dayoff": false,
+        "year": 1936
+    }],
+    "wc-10-6": [{
+        "category": "WWII",
+        "occasion": "ایتالیا وارد جنگ جهانی دوم شد",
+        "dayoff": false,
+        "year": 1940
+    }],
+    "wc-4-18": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی حفاظت از آثار باستانی",
+        "dayoff": false,
+        "year": null
+    }],
+    "ic-7-10": [{
+        "category": "ShiaDays",
+        "occasion": "ولادت امام محمد تقی (ع)",
+        "dayoff": false,
+        "year": 195
+    }],
+    "sh-9-19": [{
+        "category": "iran",
+        "occasion": "تشکیل شورای فرهنگی به فرمان امام خمینی(ره)",
+        "dayoff": false,
+        "year": 1363
+    }],
+    "wc-5-15": [{
+        "category": "UnitedNations",
+        "occasion": "روز بين‌المللی خانواده‌ها",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-4-21": [{
+            "category": "iran",
+            "occasion": "روز فرهنگ پهلوانی و ورزش زورخانه‌ای",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "حمله به مسجد گوهرشاد توسط رضاخان",
+            "dayoff": false,
+            "year": 1314
+        },
+        {
+            "category": "iran",
+            "occasion": "روز عفاف و حجاب",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "sh-11-14": [{
+        "category": "iran",
+        "occasion": "روز فناوری فضایی",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-1-29": [{
+        "category": "iran",
+        "occasion": "روز ارتش جمهوری اسلامی و نیروی زمینی",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-4-8": [{
+        "category": "iran",
+        "occasion": "روز مبارزه با سلاح‌های شیمیایی و میکروبی",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-5-9": [{
+        "category": "iran",
+        "occasion": "روز اهدای خون",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-5-22": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی تنوع زیستی",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-3-8": [{
+        "category": "UnitedNations",
+        "occasion": "روز سازمان ملل متحد برای حقوق زنان و صلح بین‌المللی",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-12-9": [{
+            "category": "UnitedNations",
+            "occasion": "روز جهانی مبارزه با فساد",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی یادبود قربانیان نسل کشی و پیشگیری از این جرم",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWI",
+            "occasion": "تصرف بیت المقدس توسط بریتانیا",
+            "dayoff": false,
+            "year": 1917
+        }
+    ],
+    "ic-1-9": [{
+        "category": "ShiaDays",
+        "occasion": "تاسوعای حسینی",
+        "dayoff": true,
+        "year": null
+    }],
+    "sh-4-14": [{
+        "category": "iran",
+        "occasion": "روز شهرداری و دهیاری",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-7-31": [{
+        "category": "WWI",
+        "occasion": "آغاز سومین نبرد ایپرا",
+        "dayoff": false,
+        "year": 1917
+    }],
+    "wc-8-13": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی چپ دست‌ها",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-11-5": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی مقابله با سونامی",
+        "dayoff": false,
+        "year": null
+    }],
+    "ic-2-20": [{
+        "category": "ShiaDays",
+        "occasion": "اربعین حسینی",
+        "dayoff": true,
+        "year": null
+    }],
+    "wc-11-10": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی علم برای صلح و توسعه",
+        "dayoff": false,
+        "year": null
+    }],
+    "ic-12-10": [{
+        "category": "ShiaDays",
+        "occasion": "عید قربان",
+        "dayoff": true,
+        "year": null
+    }],
+    "wc-10-12": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی نابینایی و اختلال بینایی",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-3-24": [{
+            "category": "UnitedNations",
+            "occasion": "روز بین‌المللی حق بر صحت و درستی درباره نقض فاحش حقوق بشر و منزلت قربانیان",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی بیماری سل",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-6-29": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی مناطق استوایی",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-7-10": [{
+            "category": "iran",
+            "occasion": "روز تجلیل از اسرا و مفقودان",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran-history",
+            "occasion": "تشکیل حکومت ملی آذربایجان با حمایت اتحاد جماهیر شوروی",
+            "dayoff": false,
+            "year": 1324
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «علی اکبر ربیعی»، «امیرحسین بساطی» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "wc-6-27": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی کسب و کارهای بسیار کوچک، کوچک و متوسط",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-8-25": [{
+            "category": "iran",
+            "occasion": "روز وقف",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «کیان پیرفلک»، «دانیال پابندی»، «آیلار حقی»، «برهان کرمی»، «سپهر مقصودی»، «آرتین رحمانی»، «علیرضا شجاعی»، «مهدی زارع»، «محمد برزگر»، «اسعد رحیمی»، «عیسی بیگلری»، «سالار مجاور»، «علی عراقی»، «محمد حسن‌زاده»، «سمانه نیکنام»، «اصغر آقایی»، «مهدی کابلی کفشگیری»، «امیر محمد دلبری»، «فرهاد خسروی»، «رشید رشیدی»، «سجاد قائمی»، «علی محمدی»، «علی مولایی»، «جواد رضایی»، «میلاد آصفی»، «مسلم هوشنگی»، «علی عباسی»، «بهرام مرادیان»، «اشرف نیکبخت»، «رضا شریعتی» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "wc-11-16": [{
+            "category": "UnitedNations",
+            "occasion": "روز جهانی فلسفه",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز بین‌المللی بردباری",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "sh-8-3": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «پارمیس همنوا»، «حسین زرینجویی» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-5-28": [{
+        "category": "iran",
+        "occasion": "کودتای آمریکا برای بازگرداندن شاه",
+        "dayoff": false,
+        "year": 1332
+    }],
+    "wc-5-8": [{
+            "category": "UnitedNations",
+            "occasion": "زمان بزرگداشت و آشتی برای کسانی که زندگی خود را در جریان جنگ جهانی دوم از دست دادند",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی مبارزه با سرطان تخمدان",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی صلیب سرخ و هلال احمر",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "sh-11-19": [{
+        "category": "iran",
+        "occasion": "روز نیروی هوایی",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-5-11": [{
+        "category": "iran",
+        "occasion": "شهادت آیت الله شیخ فضل الله نوری",
+        "dayoff": false,
+        "year": 1288
+    }],
+    "sh-7-6": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «صمد برگی‌نیا»، «امیرمهدی فرخی‌پور» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-7-28": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «علی بنی اسد»، «علی جلیلی»، «رضا خشنود هولاری» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-2-24": [{
+        "category": "iran",
+        "occasion": "لغو امتیاز تنباکو به فتوای آیت الله میرزا حسن شیرازی",
+        "dayoff": false,
+        "year": 1270
+    }],
+    "wc-11-21": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی تلویزیون",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-2-9": [{
+        "category": "iran",
+        "occasion": "روز شوراها",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-2-2": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی تالاب‌ها",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-12-24": [{
+        "category": "WorldwideHolidays",
+        "occasion": "شب کریسمس",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-3-22": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی آب",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-10-3": [{
+        "category": "iran",
+        "occasion": "روز ثبت احوال",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-9-29": [{
+            "category": "WWII",
+            "occasion": "آلمان، ایتالیا، بریتانیای کبیر و فرانسه موافقتنامه مونیخ را امضا کردند که جمهوری چکوسلواکی را وادار می کرد تا ایالت زودتن، شامل مواضع دفاعی نظامی چکوسلواکی را به آلمان نازی واگذار کند",
+            "dayoff": false,
+            "year": 1938
+        },
+        {
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی قهوه",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی قلب",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-10-14": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی استاندارد",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-6-15": [{
+        "category": "iran-history",
+        "occasion": "ورود پادشاه عثمانی به تبریز در پی اشغال شمال غربی ایران توسط عثمانی",
+        "dayoff": false,
+        "year": 893
+    }],
+    "wc-10-18": [{
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی وازکتومی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWI",
+            "occasion": "اولین نبرد ایپرا",
+            "dayoff": false,
+            "year": 1914
+        }
+    ],
+    "wc-6-15": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی آگاهی درباره سوء استفاده از سالمندان",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-6-1": [{
+            "category": "iran",
+            "occasion": "روز بزرگداشت ابو علی سینا",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "روز پزشک",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "sh-11-2": [{
+        "category": "iran-history",
+        "occasion": "اعلام استقلال جمهوری کردستان از ایران با پشتیبانی اتحاد جماهیر شوروی",
+        "dayoff": false,
+        "year": 1324
+    }],
+    "sh-9-12": [{
+        "category": "iran",
+        "occasion": "روز قانون اساسی جمهوری اسلامی ایران (تصویب قانون اساسی جمهوری اسلامی ایران)",
+        "dayoff": false,
+        "year": 1358
+    }],
+    "sh-1-18": [{
+        "category": "iran",
+        "occasion": "روز سلامتی",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-9-26": [{
+        "category": "iran",
+        "occasion": "روز حمل و نقل و رانندگان",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-10-24": [{
+            "category": "WWI",
+            "occasion": "نبرد کاپورتو - شکست سنگین نیروهای ایتالیای",
+            "dayoff": false,
+            "year": 1917
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی اطلاعات توسعه",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز سازمان ملل متحد",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-3-20": [{
+            "category": "UnitedNations",
+            "occasion": "روز جهانی زبان فرانسه",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز بین‌المللی شادی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی گنجشک‌ها",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "sh-8-11": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «مؤمن زند کریمی»، «مرتضی شیرمحمدی»، «میلاد خاوری» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "wc-12-18": [{
+            "category": "UnitedNations",
+            "occasion": "روز جهانی زبان عربی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی مهاجران",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "ic-9-20": [{
+        "category": "ShiaDays",
+        "occasion": "شب قدر",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-1-27": [{
+            "category": "WWI",
+            "occasion": "اعلام نظام وظیفه عمومی در بریتانیا",
+            "dayoff": false,
+            "year": 1916
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز بین‌المللی بزرگداشت خاطره قربانیان هولوکاست",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-1-7": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی برنامه نویسان کامپیوتری",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-10-20": [{
+        "category": "iran",
+        "occasion": "شهادت میرزا تقی خان امیر کبیر",
+        "dayoff": false,
+        "year": 1230
+    }],
+    "ic-11-1": [{
+        "category": "ShiaDays",
+        "occasion": "ولادت حضرت معصومه (س)",
+        "dayoff": false,
+        "year": 173
+    }],
+    "ic-9-10": [{
+        "category": "ShiaDays",
+        "occasion": "وفات حضرت خدیجه (س)",
+        "dayoff": false,
+        "year": -3
+    }],
+    "wc-5-29": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی صلحبانان سازمان ملل متحد",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-8-19": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «شعیب حیدری»، «اردلان قاسمی» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-9-2": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «هیمن امان»، «سعدی شاهرخی‌فر»، «علی اکبر حیدرزاده» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-8-20": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «محمد صالحی»، «محمدحسین حاجیانی»، «یلدا آقا فضلی»، «هیمن حمزه» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-6-19": [{
+        "category": "iran",
+        "occasion": "وفات آیت الله محمود طالقانی اولین امام جمعه تهران",
+        "dayoff": false,
+        "year": 1358
+    }],
+    "sh-2-3": [{
+        "category": "iran",
+        "occasion": "روز بزرگداشت شیخ بهایی",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-2-5": [{
+        "category": "iran",
+        "occasion": "شکست حمله نظامی آمریکا به ایران در طبس",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-3-14": [{
+        "category": "WWII",
+        "occasion": "تحت فشار آلمانی‌ها، اسلوواکی اعلام استقلال کرده و جمهوری اسلوواک را تشکیل دادند. آلمانی‌ها با نقض موافقتنامه مونیخ، باقیمانده سرزمین‌های چک را اشغال کردند و کشور تحت الحمایه بوهمیا و موراویا را تشکیل دادند",
+        "dayoff": false,
+        "year": 1339
+    }],
+    "wc-11-14": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی دیابت",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-8-4": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «اسماعیل مولودی»، «محمد شریعتی»، «افشین آشام»، «مائده جوانفر»، «کیوان درویشی»، «محمد لطف‌اللهی»، «مهرشاد شهیدی»، «سارینا ساعدی»، «سیدعلی سیدی»، «حمیدرضا مالمیر»، «بهناز افشاری»، «کیوان شریف»، «ابراهیم میرزایی»، «پریسا بهمنی»، «رسول حدادی»، «امیرحسین رومیانی نظری»، «علی روزبهانی» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "wc-10-29": [{
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی پیشگیری از سکته",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWI",
+            "occasion": "ترکیه در حمایت از آلمان وارد جنگ شد. جنگ در داخل سنگرها در جبهه غرب شروع شد",
+            "dayoff": false,
+            "year": 1914
+        },
+        {
+            "category": "WWI",
+            "occasion": "شورش در نیروی دریای آلمان",
+            "dayoff": false,
+            "year": 1918
+        }
+    ],
+    "wc-4-13": [{
+        "category": "WWII",
+        "occasion": "روس‌ها وین را تسخیر کردند",
+        "dayoff": false,
+        "year": 1945
+    }],
+    "sh-7-26": [{
+        "category": "iran",
+        "occasion": "روز تربیت بدنی و ورزش",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-8-1": [{
+            "category": "iran",
+            "occasion": "روز آمار و برنامه ریزی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "شهادت آیت الله حاج سید مصطفی خمینی",
+            "dayoff": false,
+            "year": 1356
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «هادی حق‌شناس»، «احسان خواجوی دره بالایی» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "wc-2-13": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی رادیو",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-5-5": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی مامایی",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-7-1": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «هدیه نعیمانی»، «پارسا رضادوست»، «سارینا اسماعیل‌زاده»، «علیرضا حسینی»، «جواد خوانساری»، «حمید فولادوند»، «احسان علیبازی»، «حسین مروتی»، «پویا (علی) احمدپور پسیخانی»، «محمدامین تکلی» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-4-26": [{
+        "category": "iran",
+        "occasion": "سالروز تأسیس نهاد شورای نگهبان",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-8-15": [{
+        "category": "WWII",
+        "occasion": "نیروهای متفقین در جنوب فرانسه، نزدیک نیس پیاده شدند و به سرعت به سمت شمال شرقی و به سوی رودخانه راین پیشروی کردند",
+        "dayoff": false,
+        "year": 1944
+    }],
+    "ic-10-1": [{
+        "category": "ShiaDays",
+        "occasion": "عید فطر",
+        "dayoff": true,
+        "year": null
+    }],
+    "wc-9-18": [{
+            "category": "WWII",
+            "occasion": "ژاپن به منچوری حمله کرد",
+            "dayoff": false,
+            "year": 1931
+        },
+        {
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی نظارت بر آب",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "sh-7-17": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «آرین مریدی»، «اسماعیل دزوار»، «عارف عاشوری»، «میلاد درخشان»، «مهران رجبی»، «مهرزاد بهروز»، «احمدرضا قلیجی»، «نادیا عارفانی»، «محمد انوش نیا» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-5-21": [{
+        "category": "iran",
+        "occasion": "روز حمایت از صنایع کوچک",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-6-6": [{
+            "category": "WWII",
+            "occasion": "سربازان بریتانیا و ایالات متحده با موفقیت در سواحل نورماندی فرانسه پیاده شدند و «جبهه دوم» را علیه آلمان‌ها تشکیل دادند",
+            "dayoff": false,
+            "year": 1944
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی زبان روسی",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "sh-6-10": [{
+            "category": "iran",
+            "occasion": "روز بانکداری اسلامی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "روز تشکیل قرارگاه پدافند هوایی حضرت خاتم الانبیا (ص)",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-1-19": [{
+        "category": "WWI",
+        "occasion": "اولین حمله زیپلین‌های آلمانی به بریتانیا",
+        "dayoff": false,
+        "year": 1915
+    }],
+    "wc-12-5": [{
+            "category": "UnitedNations",
+            "occasion": "روز جهانی خاک",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی داوطلبین سازمان ملل متحد برای توسعه اقتصادی و اجتماعی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWI",
+            "occasion": "توافق آتش بس بین آلمان و روسیه امضاء شد",
+            "dayoff": false,
+            "year": 1917
+        }
+    ],
+    "sh-5-22": [{
+        "category": "iran",
+        "occasion": "روز تشکل‌ها و مشارکت‌های اجتماعی",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-2-4": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی سرطان",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-4-9": [{
+            "category": "WWII",
+            "occasion": "آلمان به دانمارک و نروژ حمله کرد",
+            "dayoff": false,
+            "year": 1940
+        },
+        {
+            "category": "WWI",
+            "occasion": "آلمان عملیات تهاجمی در فلاندرز را آغاز کرد",
+            "dayoff": false,
+            "year": 1918
+        }
+    ],
+    "wc-9-15": [{
+            "category": "WWI",
+            "occasion": "استفاده از تانک (تانک مارک وان بریتانیا) در میدان نبرد برای اولین بار",
+            "dayoff": false,
+            "year": 1916
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی دموکراسی",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-10-20": [{
+            "category": "WWII",
+            "occasion": "سربازان ایالات متحده در فیلیپین پیاده شدند",
+            "dayoff": false,
+            "year": 1943
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی آمار",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-12-19": [{
+        "category": "WWI",
+        "occasion": "آغاز عقب نشینی نیروهای متفقین از گالیپولی",
+        "dayoff": false,
+        "year": 1915
+    }],
+    "wc-10-11": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی دختران",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-11-25": [{
+            "category": "UnitedNations",
+            "occasion": "روز جهانی همبستگی با مردم فلسطین",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWII",
+            "occasion": "آلمان نازی و امپراتوری ژاپن یک توافقنامه ضد کمونیستی(آنتی کمینترن) امضا کردند که علیه اتحاد جماهیر شوروی و نهضت بین‌المللی کمونیست تنظیم شده بود",
+            "dayoff": false,
+            "year": 1936
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی مقابله با خشونت علیه زنان",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "sh-7-23": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «حسین اکبرزاده»، «حمیدسعید مظفری»، «سیدفرهاد حسینی»، «علی بساکی» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-9-1": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «محمد حسین کمندلو»، «ریباز صالحی‌وند» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-10-7": [{
+        "category": "iran",
+        "occasion": "تشکیل نهضت سواد آموزی",
+        "dayoff": false,
+        "year": 1358
+    }],
+    "wc-8-23": [{
+            "category": "UnitedNations",
+            "occasion": "روز بین‌المللی یادبود و الغاء تجارت برده",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWII",
+            "occasion": "آلمان نازی و اتحاد جماهیر شوروی یک توافقنامه عدم تهاجم و یک متمم سری امضا کردند که به موجب آن اروپای شرقی به حوزه‌های تحت نفوذ این دو کشور تقسیم شد",
+            "dayoff": false,
+            "year": 1339
+        },
+        {
+            "category": "WWI",
+            "occasion": "نیروهای بریتانیایی عقب نشینی خود را از مونز آغاز کردند. آلمان به فرانسه حمله کرد",
+            "dayoff": false,
+            "year": 1914
+        }
+    ],
+    "sh-7-29": [{
+            "category": "iran",
+            "occasion": "روز صادرات",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «رامین فاتحی»، «رامین کرمی» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "ic-8-5": [{
+        "category": "ShiaDays",
+        "occasion": "ولادت امام زین العابدین (ع)",
+        "dayoff": false,
+        "year": 38
+    }],
+    "wc-8-4": [{
+        "category": "WWI",
+        "occasion": "اعلام جنگ بریتانیا به آلمان",
+        "dayoff": false,
+        "year": 1914
+    }],
+    "wc-6-20": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی پناهندگان",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-9-13": [{
+        "category": "iran",
+        "occasion": "روز بیمه",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-9-20": [{
+        "category": "iran-history",
+        "occasion": "ایران مناطق تحت کنترل حکومت ملی آذربایجان را باز پس گرفت",
+        "dayoff": false,
+        "year": 1325
+    }],
+    "sh-11-29": [{
+        "category": "iran",
+        "occasion": "قیام مردم تبریز",
+        "dayoff": false,
+        "year": 1356
+    }],
+    "sh-2-12": [{
+            "category": "iran",
+            "occasion": "شهادت استاد مرتضی مطهری",
+            "dayoff": false,
+            "year": 1358
+        },
+        {
+            "category": "iran",
+            "occasion": "روز معلم",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-3-1": [{
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی آگاهی در مورد خودآزاری",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی دفاع از حقوق مدنی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWII",
+            "occasion": "بلغارستان به متحدین پیوستند",
+            "dayoff": false,
+            "year": 1941
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی بدون تبعیض",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-6-23": [{
+            "category": "UnitedNations",
+            "occasion": "روز خدمات عمومی سازمان ملل متحد",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی زنان بیوه",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-6-4": [{
+            "category": "WWI",
+            "occasion": "آغاز تهاجم بروزلوف",
+            "dayoff": false,
+            "year": 1916
+        },
+        {
+            "category": "WWII",
+            "occasion": "سربازان متفقین رم را آزاد کردند. طی شش هفته بمب افکن‌های انگلیسی آمریکایی برای نخستین بار توانستند شرق آلمان را هدف حملات خود قرار دهند",
+            "dayoff": false,
+            "year": 1944
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی کودکان بی گناه قربانی خشونت",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-10-17": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی برای ریشه کن کردن فقر",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-5-30": [{
+            "category": "iran",
+            "occasion": "روز بزرگداشت علامه مجلسی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran-history",
+            "occasion": "اشغال ایران توسط نیروهای بریتانیا و روسیه",
+            "dayoff": false,
+            "year": 1320
+        },
+        {
+            "category": "iran",
+            "occasion": "روز جهانی مسجد",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "sh-9-16": [{
+            "category": "iran",
+            "occasion": "روز دانشجو",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «شهاب‌الدین هاشمی»، «دنیا فرهادی» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "wc-4-22": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی زمین",
+        "dayoff": false,
+        "year": null
+    }],
+    "ic-2-30": [{
+        "category": "ShiaDays",
+        "occasion": "شهادت امام رضا (ع)",
+        "dayoff": true,
+        "year": 203
+    }],
+    "sh-8-13": [{
+            "category": "iran",
+            "occasion": "روز دانش آموز",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "تسخیر سفارت آمریکا",
+            "dayoff": false,
+            "year": 1358
+        },
+        {
+            "category": "iran",
+            "occasion": "تبعید امام خمینی(ره) از ایران به ترکیه",
+            "dayoff": false,
+            "year": 1343
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «مبین میرکازهی»، «نام نامشخص براهویی»، «رحیم‌داد شهلی»، «سعید سهراب زهی»، «صادق براهویی»، «عبدالمالک شهنوازی»، «عظیم محمود زهی»، «علی کردکلاهوری»، «کامبیز ریگی»، «محمد سلحشوران»، «محمد شه‌بخش»، «محمد شه‌بخش»، «نام نامشخص مرادزهی»، «یونس شه‌بخش»، «یونس میربلوچ‌زهی»، «عدنان کمالی» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "sh-6-8": [{
+        "category": "iran",
+        "occasion": "انفجار دفتر نخست وزیری و شهادت رجایی و باهنر",
+        "dayoff": false,
+        "year": 1360
+    }],
+    "sh-5-8": [{
+        "category": "iran",
+        "occasion": "روز بزرگداشت شیخ شهاب الدین سهروردی",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-9-17": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «ٰ شهریار عادلی» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "wc-8-31": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی آگاهی در مورد مصرف بیش از حد مواد مخدر",
+        "dayoff": false,
+        "year": null
+    }],
+    "ic-1-12": [{
+        "category": "ShiaDays",
+        "occasion": "شهادت امام زین العابدین (ع)",
+        "dayoff": false,
+        "year": 95
+    }],
+    "wc-2-14": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز ولنتاین",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-5-17": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی مخابرات و اطلاعات",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-7-28": [{
+            "category": "UnitedNations",
+            "occasion": "روز جهانی هپاتیت",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWI",
+            "occasion": "اعلام جنگ اتریش به صربستان",
+            "dayoff": false,
+            "year": 1914
+        }
+    ],
+    "sh-4-25": [{
+        "category": "iran",
+        "occasion": "روز بهزیستی و تأمین اجتماعی",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-9-1": [{
+        "category": "WWII",
+        "occasion": "آلمان با حمله به لهستان، جنگ جهانی دوم را در اروپا آغاز کرد",
+        "dayoff": false,
+        "year": 1339
+    }],
+    "wc-8-3": [{
+        "category": "WWI",
+        "occasion": "اعلام جنگ آلمان به فرانسه و حمله به بلژیک",
+        "dayoff": false,
+        "year": 1914
+    }],
+    "ic-12-7": [{
+        "category": "ShiaDays",
+        "occasion": "شهادت امام محمد باقر (ع)",
+        "dayoff": false,
+        "year": 114
+    }],
+    "wc-11-20": [{
+            "category": "WWII",
+            "occasion": "مجارستان به متحدین پیوست ",
+            "dayoff": false,
+            "year": 1940
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز صنعتی سازی آفریقا",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWI",
+            "occasion": "تانک‌های بریتانیایی پیروزی در نبرد کامبرا را رقم زدند",
+            "dayoff": false,
+            "year": 1917
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی کودک",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-6-5": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی محیط زیست",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-8-21": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «علی آبیار»، «مهرشاد تلاتوف» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "ic-7-3": [{
+        "category": "ShiaDays",
+        "occasion": "شهادت امام علی النقی (ع)",
+        "dayoff": false,
+        "year": 254
+    }],
+    "wc-6-28": [{
+            "category": "WWI",
+            "occasion": "فرانسیس فردیناند در سارایوو ترور شد",
+            "dayoff": false,
+            "year": 1914
+        },
+        {
+            "category": "WWII",
+            "occasion": "آلمان و دیگر نیروهای متحدین حمله جدیدی را در اتحاد جماهیر شوروی آغاز کردند. سربازان آلمانی تا اواسط سپتامبر با جنگیدن راه خود را به درون استالینگراد در ساحل رود ولگا باز کردند و پس از تسخیر شبه جزیره کریمه، تا اعماق قفقاز نفوذ کردند",
+            "dayoff": false,
+            "year": 1942
+        },
+        {
+            "category": "WWI",
+            "occasion": "امضای معاهده ورسای توسط آلمان",
+            "dayoff": false,
+            "year": 1919
+        }
+    ],
+    "wc-4-16": [{
+            "category": "WWII",
+            "occasion": "روس‌ها حمله نهایی خود را آغاز کردند و برلین را به محاصره خود در آوردند",
+            "dayoff": false,
+            "year": 1945
+        },
+        {
+            "category": "WWI",
+            "occasion": "فرانسه عملیات تهاجمی ناموفقی را در جبهه غربی آغاز کرد",
+            "dayoff": false,
+            "year": 1917
+        }
+    ],
+    "wc-10-4": [{
+            "category": "WWI",
+            "occasion": "درخواست آلمان از متفقین برای آتش بس",
+            "dayoff": false,
+            "year": 1918
+        },
+        {
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی فلج مغزی",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "sh-6-17": [{
+        "category": "iran",
+        "occasion": "قیام 17 شهریور بر علیه حکومت پهلوی",
+        "dayoff": false,
+        "year": 1357
+    }],
+    "wc-10-10": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی سلامت روانی",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-3-27": [{
+        "category": "iran",
+        "occasion": "روز جهاد کشاورزی",
+        "dayoff": false,
+        "year": 1358
+    }],
+    "wc-5-7": [{
+            "category": "WWII",
+            "occasion": "آلمان تسلیم متفقین غربی شد",
+            "dayoff": false,
+            "year": 1945
+        },
+        {
+            "category": "WWI",
+            "occasion": "کشتی لوسیتینیا توسط یوبوت آلمانی غرق شد",
+            "dayoff": false,
+            "year": 1915
+        }
+    ],
+    "wc-10-5": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی معلم",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-6-2": [{
+        "category": "iran",
+        "occasion": "آغاز هفته دولت",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-2-25": [{
+        "category": "iran",
+        "occasion": "روز بزرگداشت حکیم ابوالقاسم فردوسی و پاسداشت زبان فارسی",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-3-29": [{
+        "category": "iran",
+        "occasion": "درگذشت دکتر علی شریعتی",
+        "dayoff": false,
+        "year": 1356
+    }],
+    "sh-4-12": [{
+        "category": "iran",
+        "occasion": "حمله ناو آمریکایی به هواپیمای مسافربری جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1367
+    }],
+    "wc-4-26": [{
+            "category": "UnitedNations",
+            "occasion": "روز جهانی مالکیت معنوی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی یادبود فاجعه چرنوبیل",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-7-29": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی ببر",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-9-6": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «رضا کاظمی»، «رضا کاظمی» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "ic-9-15": [{
+        "category": "ShiaDays",
+        "occasion": "ولادت امام حسن مجتبی (ع)",
+        "dayoff": false,
+        "year": 3
+    }],
+    "ic-3-12": [{
+        "category": "ShiaDays",
+        "occasion": "ولادت حضرت محمد(ص) به روایت اهل سنت",
+        "dayoff": false,
+        "year": -53
+    }],
+    "ic-3-17": [{
+            "category": "ShiaDays",
+            "occasion": "ولادت حضرت محمد (ص)",
+            "dayoff": true,
+            "year": -53
+        },
+        {
+            "category": "ShiaDays",
+            "occasion": "ولادت امام جعفر صادق (ع)",
+            "dayoff": false,
+            "year": 83
+        }
+    ],
+    "sh-6-13": [{
+            "category": "iran-history",
+            "occasion": "امضاء معاهده گردان بین ایران و امپراطوری عثمانی ",
+            "dayoff": false,
+            "year": 1125
+        },
+        {
+            "category": "iran",
+            "occasion": "روز مردم شناسی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "روز تعاون",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "روز بزرگداشت ابوریحان بیرونی",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-11-1": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی گیاه خواری",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-2-20": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی عدالت اجتماعی",
+        "dayoff": false,
+        "year": null
+    }],
+    "ic-3-8": [{
+        "category": "ShiaDays",
+        "occasion": "شهادت امام حسن عسگری (ع)",
+        "dayoff": true,
+        "year": 260
+    }],
+    "wc-4-30": [{
+            "category": "UnitedNations",
+            "occasion": "روز بین‌المللی موسیقی جاز",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWII",
+            "occasion": "خودکشی هیتلر در پی سقوط برلین",
+            "dayoff": false,
+            "year": 1945
+        }
+    ],
+    "ic-12-15": [{
+        "category": "ShiaDays",
+        "occasion": "ولادت امام علی النقی (ع)",
+        "dayoff": false,
+        "year": 212
+    }],
+    "sh-7-8": [{
+            "category": "iran",
+            "occasion": "روز بزرگداشت مولوی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «مختار احمدی»، «نیکا شاکرمی»، «امیررضا نادرزاده»، «دانیال شه‌بخش»، «ریاست بادل بلوچ»، «هستی نارویی»، «علی براهویی»، «یاسر بهادرزهی»، «محمدصدیق نارویی»، «سدیس کشانی»، «عبدالله نارویی»، «نام نامشخص گنگوزهی‌ریگی»، «موسی آنشینی»، «ابراهیم گرگیج»، «ابوبکر علیزهی»، «ابوبکر نهتانی»، «احمد سارانی»، «احمد سرگلزایی»، «احمد شه‌بخش»، «اسماعیل آبیل»، «اسماعیل حسین‌زهی»، «امید سارانی»، «امید شهنوازی»، «امید صفرزهی»، «امیرحسین پرنیان»، «امیرحمزه شهنوازی»، «امیرمحمد گمشادزهی»، «امین گله‌بچه»، «امین‌الله قلجایی»، «آرمان حسن‌زهی»، «بلال آنشینی»، «بلال رخشانی»، «بهزاد ریگی»، «جابر شیروزهی»، «جلیل رخشانی»، «جلیل قنبرزهی»، «جلیل محمدزهی»، «جمال‌عبدالناصر محمدحسنی»، «جواد پوشه»، «حمزه نارویی»، «حمزه نارویی»، «حمید عیسی‌زهی»، «حمید نارویی (فرزند رشید)»، «حمید نارویی (فرزند محمدعلی)»، «حیدر نارویی‌رشید»، «خدانور لجه‌ای»، «خلیل قنبرزهی»، «ذالفغار حسن‌زهی»، «سامر هاشمزهی»، «سامی هاشمزهی»، «سلمان ملکی»، «سلیمان عرب»، «صلاح‌الدین گمشادزهی»، «عبدالجلیل رخشانی»، «عبدالخالق شهنوازی»، «عبدالرحمن بلوچی‌خواه»، «عبدالصمد براهویی»، «عبدالصمد ثابتی‌زاده»، «عبدالغفور دهمرده»، «عبدالغفور نوربراهویی»، «عبدالله شه‌بخش»، «عبدالمجید ریگی»، «عبدالملک شه‌بخش»، «عبدالمنان رخشانی»، «عبدالوحید توحیدنیا»، «عزیزالله کُبدانی»، «علی عاقلی»، «علی‌اکبر براهویی»، «علی‌اکبر حلقه بگوش»، «عمر شهنوازی»، «عمران حسن‌زهی»، «عمران شه‌بخش»، «فرزاد شه‌بخش»، «لال‌محمد آنشینی»، «لال‌محمد آنشینی (فرزند شریف)»، «لال‌محمد عالی‌زهی»، «ماه‌الدین شیروزهی»، «متین قنبرزهی»، «مجبد بلوچزهی‌شه‌بخش»، «محسن گمشادزهی»، «محمد براهویی»، «محمد رخشانی»، «محمد ریگی»، «محمد قلجایی»، «محمداقبال نائب‌زهی»، «محمدامین گمشادزهی»، «محمدرضا ادیب‌توتازهی»، «محمدعلی اسماعیل‌زهی»، «محمدعلی گمشادزهی»، «محمدفاروق رخشانی»، «محمود براهویی»، «محمود حسن‌زهی»، «محمود شهنوازی»، «محی‌الدین شه‌بخش»، «مرتضی حسن‌زهی»، «مصطفی بریچی»، «منصور رخشانی»، «موسی ویراء»، «مهدی آنشینی»، «نام نامشخص میرشکار»، «نجم‌الدین تاجیک»، «نعمت‌الله کُبدانی»، «یاسر شاهوزهی»، «یاسر شه‌بخش»، «یونس نارویی» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "sh-9-5": [{
+            "category": "iran",
+            "occasion": "سالروز قیام مردم گرگان",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "روز بسیج مستضعفان (تشکیل بسیج مستضعفان به فرمان امام خمینی (ره))",
+            "dayoff": false,
+            "year": 1358
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «ندا بیات»، «آرشیا امام قلی‌زاده»، «عاطفه نعامی» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "sh-5-17": [{
+        "category": "iran",
+        "occasion": "روز خبرنگار",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-4-25": [{
+            "category": "UnitedNations",
+            "occasion": "روز جهانی مبارزه با مالاریا",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWI",
+            "occasion": "نیروهای متفقین در گالیپولی پیاده شدند",
+            "dayoff": false,
+            "year": 1915
+        }
+    ],
+    "sh-7-15": [{
+        "category": "iran",
+        "occasion": "روز روستا و عشایر",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-2-19": [{
+        "category": "WWI",
+        "occasion": "بریتانیا مواضع ترک‌ها در تنگه داردانل را بمباران کرد",
+        "dayoff": false,
+        "year": 1915
+    }],
+    "wc-6-8": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی اقیانوس‌ها",
+        "dayoff": false,
+        "year": null
+    }],
+    "ic-8-3": [{
+        "category": "ShiaDays",
+        "occasion": "ولادت امام حسین (ع)",
+        "dayoff": false,
+        "year": 4
+    }],
+    "sh-7-4": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «عبدالسلام گلوانی» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "wc-9-17": [{
+        "category": "WWII",
+        "occasion": "اتحاد جماهیر شوروی از سوی شرق به لهستان حمله کرد",
+        "dayoff": false,
+        "year": 1339
+    }],
+    "wc-8-30": [{
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی گمشدگان و مفقودان",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی قربانیان انسان دزدی",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "ic-11-29": [{
+        "category": "ShiaDays",
+        "occasion": "شهادت امام محمد تقی (ع)",
+        "dayoff": false,
+        "year": 220
+    }],
+    "wc-8-8": [{
+            "category": "WWII",
+            "occasion": "اتحاد جماهیر شوروی پس از اعلام جنگ علیه ژاپن، به منچوری حمله کرد",
+            "dayoff": false,
+            "year": 1945
+        },
+        {
+            "category": "WWI",
+            "occasion": " پیشروی موفقیت آمیز متفقین در نبرد مارن",
+            "dayoff": false,
+            "year": 1918
+        },
+        {
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی گربه",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "sh-10-1": [{
+        "category": "iran-history",
+        "occasion": "جنگ‌های ایران و روسیه - حمله ارتش روسیه به گنجه واقع در جمهوری آذربایجان",
+        "dayoff": false,
+        "year": 1182
+    }],
+    "sh-7-30": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «آرنیکا قائم مقامی»، «محمد خواجوی دره بالایی»، «سینا ملایری»، «ساسان قربانی»، «عزت‌الله شهبازی» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "wc-8-5": [{
+        "category": "WWI",
+        "occasion": "تصرف ورشو توسط نیروهای آلمانی",
+        "dayoff": false,
+        "year": 1915
+    }],
+    "sh-5-25": [{
+        "category": "iran-history",
+        "occasion": "جنگ‌های ایران و روسیه - حمله ایران به سرزمین‌های تازه اشغال شده توسط روس‌ها به منظور بازپس گیری این مناطق",
+        "dayoff": false,
+        "year": 1205
+    }],
+    "wc-12-25": [{
+        "category": "WorldwideHolidays",
+        "occasion": "کریسمس",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-1-23": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز بین‌المللی آزادی",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-7-21": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «محمد عبداللهی» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "wc-2-1": [{
+        "category": "WWII",
+        "occasion": "آلمانی‌ها برای تقویت نیروهای متزلزل ایتالیا، «سپاه آفریقا» را به شمال آفریقا اعزام کردند",
+        "dayoff": false,
+        "year": 1941
+    }],
+    "sh-4-7": [{
+            "category": "iran",
+            "occasion": "روز قوه قضاییه",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "انفجار دفتر مرکزی حزب جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1360
+        }
+    ],
+    "ic-6-3": [{
+        "category": "ShiaDays",
+        "occasion": "شهادت حضرت فاطمه زهرا (س)",
+        "dayoff": true,
+        "year": 11
+    }],
+    "sh-2-18": [{
+        "category": "iran",
+        "occasion": "روز بیماری‌های خاص و صعب العلاج",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-6-30": [{
+            "category": "iran-history",
+            "occasion": "امضاء عهدنامه آخال میان ایران و امپراتوری روسیه",
+            "dayoff": false,
+            "year": 1260
+        },
+        {
+            "category": "iran",
+            "occasion": "روز گفتگوی تمدن‌ها",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «مینو مجیدی»، «محمدجواد زاهدی»، «صدرالدین لیتانی»، «دانش رهنما»، «امین معرفت (معروفی)»، «میلان حقیقی»، «ابوالفضل بائو»، «رحیم کلیج»، «محسن قیصری»، «میلاد جاویدپور»، «پویا شیدا»، «غزاله چلابی»، «محمدرضا سروری»، «مهدی عسگری»، «محمد مام صالح»، «متین عبدالله‌پور»، «امیرمهدی ملک محمدی»، «عبدالله محمودپور»، «حنانه کیا»، «مهدی زاهدی»، «یاسین جمالزاده»، «مهراب نجفی»، «آرش پهلوان»، «فریدون احمدی»، «محسن مال میر»، «علی مظفری»، «امیرعلی فولادی»، «محمدجواد فرمانی»، «ایمان محمدی»، «بهنام لایق‌پور»، «سعید محمدی»، «عرفان رضایی»، «ابوالفضل مهدی‌پور»، «امیرحسین شمس»، «مهرداد قربانی»، «سعید ایرانمنش»، «ابوالفضل اکبری دوست»، «عرفان خزایی»، «مهدی ببرنژاد»، «روشنا احمدی»، «محمدرضا اسکندری»، «محمد فلاح»، «محمدحسن ترکمان»، «محسن پازوکی»، «حسین علی‌کیا»، «سیدسینا موسوی»، «فردین بختیاری»، «علیرضا فتحی»، «سیدعباس میرموسی»، «فرجاد درویشی»، «امیرحسین مهدوی»، «مرتضی نوروزی»، «محسن محمدی کوچکسرایی»، «فؤاد قدیمی»، «محمد زارعی» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "sh-1-3": [{
+        "category": "iran",
+        "occasion": "عید نوروز",
+        "dayoff": true,
+        "year": null
+    }],
+    "sh-4-1": [{
+            "category": "iran",
+            "occasion": "روز اصناف",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "تأسیس سازمان تبلیغات اسلامی",
+            "dayoff": false,
+            "year": 1360
+        }
+    ],
+    "sh-1-4": [{
+        "category": "iran",
+        "occasion": "عید نوروز",
+        "dayoff": true,
+        "year": null
+    }],
+    "sh-3-31": [{
+            "category": "iran",
+            "occasion": "شهادت دکتر مصطفی چمران",
+            "dayoff": false,
+            "year": 1360
+        },
+        {
+            "category": "iran",
+            "occasion": "روز بسیج استادان",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "sh-1-20": [{
+            "category": "iran",
+            "occasion": "روز ملی فناوری هسته‌ای",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "روز هنر انقلاب اسلامی (سالروز شهادت مرتضی آوینی)",
+            "dayoff": false,
+            "year": 1372
+        }
+    ],
+    "sh-10-5": [{
+        "category": "iran",
+        "occasion": "روز ایمنی در برابر زلزله و کاهش اثرات بلایای طبیعی",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-11-11": [{
+        "category": "WWI",
+        "occasion": "امضای آتش بس بین آلمان و متفقین - پایان جنگ جهانی اول",
+        "dayoff": false,
+        "year": 1918
+    }],
+    "sh-9-18": [{
+        "category": "iran",
+        "occasion": "معرفی عراق به عنوان آغازگر جنگ از سوی سازمان ملل",
+        "dayoff": false,
+        "year": 1370
+    }],
+    "wc-4-12": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی فضانوردی",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-5-21": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی تنوع فرهنگی برای گفتگو و توسعه",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-8-9": [{
+            "category": "UnitedNations",
+            "occasion": "روز جهانی مردم بومی ",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWII",
+            "occasion": "ایالات متحده یک بمب اتمی بر روی ناکازاکی انداخت",
+            "dayoff": false,
+            "year": 1945
+        }
+    ],
+    "sh-8-5": [{
+            "category": "iran",
+            "occasion": "روز بزرگداشت سلمان فارسی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «شاهو خضری»، «کبری شیخ سقا»، «زانیار ابوبکری»، «فریدون فرجی»، «فرشته احمدی»، «مطلب سعید پیرو»، «حمید گلی»، «مطلب سعیدپیرو» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "wc-2-22": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز بدون اخبار",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-11-13": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی مهربانی",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-4-23": [{
+            "category": "UnitedNations",
+            "occasion": "روز جهانی زبان انگلیسی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی کتاب و حق پدید آورنده",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی زبان اسپانیایی",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-9-5": [{
+        "category": "UnitedNations",
+        "occasion": "روز بین‌المللی خیریه",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-5-12": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی پرستار",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-8-19": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی بشر دوستی ",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-10-8": [{
+        "category": "iran",
+        "occasion": "روز صنعت پتروشیمی",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-10-15": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی زنان روستایی",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-12-1": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی ایدز",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-5-13": [{
+        "category": "WWII",
+        "occasion": "نیروهای متحدین در تونس خود را به متفقین تسلیم کردند و به این ترتیب نبرد شمال آفریقا پایان یافت",
+        "dayoff": false,
+        "year": 1943
+    }],
+    "sh-9-3": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «امین نظری»، «جبار فرقیزاده»، «مائده (ماهک) هاشمی»، «امان اله خان باجی زهی»، «شمال خدیری‌پور» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-9-30": [{
+        "category": "iran",
+        "occasion": "شب یلدا",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-9-3": [{
+        "category": "WWII",
+        "occasion": "بریتانیا و فرانسه با توجه به تضمین خود مبنی بر تمامیت مرزی لهستان به آلمان اعلان جنگ کردند",
+        "dayoff": false,
+        "year": 1339
+    }],
+    "sh-10-9": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «مهدی زارع اشکذری» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-1-1": [{
+        "category": "iran",
+        "occasion": "آغاز نوروز",
+        "dayoff": true,
+        "year": null
+    }],
+    "wc-3-19": [{
+        "category": "WWII",
+        "occasion": "آلمان‌ها که از قصد مجارستان مبنی بر ترک محور متحدین واهمه داشتند، مجارستان را اشغال کردند",
+        "dayoff": false,
+        "year": 1944
+    }],
+    "wc-5-10": [{
+            "category": "UnitedNations",
+            "occasion": "روز بین‌المللی پرندگان مهاجر",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWII",
+            "occasion": "آلمان به اروپای غربی، فرانسه و کشورهای بی طرف لوکزامبورگ، هلند و بلژیک حمله کرد",
+            "dayoff": false,
+            "year": 1940
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز ماه کامل - روز تولد بودا",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-10-2": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی بدون خشونت",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-11-19": [{
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی مردان",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی یادبود قربانیان حوادث رانندگی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی توالت",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "sh-1-25": [{
+        "category": "iran",
+        "occasion": "روز بزرگداشت عطار نیشابوری",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-6-12": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی علیه کار کودکان",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-1-13": [{
+            "category": "iran",
+            "occasion": "روز طبیعت",
+            "dayoff": true,
+            "year": null
+        },
+        {
+            "category": "iran-history",
+            "occasion": "جنگ‌های ایران و روسیه - حمله ارتش روسیه به ایران به تلافی حمله ایران به گرجستان",
+            "dayoff": false,
+            "year": 1175
+        }
+    ],
+    "sh-9-10": [{
+            "category": "iran",
+            "occasion": "روز مجلس",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "شهادت آیت الله سید حسن مدرس",
+            "dayoff": false,
+            "year": 1316
+        }
+    ],
+    "wc-10-28": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی انیمیشن",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-4-29": [{
+            "category": "UnitedNations",
+            "occasion": "روز یادبود قربانیان سلاح‌های شیمیایی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWI",
+            "occasion": "نیروهای بریتانیا در کوت بین النهرین تسلیم نیروهای ترک شدند",
+            "dayoff": false,
+            "year": 1916
+        }
+    ],
+    "sh-9-25": [{
+        "category": "iran",
+        "occasion": "روز پژوهش",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-8-24": [{
+            "category": "iran",
+            "occasion": "روز کتاب، کتاب خوانی و کتابدار",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "روز بزرگداشت علامه طباطبایی",
+            "dayoff": false,
+            "year": 1360
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «آرمان عمادی»، «زانیار الله مرادی»، «سامان قادربیگی»، «امید مؤیدی زارع»، «امید زارع مویدی»، «وحید خانی»، «سعید اسعدی»، «میلاد سعیدی»، «سعید مرادی»، «فواد محمدی» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "wc-6-14": [{
+            "category": "WWII",
+            "occasion": "اتحاد جماهیر شوروی کشورهای منطقه بالتیک را اشغال کرد",
+            "dayoff": false,
+            "year": 1940
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی اهدای خون",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-8-10": [{
+        "category": "WWI",
+        "occasion": "پایان تهاجم بروزلوف",
+        "dayoff": false,
+        "year": 1916
+    }],
+    "sh-5-5": [{
+        "category": "iran",
+        "occasion": "سالروز عملیات مرصاد",
+        "dayoff": false,
+        "year": 1367
+    }],
+    "wc-6-25": [{
+        "category": "UnitedNations",
+        "occasion": "روز دریانورد",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-1-12": [{
+        "category": "iran",
+        "occasion": "روز جمهوری اسلامی ایران",
+        "dayoff": true,
+        "year": null
+    }],
+    "ic-7-27": [{
+        "category": "ShiaDays",
+        "occasion": "مبعث حضرت محمد (ص)",
+        "dayoff": true,
+        "year": -13
+    }],
+    "wc-2-6": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی مقابله با اعمال خشونت جنسی علیه زنان",
+        "dayoff": false,
+        "year": null
+    }],
+    "ic-11-11": [{
+        "category": "ShiaDays",
+        "occasion": "ولادت امام رضا (ع)",
+        "dayoff": false,
+        "year": 148
+    }],
+    "wc-9-26": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی برای حذف کامل سلاح‌های هسته‌ای",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-7-10": [{
+            "category": "WWII",
+            "occasion": "جنگ هوایی که به «نبرد بریتانیا» مشهور است، با شکست آلمان نازی پایان پذیرفت",
+            "dayoff": false,
+            "year": 1940
+        },
+        {
+            "category": "WWII",
+            "occasion": "سربازان بریتانیا و ایالات متحده در سیسیل پیاده شدند. تا اواسط ماه اوت، متفقین کنترل سیسیل را به دست گرفتند",
+            "dayoff": false,
+            "year": 1943
+        }
+    ],
+    "sh-12-11": [{
+        "category": "iran-history",
+        "occasion": "نیروهای انگلیسی از ایران خارج شدند. اتحاد جماهیر شوروی موافقت قبلی خود را نقض و عقب نشینی نکرد",
+        "dayoff": false,
+        "year": 1324
+    }],
+    "sh-8-28": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «حسین عبد پناه»، «جمشید فتحی»، «ابراهیم صدری»، «حبیب‌الله فتحی»، «فؤاد سواری جوان»، «عمران ابرکار»، «مهران توانا»، «حسین شیرازی‌پور» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-7-18": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «فرزین فرخی»، «الهه سعیدی» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "wc-3-29": [{
+        "category": "WWI",
+        "occasion": "مارشال فاش به فرماندهی نیروهای متفقین منصوب شد ",
+        "dayoff": false,
+        "year": 1918
+    }],
+    "ic-9-19": [{
+        "category": "ShiaDays",
+        "occasion": "ضربت خوردن حضرت علی (ع)",
+        "dayoff": false,
+        "year": 40
+    }],
+    "sh-8-14": [{
+            "category": "iran",
+            "occasion": "روز فرهنگ عمومی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «نسرین قادری»، «مژگان کدخدایی»، «عباس لویمی»، «محمدرضا فردوسی»، «ناشناس»، «ماریا غواصیه» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "wc-5-18": [{
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی واکسن ایدز",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی موزه‌ها",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "sh-8-30": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «آرام مجد»، «محمدرضا بادبروت»، «کوروش پاژخ»، «حسام حسینی»، «اسماعیل گلعنبر»، «مسعود تیموری»، «تحسین میری»، «جوهر فتاحی (میرکی)»، «جمال اعظمی»، «حیدر محالی» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "wc-10-23": [{
+        "category": "WWII",
+        "occasion": "سربازان بریتانیا، آلمان‌ها و ایتالیایی‌ها را در العالمین در مصر شکست دادند و نیروهای متحدین را در یک عقب نشینی نامنظم از طریق لیبی تا مرز شرقی تونس عقب راندند",
+        "dayoff": false,
+        "year": 1942
+    }],
+    "wc-9-12": [{
+            "category": "UnitedNations",
+            "occasion": "روز ملل متحد برای همکاری جنوب جنوب",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWII",
+            "occasion": "فنلاند با انعقاد قرارداد آتش بس با اتحاد جماهیر شوروی، محور متحدین را ترک کرد",
+            "dayoff": false,
+            "year": 1944
+        }
+    ],
+    "sh-9-11": [{
+            "category": "iran",
+            "occasion": "شهادت میرزا کوچک خان جنگلی",
+            "dayoff": false,
+            "year": 1300
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «سیروس شریفی باگو» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "ic-10-2": [{
+        "category": "ShiaDays",
+        "occasion": "عید فطر",
+        "dayoff": true,
+        "year": null
+    }],
+    "sh-6-26": [{
+        "category": "iran-history",
+        "occasion": "رسیدن نیروهای برتانیا و روسیه به یکدیگر در تهران در پی اشغال ایران در جنگ جهانی دوم",
+        "dayoff": false,
+        "year": 1320
+    }],
+    "wc-3-11": [{
+        "category": "WWII",
+        "occasion": "آلمان، اتریش را به آلمان بزرگ ملحق کرد",
+        "dayoff": false,
+        "year": 1938
+    }],
+    "ic-9-21": [{
+        "category": "ShiaDays",
+        "occasion": "شهادت حضرت علی (ع)",
+        "dayoff": true,
+        "year": 40
+    }],
+    "sh-3-14": [{
+        "category": "iran",
+        "occasion": "رحلت امام خمینی(ره) بنیانگزار جمهوری اسلامی ایران",
+        "dayoff": true,
+        "year": 1368
+    }],
+    "sh-6-12": [{
+        "category": "iran",
+        "occasion": "روز بهورز",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-4-28": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی ایمنی و بهداشت در محل کار",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-3-27": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی تئاتر",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-1-11": [{
+        "category": "iran-history",
+        "occasion": "تقویم هجری شمسی به طور قانونی در ایران تصویب شده",
+        "dayoff": false,
+        "year": 1304
+    }],
+    "wc-12-31": [{
+        "category": "WorldwideHolidays",
+        "occasion": "سال نو میلادی",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-5-31": [{
+            "category": "UnitedNations",
+            "occasion": "روز جهانی خودداری از مصرف دخانیات",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWI",
+            "occasion": "نبرد جتلند",
+            "dayoff": false,
+            "year": 1916
+        }
+    ],
+    "sh-5-16": [{
+        "category": "iran",
+        "occasion": "تشکیل جهاد دانشگاهی",
+        "dayoff": false,
+        "year": 1359
+    }],
+    "sh-8-8": [{
+            "category": "iran",
+            "occasion": "روز نوجوان و بسیج دانش آموزی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «کومار درافتاده» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "wc-12-2": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی لغو برده داری",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-9-25": [{
+        "category": "WWI",
+        "occasion": "آغاز نبرد لوس",
+        "dayoff": false,
+        "year": 1915
+    }],
+    "sh-7-16": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «محمد امینی»، «سیداحمد شکراللهی»، «نگین صالحی»، «آیناز جواهری»، «سپهر شریفی طرقبه»، «کامران شهبازی»، «سجاد جعفری»، «سمیه محمودی نژاد»، «محسن موسوی»، «ابوالفضل آدینه‌زاده»، «داریوش علیزاده»، «یحیی رحیمی»، «پیمان منبری» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "wc-11-23": [{
+            "category": "WWII",
+            "occasion": "اسلوواکی به متحدین پیوست ",
+            "dayoff": false,
+            "year": 1940
+        },
+        {
+            "category": "WWII",
+            "occasion": "سربازان شوروی دست به یک ضد حمله زدند و با شکستن خطوط مجارها و رومانیایی‌ها در شمال غربی و جنوب غربی استالینگراد، ارتش ششم آلمان را در این شهر محاصره کردند",
+            "dayoff": false,
+            "year": 1942
+        }
+    ],
+    "wc-7-15": [{
+            "category": "UnitedNations",
+            "occasion": "روز جهانی مهارتهای جوانان",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWI",
+            "occasion": "دومین نبرد مارن آغاز شد. آغاز نابودی ارتش آلمان",
+            "dayoff": false,
+            "year": 1918
+        }
+    ],
+    "sh-8-2": [{
+            "category": "iran-history",
+            "occasion": " امضاء عهدنامه گلستان بین ایران و روسیه - قفقاز ،ارمنستان و ایالت‌های شرقی گرجستان از ایران سلب و به روسیه واگذار شد",
+            "dayoff": false,
+            "year": 1192
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «مهدی فرحانی»، «صدف موحدی»، «مرضیه دشمن زیاری»، «مونا نقیب»، «نوید بادپا» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "wc-6-17": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی مبارزه با بیابان زایی و خشکسالی",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-11-6": [{
+            "category": "WWI",
+            "occasion": "بریتانیا حمله گسترده‌ای را در جبهه غربی آغاز کرد",
+            "dayoff": false,
+            "year": 1917
+        },
+        {
+            "category": "WWII",
+            "occasion": "سربازان شوروی کی یف را آزاد کردند",
+            "dayoff": false,
+            "year": 1943
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی برای جلوگیری از بهره‌برداری از محیط زیست در جنگ و درگیری‌های مسلحانه",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-6-26": [{
+            "category": "UnitedNations",
+            "occasion": "روز جهانی حمایت از قربانیان شکنجه",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی مبارزه با مواد مخدر و قاچاق غیر قانونی آن",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-11-12": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی آسم",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-10-30": [{
+        "category": "WWI",
+        "occasion": "صلح ترکیه با متفقین",
+        "dayoff": false,
+        "year": 1918
+    }],
+    "wc-12-8": [{
+        "category": "WWII",
+        "occasion": "ایالات متحده با اعلام جنگ علیه ژاپن وارد جنگ جهانی دوم شد",
+        "dayoff": false,
+        "year": 1941
+    }],
+    "wc-11-3": [{
+        "category": "WWI",
+        "occasion": "صلح اتریش با متفقین",
+        "dayoff": false,
+        "year": 1918
+    }],
+    "sh-4-10": [{
+            "category": "iran",
+            "occasion": "روز بزرگداشت صائب تبریزی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "روز صنعت و معدن",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran-history",
+            "occasion": "جنگ‌های ایران و روسیه - پیشروی ارتش روسیه برای جلوگیری از تصرف سرزمین‌های جدا شده از حکومت صوفوی توسط عثمانی‌ها",
+            "dayoff": false,
+            "year": 1101
+        }
+    ],
+    "sh-8-6": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «مسعود احمدزاده»، «محمد صارمی بیرانوند»، «فرید کورآوند»، «محمد کشاورز»، «علی فاضلی»، «امید نارویی»، «عادل بریچی»، «مولوی یوسف رئیسی» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-6-25": [{
+            "category": "iran",
+            "occasion": "روز خانواده و تکریم بازنشستگان",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «مهسا (ژینا) امینی» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "sh-2-30": [{
+        "category": "iran",
+        "occasion": "روز ملی جمعیت",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-6-21": [{
+            "category": "WWI",
+            "occasion": "نابودی ناوگان تسلیم شده آلمان در اسکاپافلوی بریتانیا",
+            "dayoff": false,
+            "year": 1919
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی یوگا",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-11-8": [{
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی رادیولوژی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWII",
+            "occasion": "سربازان ایالات متحده و بریتانیا در چند نقطه از سواحل الجزیره و مراکش در آفریقای شمالی تحت اشغال فرانسه فرود آمدند",
+            "dayoff": false,
+            "year": 1942
+        }
+    ],
+    "wc-11-9": [{
+        "category": "WWI",
+        "occasion": "استعفای قیصر ویلهلم دوم",
+        "dayoff": false,
+        "year": 1918
+    }],
+    "wc-9-8": [{
+            "category": "WWII",
+            "occasion": "دولت بادوگلیو بی قید و شرط به متفقین تسلیم شد. آلمان‌ها بی درنگ کنترل رم و شمال ایتالیا را به دست گرفتند و رژیم فاشیستی دست نشانده‌ای را تحت رهبری موسولینی که توسط کوماندوهای آلمانی در 12 سپتامبر از زندان آزاد شده بود تأسیس کردند",
+            "dayoff": false,
+            "year": 1943
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی سوادآموزی",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "sh-5-6": [{
+        "category": "iran",
+        "occasion": "روز کارآفرینی و آموزش‌های فنی و حرفه‌ای",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-3-7": [{
+        "category": "WWII",
+        "occasion": "سربازان ایالات متحده در رماگن از رود راین عبور کردند",
+        "dayoff": false,
+        "year": 1945
+    }],
+    "sh-12-3": [{
+        "category": "iran",
+        "occasion": "کودتای رضاخان",
+        "dayoff": false,
+        "year": 1299
+    }],
+    "sh-8-15": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «محمد قائمی فرد»، «محمدحسین سالاری»، «اویس شکرزهی» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "wc-9-21": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی صلح",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-4-4": [{
+        "category": "UnitedNations",
+        "occasion": "روز بین‌المللی اگاهی از مین و کمک به اقدام علیه مین",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-7-11": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی جمعیت",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-12-10": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی حقوق بشر",
+        "dayoff": false,
+        "year": null
+    }],
+    "ic-4-8": [{
+        "category": "ShiaDays",
+        "occasion": "ولادت امام حسن عسگری (ع)",
+        "dayoff": false,
+        "year": 232
+    }],
+    "wc-1-28": [{
+        "category": "WorldwideHolidays",
+        "occasion": "کاهش بین‌المللی انتشار گاز CO2",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-7-9": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «پویا رجب نیا»، «احسان خان محمدی» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "wc-4-6": [{
+            "category": "UnitedNations",
+            "occasion": "روز جهانی ورزش برای توسعه و صلح",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWII",
+            "occasion": "آلمان، ایتالیا، مجارستان و بلغارستان به یوگسلاوی حمله کرده و آن را تجزیه کردند",
+            "dayoff": false,
+            "year": 1941
+        },
+        {
+            "category": "WWI",
+            "occasion": "اعلام جنگ ایالات متحده آمریکا به آلمان",
+            "dayoff": false,
+            "year": 1917
+        }
+    ],
+    "sh-7-3": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «حدیث نجفی»، «محمد جامه بزرگ»، «افشین شهامت» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-4-23": [{
+            "category": "iran",
+            "occasion": "گشایش اولین مجلس خبرگان رهبری",
+            "dayoff": false,
+            "year": 1362
+        },
+        {
+            "category": "iran",
+            "occasion": "روز گفت و گو و تعامل سازنده با دنیا",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-8-21": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی مد",
+        "dayoff": false,
+        "year": null
+    }],
+    "ic-7-25": [{
+        "category": "ShiaDays",
+        "occasion": "شهادت امام موسی کاظم (ع)",
+        "dayoff": false,
+        "year": 183
+    }],
+    "sh-12-9": [{
+        "category": "iran",
+        "occasion": "روز حمایت از حقوق مصرف کنندگان",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-7-12": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «رضا ساعد» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "wc-5-3": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی آزادی مطبوعات",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-7-5": [{
+            "category": "iran",
+            "occasion": "شکست حصر آبادان در عملیات ثامن الائمه",
+            "dayoff": false,
+            "year": 1360
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «سیاوش محمودی» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "wc-5-9": [{
+            "category": "WorldwideHolidays",
+            "occasion": "روز اروپا",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWII",
+            "occasion": "آلمان به روس‌ها تسلیم شد",
+            "dayoff": false,
+            "year": 1945
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "زمان بزرگداشت و آشتی برای کسانی که زندگی خود را در جریان جنگ جهانی دوم از دست دادند",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-7-1": [{
+            "category": "UnitedNations",
+            "occasion": "روز جهانی تعاونی‌ها",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWI",
+            "occasion": "آغاز نبرد سام",
+            "dayoff": false,
+            "year": 1916
+        }
+    ],
+    "sh-12-14": [{
+        "category": "iran",
+        "occasion": "روز احسان و نیکوکاری",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-3-15": [{
+        "category": "iran",
+        "occasion": "قیام 15 خرداد",
+        "dayoff": true,
+        "year": 1342
+    }],
+    "wc-10-1": [{
+            "category": "WWII",
+            "occasion": "ایتالیای فاشیستی به اتیوپی حمله کرد",
+            "dayoff": false,
+            "year": 1935
+        },
+        {
+            "category": "WWII",
+            "occasion": "ایتالیا از سمت آلبانی به یونان حمله کرد",
+            "dayoff": false,
+            "year": 1940
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی سالمندان",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی گیاه خواری",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-6-13": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی آگاهی درباره آلبینیسم",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-1-15": [{
+        "category": "iran",
+        "occasion": "روز زخایر ژنتیکی و زیستی",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-8-12": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی جوانان ",
+        "dayoff": false,
+        "year": null
+    }],
+    "ic-9-22": [{
+        "category": "ShiaDays",
+        "occasion": "شب قدر",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-12-1": [{
+        "category": "iran-history",
+        "occasion": "امضاء عهدنامه ترکمنچای",
+        "dayoff": false,
+        "year": 1206
+    }],
+    "wc-9-2": [{
+        "category": "WWII",
+        "occasion": "ژاپن پس از موافقت با تسلیم بی قید و شرط در 14 اوت 1945 رسماً تسلیم شد و جنگ جهانی دوم پایان یافت",
+        "dayoff": false,
+        "year": 1945
+    }],
+    "sh-9-9": [{
+            "category": "iran",
+            "occasion": "روز بزرگداشت شیخ مفید",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «فرزین معروفی» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "sh-8-29": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «کاروان قادری»، «محسن نیازی»، «سروش سیدی»، «سلیمان شکری»، «جلال قربانی»، «ستار رحیمی»، «طاهر عزیزی»، «بهاالدین ویسی»، «عرفان کاکایی»، «لقمان کاکایی»، «فرشید موسوی» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-3-20": [{
+        "category": "iran",
+        "occasion": "روز صنایع دستی",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-8-18": [{
+            "category": "iran",
+            "occasion": "روز کیفیت",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «فائق مام قادری»، «سپهر بیرانوند (سام)»، «علیرضا کریمی»، «متین نصری»، «حافظ اولاد امرعلی»، «مهدی صالحی‌پور»، «فایق مام قادری» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "wc-9-6": [{
+        "category": "WWI",
+        "occasion": "آغاز نبرد مارن",
+        "dayoff": false,
+        "year": 1914
+    }],
+    "sh-2-1": [{
+        "category": "iran",
+        "occasion": "روز بزرگداشت سعدی",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-9-16": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی برای حفاظت از لایه اوزون",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-11-30": [{
+        "category": "WWII",
+        "occasion": "اتحاد جماهیر شوروی با حمله به فنلاند، «جنگ زمستان» را آغاز کرد",
+        "dayoff": false,
+        "year": 1339
+    }],
+    "ic-8-11": [{
+        "category": "ShiaDays",
+        "occasion": "ولادت حضرت علی اکبر (ع)",
+        "dayoff": false,
+        "year": 33
+    }],
+    "sh-3-5": [{
+        "category": "iran",
+        "occasion": "روز حمایت از خانواده زندانیان",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-9-24": [{
+        "category": "iran-history",
+        "occasion": "تصرف مهاباد توسط ارتش ایران",
+        "dayoff": false,
+        "year": 1325
+    }],
+    "wc-7-18": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی نلسون ماندلا",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-10-13": [{
+            "category": "WorldwideHolidays",
+            "occasion": "جمعه سیزدهم",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز جهانی کاهش اثرات بلایای طبیعی",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-8-29": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی مقابله با آزمایشاهای هسته‌ای",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-11-17": [{
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی نوزادان نارس",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی دانش آموزان",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی وکلای مدافع",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-7-25": [{
+            "category": "WWII",
+            "occasion": "شورای بزرگ فاشیست بنیتو موسولینی را عزل کرد و به مارشال ایتالیایی پیترو بادوگلیو اختیارات لازم را برای تشکیل یک دولت جدید محول کرد",
+            "dayoff": false,
+            "year": 1943
+        },
+        {
+            "category": "WWII",
+            "occasion": "نیروهای انگلیسی آمریکایی از سواحل اشغالی نورماندی حمله خود را آغاز کردند و با سرعت به شرق به سمت پاریس حرکت کردند",
+            "dayoff": false,
+            "year": 1944
+        }
+    ],
+    "wc-1-12": [{
+        "category": "WWII",
+        "occasion": "روس‌ها حمله جدیدی را آغاز کردند و ورشو و کراکوف را آزاد کردند",
+        "dayoff": false,
+        "year": 1945
+    }],
+    "sh-8--": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «امید قمصری»، «حسین محمدی» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-8-27": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «حمیدرضا روحی»، «شهریار محمدی»، «شیرکو سلطانی»، «امید حسنی»، «هانیه مرادی»، «مجید عبداللهی آسترکی»، «کمال احمدی»، «منصور قربانی»، «میلاد معروفی»، «مهران رحمانی»، «امیر فراستی شاد»، «محمد احمدی گاگش» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-6-5": [{
+            "category": "iran",
+            "occasion": "روز بزرگداشت محمدبن زکریای رازی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "روز داروسازی",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "sh-12-5": [{
+            "category": "iran",
+            "occasion": "روز بزرگداشت خواجه نصیرالدین طوسی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "روز مهندسی",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "sh-12-21": [{
+            "category": "iran",
+            "occasion": "روز بزرگداشت نظامی گنجوی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "روز بزرگداشت شهدا(تأسیس بنیاد شهید انقلاب اسلامی)",
+            "dayoff": false,
+            "year": 1358
+        }
+    ],
+    "sh-6-29": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «دیاکو مهرنوایی»، «زکریا خیال»، «رضا شهپرنیا»، «فرزین لطفی»، «ساسان باقری»، «میلاد زارع» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-1-21": [{
+            "category": "iran",
+            "occasion": "شهادت امیر سپهبد علی صیاد شیرازی",
+            "dayoff": false,
+            "year": 1378
+        },
+        {
+            "category": "iran",
+            "occasion": "سالروز افتتاح حساب شماره 100 به فرمان امام خمینی(ره) و تاسیس بنیاد مسکن انقلاب اسلامی",
+            "dayoff": false,
+            "year": 1358
+        }
+    ],
+    "sh-8-9": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «نسیم صدقی»، «ناهید مصطفی‌پور»، «جعفر قربانی» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "wc-8-20": [{
+        "category": "WWII",
+        "occasion": "سربازان متفقین به پاریس رسیدند",
+        "dayoff": false,
+        "year": 1944
+    }],
+    "sh-9-8": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «مهران سماک» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "wc-9-9": [{
+            "category": "WWII",
+            "occasion": "سربازان متفقین در سواحل سالرنو در نزدیکی ناپل پیاده شدند",
+            "dayoff": false,
+            "year": 1943
+        },
+        {
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی فیزیوتراپی",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-4-21": [{
+            "category": "UnitedNations",
+            "occasion": "روز جهانی خلاقیت و نوآوری",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی خدمات جوانان",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-7-5": [{
+            "category": "WWII",
+            "occasion": "آلمان‌ها با تانک حمله عظیمی را نزدیک کورسک در اتحاد جماهیر شوروی آغاز کردند. روس‌ها این حمله را طی یک هفته دفع کردند و حمله‌ای را به ابتکار خود آغاز کردند",
+            "dayoff": false,
+            "year": 1943
+        },
+        {
+            "category": "WWI",
+            "occasion": "قیصر ویلهلم دوم قول حمایت آلمان از اتریش در برابر صربستان را داد",
+            "dayoff": false,
+            "year": 1914
+        }
+    ],
+    "sh-5-26": [{
+        "category": "iran",
+        "occasion": "آغاز بازگشت اسرای جنگی به ایران",
+        "dayoff": false,
+        "year": 1369
+    }],
+    "sh-7--": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «مرتضی سلطان‌نیا»، «میثم مقدسی» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-8-10": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «محمدحسین فرجی» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "sh-6-31": [{
+            "category": "iran",
+            "occasion": "آغاز جنگ تحمیلی",
+            "dayoff": false,
+            "year": 1359
+        },
+        {
+            "category": "iran",
+            "occasion": "آغاز هفته دفاع مقدس",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «آروین ململی گلزاری»، «کنعان آقایی»، «ستاره تاجیک»، «شیرین علیزاده»، «اسماعیل حیدری»، «سیدمهدی موسوی»، «روزبه خادمی»، «امیر نوروزی»، «مهدی لیلازی»، «مهرداد بهنام اصل»، «پدرام آذرنوش»، «مازیار سلیمانیان»، «جواد حیدری»، «محمد حسین‌خواه»، «مهرداد عوض‌پور»، «محمدرسول مومنی‌زاده»، «مهسا موگویی»، «محمدجواد زمانی»، «یاسر جعفری» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "sh-7-13": [{
+            "category": "iran",
+            "occasion": "روز نیروی انتظامی",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "iran",
+            "occasion": "هجرت امام خمینی (ره) از عراق به پاریس",
+            "dayoff": false,
+            "year": 1357
+        },
+        {
+            "category": "victims",
+            "occasion": "به قتل رسیدن «رضا بنیادی»، «نیما شفیق‌دوست» توسط جمهوری اسلامی",
+            "dayoff": false,
+            "year": 1401
+        }
+    ],
+    "sh-2-2": [{
+            "category": "iran",
+            "occasion": "سالروز اعلام انقلاب فرهنگی",
+            "dayoff": false,
+            "year": 1359
+        },
+        {
+            "category": "iran",
+            "occasion": "تأسیس سپاه پاسداران انقلاب اسلامی",
+            "dayoff": false,
+            "year": 1358
+        }
+    ],
+    "sh-2-28": [{
+        "category": "iran",
+        "occasion": "روز بزرگداشت حکیم عمر خیام",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-4-16": [{
+        "category": "iran",
+        "occasion": "روز مالیات",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-9-30": [{
+        "category": "UnitedNations",
+        "occasion": "روز جهانی ترجمه",
+        "dayoff": false,
+        "year": null
+    }],
+    "ic-7-15": [{
+        "category": "ShiaDays",
+        "occasion": "تغییر قبله مسلمین از بیت المقدس به مکه",
+        "dayoff": false,
+        "year": 2
+    }],
+    "sh-6-3": [{
+        "category": "iran",
+        "occasion": "اشغال ایران توسط متفقین و فرار رضاخان",
+        "dayoff": false,
+        "year": 1320
+    }],
+    "wc-1-13": [{
+        "category": "WorldwideHolidays",
+        "occasion": "جمعه سیزدهم",
+        "dayoff": false,
+        "year": null
+    }],
+    "sh-10-4": [{
+        "category": "iran",
+        "occasion": "ولادت حضرت مسیح(ع)",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-1-29": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی مبارزه با جزام",
+        "dayoff": false,
+        "year": null
+    }],
+    "ic-7-13": [{
+        "category": "ShiaDays",
+        "occasion": "ولادت حضرت علی (ع)",
+        "dayoff": true,
+        "year": -23
+    }],
+    "wc-1-15": [{
+        "category": "WorldwideHolidays",
+        "occasion": "روز جهانی مذاهب",
+        "dayoff": false,
+        "year": null
+    }],
+    "wc-12-11": [{
+            "category": "UnitedNations",
+            "occasion": "روز جهانی کوهستان‌ها",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWII",
+            "occasion": "آلمان نازی و دیگر نیروهای متحدین علیه ایالات متحده اعلام جنگ کردند",
+            "dayoff": false,
+            "year": 1941
+        }
+    ],
+    "wc-2-11": [{
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی همدردی با بیماران",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "UnitedNations",
+            "occasion": "روز بین‌المللی مشارکت زنان و دختران در علوم",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "sh-6-28": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «فریدون محمودی»، «ایمان بهزادپور اهل»، «محسن محمدی»، «میلاد استادهاشم»، «رضا لطفی» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "wc-1-26": [{
+            "category": "WorldwideHolidays",
+            "occasion": "روز بین‌المللی آموزش حفاظت از محیط زیست",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی گمرک",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "wc-4-2": [{
+            "category": "UnitedNations",
+            "occasion": "روز جهانی آگاهی درباره اوتیسم",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی کتاب کودک",
+            "dayoff": false,
+            "year": null
+        }
+    ],
+    "sh-11-22": [{
+        "category": "iran",
+        "occasion": "پیروزی انقلاب اسلامی",
+        "dayoff": true,
+        "year": 1357
+    }],
+    "wc-6-30": [{
+        "category": "UnitedNations",
+        "occasion": "روزهای جهانی شهاب سنگ",
+        "dayoff": false,
+        "year": null
+    }],
+    "ic-5-5": [{
+        "category": "ShiaDays",
+        "occasion": "ولادت حضرت زینب (س)",
+        "dayoff": false,
+        "year": 5
+    }],
+    "sh----": [{
+        "category": "victims",
+        "occasion": "به قتل رسیدن «حامد سلحشور»، «آوات قادرپور»، «شورش نیکنام» توسط جمهوری اسلامی",
+        "dayoff": false,
+        "year": 1401
+    }],
+    "wc-9-13": [{
+            "category": "WorldwideHolidays",
+            "occasion": "روز جهانی برنامه نویسان کامپیوتر",
+            "dayoff": false,
+            "year": null
+        },
+        {
+            "category": "WWII",
+            "occasion": "ایتالیایی‌ها به مصر حمله کردند",
+            "dayoff": false,
+            "year": 1940
+        }
+    ]
+}
