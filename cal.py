@@ -4,12 +4,16 @@ import json
 
 
 class Calendar(Notebook):
-    def __init__(self, dataJsonPath, **kwargs) -> None:
+    def __init__(self, daysJsonPath, **kwargs) -> None:
         super().__init__(**kwargs)
         # general
         self.name = kwargs.get('name', 'Untitle-Calendar')
-        self.dataJsonPath = dataJsonPath
-        self.readDataJson()
+        self.daysJsonPath = daysJsonPath
+        self.eventJsonPath = kwargs.get('eventJsonPath', 'events.json')
+        self.calNamesJsonPath = kwargs.get('calNamesJsonPath', 'calNames.json')
+        self.readDaysJson()
+        self.readEventJson()
+        self.readCalNamesJson()
         self.startWeekday = kwargs.get('startWeekday', 'Sat')
         self.weekend = kwargs.get('weekend', 0)
         self.divider = kwargs.get('divider', ' / ')
@@ -92,22 +96,40 @@ class Calendar(Notebook):
         self.primaryColor = kwargs.get('primaryColor', '#000')
         self.secondColor = kwargs.get('secondColor', '#ddd')
 
-    def readDataJson(self):
+    def readDaysJson(self):
         try:
-            with open(self.dataJsonPath) as f:
-                self.dataJson = json.load(f)
+            with open(self.daysJsonPath) as f:
+                self.daysJson = json.load(f)
+        except:
+            print('JSON file is not exist.')
+            exit()
+
+    def readEventJson(self):
+        try:
+            with open(self.eventJsonPath) as f:
+                self.eventJson = json.load(f)
+        except:
+            print('JSON file is not exist.')
+            exit()
+
+    def readCalNamesJson(self):
+        try:
+            with open(self.calNamesJsonPath) as f:
+                self.calNamesJson = json.load(f)
         except:
             print('JSON file is not exist.')
             exit()
 
     def weekKeys(self, weekNo):
-        key = list(self.dataJson.keys())
+        keys = list(self.daysJson.keys())
         for dayNo in range(7):
-            if self.dataJson[key[dayNo]]['wc']['weekday'][0] == self.startWeekday:
-                key = key[dayNo:]
+            # if self.daysJson[keys[dayNo]]['wc']['weekday'][0] == self.startWeekday:
+            wd = str(self.daysJson[keys[dayNo]]['weekday'])
+            if self.calNamesJson['wc']['weekday-short'][wd] == self.startWeekday:
+                keys = keys[dayNo:]
                 break
 
-        return key[(weekNo-1)*7:weekNo*7]
+        return keys[(weekNo-1)*7:weekNo*7]
 
     def addWeekPage(self, weekNo):
         page = WeekPage(weekNo, self.weekKeys(weekNo), **self.__dict__)

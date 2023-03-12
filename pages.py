@@ -216,7 +216,10 @@ class WeekPage(LinePage):
     def __init__(self, weekNo, weekKeys, name='Untitle-WeekPage', **kwargs) -> None:
         super().__init__(name, **kwargs)
 
-        self.dataJson = kwargs.get('dataJson', 'left')
+        self.daysJson = kwargs.get('daysJson', '')
+        self.eventJson = kwargs.get('eventJson', '')
+        self.calNamesJson = kwargs.get('calNamesJson', '')
+
         self.weekKeys = weekKeys
         self.weekNo = weekNo
         self.divider = kwargs.get('divider', ' / ')
@@ -305,17 +308,23 @@ class WeekPage(LinePage):
     def calendarText(self, calID, dayKey, full=False):
         if full:
             if calID == 'sh':
-                sh = self.dataJson[dayKey][calID]
-                textCal = f"{sh['date'][2]} {sh['monthName']} {sh['date'][0]}"
+                sh = self.daysJson[dayKey][calID]
+                month = self.calNamesJson[calID]['month'][str(sh[1])]
+
+                textCal = f"{sh[2]} {month} {sh[0]}"
             elif calID == 'wc':
-                wc = self.dataJson[dayKey][calID]
-                textCal = f"{wc['monthName'][1]} {wc['date'][2]}, {wc['date'][0]}"
+                wc = self.daysJson[dayKey][calID]
+                month = self.calNamesJson[calID]['month'][str(wc[1])]
+
+                textCal = f"{month} {wc[2]}, {wc[0]}"
             elif calID == 'ic':
-                ic = self.dataJson[dayKey][calID]
-                textCal = f"{ic['date'][2]} {ic['monthName']} {ic['date'][0]}"
+                ic = self.daysJson[dayKey][calID]
+                month = self.calNamesJson[calID]['month'][str(ic[1])]
+
+                textCal = f"{ic[2]} {month} {ic[0]}"
         else:
-            cal = self.dataJson[dayKey][calID]
-            textCal = str(cal['date'][2])
+            cal = self.daysJson[dayKey][calID]
+            textCal = str(cal[2])
 
         if calID == 'sh':
             return perNo(textCal)
@@ -382,7 +391,20 @@ class WeekPage(LinePage):
 
             # holiday style
             holiday = False
-            for e in self.dataJson[dayKey]['event']['values']:
+
+            todaySh = self.daysJson[dayKey]["sh"]
+            todayIc = self.daysJson[dayKey]["ic"]
+            todayWc = self.daysJson[dayKey]["wc"]
+
+            events = []
+            events += self.eventJson.get(
+                f"sh-{todaySh[1]}-{todaySh[2]}", [])
+            events += self.eventJson.get(
+                f"ic-{todayIc[1]}-{todayIc[2]}", [])
+            events += self.eventJson.get(
+                f"wc-{todayWc[1]}-{todayWc[2]}", [])
+
+            for e in events:
                 if e["dayoff"] == True:
                     holiday = True
             if i > 6-self.weekend:
@@ -390,7 +412,9 @@ class WeekPage(LinePage):
 
             # text of cal
             textCal = self.calendarText(calID, dayKey)
-            textWeekday = self.dataJson[dayKey][calID]['weekday']
+
+            wd = str(self.daysJson[dayKey]['weekday'])
+            textWeekday = self.calNamesJson[calID]['weekday'][wd]
 
             if isinstance(textWeekday, list):
                 textWeekday = textWeekday[1]
@@ -566,7 +590,7 @@ class WeekPage(LinePage):
 
             for i in range(len(self.weekKeys)):
                 dayKey = self.weekKeys[i]
-                cal = self.dataJson[dayKey][calID]
+                cal = self.daysJson[dayKey][calID]
 
                 # x and y location
                 calH = self.fontHeightScl * \
@@ -576,7 +600,7 @@ class WeekPage(LinePage):
                 xLeftSpace, xRightSpace = self.xloc(loc, space+0.5)
                 x = xLeftSpace if self.layout == "left" else xRightSpace
 
-                isfull = self.showFullCalendar or cal['date'][2] == 1 or i == 0
+                isfull = self.showFullCalendar or cal[2] == 1 or i == 0
                 self.pages[loc].addText(
                     x,
                     y,
@@ -606,7 +630,19 @@ class WeekPage(LinePage):
 
         for i in range(len(self.weekKeys)):
             dayKey = self.weekKeys[i]
-            events = self.dataJson[dayKey]['event']['values']
+            # events = self.daysJson[dayKey]['event']['values']
+
+            todaySh = self.daysJson[dayKey]["sh"]
+            todayIc = self.daysJson[dayKey]["ic"]
+            todayWc = self.daysJson[dayKey]["wc"]
+
+            events = []
+            events += self.eventJson.get(
+                f"sh-{todaySh[1]}-{todaySh[2]}", [])
+            events += self.eventJson.get(
+                f"ic-{todayIc[1]}-{todayIc[2]}", [])
+            events += self.eventJson.get(
+                f"wc-{todayWc[1]}-{todayWc[2]}", [])
 
             eventList = list(map(lambda e: e['occasion'], events))
             eventList = list(
@@ -660,8 +696,13 @@ class WeekPage(LinePage):
         )
 
         calID = self.calendarOrder[0]
-        startMonth = self.dataJson[self.weekKeys[0]][calID]['monthName']
-        endMonth = self.dataJson[self.weekKeys[-1]][calID]['monthName']
+
+        mn = str(self.daysJson[self.weekKeys[0]][calID][1])
+        startMonth = self.calNamesJson[calID]['month'][mn]
+
+        mn = str(self.daysJson[self.weekKeys[-1]][calID][1])
+        endMonth = self.calNamesJson[calID]['month'][mn]
+
         if isinstance(startMonth, list):
             startMonth = startMonth[1]
             endMonth = endMonth[1]
@@ -924,13 +965,25 @@ class FirstPage(LinePage):
 class HolidaysPage(LinePageWithTitle):
     def __init__(self, year=1401, shiftDownHolidays=1, title='تعطیلات رسمی ۱۴۰۱', name='Untitle-LinePage', **kwargs) -> None:
         super().__init__(title, name, **kwargs)
-        self.dataJson = kwargs.get('dataJson', '')
+        self.daysJson = kwargs.get('daysJson', '')
+        self.eventJson = kwargs.get('eventJson', '')
+        self.calNamesJson = kwargs.get('calNamesJson', '')
         self.shiftDownHolidays = shiftDownHolidays
         self.holidays = []
-        for day in self.dataJson.keys():
-            dayYear = self.dataJson[day]['sh']['date'][0]
-            if self.dataJson[day]['sh']['date'][0] == year:
-                events = self.dataJson[day]['event']['values']
+        for day in self.daysJson.keys():
+            if self.daysJson[day]['sh'][0] == year:
+                todaySh = self.daysJson[day]["sh"]
+                todayIc = self.daysJson[day]["ic"]
+                todayWc = self.daysJson[day]["wc"]
+
+                events = []
+                events += self.eventJson.get(
+                    f"sh-{todaySh[1]}-{todaySh[2]}", [])
+                events += self.eventJson.get(
+                    f"ic-{todayIc[1]}-{todayIc[2]}", [])
+                events += self.eventJson.get(
+                    f"wc-{todayWc[1]}-{todayWc[2]}", [])
+
                 for e in events:
                     if e['dayoff'] == True:
                         self.holidays.append((day, e['occasion']))
@@ -983,8 +1036,12 @@ class HolidaysPage(LinePageWithTitle):
 
         lastMonth = ''
         for day, event in self.holidays:
-            monthName = self.dataJson[day]['sh']['monthName']
-            dateInfo = self.dataJson[day]['sh']
+            # monthName = self.daysJson[day]['sh']['monthName']
+            month = str(self.daysJson[day]['sh'][1])
+            monthName = self.calNamesJson['sh']['month'][month]
+            dateDay = self.daysJson[day]['sh'][2]
+            wd = str(self.daysJson[day]['weekday'])
+            weekday = self.calNamesJson['sh']['weekday'][wd]
 
             # x and y location
             if monthName != lastMonth:
@@ -999,14 +1056,14 @@ class HolidaysPage(LinePageWithTitle):
             self.pages[loc].addText(
                 x2,
                 y,
-                perNo(dateInfo['date'][2]),
+                perNo(dateDay),
                 transform=f'scale({self.scale})',
                 class_='holidayNo'
             )
             self.pages[loc].addText(
                 x3,
                 y,
-                perNo(dateInfo['weekday']),
+                perNo(weekday),
                 transform=f'scale({self.scale})',
                 class_='holiday'
             )
@@ -1021,19 +1078,31 @@ class HolidaysPage(LinePageWithTitle):
 
 
 class OneYearPage(LinePageWithTitle):
-    def __init__(self, year=1401, title='سال ۱۴۰۱', name='Untitle-LinePage', **kwargs) -> None:
+    def __init__(self, year=1402, title='سال ۱۴۰۲', name='Untitle-LinePage', **kwargs) -> None:
         super().__init__(title, name, **kwargs)
-        self.dataJson = kwargs.get('dataJson', '')
+        self.daysJson = kwargs.get('daysJson', '')
+        self.eventJson = kwargs.get('eventJson', '')
+        self.calNamesJson = kwargs.get('calNamesJson', '')
         self.year = year
         self.startWeekday = kwargs.get('startWeekday', 'Sat')
         self.weekend = kwargs.get('weekend', 0)
         self.secondColor = kwargs.get('secondColor', '#ddd')
 
         self.holidays = []
-        for day in self.dataJson.keys():
-            dayYear = self.dataJson[day]['sh']['date'][0]
-            if self.dataJson[day]['sh']['date'][0] == year:
-                events = self.dataJson[day]['event']['values']
+        for day in self.daysJson.keys():
+            if self.daysJson[day]['sh'][0] == year:
+                todaySh = self.daysJson[day]["sh"]
+                todayIc = self.daysJson[day]["ic"]
+                todayWc = self.daysJson[day]["wc"]
+
+                events = []
+                events += self.eventJson.get(
+                    f"sh-{todaySh[1]}-{todaySh[2]}", [])
+                events += self.eventJson.get(
+                    f"ic-{todayIc[1]}-{todayIc[2]}", [])
+                events += self.eventJson.get(
+                    f"wc-{todayWc[1]}-{todayWc[2]}", [])
+
                 for e in events:
                     if e['dayoff'] == True:
                         self.holidays.append(day)
@@ -1084,15 +1153,16 @@ class OneYearPage(LinePageWithTitle):
 
         calKeysDict = {}
         monthList = {}
-        for date_ in self.dataJson:
-            day = self.dataJson[date_]['sh']
+        for date_ in self.daysJson:
+            day = self.daysJson[date_]['sh']
 
-            if day['date'][0] == self.year:
-                if day['date'][2] == 1:
-                    monthList[day['date'][1]] = day['monthName']
-                    calKeysDict[day['date'][1]] = [date_]
+            if day[0] == self.year:
+                if day[2] == 1:
+                    monthList[day[1]
+                              ] = self.calNamesJson['sh']['month'][str(day[1])]
+                    calKeysDict[day[1]] = [date_]
                 else:
-                    calKeysDict[day['date'][1]].append(date_)
+                    calKeysDict[day[1]].append(date_)
 
         for m in range(1, 13):
             j = (m-1)//3
@@ -1135,8 +1205,10 @@ class OneYearPage(LinePageWithTitle):
 
         a = 0
         for date_ in days:
-            day = self.dataJson[date_]
-            b = weekDays.index(day['wc']['weekday'][0])
+            day = self.daysJson[date_]
+            # b = weekDays.index(day['wc']['weekday'][0])
+            wd = str(day['weekday'])
+            b = weekDays.index(self.calNamesJson['wc']['weekday-short'][wd])
 
             x = xLeft + w - colWidth * (a + 1.5)
             y = yTop + lineHeight * (b + 0.5) + calH/2
@@ -1146,7 +1218,7 @@ class OneYearPage(LinePageWithTitle):
             self.pages[loc].addText(
                 x,
                 y,
-                perNo(day['sh']['date'][2]),
+                perNo(day['sh'][2]),
                 transform=f'scale({self.scale})',
                 class_='onePageYearHolidays' if isHoliday else 'onePageYear'
             )
