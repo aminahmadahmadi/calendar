@@ -41,14 +41,14 @@ example = {
     }
 }
 
-newBook = Calendar('cal1401.json',
+newBook = Calendar('1402.json',
                    **previewProperty,
                    **example
                    )
 
 newBook.addFirstPage()
 newBook.addLinePage()
-newBook.addChecklistPage(title='اهداف سال ۱۴۰۱',
+newBook.addChecklistPage(title='اهداف سال ۱۴۰۲',
                          pattern='01', checkboxscale=0.6)
 
 newBook.addOneYearPage()
