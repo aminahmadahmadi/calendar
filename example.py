@@ -46,13 +46,15 @@ newBook = Calendar('1402.json',
                    **example
                    )
 
-newBook.addFirstPage()
+newBook.addFirstPage(years=['1402', '2023 - 2024', '1445 - 1444'],
+                     turnOfYear=['سه‌شنبه ۱ فروردین ۱۴۰۲', 'ساعت ۰۰:۵۴:۲۸'])
+
 newBook.addLinePage()
 newBook.addChecklistPage(title='اهداف سال ۱۴۰۲',
                          pattern='01', checkboxscale=0.6)
 
 newBook.addOneYearPage()
-newBook.addHolidaysPage()
+newBook.addHolidaysPage(year=1402, title='تعطیلات رسمی ۱۴۰۲')
 
 for i in range(53):
     newBook.addLinePage()
