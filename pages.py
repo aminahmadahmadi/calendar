@@ -99,7 +99,6 @@ class Page():
             'fill:none;'
             'stroke:#000;'
             'stroke-width:0.05;'
-            f'transform:scale({self.scale});'
         )
 
         for x in [self.margin[_dir[loc][0]], self.width+self.margin[_dir[loc][0]]]:
@@ -108,11 +107,13 @@ class Page():
 
             self.pages[loc].addLine(
                 x, y1 - self.trimMark, x, y1,
-                class_='trimMark'
+                class_='trimMark',
+                transform=f'scale({self.scale})'
             )
             self.pages[loc].addLine(
                 x, y2, x, y2 + self.trimMark,
-                class_='trimMark'
+                class_='trimMark',
+                transform=f'scale({self.scale})'
             )
 
         for y in [self.margin['top'], self.height+self.margin['top']]:
@@ -121,12 +122,14 @@ class Page():
 
             self.pages[loc].addLine(
                 x1 - self.trimMark, y, x1, y,
-                class_='trimMark'
+                class_='trimMark',
+                transform=f'scale({self.scale})'
             )
             end = self.width + self.margin['inside'] + self.margin['outside']
             self.pages[loc].addLine(
                 x2, y, x2 + self.trimMark, y,
-                class_='trimMark'
+                class_='trimMark',
+                transform=f'scale({self.scale})'
             )
 
 
@@ -625,12 +628,11 @@ class WeekPage(LinePage):
             f'font-family:"{self.fontFamily} {self.fontWeight.get("events","")}";'
             f'font-size:{self.fontSize.get("events", 5)/self.scale}px;'
             'text-anchor:start;'
-            'direction: rtl'
+            'direction: rtl;'
         )
 
         for i in range(len(self.weekKeys)):
             dayKey = self.weekKeys[i]
-            # events = self.daysJson[dayKey]['event']['values']
 
             todaySh = self.daysJson[dayKey]["sh"]
             todayIc = self.daysJson[dayKey]["ic"]
@@ -644,46 +646,45 @@ class WeekPage(LinePage):
             events += self.eventJson.get(
                 f"wc-{todayWc[1]}-{todayWc[2]}", [])
 
-            eventList = list(map(lambda e: e['occasion'], events))
-            eventList = list(
-                map(lambda x: x if len(x) < 120 else '', eventList))
-            eventText = self.divider.join(eventList)
-            eventText2 = ''
             textArea = self.width - \
                 self.padding['inside']-self.padding['outside'] - \
                 self.lineHeight*(1+self.daysHeight)
-            l = 7.8 * (textArea) / self.fontSize['events']
+            l = int(7.2 * (textArea) / self.fontSize['events'])
+            eventList = list(map(lambda e: e['occasion'], events))
+            eventText = self.divider.join(eventList)
+            et = []
 
             if len(eventText) > l:
-                j = 1
-                while (len(self.divider.join(eventList[-j:])) < l and j < len(eventList)):
-                    eventText2 = self.divider.join(eventList[:-j])
-                    eventText = self.divider.join(eventList[-j:])
-                    j += 1
+                etTemp2 = eventText
+                a = int(len(eventText) / l)+1
+                for _ in range(a):
+                    etTemp = etTemp2[(-1*l):]
+
+                    if etTemp == etTemp2:
+                        txt = etTemp
+                    else:
+                        txt = " ".join(etTemp.split(" ")[1:])
+                    print(txt)
+                    et.append(txt)
+                    etTemp2 = etTemp2[:(-1*len(txt))]
+            else:
+                et.append(eventText)
 
             # x and y location
             space = self.lineHeight if self.layout == 'left' else self.daysHeight*self.lineHeight
             _, xRightSpace = self.xloc(loc, space+0.5)
             calH = self.fontHeightScl * \
                 self.fontSize.get('events', 5)/self.scale
-            y1 = self.daysY[i+1] - self.lineHeight * 0.5 + calH/2
-            y2 = self.daysY[i+1] - self.lineHeight * 1.5 + calH/2
 
-            self.pages[loc].addText(
-                xRightSpace,
-                y1,
-                perNo(eventText),
-                transform=f'scale({self.scale})',
-                class_='events',
-            )
-            self.pages[loc].addText(
-                xRightSpace,
-                y2,
-                perNo(eventText2),
-                transform=f'scale({self.scale})',
-                class_='events',
-            )
-        pass
+            for en in range(len(et)):
+                y = self.daysY[i+1] - self.lineHeight * (en+0.5) + calH/2
+                self.pages[loc].addText(
+                    xRightSpace,
+                    y,
+                    perNo(et[en]),
+                    transform=f'scale({self.scale})',
+                    class_='events',
+                )
 
     def addMonthandWeek(self, loc):
         self.pages[loc].addStyle(
@@ -692,7 +693,8 @@ class WeekPage(LinePage):
             f'stroke:None;'
             f'font-family:"{self.fontFamily} {self.fontWeight.get("monthAndWeek","")}";'
             f'font-size:{self.fontSize.get("monthAndWeek", 8)/self.scale}px;'
-            f'text-anchor:{"start" if self.layout=="left" else "end"};'
+            f'text-anchor:{"end" if self.layout=="left" else "start"};'
+            'direction: rtl;'
         )
 
         calID = self.calendarOrder[0]
