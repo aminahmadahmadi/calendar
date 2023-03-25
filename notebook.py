@@ -137,5 +137,70 @@ class Notebook():
         with open(os.path.join(Dir, self.name, 'index.html'), "w") as f:
             f.write(htmlTxt)
 
-    def toPDF():
-        pass
+    def toPDF(self, Dir='', removeSvgs=True, removePdfs=True):
+        try:
+            if not os.path.exists(os.path.join(Dir, self.name)):
+                os.mkdir(os.path.join(Dir, self.name))
+
+            if not os.path.exists(os.path.join(Dir, self.name, 'pages')):
+                os.mkdir(os.path.join(Dir, self.name, 'pages'))
+
+            for i in range(len(self.pages)):
+                if i % 2 == 0 ^ self.rtl:
+                    pageDir = 'right'
+                else:
+                    pageDir = 'left'
+                print(
+                    f'#{i+1:>3}: {str(self.pages[i].__class__)[8:-2].split(".")[-1]}({pageDir[:1]})')
+
+                svg = self.pages[i].page[pageDir]
+                svg.name = f'p{i:03}'
+                path_ = os.path.join(Dir, self.name, 'pages')
+                svg.save(
+                    path_,
+                    width=f'{self.pages[i].svgWidth}mm',
+                    height=f'{self.pages[i].svgHeight}mm'
+                )
+
+                fpath = os.path.join(path_, svg.name)
+                os.system(
+                    f'inkscape "{fpath}.svg" --export-filename="{fpath}.pdf"')
+                if removeSvgs:
+                    os.system(f'rm "{fpath}.svg"')
+
+            path = os.path.join(Dir, self.name, 'pages')
+            path2 = os.path.join(Dir, self.name)
+            os.chdir(f"{path}")
+
+            os.system(f'pdfunite *.pdf ../cal.pdf')
+
+            if removePdfs:
+                os.chdir(f"{path2}")
+                os.system(f'rm -r pages')
+
+            os.chdir(os.path.dirname(os.path.realpath(__file__)))
+        except:
+            print('"inkscape" and "pdfunite" requirement for use toPDF function.')
+
+    def toPrintPDF(self, Dir='', loopPaper=5, removeSvgs=True, removePdfs=True):
+        self.toPDF(Dir, removeSvgs=removeSvgs, removePdfs=False)
+
+        names = []
+        for d in range(0, len(self.pages)-1, loopPaper*4):
+            for i in range(0, loopPaper*2, 2):
+                for p in [d+loopPaper*4-i-1, d+i, d+i+1, d+loopPaper*4-i-2]:
+                    names.append(f'p{p:03}.pdf')
+
+        path = os.path.join(Dir, self.name, 'pages')
+        os.chdir(f"{path}")
+        name = " ".join(names)
+        os.system(f'pdfunite {name} ../cal-print.pdf')
+        os.chdir(os.path.dirname(os.path.realpath(__file__)))
+
+        if removePdfs:
+            path2 = os.path.join(Dir, self.name)
+            os.chdir(f"{path2}")
+            os.system(f'rm -r pages')
+            os.chdir(os.path.dirname(os.path.realpath(__file__)))
+
+            print('pdfs removed')
