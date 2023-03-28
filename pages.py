@@ -664,7 +664,6 @@ class WeekPage(LinePage):
                         txt = etTemp
                     else:
                         txt = " ".join(etTemp.split(" ")[1:])
-                    print(txt)
                     et.append(txt)
                     etTemp2 = etTemp2[:(-1*len(txt))]
             else:
