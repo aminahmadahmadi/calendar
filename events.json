@@ -351,7 +351,7 @@
         },
         {
             "category": "UnitedNations",
-            "occasion": "روز بين‌المللی رفع تبعيض نژادی",
+            "occasion": "روز بین‌المللی رفع تبعیض نژادی",
             "dayoff": false,
             "year": null
         },
@@ -1021,7 +1021,7 @@
     }],
     "wc-5-15": [{
         "category": "UnitedNations",
-        "occasion": "روز بين‌المللی خانواده‌ها",
+        "occasion": "روز بین‌المللی خانواده‌ها",
         "dayoff": false,
         "year": null
     }],
@@ -2323,7 +2323,7 @@
     }],
     "sh-9-6": [{
         "category": "victims",
-        "occasion": "به قتل رسیدن «رضا کاظمی»، «رضا کاظمی» توسط جمهوری اسلامی",
+        "occasion": "به قتل رسیدن «رضا کاظمی» توسط جمهوری اسلامی",
         "dayoff": false,
         "year": 1401
     }],
