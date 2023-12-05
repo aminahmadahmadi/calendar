@@ -4,7 +4,7 @@ import json
 
 
 class Calendar(Notebook):
-    def __init__(self, daysJsonPath, **kwargs) -> None:
+    def __init__(self, daysJsonPath, startDate, **kwargs) -> None:
         super().__init__(**kwargs)
         # general
         self.name = kwargs.get('name', 'Untitle-Calendar')
@@ -19,6 +19,7 @@ class Calendar(Notebook):
         self.divider = kwargs.get('divider', ' / ')
         self.sentence = kwargs.get('sentence', [])
         self.personalEvents = kwargs.get('personalEvents', {})
+        self.startDate = startDate
 
         # design
         self.layout = kwargs.get('layout', 'left')
@@ -122,14 +123,13 @@ class Calendar(Notebook):
 
     def weekKeys(self, weekNo):
         keys = list(self.daysJson.keys())
-        for dayNo in range(7):
-            # if self.daysJson[keys[dayNo]]['wc']['weekday'][0] == self.startWeekday:
-            wd = str(self.daysJson[keys[dayNo]]['weekday'])
-            if self.calNamesJson['wc']['weekday-short'][wd] == self.startWeekday:
-                keys = keys[dayNo:]
-                break
 
-        return keys[(weekNo-1)*7:weekNo*7]
+        for dayNo in range(10000):
+            wd = str(self.daysJson[keys[dayNo]]['weekday'])
+            if self.calNamesJson['wc']['weekday-short'][wd] == self.startWeekday and self.startDate in keys[dayNo:dayNo+7]:
+                newkeys = keys[dayNo:]
+                break
+        return newkeys[(weekNo-1)*7:weekNo*7]
 
     def addWeekPage(self, weekNo):
         page = WeekPage(weekNo, self.weekKeys(weekNo), **self.__dict__)
