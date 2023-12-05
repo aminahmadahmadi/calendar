@@ -185,17 +185,18 @@ class Notebook():
     def toPrintPDF(self, Dir='', loopPaper=5, removeSvgs=True, removePdfs=True):
         self.toPDF(Dir, removeSvgs=removeSvgs, removePdfs=False)
 
-        names = []
-        for d in range(0, len(self.pages)-1, loopPaper*4):
-            for i in range(0, loopPaper*2, 2):
-                for p in [d+loopPaper*4-i-1, d+i, d+i+1, d+loopPaper*4-i-2]:
-                    names.append(f'p{p:03}.pdf')
+        if loopPaper > 0:
+            names = []
+            for d in range(0, len(self.pages)-1, loopPaper*4):
+                for i in range(0, loopPaper*2, 2):
+                    for p in [d+loopPaper*4-i-1, d+i, d+i+1, d+loopPaper*4-i-2]:
+                        names.append(f'p{p:03}.pdf')
 
-        path = os.path.join(Dir, self.name, 'pages')
-        os.chdir(f"{path}")
-        name = " ".join(names)
-        os.system(f'pdfunite {name} ../cal-print.pdf')
-        os.chdir(os.path.dirname(os.path.realpath(__file__)))
+            path = os.path.join(Dir, self.name, 'pages')
+            os.chdir(f"{path}")
+            name = " ".join(names)
+            os.system(f'pdfunite {name} ../cal-print.pdf')
+            os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
         if removePdfs:
             path2 = os.path.join(Dir, self.name)

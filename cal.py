@@ -15,7 +15,7 @@ class Calendar(Notebook):
         self.readEventJson()
         self.readCalNamesJson()
         self.startWeekday = kwargs.get('startWeekday', 'Sat')
-        self.weekend = kwargs.get('weekend', 0)
+        self.weekend = kwargs.get('weekend', [])
         self.divider = kwargs.get('divider', ' / ')
         self.sentence = kwargs.get('sentence', [])
         self.personalEvents = kwargs.get('personalEvents', {})

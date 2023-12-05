@@ -231,7 +231,7 @@ class WeekPage(LinePage):
         self.layout = kwargs.get('layout', 'left')
         self.daysHeight = kwargs.get('daysHeight', 4)
         self.lineShiftDown = kwargs.get('lineShiftDown', 0)
-        self.weekend = kwargs.get('weekend', 0)
+        self.weekend = kwargs.get('weekend', [])
         self.iconSize = kwargs.get('iconSize', self.lineHeight*0.8)
 
         # font style
@@ -410,7 +410,7 @@ class WeekPage(LinePage):
             for e in events:
                 if e["dayoff"] == True:
                     holiday = True
-            if i > 6-self.weekend:
+            if i in self.weekend:
                 holiday = True
 
             # text of cal
@@ -1086,7 +1086,7 @@ class OneYearPage(LinePageWithTitle):
         self.calNamesJson = kwargs.get('calNamesJson', '')
         self.year = year
         self.startWeekday = kwargs.get('startWeekday', 'Sat')
-        self.weekend = kwargs.get('weekend', 0)
+        self.weekend = kwargs.get('weekend', [])
         self.secondColor = kwargs.get('secondColor', '#ddd')
 
         self.holidays = []
@@ -1214,7 +1214,8 @@ class OneYearPage(LinePageWithTitle):
             x = xLeft + w - colWidth * (a + 1.5)
             y = yTop + lineHeight * (b + 0.5) + calH/2
 
-            isHoliday = (date_ in self.holidays) or (b > 6-self.weekend)
+            isHoliday = (date_ in self.holidays) or (
+                day['weekday'] in self.weekend)
 
             self.pages[loc].addText(
                 x,
