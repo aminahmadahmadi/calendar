@@ -15,7 +15,7 @@ previewProperty = {
 }
 
 example = {
-    'width': 130,
+    'width': 160,
     'name': 'UntitleCalendar',
     'sentence': [
         'Lorem ipsum dolor sit amet,',
@@ -25,36 +25,38 @@ example = {
     'padding': [25, 0, 9, 0],
     'lineHeight': 5,
     'daysHeight': 5,
-    'showWeekdays': True,
-    'weekend': 1,
+    'showWeekdays': False,
+    'weekend': [6],
     'secondColor': '#f00',
     'personalEvents': {
-        '1401-10-30': {'icon': 'fire'},
-        '1401-10-18': {'icon': 'plane'},
-        '1401-10-16': {'icon': 'ship'},
-        '1401-08-25': {'icon': 'internet'},
-        '1401-08-24': {'icon': 'hand'},
-        '1401-10-07': {'icon': 'hand'},
-        '1401-04-24': {'icon': 'hand'},
-        '1401-12-23': {'icon': 'pi'},
-        '1401-11-25': {'icon': 'heart'},
+        '1403-10-30': {'icon': 'fire'},
+        '1403-10-30': {'icon': 'fire'},
+        '1403-10-18': {'icon': 'plane'},
+        '1403-10-16': {'icon': 'ship'},
+        '1403-8-25': {'icon': 'internet'},
+        '1403-8-24': {'icon': 'hand'},
+        '1403-10-7': {'icon': 'hand'},
+        '1403-4-24': {'icon': 'hand'},
+        '1403-12-23': {'icon': 'pi'},
+        '1403-11-25': {'icon': 'heart'},
     }
 }
 
-newBook = Calendar('1402.json',
-                   **previewProperty,
+newBook = Calendar('data.json',
+                   startDate='1403-1-1',
+                   ** previewProperty,
                    **example
                    )
 
-newBook.addFirstPage(years=['1402', '2023 - 2024', '1445 - 1444'],
-                     turnOfYear=['سه‌شنبه ۱ فروردین ۱۴۰۲', 'ساعت ۰۰:۵۴:۲۸'])
+newBook.addFirstPage(years=['1403', '2024 - 2025', '1446 - 1445'],
+                     turnOfYear=['چهارشنبه ۱ فروردین ۱۴۰۳', 'ساعت ۰۶:۳۶:۲۶'])
 
 newBook.addLinePage()
-newBook.addChecklistPage(title='اهداف سال ۱۴۰۲',
+newBook.addChecklistPage(title='اهداف سال ۱۴۰۳',
                          pattern='01', checkboxscale=0.6)
 
-newBook.addOneYearPage()
-newBook.addHolidaysPage(year=1402, title='تعطیلات رسمی ۱۴۰۲')
+newBook.addOneYearPage(year=1403)
+newBook.addHolidaysPage(year=1403, title='تعطیلات رسمی ۱۴۰۳')
 
 for i in range(53):
     newBook.addLinePage()
