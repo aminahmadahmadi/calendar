@@ -62,8 +62,8 @@ class Notebook():
         page = ChecklistPage(**self.__dict__, **kwargs)
         self.pages.append(page)
 
-    def addOneYearPage(self, **kwargs):
-        page = OneYearPage(**self.__dict__, **kwargs)
+    def addOneYearPage(self, year, title='', **kwargs):
+        page = OneYearPage(year, title, **self.__dict__, **kwargs)
         self.pages.append(page)
 
     def toHTML(self, Dir=''):

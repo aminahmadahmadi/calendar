@@ -1,4 +1,4 @@
-from aaaSvg import Svg
+﻿from aaaSvg import Svg
 from replaceText import perNo, arbNo
 
 
@@ -851,7 +851,7 @@ class ChecklistPage(LinePageWithTitle):
 
 
 class FirstPage(LinePage):
-    def __init__(self, name='John Smith', sentence=[], years=['1401', '2022 - 2023', '1444 - 1443'], turnOfYear=['یک شنبه ۲۹ اسفندماه ۱۴۰۰', 'ساعت ۱۹:۰۳:۲۶'], **kwargs) -> None:
+    def __init__(self, years, turnOfYear, name, sentence=[], **kwargs) -> None:
         super().__init__(name, **kwargs)
 
         self.sentence = sentence
@@ -1004,7 +1004,7 @@ class FirstPage(LinePage):
 
 
 class HolidaysPage(LinePageWithTitle):
-    def __init__(self, year=1401, shiftDownHolidays=1, title='تعطیلات رسمی ۱۴۰۱', name='Untitle-LinePage', **kwargs) -> None:
+    def __init__(self, year, title, shiftDownHolidays=1, name='Untitle-LinePage', **kwargs) -> None:
         super().__init__(title, name, **kwargs)
         self.daysJson = kwargs.get('daysJson', '')
         self.eventJson = kwargs.get('eventJson', '')
@@ -1121,7 +1121,7 @@ class HolidaysPage(LinePageWithTitle):
 
 
 class OneYearPage(LinePageWithTitle):
-    def __init__(self, year=1402, title='سال ۱۴۰۲', name='Untitle-LinePage', **kwargs) -> None:
+    def __init__(self, year, title, name='Untitle-LinePage', **kwargs) -> None:
         super().__init__(title, name, **kwargs)
         self.daysJson = kwargs.get('daysJson', '')
         self.eventJson = kwargs.get('eventJson', '')

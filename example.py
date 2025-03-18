@@ -55,7 +55,7 @@ newBook.addLinePage()
 newBook.addChecklistPage(title='اهداف سال ۱۴۰۳',
                          pattern='01', checkboxscale=0.6)
 
-newBook.addOneYearPage(year=1403)
+newBook.addOneYearPage(year=1403, title='سال ۱۴۰۲')
 newBook.addHolidaysPage(year=1403, title='تعطیلات رسمی ۱۴۰۳')
 
 for i in range(53):
