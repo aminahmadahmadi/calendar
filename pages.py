@@ -1,4 +1,4 @@
-﻿from aaaSvg import Svg
+from aaaSvg import Svg
 from replaceText import perNo, arbNo
 
 
@@ -339,35 +339,42 @@ class WeekPage(LinePage):
     def addFirstCal(self, loc):
         calID = self.calendarOrder[0]
 
+        font = ' '.join([self.fontFamily, self.fontWeight.get("firstCal", "")]).strip()  # nopep8
         self.pages[loc].addStyle(
             'firstCal',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{self.fontFamily} {self.fontWeight.get("firstCal","")}";'
+            f'font-family:"{font}";'
             f'font-size:{self.fontSize.get("firstCal", self.lineHeight * self.daysHeight * 2)/self.scale}px;'
             'text-anchor:middle;'
         )
+
+        font = ' '.join([self.fontFamily, self.fontWeight.get("holiday", "")]).strip()  # nopep8
         self.pages[loc].addStyle(
             'holiday',
             f'fill:{self.secondColor};'
             f'stroke:None;'
-            f'font-family:"{self.fontFamily} {self.fontWeight.get("holiday","")}";'
+            f'font-family:"{font}";'
             f'font-size:{self.fontSize.get("holiday", self.lineHeight * self.daysHeight * 2)/self.scale}px;'
             'text-anchor:middle;'
         )
+
+        font = ' '.join([self.fontFamily, self.fontWeight.get("firstCalWeekdays", "")]).strip()  # nopep8
         self.pages[loc].addStyle(
             'firstCalWeekdays',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{self.fontFamily} {self.fontWeight.get("firstCalWeekdays","")}";'
+            f'font-family:"{font}";'
             f'font-size:{self.fontSize.get("firstCalWeekdays", 8)/self.scale}px;'
             'text-anchor:middle;'
         )
+
+        font = ' '.join([self.fontFamily, self.fontWeight.get("firstCalWeekdaysHoliday", "")]).strip()  # nopep8
         self.pages[loc].addStyle(
             'firstCalWeekdaysHoliday',
             f'fill:{self.secondColor};'
             f'stroke:None;'
-            f'font-family:"{self.fontFamily} {self.fontWeight.get("firstCalWeekdaysHoliday","")}";'
+            f'font-family:"{font}";'
             f'font-size:{self.fontSize.get("firstCalWeekdaysHoliday", 8)/self.scale}px;'
             'text-anchor:middle;'
         )
@@ -456,11 +463,13 @@ class WeekPage(LinePage):
         }
         # print('addPersonalEvents(', loc, ')')
         startAnchor = self.layout == "left"
+
+        font = ' '.join([self.fontFamily, self.fontWeight.get("personalEvents", "")]).strip()  # nopep8
         self.pages[loc].addStyle(
             'personalEvents',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{self.fontFamily} {self.fontWeight.get("personalEvents","Regular")}";'
+            f'font-family:"{font}";'
             f'font-size:{self.fontSize.get("personalEvents", 7)/self.scale}px;'
             f'text-anchor:{"start" if startAnchor else "end"};'
             'direction:rtl;'
@@ -537,11 +546,14 @@ class WeekPage(LinePage):
         if not self.showTime:
             return
 
+        font = ' '.join([self.fontFamily, self.fontWeight.get("time", "")]).strip()  # nopep8
+
         self.pages[loc].addStyle(
             'time',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{self.fontFamily} {self.fontWeight.get("time","")}";'
+
+            f'font-family:"{font}";'
             f'font-size:{self.fontSize.get("time", 5)/self.scale}px;'
             'text-anchor:middle;'
         )
@@ -591,11 +603,13 @@ class WeekPage(LinePage):
 
         try:
             startAnchor = (self.layout == "right") ^ (calID == "wc")
+
+            font = ' '.join([self.fontFamily, self.fontWeight.get(order, "")]).strip()  # nopep8
             self.pages[loc].addStyle(
                 order,
                 f'fill:{self.primaryColor};'
                 f'stroke:None;'
-                f'font-family:"{self.fontFamily} {self.fontWeight.get(order,"")}";'
+                f'font-family:"{font}";'
                 f'font-size:{self.fontSize.get(order, 8)/self.scale}px;'
                 f'text-anchor:{"start" if startAnchor else "end"};'
                 f'direction:{"ltr" if calID=="wc" else "rtl"};'
@@ -631,11 +645,13 @@ class WeekPage(LinePage):
         self.addOtherCal(loc, 'thirdCal')
 
     def addEventOfDays(self, loc):
+
+        font = ' '.join([self.fontFamily, self.fontWeight.get("events", "")]).strip()  # nopep8
         self.pages[loc].addStyle(
             'events',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{self.fontFamily} {self.fontWeight.get("events","")}";'
+            f'font-family:"{font}";'
             f'font-size:{self.fontSize.get("events", 5)/self.scale}px;'
             'text-anchor:start;'
             'direction: rtl;'
@@ -696,11 +712,13 @@ class WeekPage(LinePage):
                 )
 
     def addMonthandWeek(self, loc):
+
+        font = ' '.join([self.fontFamily, self.fontWeight.get("monthAndWeek", "")]).strip()  # nopep8
         self.pages[loc].addStyle(
             'monthAndWeek',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{self.fontFamily} {self.fontWeight.get("monthAndWeek","")}";'
+            f'font-family:"{font}";'
             f'font-size:{self.fontSize.get("monthAndWeek", 8)/self.scale}px;'
             f'text-anchor:{"end" if self.layout=="left" else "start"};'
             'direction: rtl;'
@@ -763,11 +781,13 @@ class LinePageWithTitle(LinePage):
             self.addTitle(loc)
 
     def addTitle(self, loc):
+
+        font = ' '.join([self.fontFamily, self.fontWeight.get("monthAndWeek", "")]).strip()  # nopep8
         self.pages[loc].addStyle(
             'titleofpage',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{self.fontFamily} {self.fontWeight.get("monthAndWeek","")}";'
+            f'font-family:"{font}";'
             f'font-size:{self.fontSize.get("monthAndWeek", 8)/self.scale}px;'
             'text-anchor:start;'
             'direction:rtl;'
@@ -859,27 +879,33 @@ class FirstPage(LinePage):
 
     def addYears(self, loc):
         first, second, third = tuple(self.years)
+
+        font = ' '.join([self.fontFamily, self.fontWeight.get("firstPageTitle", "")]).strip()  # nopep8
         self.pages[loc].addStyle(
             'firstInfo',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{self.fontFamily} {self.fontWeight.get("firstPageTitle","")}";'
+            f'font-family:"{font}";'
             f'font-size:{self.fontSize.get("firstPageTitle", self.lineHeight*self.daysHeight*4)/self.scale}px;'
             f'text-anchor:{"start" if loc=="left" else "end"};'
         )
+
+        font = ' '.join([self.fontFamily, self.fontWeight.get("firstPageOther", "")]).strip()  # nopep8
         self.pages[loc].addStyle(
             'secondInfo',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{self.fontFamily} {self.fontWeight.get("firstPageOther","")}";'
+            f'font-family:"{font}";'
             f'font-size:{self.fontSize.get("firstPageOther", 9)/self.scale}px;'
             f'text-anchor:{"start" if loc=="left" else "end"};'
         )
+
+        font = ' '.join([self.fontFamily, self.fontWeight.get("turnOfYear", "")]).strip()  # nopep8
         self.pages[loc].addStyle(
             'turnOfYear',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{self.fontFamily} {self.fontWeight.get("turnOfYear","")}";'
+            f'font-family:"{font}";'
             f'font-size:{self.fontSize.get("turnOfYear", 7)/self.scale}px;'
             f'text-anchor:{"start" if loc=="right" else "end"};'
             'direction:rtl;'
@@ -925,20 +951,24 @@ class FirstPage(LinePage):
             )
 
     def addNameSentence(self, loc):
+
+        font = ' '.join([self.fontFamily, self.fontWeight.get("name", "")]).strip()  # nopep8
         self.pages[loc].addStyle(
             'name',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{self.fontFamily} {self.fontWeight.get("name","")}";'
+            f'font-family:"{font}";'
             f'font-size:{self.fontSize.get("name", 79)/self.scale}px;'
             f'text-anchor:{"start" if loc=="right" else "end"};'
             'direction:rtl;'
         )
+
+        font = ' '.join([self.fontFamily, self.fontWeight.get("sentence", "")]).strip()  # nopep8
         self.pages[loc].addStyle(
             'sentence',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{self.fontFamily} {self.fontWeight.get("sentence","")}";'
+            f'font-family:"{font}";'
             f'font-size:{self.fontSize.get("sentence", 9)/self.scale}px;'
             f'text-anchor:{"start" if loc=="right" else "end"};'
             'direction:rtl;'
@@ -1006,30 +1036,32 @@ class HolidaysPage(LinePageWithTitle):
             self.addHolidays(loc)
 
     def addHolidays(self, loc):
-
+        font = ' '.join([self.fontFamily, self.fontWeight.get("holidaysPage", "")]).strip()  # nopep8
         self.pages[loc].addStyle(
             'holiday',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{self.fontFamily} {self.fontWeight.get("holidaysPage","")}";'
+            f'font-family:"{font}";'
             f'font-size:{self.fontSize.get("holidaysPage", 7)/self.scale}px;'
             'text-anchor:start;'
             'direction:rtl;'
         )
+        font = ' '.join([self.fontFamily, self.fontWeight.get("holidaysPage", "")]).strip()  # nopep8
         self.pages[loc].addStyle(
             'holiday',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{self.fontFamily} {self.fontWeight.get("holidaysPage","")}";'
+            f'font-family:"{font}";'
             f'font-size:{self.fontSize.get("holidaysPage", 7)/self.scale}px;'
             'text-anchor:start;'
             'direction:rtl;'
         )
+        font = ' '.join([self.fontFamily, self.fontWeight.get("holidaysPageNo", "")]).strip()  # nopep8
         self.pages[loc].addStyle(
             'holidayNo',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{self.fontFamily} {self.fontWeight.get("holidaysPageNo","")}";'
+            f'font-family:"{font}";'
             f'font-size:{self.fontSize.get("holidaysPageNo", 7)/self.scale}px;'
             'text-anchor:middle;'
             'direction:rtl;'
@@ -1125,29 +1157,35 @@ class OneYearPage(LinePageWithTitle):
             self.addMonths(loc)
 
     def addMonths(self, loc):
+
+        font = ' '.join([self.fontFamily, self.fontWeight.get("onePageYear", "")]).strip()  # nopep8
         self.pages[loc].addStyle(
             'onePageYear',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{self.fontFamily} {self.fontWeight.get("onePageYear","")}";'
+            f'font-family:"{font}";'
             f'font-size:{self.fontSize.get("onePageYear", 7)/self.scale}px;'
             'text-anchor:middle;'
             'direction:rtl;'
         )
+
+        font = ' '.join([self.fontFamily, self.fontWeight.get("onePageYearHolidays", "")]).strip()  # nopep8
         self.pages[loc].addStyle(
             'onePageYearHolidays',
             f'fill:{self.secondColor};'
             f'stroke:None;'
-            f'font-family:"{self.fontFamily} {self.fontWeight.get("onePageYearHolidays","")}";'
+            f'font-family:"{font}";'
             f'font-size:{self.fontSize.get("onePageYearHolidays", 7)/self.scale}px;'
             'text-anchor:middle;'
             'direction:rtl;'
         )
+
+        font = ' '.join([self.fontFamily, self.fontWeight.get("onePageYearMonth", "")]).strip()  # nopep8
         self.pages[loc].addStyle(
             'onePageYearMonth',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{self.fontFamily} {self.fontWeight.get("onePageYearMonth","")}";'
+            f'font-family:"{font}";'
             f'font-size:{self.fontSize.get("onePageYearMonth", 7)/self.scale}px;'
             'text-anchor:start;'
             'direction:rtl;'
