@@ -236,6 +236,7 @@ class WeekPage(LinePage):
 
         # font style
         self.fontHeightScl = kwargs.get('fontHeightScl', 0.66)
+        self.fontWidthScl = kwargs.get('fontWidthScl', 7.2)
         self.fontFamily = kwargs.get('fontFamily', 'Anjoman')
         self.fontWeight = kwargs.get('fontWeight', {})
         self.fontSize = kwargs.get('fontSize', {})
@@ -675,7 +676,7 @@ class WeekPage(LinePage):
             textArea = self.width - \
                 self.padding['inside']-self.padding['outside'] - \
                 self.lineHeight*(1+self.daysHeight)
-            l = int(7.2 * (textArea) / self.fontSize['events'])
+            l = int(self.fontWidthScl * (textArea) / self.fontSize['events'])
             eventList = list(map(lambda e: e['occasion'], events))
             eventText = self.divider.join(eventList)
             et = []
