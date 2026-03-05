@@ -136,8 +136,9 @@ class Calendar(Notebook):
         page = WeekPage(weekNo, self.weekKeys(weekNo), **self.__dict__)
         self.pages.append(page)
 
-    def addFirstPage(self, years, turnOfYear, **kwargs):
-        page = FirstPage(years, turnOfYear, **self.__dict__, **kwargs)
+    def addFirstPage(self, years, turnOfYear, translateX=0, **kwargs):
+        page = FirstPage(years, turnOfYear,
+                         translateX=translateX, **self.__dict__, **kwargs)
         self.pages.append(page)
 
     def addHolidaysPage(self, year, title, **kwargs):

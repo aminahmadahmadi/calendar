@@ -853,7 +853,7 @@ class ChecklistPage(LinePageWithTitle):
 
 
 class FirstPage(LinePage):
-    def __init__(self, years, turnOfYear, name, sentence=[], **kwargs) -> None:
+    def __init__(self, years, turnOfYear, name, sentence=[], translateX=0, **kwargs) -> None:
         super().__init__(name, **kwargs)
 
         self.sentence = sentence
@@ -870,6 +870,8 @@ class FirstPage(LinePage):
         self.fontSize = kwargs.get('fontSize', {})
 
         self.daysHeight = kwargs.get('daysHeight', 4)
+
+        self.dx = translateX
 
     def makePages(self):
         for loc in ['right', 'left']:
@@ -922,21 +924,21 @@ class FirstPage(LinePage):
             self.lineHeight*self.daysHeight*0.9
 
         self.pages[loc].addText(
-            x-self.lineHeight * self.daysHeight / 7,
+            self.dx+x-self.lineHeight * self.daysHeight / 7,
             y,
             perNo(first),
             transform=f'scale({self.scale})',
             class_='firstInfo'
         )
         self.pages[loc].addText(
-            x,
+            self.dx+x,
             y+self.lineHeight*1.2,
             second,
             transform=f'scale({self.scale})',
             class_='secondInfo'
         )
         self.pages[loc].addText(
-            x,
+            self.dx+x,
             y+self.lineHeight*2,
             arbNo(third),
             transform=f'scale({self.scale})',
@@ -945,7 +947,7 @@ class FirstPage(LinePage):
 
         for i in range(len(self.turnOfYear)):
             self.pages[loc].addText(
-                x,
+                self.dx+x,
                 y+self.lineHeight*(5+0.1*self.fontSize.get("turnOfYear", 7)*i),
                 perNo(self.turnOfYear[i]),
                 transform=f'scale({self.scale})',
@@ -986,7 +988,7 @@ class FirstPage(LinePage):
             (len(self.sentence)+3)*self.lineHeight
 
         self.pages[loc].addText(
-            x,
+            self.dx+x,
             y,
             perNo(self.name),
             transform=f'scale({self.scale})',
@@ -997,7 +999,7 @@ class FirstPage(LinePage):
         for line in self.sentence:
             y += self.lineHeight
             self.pages[loc].addText(
-                x,
+                self.dx+x,
                 y,
                 perNo(line),
                 transform=f'scale({self.scale})',
