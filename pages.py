@@ -248,6 +248,7 @@ class WeekPage(LinePage):
         # Data show
         self.calendarOrder = kwargs.get('calendarOrder', ['sh', 'wc', 'ic'])
         self.showEvents = kwargs.get('showEvents', True)
+        self.showHolidays = kwargs.get('showHolidays', True)
         self.showWeekdays = kwargs.get('showWeekdays', False)
         self.showFullCalendar = kwargs.get('showFullCalendar', False)
         self.showWeekNo = kwargs.get('showWeekNo', True)
@@ -402,22 +403,22 @@ class WeekPage(LinePage):
 
             # holiday style
             holiday = False
+            if self.showHolidays:
+                todaySh = self.daysJson[dayKey]["sh"]
+                todayIc = self.daysJson[dayKey]["ic"]
+                todayWc = self.daysJson[dayKey]["wc"]
 
-            todaySh = self.daysJson[dayKey]["sh"]
-            todayIc = self.daysJson[dayKey]["ic"]
-            todayWc = self.daysJson[dayKey]["wc"]
+                events = []
+                events += self.eventJson.get(
+                    f"sh-{todaySh[1]}-{todaySh[2]}", [])
+                events += self.eventJson.get(
+                    f"ic-{todayIc[1]}-{todayIc[2]}", [])
+                events += self.eventJson.get(
+                    f"wc-{todayWc[1]}-{todayWc[2]}", [])
 
-            events = []
-            events += self.eventJson.get(
-                f"sh-{todaySh[1]}-{todaySh[2]}", [])
-            events += self.eventJson.get(
-                f"ic-{todayIc[1]}-{todayIc[2]}", [])
-            events += self.eventJson.get(
-                f"wc-{todayWc[1]}-{todayWc[2]}", [])
-
-            for e in events:
-                if e["dayoff"] == True:
-                    holiday = True
+                for e in events:
+                    if e["dayoff"] == True:
+                        holiday = True
             if i in self.weekend:
                 holiday = True
 
@@ -1131,26 +1132,28 @@ class OneYearPage(LinePageWithTitle):
         self.startWeekday = kwargs.get('startWeekday', 'Sat')
         self.weekend = kwargs.get('weekend', [])
         self.secondColor = kwargs.get('secondColor', '#ddd')
+        self.showHolidays = kwargs.get('showHolidays', True)
 
         self.holidays = []
-        for day in self.daysJson.keys():
-            if self.daysJson[day]['sh'][0] == year:
-                todaySh = self.daysJson[day]["sh"]
-                todayIc = self.daysJson[day]["ic"]
-                todayWc = self.daysJson[day]["wc"]
+        if self.showHolidays:
+            for day in self.daysJson.keys():
+                if self.daysJson[day]['sh'][0] == year:
+                    todaySh = self.daysJson[day]["sh"]
+                    todayIc = self.daysJson[day]["ic"]
+                    todayWc = self.daysJson[day]["wc"]
 
-                events = []
-                events += self.eventJson.get(
-                    f"sh-{todaySh[1]}-{todaySh[2]}", [])
-                events += self.eventJson.get(
-                    f"ic-{todayIc[1]}-{todayIc[2]}", [])
-                events += self.eventJson.get(
-                    f"wc-{todayWc[1]}-{todayWc[2]}", [])
+                    events = []
+                    events += self.eventJson.get(
+                        f"sh-{todaySh[1]}-{todaySh[2]}", [])
+                    events += self.eventJson.get(
+                        f"ic-{todayIc[1]}-{todayIc[2]}", [])
+                    events += self.eventJson.get(
+                        f"wc-{todayWc[1]}-{todayWc[2]}", [])
 
-                for e in events:
-                    if e['dayoff'] == True:
-                        self.holidays.append(day)
-                        break
+                    for e in events:
+                        if e['dayoff'] == True:
+                            self.holidays.append(day)
+                            break
 
     def makePages(self):
         super().makePages()

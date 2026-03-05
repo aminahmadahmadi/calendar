@@ -30,6 +30,7 @@ class Calendar(Notebook):
         # Data show
         self.calendarOrder = kwargs.get('calendarOrder', ['sh', 'wc', 'ic'])
         self.showEvents = kwargs.get('showEvents', True)
+        self.showHolidays = kwargs.get('showHolidays', True)
         self.showWeekdays = kwargs.get('showWeekdays', False)
         self.showFullCalendar = kwargs.get('showFullCalendar', False)
         self.showWeekNo = kwargs.get('showWeekNo', True)
