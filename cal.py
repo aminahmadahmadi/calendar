@@ -38,6 +38,7 @@ class Calendar(Notebook):
 
         # font style
         self.fontHeightScl = kwargs.get('fontHeightScl', 0.67)
+        self.fontWidthScl = kwargs.get('fontWidthScl', 7.2)
         self.fontFamily = kwargs.get('fontFamily', 'Anjoman')
 
         fontWeight = kwargs.get('fontWeight', {})
