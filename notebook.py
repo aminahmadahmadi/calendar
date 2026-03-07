@@ -74,7 +74,7 @@ class Notebook():
             os.mkdir(os.path.join(Dir, self.name, 'pages'))
 
         _direction = "rtl" if self.rtl else "ltr"
-        htmlTxt = f'<html>\n<head>\n<style>\nhtml,body{{margin:0;padding:0;direction:{_direction};}}\n</style>\n</head>\n<body>\n'
+        htmlTxt = f'<html>\n<head>\n<style>\nhtml,body{{margin:0;padding:0;direction:{_direction};}}\nbody{{display:flex;flex-wrap:wrap;}}\n</style>\n</head>\n<body>\n'
         for i in range(len(self.pages)):
             if i % 2 == 0 ^ self.rtl:
                 pageDir = 'right'
@@ -107,7 +107,7 @@ class Notebook():
             os.mkdir(os.path.join(Dir, self.name, 'pages'))
 
         _direction = "rtl" if self.rtl else "ltr"
-        htmlTxt = f'<html>\n<head>\n<style>\nhtml,body{{margin:0;padding:0;direction:{_direction};}}\n</style>\n</head>\n<body>\n'
+        htmlTxt = f'<html>\n<head>\n<style>\nhtml,body{{margin:0;padding:0;direction:{_direction};}}\nbody{{display:flex;flex-wrap:wrap;}}\n</style>\n</head>\n<body>\n'
 
         for i in range(len(self.pages)):
             if i % 2 == 0 ^ self.rtl:
