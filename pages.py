@@ -1135,6 +1135,7 @@ class OneYearPage(LinePageWithTitle):
         self.weekend = kwargs.get('weekend', [])
         self.secondColor = kwargs.get('secondColor', '#ddd')
         self.showHolidays = kwargs.get('showHolidays', True)
+        self.xPadding = kwargs.get('xPadding', 2)
 
         self.holidays = []
         if self.showHolidays:
@@ -1196,7 +1197,7 @@ class OneYearPage(LinePageWithTitle):
             'text-anchor:start;'
             'direction:rtl;'
         )
-        xLeft, xRight = self.xloc(loc, 2*self.lineHeight)
+        xLeft, xRight = self.xloc(loc, self.xPadding*self.lineHeight)
         yTop = self.margin['top']+self.padding['top']
         yBottom = self.margin['top'] + self.height - self.padding['bottom']
 
