@@ -40,6 +40,7 @@ class Calendar(Notebook):
         self.fontHeightScl = kwargs.get('fontHeightScl', 0.67)
         self.fontWidthScl = kwargs.get('fontWidthScl', 7.2)
         self.fontFamily = kwargs.get('fontFamily', 'Anjoman')
+        self.backupFonts = kwargs.get('backupFonts', 'vazirmatn')
 
         fontWeight = kwargs.get('fontWeight', {})
         defaultFontWeight = {

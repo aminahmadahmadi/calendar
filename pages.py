@@ -238,6 +238,7 @@ class WeekPage(LinePage):
         self.fontHeightScl = kwargs.get('fontHeightScl', 0.66)
         self.fontWidthScl = kwargs.get('fontWidthScl', 7.2)
         self.fontFamily = kwargs.get('fontFamily', 'Anjoman')
+        self.backupFonts = kwargs.get('backupFonts', 'vazirmatn')
         self.fontWeight = kwargs.get('fontWeight', {})
         self.fontSize = kwargs.get('fontSize', {})
 
@@ -346,7 +347,7 @@ class WeekPage(LinePage):
             'firstCal',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("firstCal", self.lineHeight * self.daysHeight * 2)/self.scale}px;'
             'text-anchor:middle;'
         )
@@ -356,7 +357,7 @@ class WeekPage(LinePage):
             'holiday',
             f'fill:{self.secondColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("holiday", self.lineHeight * self.daysHeight * 2)/self.scale}px;'
             'text-anchor:middle;'
         )
@@ -366,7 +367,7 @@ class WeekPage(LinePage):
             'firstCalWeekdays',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("firstCalWeekdays", 8)/self.scale}px;'
             'text-anchor:middle;'
         )
@@ -376,7 +377,7 @@ class WeekPage(LinePage):
             'firstCalWeekdaysHoliday',
             f'fill:{self.secondColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("firstCalWeekdaysHoliday", 8)/self.scale}px;'
             'text-anchor:middle;'
         )
@@ -471,7 +472,7 @@ class WeekPage(LinePage):
             'personalEvents',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("personalEvents", 7)/self.scale}px;'
             f'text-anchor:{"start" if startAnchor else "end"};'
             'direction:rtl;'
@@ -541,7 +542,7 @@ class WeekPage(LinePage):
             f'fill:{self.primaryColor};'
             f'stroke:None;'
 
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("time", 5)/self.scale}px;'
             'text-anchor:middle;'
         )
@@ -597,7 +598,7 @@ class WeekPage(LinePage):
                 order,
                 f'fill:{self.primaryColor};'
                 f'stroke:None;'
-                f'font-family:"{font}";'
+                f'font-family:"{font}",{self.backupFonts};'
                 f'font-size:{self.fontSize.get(order, 8)/self.scale}px;'
                 f'text-anchor:{"start" if startAnchor else "end"};'
                 f'direction:{"ltr" if calID=="wc" else "rtl"};'
@@ -639,7 +640,7 @@ class WeekPage(LinePage):
             'events',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("events", 5)/self.scale}px;'
             'text-anchor:start;'
             'direction: rtl;'
@@ -706,7 +707,7 @@ class WeekPage(LinePage):
             'monthAndWeek',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("monthAndWeek", 8)/self.scale}px;'
             f'text-anchor:{"end" if self.layout=="left" else "start"};'
             'direction: rtl;'
@@ -760,6 +761,7 @@ class LinePageWithTitle(LinePage):
         # font style
         self.fontHeightScl = kwargs.get('fontHeightScl', 0.66)
         self.fontFamily = kwargs.get('fontFamily', 'Anjoman')
+        self.backupFonts = kwargs.get('backupFonts', 'vazirmatn')
         self.fontWeight = kwargs.get('fontWeight', {})
         self.fontSize = kwargs.get('fontSize', {})
 
@@ -775,7 +777,7 @@ class LinePageWithTitle(LinePage):
             'titleofpage',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("monthAndWeek", 8)/self.scale}px;'
             'text-anchor:start;'
             'direction:rtl;'
@@ -852,6 +854,7 @@ class FirstPage(LinePage):
         # font style
         self.fontHeightScl = kwargs.get('fontHeightScl', 0.66)
         self.fontFamily = kwargs.get('fontFamily', 'Anjoman')
+        self.backupFonts = kwargs.get('backupFonts', 'vazirmatn')
         self.fontWeight = kwargs.get('fontWeight', {})
         self.fontSize = kwargs.get('fontSize', {})
 
@@ -875,7 +878,7 @@ class FirstPage(LinePage):
             'firstInfo',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("firstPageTitle", self.lineHeight*self.daysHeight*4)/self.scale}px;'
             f'text-anchor:{"start" if loc=="left" else "end"};'
         )
@@ -885,7 +888,7 @@ class FirstPage(LinePage):
             'secondInfo',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("firstPageOther", 9)/self.scale}px;'
             f'text-anchor:{"start" if loc=="left" else "end"};'
         )
@@ -895,7 +898,7 @@ class FirstPage(LinePage):
             'turnOfYear',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("turnOfYear", 7)/self.scale}px;'
             f'text-anchor:{"start" if loc=="right" else "end"};'
             'direction:rtl;'
@@ -947,7 +950,7 @@ class FirstPage(LinePage):
             'name',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("name", 79)/self.scale}px;'
             f'text-anchor:{"start" if loc=="right" else "end"};'
             'direction:rtl;'
@@ -958,7 +961,7 @@ class FirstPage(LinePage):
             'sentence',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("sentence", 9)/self.scale}px;'
             f'text-anchor:{"start" if loc=="right" else "end"};'
             'direction:rtl;'
@@ -1031,7 +1034,7 @@ class HolidaysPage(LinePageWithTitle):
             'holiday',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("holidaysPage", 7)/self.scale}px;'
             'text-anchor:start;'
             'direction:rtl;'
@@ -1041,7 +1044,7 @@ class HolidaysPage(LinePageWithTitle):
             'holiday',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("holidaysPage", 7)/self.scale}px;'
             'text-anchor:start;'
             'direction:rtl;'
@@ -1051,7 +1054,7 @@ class HolidaysPage(LinePageWithTitle):
             'holidayNo',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("holidaysPageNo", 7)/self.scale}px;'
             'text-anchor:middle;'
             'direction:rtl;'
@@ -1156,7 +1159,7 @@ class OneYearPage(LinePageWithTitle):
             'onePageYear',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("onePageYear", 7)/self.scale}px;'
             'text-anchor:middle;'
             'direction:rtl;'
@@ -1167,7 +1170,7 @@ class OneYearPage(LinePageWithTitle):
             'onePageYearHolidays',
             f'fill:{self.secondColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("onePageYearHolidays", 7)/self.scale}px;'
             'text-anchor:middle;'
             'direction:rtl;'
@@ -1178,7 +1181,7 @@ class OneYearPage(LinePageWithTitle):
             'onePageYearMonth',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("onePageYearMonth", 7)/self.scale}px;'
             'text-anchor:start;'
             'direction:rtl;'
