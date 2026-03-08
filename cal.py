@@ -10,6 +10,7 @@ class Calendar(Notebook):
         self.name = kwargs.get('name', 'Untitle-Calendar')
         self.daysJsonPath = daysJsonPath
         self.eventJsonPath = kwargs.get('eventJsonPath', 'events.json')
+        self.eventFilter = kwargs.get('eventFilter', [])
         self.calNamesJsonPath = kwargs.get('calNamesJsonPath', 'calNames.json')
         self.readDaysJson()
         self.readEventJson()

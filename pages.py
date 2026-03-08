@@ -222,6 +222,7 @@ class WeekPage(LinePage):
         self.daysJson = kwargs.get('daysJson', '')
         self.eventJson = kwargs.get('eventJson', '')
         self.calNamesJson = kwargs.get('calNamesJson', '')
+        self.eventFilter = kwargs.get('eventFilter', [])
 
         self.weekKeys = weekKeys
         self.weekNo = weekNo
@@ -660,6 +661,13 @@ class WeekPage(LinePage):
                 f"ic-{todayIc[1]}-{todayIc[2]}", [])
             events += self.eventJson.get(
                 f"wc-{todayWc[1]}-{todayWc[2]}", [])
+
+            finalEvents = []
+            for _event in events:
+                if _event.get('category', '') not in self.eventFilter:
+                    finalEvents.append(_event)
+
+            events = finalEvents
 
             makeShorterCoeff = 0.95 if i else 0.8
             for d in self.calendarOrder[1:]:
