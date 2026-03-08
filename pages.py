@@ -488,61 +488,47 @@ class WeekPage(LinePage):
                 # print(dayKey, self.personalEvents)
                 continue
 
-            # y location
-            eventH = self.fontHeightScl * \
-                self.fontSize.get("personalEvents", 7)/self.scale
+            e: dict = self.personalEvents[dayKey]
+            _icon = e.get('icon', None)
+            _text = e.get('text', None)
+            _translateX = e.get('translateX', 0)
+            _translateY = e.get('translateY', 0)
+            _translateTextX = e.get('translateTextX', 0)
+            _translateTextY = e.get('translateTextY', 0)
 
-            eventY = self.daysY[i]+self.lineHeight/2 + eventH/2
-            eventIconY = self.daysY[i]+(self.lineHeight-self.iconSize)/2
+            # y location
+            eventH = self.fontHeightScl * self.fontSize.get("personalEvents", 7)/self.scale  # noqa
+
+            eventY = self.daysY[i]+self.lineHeight / 2 + eventH/2 + _translateTextY  # noqa
+            eventIconY = self.daysY[i] + (self.lineHeight-self.iconSize)/2 + _translateY  # noqa
 
             space = self.lineHeight+self.iconSize if self.layout == 'left' else self.lineHeight
 
-            e = self.personalEvents[dayKey]
-            if 'icon' in e:
-                Txtspace = self.lineHeight+self.iconSize*1.2
-            else:
-                Txtspace = space
+            Txtspace = self.lineHeight+self.iconSize*1.2 if _icon else space
+            xLeftSpace, xRightSpace = self.xloc(loc, space+0.5+_translateX)
+            xLeftSpaceTxt, xRightSpaceTxt = self.xloc(loc, Txtspace+0.5+_translateTextX)  # noqa
 
-            xLeftSpace, xRightSpace = self.xloc(loc, space+0.5)
-            xLeftSpaceTxt, xRightSpaceTxt = self.xloc(loc, Txtspace+0.5)
+            xSpace = xRightSpace if self.layout == 'left' else xLeftSpace
+            xSpaceTxt = xRightSpaceTxt if self.layout == 'left' else xLeftSpaceTxt
 
-            if self.layout == 'left':
-                if 'icon' in e:
-                    try:
-                        self.pages[loc].addPathByD(
-                            iconPath[e["icon"]],
-                            transform=f'scale({self.scale}) translate({xRightSpace} {eventIconY}) scale({self.iconSize})',
-                            class_='icon'
-                        )
-                    except:
-                        pass
-                if 'text' in e:
-                    self.pages[loc].addText(
-                        xRightSpaceTxt,
-                        eventY,
-                        perNo(e['text']),
-                        transform=f'scale({self.scale})',
-                        class_='personalEvents'
-                    )
-            else:
-                if 'icon' in e:
+            if _icon:
+                try:
                     self.pages[loc].addPathByD(
-                        iconPath[e["icon"]],
-                        x=xLeftSpace,
-                        y=eventIconY,
-                        w=self.iconSize,
-                        h=self.iconSize,
-                        transform=f'scale({self.scale})',
+                        iconPath[_icon],
+                        transform=f'scale({self.scale}) translate({xSpace} {eventIconY}) scale({self.iconSize})',
                         class_='icon'
                     )
-                if 'text' in e:
-                    self.pages[loc].addText(
-                        xLeftSpaceTxt,
-                        eventY,
-                        perNo(e['text']),
-                        transform=f'scale({self.scale})',
-                        class_='personalEvents'
-                    )
+                except:
+                    pass
+
+            if _text:
+                self.pages[loc].addText(
+                    xSpaceTxt,
+                    eventY,
+                    perNo(_text),
+                    transform=f'scale({self.scale})',
+                    class_='personalEvents'
+                )
 
     def drawTime(self, loc, pattern='01'):
         if not self.showTime:
