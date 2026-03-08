@@ -661,6 +661,11 @@ class WeekPage(LinePage):
             events += self.eventJson.get(
                 f"wc-{todayWc[1]}-{todayWc[2]}", [])
 
+            makeShorterCoeff = 0.95 if i else 0.8
+            for d in self.calendarOrder[1:]:
+                if self.daysJson[dayKey][d] == 1:
+                    makeShorterCoeff = 0.8
+
             textArea = self.width - \
                 self.padding['inside']-self.padding['outside'] - \
                 self.lineHeight*(1+self.daysHeight)
@@ -671,8 +676,17 @@ class WeekPage(LinePage):
 
             if len(eventText) > l:
                 etTemp2 = eventText
-                a = int(len(eventText) / l)+1
-                for _ in range(a):
+                a = round((len(eventText)-l) / (l*makeShorterCoeff))+2
+                for j in range(a):
+                    if j == (self.daysHeight-len(self.calendarOrder)+1):
+                        l = int(l*makeShorterCoeff)
+
+                    if etTemp2 == '':
+                        break
+                    if j >= self.daysHeight:
+                        print('---------', dayKey,
+                              '--------- Events Length Error!')
+
                     etTemp = etTemp2[(-1*l):]
 
                     if etTemp == etTemp2:
