@@ -140,8 +140,9 @@ class Calendar(Notebook):
                 break
         return newkeys[(weekNo-1)*7:weekNo*7]
 
-    def addWeekPage(self, weekNo):
-        page = WeekPage(weekNo, self.weekKeys(weekNo), **self.__dict__)
+    def addWeekPage(self, weekNo, monthFilter=None):
+        page = WeekPage(weekNo, self.weekKeys(weekNo),
+                        monthFilter=monthFilter, **self.__dict__)
         self.pages.append(page)
 
     def addFirstPage(self, years, turnOfYear, translateX=0, **kwargs):

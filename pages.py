@@ -225,6 +225,7 @@ class WeekPage(LinePage):
         self.calNamesJson = kwargs.get('calNamesJson', '')
         self.eventFilter = kwargs.get('eventFilter', [])
 
+        self.monthFilter = kwargs.get('monthFilter', None)
         self.weekKeys = weekKeys
         self.weekNo = weekNo
         self.divider = kwargs.get('divider', ' / ')
@@ -264,7 +265,7 @@ class WeekPage(LinePage):
 
     @property
     def page(self):
-        self.pages = {}
+        self.pages: dict[str:Svg] = {}
         self.makePages()
         return self.pages
 
@@ -306,7 +307,11 @@ class WeekPage(LinePage):
                 self.daysY.append(y)
                 xl, xr = xLeft, xRight
             else:
-                if self.layout == 'left':
+                dayKey = self.weekKeys[len(self.daysY)-1]
+                if self.monthFilter != None and self.monthFilter != self.daysJson[dayKey][self.calendarOrder[0]][1]:
+                    xl, xr = xLeft, xRight
+
+                elif self.layout == 'left':
                     xl, xr = xLeftSpace, xRight
                 else:
                     xl, xr = xLeft, xRightSpace
@@ -396,6 +401,9 @@ class WeekPage(LinePage):
         x = xLeftSpace if self.layout == 'left' else xRightSpace
         for i in range(len(self.weekKeys)):
             dayKey = self.weekKeys[i]
+
+            if self.monthFilter != None and self.monthFilter != self.daysJson[dayKey][calID][1]:
+                continue
 
             # y location
             dayH = self.fontHeightScl * \
@@ -490,8 +498,12 @@ class WeekPage(LinePage):
             f'fill:{self.primaryColor};'
             f'stroke:None;'
         )
+        calID = self.calendarOrder[0]
         for i in range(len(self.weekKeys)):
             dayKey = self.weekKeys[i]
+
+            if self.monthFilter != None and self.monthFilter != self.daysJson[dayKey][calID][1]:
+                continue
 
             if dayKey not in self.personalEvents:
                 # print(dayKey, self.personalEvents)
@@ -712,7 +724,11 @@ class WeekPage(LinePage):
         else:
             xl, xr = xLeft, xRightSpace
 
-        for y in self.daysY[:-1]:
+        for dayindex, y in enumerate(self.daysY[:-1]):
+            dayKey = self.weekKeys[dayindex]
+            if self.monthFilter != None and self.monthFilter != self.daysJson[dayKey][self.calendarOrder[0]][1]:
+                continue
+
             calH = self.fontHeightScl * \
                 self.fontSize.get('time', 5)/self.scale
 
@@ -763,6 +779,9 @@ class WeekPage(LinePage):
 
             for i in range(len(self.weekKeys)):
                 dayKey = self.weekKeys[i]
+                if self.monthFilter != None and self.monthFilter != self.daysJson[dayKey][self.calendarOrder[0]][1]:
+                    continue
+
                 cal = self.daysJson[dayKey][calID]
 
                 # x and y location
@@ -805,6 +824,8 @@ class WeekPage(LinePage):
 
         for i in range(len(self.weekKeys)):
             dayKey = self.weekKeys[i]
+            if self.monthFilter != None and self.monthFilter != self.daysJson[dayKey][self.calendarOrder[0]][1]:
+                continue
 
             todaySh = self.daysJson[dayKey]["sh"]
             todayIc = self.daysJson[dayKey]["ic"]
@@ -903,8 +924,13 @@ class WeekPage(LinePage):
             startMonth = startMonth[1]
             endMonth = endMonth[1]
 
-        monthes = [startMonth] if startMonth == endMonth else [
-            startMonth, endMonth]
+        if startMonth == endMonth:
+            monthes = [startMonth]
+        elif self.monthFilter == None:
+            monthes = [startMonth, endMonth]
+        else:
+            monthes = [self.calNamesJson[calID]
+                       ['month'][str(self.monthFilter)]]
 
         weekText = f'هفته {perNo(self.weekNo)}  {self.divider}  ' if self.showWeekNo else ''
         monthText = " و ".join(monthes)
