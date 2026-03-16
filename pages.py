@@ -212,12 +212,12 @@ class LinePage(Page):
 
 class DotPage(Page):
     def __init__(self, name='Untitle-DotPage', **kwargs) -> None:
-        super().__init__(name, **kwargs)
+        super().__init__(name=name, **kwargs)
 
 
 class WeekPage(LinePage):
     def __init__(self, weekNo, weekKeys, name='Untitle-WeekPage', **kwargs) -> None:
-        super().__init__(name, **kwargs)
+        super().__init__(name=name, **kwargs)
 
         self.daysJson = kwargs.get('daysJson', '')
         self.eventJson = kwargs.get('eventJson', '')
@@ -233,7 +233,8 @@ class WeekPage(LinePage):
         self.daysHeight = kwargs.get('daysHeight', 4)
         self.lineShiftDown = kwargs.get('lineShiftDown', 0)
         self.weekend = kwargs.get('weekend', [])
-        self.iconSize = kwargs.get('iconSize', self.lineHeight*0.8)
+        self.iconScale = kwargs.get('iconScale', 0.8)
+        self.moonScale = kwargs.get('moonScale', 0.6)
 
         # font style
         self.fontHeightScl = kwargs.get('fontHeightScl', 0.66)
@@ -255,6 +256,10 @@ class WeekPage(LinePage):
         self.showFullCalendar = kwargs.get('showFullCalendar', False)
         self.showWeekNo = kwargs.get('showWeekNo', True)
         self.showTime = kwargs.get('showTime', False)
+        self.showMoon = kwargs.get('showMoon', True)
+        self.showJustImpMoon = kwargs.get('showJustImpMoon', True)
+        self.moonRotationDeg = kwargs.get('moonRotationDeg', 30)
+        self.moonStyle = kwargs.get('moonStyle', 'stroke')
 
     @property
     def page(self):
@@ -273,6 +278,7 @@ class WeekPage(LinePage):
             if self.showEvents:
                 self.addEventOfDays(loc)
             self.addPersonalEvents(loc)
+            self.addMoonIcon(loc)
             self.addMonthandWeek(loc)
             self.drawGuide(loc)
             self.drawTrimMark(loc)
@@ -498,15 +504,16 @@ class WeekPage(LinePage):
             _translateTextX = e.get('translateTextX', 0)
             _translateTextY = e.get('translateTextY', 0)
 
+            iconSize = self.iconScale*self.lineHeight
             # y location
             eventH = self.fontHeightScl * self.fontSize.get("personalEvents", 7)/self.scale  # noqa
 
             eventY = self.daysY[i]+self.lineHeight / 2 + eventH/2 + _translateTextY  # noqa
-            eventIconY = self.daysY[i] + (self.lineHeight-self.iconSize)/2 + _translateY  # noqa
+            eventIconY = self.daysY[i] + (self.lineHeight-iconSize)/2 + _translateY  # noqa
 
-            space = self.lineHeight+self.iconSize if self.layout == 'left' else self.lineHeight
+            space = self.lineHeight+iconSize if self.layout == 'left' else self.lineHeight
 
-            Txtspace = self.lineHeight+self.iconSize*1.2 if _icon else space
+            Txtspace = self.lineHeight+iconSize*1.2 if _icon else space
             xLeftSpace, xRightSpace = self.xloc(loc, space+0.5+_translateX)
             xLeftSpaceTxt, xRightSpaceTxt = self.xloc(loc, Txtspace+0.5+_translateTextX)  # noqa
 
@@ -517,7 +524,7 @@ class WeekPage(LinePage):
                 try:
                     self.pages[loc].addPathByD(
                         iconPath[_icon],
-                        transform=f'scale({self.scale}) translate({xSpace} {eventIconY}) scale({self.iconSize})',
+                        transform=f'scale({self.scale}) translate({xSpace} {eventIconY}) scale({iconSize})',
                         class_='icon'
                     )
                 except:
@@ -531,6 +538,154 @@ class WeekPage(LinePage):
                     transform=f'scale({self.scale})',
                     class_='personalEvents'
                 )
+
+    def addMoonIcon(self, loc):
+        if self.showMoon == False:
+            return
+        downH = len(self.calendarOrder)-1
+
+        if self.moonStyle == 'light':
+            swb, cbf, cbs = 2, '#ccc', '#ccc'
+            swf, cff, cfs = 0, '#fff', '#ccc'
+        elif self.moonStyle == 'dark':
+            swb, cbf, cbs = 0, '#333', '#333'
+            swf, cff, cfs = 1,  '#ccc', '#ccc'
+        else:
+            swb, cbf, cbs = 3, 'none', '#ddd'
+            swf, cff, cfs = 3, 'none', '#000'
+
+        self.pages[loc].addStyle(
+            'moon-back',
+            f'fill:{cbf};stroke:{cbs};stroke-width:{swb*self.lineWidth};stroke-linecap:round;'
+        )
+        self.pages[loc].addStyle(
+            'moon-front',
+            f'fill:{cff};stroke:{cfs};stroke-width:{swf*self.lineWidth};stroke-linecap:round;'
+        )
+        self.pages[loc].addStyle(
+            'moon-filler',
+            f'fill:{cbf};stroke:{cfs};stroke-width:{swf*self.lineWidth};stroke-linecap:round;'
+        )
+
+        def pointArc(points):
+            if len(points) != 3:
+                return
+
+            sP, mP, eP = points
+
+            a, b = sP
+            c, d = eP
+            x0, y0 = mP
+
+            alpha = ((x0-a)*(x0-c) + (y0-b)*(y0-d)) / \
+                ((b-d)*x0 - (a-c)*y0 + a*d - b*c)
+
+            cx = ((a+c) + alpha*(b-d)) / 2
+            cy = ((b+d) - alpha*(a-c)) / 2
+            r2 = alpha * (a*d - b*c) - a*c - b*d + cx**2 + cy**2
+            r = math.sqrt(r2)
+
+            return cx, cy, r
+
+        calID = self.calendarOrder[0]
+        for i in range(len(self.weekKeys)):
+            dayKey = self.weekKeys[i]
+
+            if self.monthFilter != None and self.monthFilter != self.daysJson[dayKey][calID][1]:
+                continue
+
+            cal = self.daysJson[dayKey]['ic']
+            calDay = cal[2]
+
+            if calDay < 27 or i > 5:
+                nextDay = calDay+1
+            else:
+                nextdayKey = self.weekKeys[i+1]
+                nextcal = self.daysJson[nextdayKey]['ic']
+                nextDay = nextcal[2]
+
+            if self.showJustImpMoon:
+                if calDay in [1, 7, 14, 21] or nextDay == 1:
+                    pass
+                else:
+                    continue
+
+            # y location
+            eventIconY = self.daysY[i]+downH*self.lineHeight  # noqa
+
+            space = self.lineHeight*self.daysHeight
+            xLeftSpace, xRightSpace = self.xloc(loc, space)
+            xSpace = xRightSpace if self.layout == 'right' else xLeftSpace
+            thisPage: Svg = self.pages[loc]
+
+            r = self.lineHeight*self.moonScale/2
+            cx = xSpace+r/2+1
+            cy = eventIconY+self.lineHeight/2
+
+            moonAngle = 360*calDay/29.5
+            moonRotation = self.moonRotationDeg*(1-2*calDay/29.5)
+
+            thisPage.openGroup(
+                transform=f"scale({self.scale}) translate({cx} {cy}) rotate({moonRotation}) "
+            )
+            thisPage.addCircle(
+                cx=0, cy=0, r=r,
+                class_="moon-back"
+            )
+
+            if moonAngle <= 180:
+                dx1 = r*math.cos(math.radians(moonAngle))
+                dx1 = r*0.9999*(7-calDay)/7
+                dx2 = r*0.9999
+            else:
+                dx1 = -r*0.9999
+                dx2 = r*math.cos(math.radians(180-moonAngle))
+                dx2 = r*0.9999*(21.5-calDay)/8
+
+            useWhite = False
+            if dx1*dx2 > 0:
+                useWhite = True
+
+            if calDay >= 30 or nextDay == 1:
+
+                thisPage.closeGroup()
+                continue
+
+            else:
+                dxList = [dx1, dx2] if abs(dx1) > abs(dx2) else [dx2, dx1]
+
+                for index, dx in enumerate(dxList):
+                    if abs(dx) < 10e-2:
+                        thisPage.addLine(
+                            x1=0, y1=0-r, x2=0, y2=0+r,
+                            class_="moon-front"
+                        )
+                    else:
+                        cX, cY, R = pointArc(
+                            [[0, 0-r], [0+dx, 0], [0, 0+r]])
+
+                        if abs(R - r) > 10e-5:
+                            beta = math.degrees(math.asin(r/R))
+                        else:
+                            beta = 90
+
+                        if cX > 0:
+                            a1 = 180-beta
+                            a2 = 180+beta
+                        else:
+                            a1 = -beta
+                            a2 = beta
+
+                        # thisPage.addCircle(cX, cY, R,
+                        #                    class_="line")
+
+                        st = "moon-front" if (index == 0 or not useWhite) else "moon-filler"  # noqa
+                        thisPage.addNormalArc(cX, cY, R, R,
+                                              startDegree=a1,
+                                              endDegree=a2,
+                                              class_=st)
+
+            thisPage.closeGroup()
 
     def drawTime(self, loc, pattern='01'):
         if not self.showTime:

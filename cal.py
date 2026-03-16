@@ -26,7 +26,8 @@ class Calendar(Notebook):
         self.layout = kwargs.get('layout', 'left')
         self.daysHeight = kwargs.get('daysHeight', 4)
         self.lineShiftDown = kwargs.get('lineShiftDown', 0)
-        self.iconSize = kwargs.get('iconSize', self.lineHeight*0.8)
+        self.iconScale = kwargs.get('iconScale', 0.8)
+        self.moonScale = kwargs.get('moonScale', 0.6)
 
         # Data show
         self.calendarOrder = kwargs.get('calendarOrder', ['sh', 'wc', 'ic'])
@@ -36,6 +37,10 @@ class Calendar(Notebook):
         self.showFullCalendar = kwargs.get('showFullCalendar', False)
         self.showWeekNo = kwargs.get('showWeekNo', True)
         self.showTime = kwargs.get('showTime', False)
+        self.showMoon = kwargs.get('showMoon', True)
+        self.showJustImpMoon = kwargs.get('showJustImpMoon', True)
+        self.moonRotationDeg = kwargs.get('moonRotationDeg', 45)
+        self.moonStyle = kwargs.get('moonStyle', 'stroke')
 
         # font style
         self.fontHeightScl = kwargs.get('fontHeightScl', 0.67)
