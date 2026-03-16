@@ -1522,3 +1522,251 @@ class OneYearPage(LinePageWithTitle):
             transform=f' scale({self.scale}) translate({xLeft+w-colWidth/2+monthH/2} {yTop+1}) rotate(-90)',
             class_='onePageYearMonth'
         )
+
+
+class OneMonthPage(LinePageWithTitle):
+    def __init__(self, month, year, cal='sh', name='Untitle-LinePage', **kwargs) -> None:
+        self.calNamesJson = kwargs.get('calNamesJson', '')
+        super().__init__(name=name, **kwargs)
+        self.daysJson = kwargs.get('daysJson', '')
+        self.eventJson = kwargs.get('eventJson', '')
+        self.month = month
+        self.year = year
+        self.cal = cal
+        self.startWeekday = kwargs.get('startWeekday', 'Sat')
+        self.weekend = kwargs.get('weekend', [])
+        self.secondColor = kwargs.get('secondColor', '#ddd')
+        self.showHolidays = kwargs.get('showHolidays', True)
+
+        self.xPadding = kwargs.get('xPadding', 2)
+        self.monthScaleX = kwargs.get('monthScaleX', 1)
+        self.monthScaleY = kwargs.get('monthScaleY', 1)
+        self.shiftDay = kwargs.get('shiftDay', 2)
+
+        self.holidays = []
+        if self.showHolidays:
+            for day in self.daysJson.keys():
+                y, m, d = self.daysJson[day]['sh']
+                if y == year and m == month:
+                    todaySh = self.daysJson[day]["sh"]
+                    todayIc = self.daysJson[day]["ic"]
+                    todayWc = self.daysJson[day]["wc"]
+
+                    events = []
+                    events += self.eventJson.get(
+                        f"sh-{todaySh[1]}-{todaySh[2]}", [])
+                    events += self.eventJson.get(
+                        f"ic-{todayIc[1]}-{todayIc[2]}", [])
+                    events += self.eventJson.get(
+                        f"wc-{todayWc[1]}-{todayWc[2]}", [])
+
+                    for e in events:
+                        if e['dayoff'] == True:
+                            self.holidays.append(day)
+                            break
+
+    def makePages(self):
+        super().makePages()
+        for loc in ['right', 'left']:
+            self.addMonths(loc)
+
+    def addMonths(self, loc):
+        # 'onePageMonth': 'Black',
+        # 'onePageMonthHolidays': 'Medium',
+        # 'onePageMonthDays': '',
+        font = ' '.join([self.fontFamily, self.fontWeight.get("onePageMonth", "")]).strip()  # nopep8
+        self.pages[loc].addStyle(
+            'onePageMonth',
+            f'fill:{self.primaryColor};'
+            f'stroke:None;'
+            f'font-family:"{font}",{self.backupFonts};'
+            f'font-size:{self.fontSize.get("onePageMonth", 7)/self.scale}px;'
+            'text-anchor:start;'
+            'direction:rtl;'
+        )
+
+        font = ' '.join([self.fontFamily, self.fontWeight.get("onePageMonthHolidays", "")]).strip()  # nopep8
+        self.pages[loc].addStyle(
+            'onePageMonthHolidays',
+            f'fill:{self.secondColor};'
+            f'stroke:None;'
+            f'font-family:"{font}",{self.backupFonts};'
+            f'font-size:{self.fontSize.get("onePageMonthHolidays", 7)/self.scale}px;'
+            'text-anchor:start;'
+            'direction:rtl;'
+        )
+
+        font = ' '.join([self.fontFamily, self.fontWeight.get("onePageMonthDays", "")]).strip()  # nopep8
+        self.pages[loc].addStyle(
+            'onePageMonthDays',
+            f'fill:{self.primaryColor};'
+            f'stroke:None;'
+            f'font-family:"{font}",{self.backupFonts};'
+            f'font-size:{self.fontSize.get("onePageMonthDays", 7)/self.scale}px;'
+            'text-anchor:start;'
+            'direction:rtl;'
+        )
+        xLeft, xRight = self.xloc(loc, self.xPadding*self.lineHeight)
+        yTop = self.margin['top']+self.padding['top']
+        yBottom = self.margin['top'] + self.height - self.padding['bottom']
+
+        w = (xRight-xLeft)
+        h = (((yBottom-yTop)*self.monthScaleY) //
+             self.lineHeight)*self.lineHeight
+
+        weekDays = ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri']
+        weekShift = weekDays.index(self.startWeekday)
+        weekDays = weekDays[weekShift:] + weekDays[:weekShift]
+
+        calKeysDict = {}
+        monthList = {}
+        for date_ in self.daysJson:
+            day = self.daysJson[date_][self.cal]
+
+            if day[0] == self.year:
+                if day[2] == 1:
+                    monthList[day[1]] = self.calNamesJson[self.cal]['month'][str(
+                        day[1])]
+                    calKeysDict[day[1]] = [date_]
+                else:
+                    calKeysDict[day[1]].append(date_)
+
+        self.addMonth(
+            loc,
+            xLeft=xLeft,
+            yTop=yTop,
+            w=w,
+            h=h,
+            monthName=monthList[self.month],
+            days=calKeysDict[self.month],
+            weekDays=weekDays
+        )
+
+    def addMonth(self, loc, xLeft, yTop, w, h, monthName, days, weekDays):
+        # colWidth = self.lineHeight if self.lineHeight <= w/7 else w/7
+        colWidth = self.monthScaleX*w/6
+
+        day1 = self.daysJson[days[0]]
+        wd1 = str(day1['weekday'])
+        b1 = weekDays.index(self.calNamesJson['wc']['weekday-short'][wd1])
+
+        dayE = self.daysJson[days[-1]]
+        wdE = str(dayE['weekday'])
+        bE = weekDays.index(self.calNamesJson['wc']['weekday-short'][wdE])
+
+        col = 6 if bE < b1 else 5
+        if b1 > self.shiftDay or col == 6:
+            dx = w - colWidth*col
+        else:
+            dx = 0
+
+        if False:
+            lineHeight = self.lineHeight
+            self.pages[loc].addRect(
+                xLeft+w-colWidth,
+                yTop+1,
+                colWidth,
+                h-2-lineHeight,
+                transform=f'scale({self.scale})',
+                fill="white",
+            )
+        else:
+            # lineHeight = (((h-self.lineHeight)/7) //
+            #               self.lineHeight)*self.lineHeight
+
+            lineHeight = self.lineHeight*self.daysHeight
+
+            # self.pages[loc].addRect(
+            #     xLeft+dx, yTop-1, w-dx, 7*lineHeight-1,
+            #     transform=f'scale({self.scale})',
+            #     fill="white",
+            # )
+
+        calH = self.fontHeightScl * \
+            self.fontSize.get("onePageMonthDays", 7)/self.scale
+
+        # a = -1 if col == 6 else 0
+        a = 0
+        for date_ in days:
+            day = self.daysJson[date_]
+            # b = weekDays.index(day['wc']['weekday'][0])
+            wd = str(day['weekday'])
+            b = weekDays.index(self.calNamesJson['wc']['weekday-short'][wd])
+
+            x = xLeft + w - colWidth * (self.monthScaleX*a + 1.5) + dx
+            y = yTop + lineHeight * (self.monthScaleY*b + 0.5) + calH/2
+
+            isHoliday = (date_ in self.holidays)
+            # or (
+            #     day['weekday'] in self.weekend)
+            cellW = colWidth * self.monthScaleX
+            cellH = lineHeight * self.monthScaleY
+
+            y2 = yTop + cellH*b
+            x2 = xLeft + (col-a-1)*cellW + dx
+
+            self.pages[loc].addRect(
+                x2, y2-1, cellW+0.2, cellH+0.2,
+                transform=f'scale({self.scale})',
+                fill="white",
+            )
+            self.pages[loc].addPolyline(
+                points=[
+                    [x2+1, y2],
+                    [x2+cellW-1, y2],
+                    [x2+cellW-1, y2+cellH-2],
+                ],
+                transform=f'scale({self.scale})',
+                class_='line'
+            )
+
+            self.pages[loc].addText(
+                x2+cellW-2,
+                y2 + calH+2,
+                perNo(day['sh'][2]),
+                transform=f'scale({self.scale})',
+                class_='onePageMonthHolidays' if isHoliday else 'onePageMonthDays'
+            )
+            a += 1 if b == 6 else 0
+
+        monthH = self.fontHeightScl * \
+            self.fontSize.get("onePageMonthDays", 7)/self.scale
+
+        self.pages[loc].addText(
+            0,
+            0,
+            monthName,
+            transform=f' scale({self.scale}) translate({xLeft+w-colWidth/2+monthH/2} {yTop+self.lineHeight/2}) rotate(-90)',
+            class_='onePageMonth'
+        )
+
+
+class SquarePage(LinePageWithTitle):
+    def __init__(self, name='Untitle-DotPage', **kwargs) -> None:
+        super().__init__(name=name, **kwargs)
+
+    def makePages(self):
+        super().makePages()
+        for loc in ['right', 'left']:
+            self.addVerticalLines(loc)
+
+    def addVerticalLines(self, loc):
+        y = self.margin['top'] + self.padding['top']
+        yTop = y
+        while y <= self.svgHeight - self.margin['bottom'] - self.padding['bottom']:
+            yBottom = y
+            y += self.lineHeight
+
+        self.pages[loc].openGroup()
+
+        xLeft, xRight = self.xloc(loc, self.lineHeight)
+        x = xLeft
+        while x <= xRight:
+            self.pages[loc].addLine(
+                x, yTop, x, yBottom,
+                transform=f'scale({self.scale})',
+                class_='line'
+            )
+            x += self.lineHeight
+
+        self.pages[loc].closeGroup()

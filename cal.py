@@ -69,6 +69,9 @@ class Calendar(Notebook):
             'onePageYear': 'Light',
             'onePageYearHolidays': 'Medium',
             'onePageYearMonth': 'Black',
+            'onePageMonth': 'Black',
+            'onePageMonthHolidays': 'Medium',
+            'onePageMonthDays': '',
             'personalEvents': 'ExtraLight'
         }
         self.fontWeight = {}
@@ -96,6 +99,9 @@ class Calendar(Notebook):
             'onePageYear': 7,
             'onePageYearHolidays': 7,
             'onePageYearMonth': 7,
+            'onePageMonth': 7,
+            'onePageMonthHolidays': 7,
+            'onePageMonthDays': 7,
             'personalEvents': 6
         }
         self.fontSize = {}
