@@ -1,5 +1,6 @@
 ﻿from aaaSvg import Svg
 from replaceText import perNo, arbNo
+import math
 
 
 class Page():
@@ -37,7 +38,7 @@ class Page():
 
     @property
     def page(self):
-        self.pages = {}
+        self.pages: dict[str:Svg] = {}
         self.makePages()
         return self.pages
 
@@ -135,7 +136,7 @@ class Page():
 
 class LinePage(Page):
     def __init__(self, name='Untitle-LinePage', **kwargs) -> None:
-        super().__init__(name, **kwargs)
+        super().__init__(name=name, **kwargs)
 
         # margin and padding
         self.padding = kwargs.get(
@@ -155,7 +156,7 @@ class LinePage(Page):
 
     @property
     def page(self):
-        self.pages = {}
+        self.pages: dict[str:Svg] = {}
         self.makePages()
         return self.pages
 
@@ -927,10 +928,15 @@ class WeekPage(LinePage):
 
 
 class LinePageWithTitle(LinePage):
-    def __init__(self, title='', name='Untitle-LinePage', **kwargs) -> None:
-        super().__init__(name, **kwargs)
+    def __init__(self, title='', moretext=[], name='Untitle-LinePage', **kwargs) -> None:
+        super().__init__(name=name, **kwargs)
 
         self.title = title
+        self.moretext = moretext
+
+        self.daysHeight = kwargs.get('daysHeight', 4)
+        self.translateTextX = kwargs.get('translateTextX', 0)
+        self.translateTextY = kwargs.get('translateTextY', 0)
 
         # colors
         self.primaryColor = kwargs.get('primaryColor', '#000')
@@ -946,9 +952,41 @@ class LinePageWithTitle(LinePage):
         super().makePages()
         for loc in ['right', 'left']:
             self.addTitle(loc)
+            if self.moretext:
+                self.addMoreText(loc)
+
+    def addMoreText(self, loc):
+        font = ' '.join([self.fontFamily, self.fontWeight.get("personalEvents", "")]).strip()  # nopep8
+        self.pages[loc].addStyle(
+            'personalEvents',
+            f'fill:{self.primaryColor};'
+            f'stroke:None;'
+            f'font-family:"{font}",{self.backupFonts};'
+            f'font-size:{self.fontSize.get("monthAndWeek", 8)/self.scale}px;'
+            'text-anchor:start;'
+            'direction:rtl;'
+        )
+        lineNo = 7 * self.daysHeight - len(self.moretext)
+        y = self.margin['top'] + self.padding['top'] + lineNo*self.lineHeight+self.translateTextY  # noqa
+        eventH = self.fontHeightScl * self.fontSize.get("personalEvents", 7)/self.scale  # noqa
+
+        eventY = y+self.lineHeight / 2 + eventH/2  # noqa
+
+        space = self.lineHeight*2
+        xLeftSpace, xRightSpace = self.xloc(loc, space+0.5)
+        x = xRightSpace+self.translateTextX
+
+        for _text in self.moretext:
+            self.pages[loc].addText(
+                x,
+                eventY,
+                _text,
+                transform=f'scale({self.scale})',
+                class_='personalEvents'
+            )
+            eventY += self.lineHeight
 
     def addTitle(self, loc):
-
         font = ' '.join([self.fontFamily, self.fontWeight.get("monthAndWeek", "")]).strip()  # nopep8
         self.pages[loc].addStyle(
             'titleofpage',
@@ -980,7 +1018,7 @@ class LinePageWithTitle(LinePage):
 
 class ChecklistPage(LinePageWithTitle):
     def __init__(self, title='', name='Untitle-LinePage', pattern='010', checkboxscale=0.6, **kwargs) -> None:
-        super().__init__(title, name, **kwargs)
+        super().__init__(title=title, name=name, **kwargs)
 
         self.pattern = pattern
         self.checkboxscale = checkboxscale
@@ -1019,7 +1057,7 @@ class ChecklistPage(LinePageWithTitle):
 
 class FirstPage(LinePage):
     def __init__(self, years, turnOfYear, name, sentence=[], translateX=0, **kwargs) -> None:
-        super().__init__(name, **kwargs)
+        super().__init__(name=name, **kwargs)
 
         self.sentence = sentence
         self.years = years
@@ -1175,7 +1213,7 @@ class FirstPage(LinePage):
 
 class HolidaysPage(LinePageWithTitle):
     def __init__(self, year, title, shiftDownHolidays=1, name='Untitle-LinePage', **kwargs) -> None:
-        super().__init__(title, name, **kwargs)
+        super().__init__(title=title, name=name, **kwargs)
         self.daysJson = kwargs.get('daysJson', '')
         self.eventJson = kwargs.get('eventJson', '')
         self.calNamesJson = kwargs.get('calNamesJson', '')
@@ -1292,7 +1330,7 @@ class HolidaysPage(LinePageWithTitle):
 
 class OneYearPage(LinePageWithTitle):
     def __init__(self, year, title, name='Untitle-LinePage', **kwargs) -> None:
-        super().__init__(title, name, **kwargs)
+        super().__init__(title=title, name=name, **kwargs)
         self.daysJson = kwargs.get('daysJson', '')
         self.eventJson = kwargs.get('eventJson', '')
         self.calNamesJson = kwargs.get('calNamesJson', '')

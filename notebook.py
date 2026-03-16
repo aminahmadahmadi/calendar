@@ -54,8 +54,16 @@ class Notebook():
         page = LinePage(**self.__dict__)
         self.pages.append(page)
 
-    def addDotPage(self):
-        page = DotPage(**self.__dict__)
+    def addLinePageWithTitle(self, **kwargs):
+        page = LinePageWithTitle(**self.__dict__, **kwargs)
+        self.pages.append(page)
+
+    def addSquarePage(self, **kwargs):
+        page = SquarePage(**self.__dict__, **kwargs)
+        self.pages.append(page)
+
+    def addDotPage(self, **kwargs):
+        page = DotPage(**self.__dict__, **kwargs)
         self.pages.append(page)
 
     def addChecklistPage(self, **kwargs):
