@@ -1,14 +1,19 @@
 # vs code
 .vscode/
+*.pdf
 
 # test folders
 test*/
 Untitle*/
 test*
 
+
+
 # tmp files 
 pages/
 calendar-*.json
+output-*/
+output-*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -6,6 +6,8 @@ class Notebook():
     def __init__(self, **kwargs) -> None:
         # general
         self.name = kwargs.get('name', 'Untitle-Notebook')
+        self.saveFolderName = f'output-{self.name}'
+
         self.rtl = kwargs.get('rtl', True)
         self.width = kwargs.get('width', 148)
         self.height = kwargs.get('height', 210)
@@ -46,6 +48,13 @@ class Notebook():
         # info on page
         self.guide = kwargs.get('guide', False)
 
+    def mainDirectory(self, Dir):
+        return os.path.join(Dir, self.saveFolderName)
+
+    def pagesDirectory(self, Dir):
+        return os.path.join(
+            self.mainDirectory(Dir), 'pages')
+
     def addEmptyPage(self):
         page = Page(**self.__dict__)
         self.pages.append(page)
@@ -75,11 +84,12 @@ class Notebook():
         self.pages.append(page)
 
     def toHTML(self, Dir='', previewMargin=False):
-        if not os.path.exists(os.path.join(Dir, self.name)):
-            os.mkdir(os.path.join(Dir, self.name))
 
-        if not os.path.exists(os.path.join(Dir, self.name, 'pages')):
-            os.mkdir(os.path.join(Dir, self.name, 'pages'))
+        if not os.path.exists(self.mainDirectory(Dir)):
+            os.mkdir(self.mainDirectory(Dir))
+
+        if not os.path.exists(self.pagesDirectory(Dir)):
+            os.mkdir(self.pagesDirectory(Dir))
 
         _direction = "rtl" if self.rtl else "ltr"
         htmlTxt = f'<html>\n<head>\n<style>\nhtml,body{{margin:0;padding:0;direction:{_direction};}}\nbody{{display:flex;flex-wrap:wrap;}}\n</style>\n</head>\n<body>\n'
@@ -96,7 +106,7 @@ class Notebook():
             svg: Svg = self.pages[i].page[pageDir]
             svg.name = f'p{i:03}'
             svg.save(
-                "/".join([Dir, self.name, 'pages']),
+                self.pagesDirectory(Dir),
                 width=f'{self.pages[i].svgWidth}mm',
                 height=f'{self.pages[i].svgHeight}mm'
             )
@@ -110,15 +120,15 @@ class Notebook():
 
         htmlTxt += '</body>\n</html>'
 
-        with open(os.path.join(Dir, self.name, 'index.html'), "w") as f:
+        with open(os.path.join(self.mainDirectory(Dir), 'index.html'), "w") as f:
             f.write(htmlTxt)
 
     def toPrintHTML(self, Dir='', loopPaper=5):
-        if not os.path.exists(os.path.join(Dir, self.name)):
-            os.mkdir(os.path.join(Dir, self.name))
+        if not os.path.exists(self.mainDirectory(Dir)):
+            os.mkdir(self.mainDirectory(Dir))
 
-        if not os.path.exists(os.path.join(Dir, self.name, 'pages')):
-            os.mkdir(os.path.join(Dir, self.name, 'pages'))
+        if not os.path.exists(self.pagesDirectory(Dir)):
+            os.mkdir(self.pagesDirectory(Dir))
 
         _direction = "rtl" if self.rtl else "ltr"
         htmlTxt = f'<html>\n<head>\n<style>\nhtml,body{{margin:0;padding:0;direction:{_direction};}}\nbody{{display:flex;flex-wrap:wrap;}}\n</style>\n</head>\n<body>\n'
@@ -134,7 +144,7 @@ class Notebook():
             svg = self.pages[i].page[pageDir]
             svg.name = f'p{i:03}'
             svg.save(
-                "/".join([Dir, self.name, 'pages']),
+                self.pagesDirectory(Dir),
                 width=f'{self.pages[i].svgWidth}mm',
                 height=f'{self.pages[i].svgHeight}mm'
             )
@@ -148,16 +158,16 @@ class Notebook():
 
         htmlTxt += '</body>\n</html>'
 
-        with open(os.path.join(Dir, self.name, 'index.html'), "w") as f:
+        with open(os.path.join(self.mainDirectory(Dir), 'index.html'), "w") as f:
             f.write(htmlTxt)
 
     def toPDF(self, Dir='', removeSvgs=True, removePdfs=True):
         try:
-            if not os.path.exists(os.path.join(Dir, self.name)):
-                os.mkdir(os.path.join(Dir, self.name))
+            if not os.path.exists(self.mainDirectory(Dir)):
+                os.mkdir(self.mainDirectory(Dir))
 
-            if not os.path.exists(os.path.join(Dir, self.name, 'pages')):
-                os.mkdir(os.path.join(Dir, self.name, 'pages'))
+            if not os.path.exists(self.pagesDirectory(Dir)):
+                os.mkdir(self.pagesDirectory(Dir))
 
             for i in range(len(self.pages)):
                 if i % 2 == 0 ^ self.rtl:
@@ -169,27 +179,24 @@ class Notebook():
 
                 svg = self.pages[i].page[pageDir]
                 svg.name = f'p{i:03}'
-                path_ = os.path.join(Dir, self.name, 'pages')
                 svg.save(
-                    path_,
+                    self.pagesDirectory(Dir),
                     width=f'{self.pages[i].svgWidth}mm',
                     height=f'{self.pages[i].svgHeight}mm'
                 )
 
-                fpath = os.path.join(path_, svg.name)
+                fpath = os.path.join(self.pagesDirectory(Dir), svg.name)
                 os.system(
                     f'inkscape "{fpath}.svg" --export-filename="{fpath}.pdf"')
                 if removeSvgs:
                     os.system(f'rm "{fpath}.svg"')
 
-            path = os.path.join(Dir, self.name, 'pages')
-            path2 = os.path.join(Dir, self.name)
-            os.chdir(f"{path}")
+            os.chdir(f"{self.pagesDirectory(Dir)}")
 
             os.system(f'pdfunite *.pdf ../cal.pdf')
 
             if removePdfs:
-                os.chdir(f"{path2}")
+                os.chdir(f"{self.mainDirectory(Dir)}")
                 os.system(f'rm -r pages')
 
             os.chdir(os.path.dirname(os.path.realpath(__file__)))
@@ -206,15 +213,13 @@ class Notebook():
                     for p in [d+loopPaper*4-i-1, d+i, d+i+1, d+loopPaper*4-i-2]:
                         names.append(f'p{p:03}.pdf')
 
-            path = os.path.join(Dir, self.name, 'pages')
-            os.chdir(f"{path}")
+            os.chdir(f"{self.pagesDirectory(Dir)}")
             name = " ".join(names)
             os.system(f'pdfunite {name} ../cal-print.pdf')
             os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
         if removePdfs:
-            path2 = os.path.join(Dir, self.name)
-            os.chdir(f"{path2}")
+            os.chdir(f"{self.mainDirectory(Dir)}")
             os.system(f'rm -r pages')
             os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
