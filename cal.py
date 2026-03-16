@@ -10,6 +10,7 @@ class Calendar(Notebook):
         self.name = kwargs.get('name', 'Untitle-Calendar')
         self.daysJsonPath = daysJsonPath
         self.eventJsonPath = kwargs.get('eventJsonPath', 'events.json')
+        self.eventFilter = kwargs.get('eventFilter', [])
         self.calNamesJsonPath = kwargs.get('calNamesJsonPath', 'calNames.json')
         self.readDaysJson()
         self.readEventJson()
@@ -25,7 +26,8 @@ class Calendar(Notebook):
         self.layout = kwargs.get('layout', 'left')
         self.daysHeight = kwargs.get('daysHeight', 4)
         self.lineShiftDown = kwargs.get('lineShiftDown', 0)
-        self.iconSize = kwargs.get('iconSize', self.lineHeight*0.8)
+        self.iconScale = kwargs.get('iconScale', 0.8)
+        self.moonScale = kwargs.get('moonScale', 0.6)
 
         # Data show
         self.calendarOrder = kwargs.get('calendarOrder', ['sh', 'wc', 'ic'])
@@ -35,10 +37,16 @@ class Calendar(Notebook):
         self.showFullCalendar = kwargs.get('showFullCalendar', False)
         self.showWeekNo = kwargs.get('showWeekNo', True)
         self.showTime = kwargs.get('showTime', False)
+        self.showMoon = kwargs.get('showMoon', True)
+        self.showJustImpMoon = kwargs.get('showJustImpMoon', True)
+        self.moonRotationDeg = kwargs.get('moonRotationDeg', 45)
+        self.moonStyle = kwargs.get('moonStyle', 'stroke')
 
         # font style
         self.fontHeightScl = kwargs.get('fontHeightScl', 0.67)
+        self.fontWidthScl = kwargs.get('fontWidthScl', 7.2)
         self.fontFamily = kwargs.get('fontFamily', 'Anjoman')
+        self.backupFonts = kwargs.get('backupFonts', 'vazirmatn')
 
         fontWeight = kwargs.get('fontWeight', {})
         defaultFontWeight = {
@@ -61,6 +69,9 @@ class Calendar(Notebook):
             'onePageYear': 'Light',
             'onePageYearHolidays': 'Medium',
             'onePageYearMonth': 'Black',
+            'onePageMonth': 'Black',
+            'onePageMonthHolidays': 'Medium',
+            'onePageMonthDays': '',
             'personalEvents': 'ExtraLight'
         }
         self.fontWeight = {}
@@ -88,6 +99,9 @@ class Calendar(Notebook):
             'onePageYear': 7,
             'onePageYearHolidays': 7,
             'onePageYearMonth': 7,
+            'onePageMonth': 7,
+            'onePageMonthHolidays': 7,
+            'onePageMonthDays': 7,
             'personalEvents': 6
         }
         self.fontSize = {}
@@ -132,8 +146,9 @@ class Calendar(Notebook):
                 break
         return newkeys[(weekNo-1)*7:weekNo*7]
 
-    def addWeekPage(self, weekNo):
-        page = WeekPage(weekNo, self.weekKeys(weekNo), **self.__dict__)
+    def addWeekPage(self, weekNo, monthFilter=None):
+        page = WeekPage(weekNo, self.weekKeys(weekNo),
+                        monthFilter=monthFilter, **self.__dict__)
         self.pages.append(page)
 
     def addFirstPage(self, years, turnOfYear, translateX=0, **kwargs):

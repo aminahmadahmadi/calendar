@@ -1,5 +1,6 @@
 ﻿from aaaSvg import Svg
 from replaceText import perNo, arbNo
+import math
 
 
 class Page():
@@ -37,7 +38,7 @@ class Page():
 
     @property
     def page(self):
-        self.pages = {}
+        self.pages: dict[str:Svg] = {}
         self.makePages()
         return self.pages
 
@@ -135,7 +136,7 @@ class Page():
 
 class LinePage(Page):
     def __init__(self, name='Untitle-LinePage', **kwargs) -> None:
-        super().__init__(name, **kwargs)
+        super().__init__(name=name, **kwargs)
 
         # margin and padding
         self.padding = kwargs.get(
@@ -155,7 +156,7 @@ class LinePage(Page):
 
     @property
     def page(self):
-        self.pages = {}
+        self.pages: dict[str:Svg] = {}
         self.makePages()
         return self.pages
 
@@ -212,17 +213,19 @@ class LinePage(Page):
 
 class DotPage(Page):
     def __init__(self, name='Untitle-DotPage', **kwargs) -> None:
-        super().__init__(name, **kwargs)
+        super().__init__(name=name, **kwargs)
 
 
 class WeekPage(LinePage):
     def __init__(self, weekNo, weekKeys, name='Untitle-WeekPage', **kwargs) -> None:
-        super().__init__(name, **kwargs)
+        super().__init__(name=name, **kwargs)
 
         self.daysJson = kwargs.get('daysJson', '')
         self.eventJson = kwargs.get('eventJson', '')
         self.calNamesJson = kwargs.get('calNamesJson', '')
+        self.eventFilter = kwargs.get('eventFilter', [])
 
+        self.monthFilter = kwargs.get('monthFilter', None)
         self.weekKeys = weekKeys
         self.weekNo = weekNo
         self.divider = kwargs.get('divider', ' / ')
@@ -232,12 +235,14 @@ class WeekPage(LinePage):
         self.daysHeight = kwargs.get('daysHeight', 4)
         self.lineShiftDown = kwargs.get('lineShiftDown', 0)
         self.weekend = kwargs.get('weekend', [])
-        self.iconSize = kwargs.get('iconSize', self.lineHeight*0.8)
+        self.iconScale = kwargs.get('iconScale', 0.8)
+        self.moonScale = kwargs.get('moonScale', 0.6)
 
         # font style
         self.fontHeightScl = kwargs.get('fontHeightScl', 0.66)
         self.fontWidthScl = kwargs.get('fontWidthScl', 7.2)
         self.fontFamily = kwargs.get('fontFamily', 'Anjoman')
+        self.backupFonts = kwargs.get('backupFonts', 'vazirmatn')
         self.fontWeight = kwargs.get('fontWeight', {})
         self.fontSize = kwargs.get('fontSize', {})
 
@@ -253,10 +258,14 @@ class WeekPage(LinePage):
         self.showFullCalendar = kwargs.get('showFullCalendar', False)
         self.showWeekNo = kwargs.get('showWeekNo', True)
         self.showTime = kwargs.get('showTime', False)
+        self.showMoon = kwargs.get('showMoon', True)
+        self.showJustImpMoon = kwargs.get('showJustImpMoon', True)
+        self.moonRotationDeg = kwargs.get('moonRotationDeg', 30)
+        self.moonStyle = kwargs.get('moonStyle', 'stroke')
 
     @property
     def page(self):
-        self.pages = {}
+        self.pages: dict[str:Svg] = {}
         self.makePages()
         return self.pages
 
@@ -271,6 +280,7 @@ class WeekPage(LinePage):
             if self.showEvents:
                 self.addEventOfDays(loc)
             self.addPersonalEvents(loc)
+            self.addMoonIcon(loc)
             self.addMonthandWeek(loc)
             self.drawGuide(loc)
             self.drawTrimMark(loc)
@@ -297,7 +307,11 @@ class WeekPage(LinePage):
                 self.daysY.append(y)
                 xl, xr = xLeft, xRight
             else:
-                if self.layout == 'left':
+                dayKey = self.weekKeys[len(self.daysY)-1]
+                if self.monthFilter != None and self.monthFilter != self.daysJson[dayKey][self.calendarOrder[0]][1]:
+                    xl, xr = xLeft, xRight
+
+                elif self.layout == 'left':
                     xl, xr = xLeftSpace, xRight
                 else:
                     xl, xr = xLeft, xRightSpace
@@ -346,7 +360,7 @@ class WeekPage(LinePage):
             'firstCal',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("firstCal", self.lineHeight * self.daysHeight * 2)/self.scale}px;'
             'text-anchor:middle;'
         )
@@ -356,7 +370,7 @@ class WeekPage(LinePage):
             'holiday',
             f'fill:{self.secondColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("holiday", self.lineHeight * self.daysHeight * 2)/self.scale}px;'
             'text-anchor:middle;'
         )
@@ -366,7 +380,7 @@ class WeekPage(LinePage):
             'firstCalWeekdays',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("firstCalWeekdays", 8)/self.scale}px;'
             'text-anchor:middle;'
         )
@@ -376,7 +390,7 @@ class WeekPage(LinePage):
             'firstCalWeekdaysHoliday',
             f'fill:{self.secondColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("firstCalWeekdaysHoliday", 8)/self.scale}px;'
             'text-anchor:middle;'
         )
@@ -387,6 +401,9 @@ class WeekPage(LinePage):
         x = xLeftSpace if self.layout == 'left' else xRightSpace
         for i in range(len(self.weekKeys)):
             dayKey = self.weekKeys[i]
+
+            if self.monthFilter != None and self.monthFilter != self.daysJson[dayKey][calID][1]:
+                continue
 
             # y location
             dayH = self.fontHeightScl * \
@@ -471,7 +488,7 @@ class WeekPage(LinePage):
             'personalEvents',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("personalEvents", 7)/self.scale}px;'
             f'text-anchor:{"start" if startAnchor else "end"};'
             'direction:rtl;'
@@ -481,68 +498,207 @@ class WeekPage(LinePage):
             f'fill:{self.primaryColor};'
             f'stroke:None;'
         )
+        calID = self.calendarOrder[0]
         for i in range(len(self.weekKeys)):
             dayKey = self.weekKeys[i]
+
+            if self.monthFilter != None and self.monthFilter != self.daysJson[dayKey][calID][1]:
+                continue
 
             if dayKey not in self.personalEvents:
                 # print(dayKey, self.personalEvents)
                 continue
 
+            e: dict = self.personalEvents[dayKey]
+            _icon = e.get('icon', None)
+            _text = e.get('text', None)
+            _translateX = e.get('translateX', 0)
+            _translateY = e.get('translateY', 0)
+            _translateTextX = e.get('translateTextX', 0)
+            _translateTextY = e.get('translateTextY', 0)
+
+            iconSize = self.iconScale*self.lineHeight
             # y location
-            eventH = self.fontHeightScl * \
-                self.fontSize.get("personalEvents", 7)/self.scale
+            eventH = self.fontHeightScl * self.fontSize.get("personalEvents", 7)/self.scale  # noqa
 
-            eventY = self.daysY[i]+self.lineHeight/2 + eventH/2
-            eventIconY = self.daysY[i]+(self.lineHeight-self.iconSize)/2
+            eventY = self.daysY[i]+self.lineHeight / 2 + eventH/2 + _translateTextY  # noqa
+            eventIconY = self.daysY[i] + (self.lineHeight-iconSize)/2 + _translateY  # noqa
 
-            space = self.lineHeight+self.iconSize if self.layout == 'left' else self.lineHeight
+            space = self.lineHeight+iconSize if self.layout == 'left' else self.lineHeight
 
-            e = self.personalEvents[dayKey]
-            if 'icon' in e:
-                Txtspace = self.lineHeight+self.iconSize*1.2
-            else:
-                Txtspace = space
+            Txtspace = self.lineHeight+iconSize*1.2 if _icon else space
+            xLeftSpace, xRightSpace = self.xloc(loc, space+0.5+_translateX)
+            xLeftSpaceTxt, xRightSpaceTxt = self.xloc(loc, Txtspace+0.5+_translateTextX)  # noqa
 
-            xLeftSpace, xRightSpace = self.xloc(loc, space+0.5)
-            xLeftSpaceTxt, xRightSpaceTxt = self.xloc(loc, Txtspace+0.5)
+            xSpace = xRightSpace if self.layout == 'left' else xLeftSpace
+            xSpaceTxt = xRightSpaceTxt if self.layout == 'left' else xLeftSpaceTxt
 
-            if self.layout == 'left':
-                if 'icon' in e:
-                    try:
-                        self.pages[loc].addPathByD(
-                            iconPath[e["icon"]],
-                            transform=f'scale({self.scale}) translate({xRightSpace} {eventIconY}) scale({self.iconSize})',
-                            class_='icon'
-                        )
-                    except:
-                        pass
-                if 'text' in e:
-                    self.pages[loc].addText(
-                        xRightSpaceTxt,
-                        eventY,
-                        perNo(e['text']),
-                        transform=f'scale({self.scale})',
-                        class_='personalEvents'
-                    )
-            else:
-                if 'icon' in e:
+            if _icon:
+                try:
                     self.pages[loc].addPathByD(
-                        iconPath[e["icon"]],
-                        x=xLeftSpace,
-                        y=eventIconY,
-                        w=self.iconSize,
-                        h=self.iconSize,
-                        transform=f'scale({self.scale})',
+                        iconPath[_icon],
+                        transform=f'scale({self.scale}) translate({xSpace} {eventIconY}) scale({iconSize})',
                         class_='icon'
                     )
-                if 'text' in e:
-                    self.pages[loc].addText(
-                        xLeftSpaceTxt,
-                        eventY,
-                        perNo(e['text']),
-                        transform=f'scale({self.scale})',
-                        class_='personalEvents'
-                    )
+                except:
+                    pass
+
+            if _text:
+                self.pages[loc].addText(
+                    xSpaceTxt,
+                    eventY,
+                    perNo(_text),
+                    transform=f'scale({self.scale})',
+                    class_='personalEvents'
+                )
+
+    def addMoonIcon(self, loc):
+        if self.showMoon == False:
+            return
+        downH = len(self.calendarOrder)-1
+
+        if self.moonStyle == 'light':
+            swb, cbf, cbs = 2, '#ccc', '#ccc'
+            swf, cff, cfs = 0, '#fff', '#ccc'
+        elif self.moonStyle == 'dark':
+            swb, cbf, cbs = 0, '#333', '#333'
+            swf, cff, cfs = 1,  '#ccc', '#ccc'
+        else:
+            swb, cbf, cbs = 3, 'none', '#ddd'
+            swf, cff, cfs = 3, 'none', '#000'
+
+        self.pages[loc].addStyle(
+            'moon-back',
+            f'fill:{cbf};stroke:{cbs};stroke-width:{swb*self.lineWidth};stroke-linecap:round;'
+        )
+        self.pages[loc].addStyle(
+            'moon-front',
+            f'fill:{cff};stroke:{cfs};stroke-width:{swf*self.lineWidth};stroke-linecap:round;'
+        )
+        self.pages[loc].addStyle(
+            'moon-filler',
+            f'fill:{cbf};stroke:{cfs};stroke-width:{swf*self.lineWidth};stroke-linecap:round;'
+        )
+
+        def pointArc(points):
+            if len(points) != 3:
+                return
+
+            sP, mP, eP = points
+
+            a, b = sP
+            c, d = eP
+            x0, y0 = mP
+
+            alpha = ((x0-a)*(x0-c) + (y0-b)*(y0-d)) / \
+                ((b-d)*x0 - (a-c)*y0 + a*d - b*c)
+
+            cx = ((a+c) + alpha*(b-d)) / 2
+            cy = ((b+d) - alpha*(a-c)) / 2
+            r2 = alpha * (a*d - b*c) - a*c - b*d + cx**2 + cy**2
+            r = math.sqrt(r2)
+
+            return cx, cy, r
+
+        calID = self.calendarOrder[0]
+        for i in range(len(self.weekKeys)):
+            dayKey = self.weekKeys[i]
+
+            if self.monthFilter != None and self.monthFilter != self.daysJson[dayKey][calID][1]:
+                continue
+
+            cal = self.daysJson[dayKey]['ic']
+            calDay = cal[2]
+
+            if calDay < 27 or i > 5:
+                nextDay = calDay+1
+            else:
+                nextdayKey = self.weekKeys[i+1]
+                nextcal = self.daysJson[nextdayKey]['ic']
+                nextDay = nextcal[2]
+
+            if self.showJustImpMoon:
+                if calDay in [1, 7, 14, 21] or nextDay == 1:
+                    pass
+                else:
+                    continue
+
+            # y location
+            eventIconY = self.daysY[i]+downH*self.lineHeight  # noqa
+
+            space = self.lineHeight*self.daysHeight
+            xLeftSpace, xRightSpace = self.xloc(loc, space)
+            xSpace = xRightSpace if self.layout == 'right' else xLeftSpace
+            thisPage: Svg = self.pages[loc]
+
+            r = self.lineHeight*self.moonScale/2
+            cx = xSpace+r/2+1
+            cy = eventIconY+self.lineHeight/2
+
+            moonAngle = 360*calDay/29.5
+            moonRotation = self.moonRotationDeg*(1-2*calDay/29.5)
+
+            thisPage.openGroup(
+                transform=f"scale({self.scale}) translate({cx} {cy}) rotate({moonRotation}) "
+            )
+            thisPage.addCircle(
+                cx=0, cy=0, r=r,
+                class_="moon-back"
+            )
+
+            if moonAngle <= 180:
+                dx1 = r*math.cos(math.radians(moonAngle))
+                dx1 = r*0.9999*(7-calDay)/7
+                dx2 = r*0.9999
+            else:
+                dx1 = -r*0.9999
+                dx2 = r*math.cos(math.radians(180-moonAngle))
+                dx2 = r*0.9999*(21.5-calDay)/8
+
+            useWhite = False
+            if dx1*dx2 > 0:
+                useWhite = True
+
+            if calDay >= 30 or nextDay == 1:
+
+                thisPage.closeGroup()
+                continue
+
+            else:
+                dxList = [dx1, dx2] if abs(dx1) > abs(dx2) else [dx2, dx1]
+
+                for index, dx in enumerate(dxList):
+                    if abs(dx) < 10e-2:
+                        thisPage.addLine(
+                            x1=0, y1=0-r, x2=0, y2=0+r,
+                            class_="moon-front"
+                        )
+                    else:
+                        cX, cY, R = pointArc(
+                            [[0, 0-r], [0+dx, 0], [0, 0+r]])
+
+                        if abs(R - r) > 10e-5:
+                            beta = math.degrees(math.asin(r/R))
+                        else:
+                            beta = 90
+
+                        if cX > 0:
+                            a1 = 180-beta
+                            a2 = 180+beta
+                        else:
+                            a1 = -beta
+                            a2 = beta
+
+                        # thisPage.addCircle(cX, cY, R,
+                        #                    class_="line")
+
+                        st = "moon-front" if (index == 0 or not useWhite) else "moon-filler"  # noqa
+                        thisPage.addNormalArc(cX, cY, R, R,
+                                              startDegree=a1,
+                                              endDegree=a2,
+                                              class_=st)
+
+            thisPage.closeGroup()
 
     def drawTime(self, loc, pattern='01'):
         if not self.showTime:
@@ -555,7 +711,7 @@ class WeekPage(LinePage):
             f'fill:{self.primaryColor};'
             f'stroke:None;'
 
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("time", 5)/self.scale}px;'
             'text-anchor:middle;'
         )
@@ -568,7 +724,11 @@ class WeekPage(LinePage):
         else:
             xl, xr = xLeft, xRightSpace
 
-        for y in self.daysY[:-1]:
+        for dayindex, y in enumerate(self.daysY[:-1]):
+            dayKey = self.weekKeys[dayindex]
+            if self.monthFilter != None and self.monthFilter != self.daysJson[dayKey][self.calendarOrder[0]][1]:
+                continue
+
             calH = self.fontHeightScl * \
                 self.fontSize.get('time', 5)/self.scale
 
@@ -611,7 +771,7 @@ class WeekPage(LinePage):
                 order,
                 f'fill:{self.primaryColor};'
                 f'stroke:None;'
-                f'font-family:"{font}";'
+                f'font-family:"{font}",{self.backupFonts};'
                 f'font-size:{self.fontSize.get(order, 8)/self.scale}px;'
                 f'text-anchor:{"start" if startAnchor else "end"};'
                 f'direction:{"ltr" if calID=="wc" else "rtl"};'
@@ -619,6 +779,9 @@ class WeekPage(LinePage):
 
             for i in range(len(self.weekKeys)):
                 dayKey = self.weekKeys[i]
+                if self.monthFilter != None and self.monthFilter != self.daysJson[dayKey][self.calendarOrder[0]][1]:
+                    continue
+
                 cal = self.daysJson[dayKey][calID]
 
                 # x and y location
@@ -653,7 +816,7 @@ class WeekPage(LinePage):
             'events',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("events", 5)/self.scale}px;'
             'text-anchor:start;'
             'direction: rtl;'
@@ -661,6 +824,8 @@ class WeekPage(LinePage):
 
         for i in range(len(self.weekKeys)):
             dayKey = self.weekKeys[i]
+            if self.monthFilter != None and self.monthFilter != self.daysJson[dayKey][self.calendarOrder[0]][1]:
+                continue
 
             todaySh = self.daysJson[dayKey]["sh"]
             todayIc = self.daysJson[dayKey]["ic"]
@@ -674,6 +839,18 @@ class WeekPage(LinePage):
             events += self.eventJson.get(
                 f"wc-{todayWc[1]}-{todayWc[2]}", [])
 
+            finalEvents = []
+            for _event in events:
+                if _event.get('category', '') not in self.eventFilter:
+                    finalEvents.append(_event)
+
+            events = finalEvents
+
+            makeShorterCoeff = 0.95 if i else 0.8
+            for d in self.calendarOrder[1:]:
+                if self.daysJson[dayKey][d] == 1:
+                    makeShorterCoeff = 0.8
+
             textArea = self.width - \
                 self.padding['inside']-self.padding['outside'] - \
                 self.lineHeight*(1+self.daysHeight)
@@ -684,8 +861,17 @@ class WeekPage(LinePage):
 
             if len(eventText) > l:
                 etTemp2 = eventText
-                a = int(len(eventText) / l)+1
-                for _ in range(a):
+                a = round((len(eventText)-l) / (l*makeShorterCoeff))+2
+                for j in range(a):
+                    if j == (self.daysHeight-len(self.calendarOrder)+1):
+                        l = int(l*makeShorterCoeff)
+
+                    if etTemp2 == '':
+                        break
+                    if j >= self.daysHeight:
+                        print('---------', dayKey,
+                              '--------- Events Length Error!')
+
                     etTemp = etTemp2[(-1*l):]
 
                     if etTemp == etTemp2:
@@ -720,7 +906,7 @@ class WeekPage(LinePage):
             'monthAndWeek',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("monthAndWeek", 8)/self.scale}px;'
             f'text-anchor:{"end" if self.layout=="left" else "start"};'
             'direction: rtl;'
@@ -738,8 +924,13 @@ class WeekPage(LinePage):
             startMonth = startMonth[1]
             endMonth = endMonth[1]
 
-        monthes = [startMonth] if startMonth == endMonth else [
-            startMonth, endMonth]
+        if startMonth == endMonth:
+            monthes = [startMonth]
+        elif self.monthFilter == None:
+            monthes = [startMonth, endMonth]
+        else:
+            monthes = [self.calNamesJson[calID]
+                       ['month'][str(self.monthFilter)]]
 
         weekText = f'هفته {perNo(self.weekNo)}  {self.divider}  ' if self.showWeekNo else ''
         monthText = " و ".join(monthes)
@@ -763,10 +954,15 @@ class WeekPage(LinePage):
 
 
 class LinePageWithTitle(LinePage):
-    def __init__(self, title='', name='Untitle-LinePage', **kwargs) -> None:
-        super().__init__(name, **kwargs)
+    def __init__(self, title='', moretext=[], name='Untitle-LinePage', **kwargs) -> None:
+        super().__init__(name=name, **kwargs)
 
         self.title = title
+        self.moretext = moretext
+
+        self.daysHeight = kwargs.get('daysHeight', 4)
+        self.translateTextX = kwargs.get('translateTextX', 0)
+        self.translateTextY = kwargs.get('translateTextY', 0)
 
         # colors
         self.primaryColor = kwargs.get('primaryColor', '#000')
@@ -774,6 +970,7 @@ class LinePageWithTitle(LinePage):
         # font style
         self.fontHeightScl = kwargs.get('fontHeightScl', 0.66)
         self.fontFamily = kwargs.get('fontFamily', 'Anjoman')
+        self.backupFonts = kwargs.get('backupFonts', 'vazirmatn')
         self.fontWeight = kwargs.get('fontWeight', {})
         self.fontSize = kwargs.get('fontSize', {})
 
@@ -781,15 +978,47 @@ class LinePageWithTitle(LinePage):
         super().makePages()
         for loc in ['right', 'left']:
             self.addTitle(loc)
+            if self.moretext:
+                self.addMoreText(loc)
+
+    def addMoreText(self, loc):
+        font = ' '.join([self.fontFamily, self.fontWeight.get("personalEvents", "")]).strip()  # nopep8
+        self.pages[loc].addStyle(
+            'personalEvents',
+            f'fill:{self.primaryColor};'
+            f'stroke:None;'
+            f'font-family:"{font}",{self.backupFonts};'
+            f'font-size:{self.fontSize.get("monthAndWeek", 8)/self.scale}px;'
+            'text-anchor:start;'
+            'direction:rtl;'
+        )
+        lineNo = 7 * self.daysHeight - len(self.moretext)
+        y = self.margin['top'] + self.padding['top'] + lineNo*self.lineHeight+self.translateTextY  # noqa
+        eventH = self.fontHeightScl * self.fontSize.get("personalEvents", 7)/self.scale  # noqa
+
+        eventY = y+self.lineHeight / 2 + eventH/2  # noqa
+
+        space = self.lineHeight*2
+        xLeftSpace, xRightSpace = self.xloc(loc, space+0.5)
+        x = xRightSpace+self.translateTextX
+
+        for _text in self.moretext:
+            self.pages[loc].addText(
+                x,
+                eventY,
+                _text,
+                transform=f'scale({self.scale})',
+                class_='personalEvents'
+            )
+            eventY += self.lineHeight
 
     def addTitle(self, loc):
-
         font = ' '.join([self.fontFamily, self.fontWeight.get("monthAndWeek", "")]).strip()  # nopep8
         self.pages[loc].addStyle(
             'titleofpage',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("monthAndWeek", 8)/self.scale}px;'
             'text-anchor:start;'
             'direction:rtl;'
@@ -815,7 +1044,7 @@ class LinePageWithTitle(LinePage):
 
 class ChecklistPage(LinePageWithTitle):
     def __init__(self, title='', name='Untitle-LinePage', pattern='010', checkboxscale=0.6, **kwargs) -> None:
-        super().__init__(title, name, **kwargs)
+        super().__init__(title=title, name=name, **kwargs)
 
         self.pattern = pattern
         self.checkboxscale = checkboxscale
@@ -854,7 +1083,7 @@ class ChecklistPage(LinePageWithTitle):
 
 class FirstPage(LinePage):
     def __init__(self, years, turnOfYear, name, sentence=[], translateX=0, **kwargs) -> None:
-        super().__init__(name, **kwargs)
+        super().__init__(name=name, **kwargs)
 
         self.sentence = sentence
         self.years = years
@@ -866,6 +1095,7 @@ class FirstPage(LinePage):
         # font style
         self.fontHeightScl = kwargs.get('fontHeightScl', 0.66)
         self.fontFamily = kwargs.get('fontFamily', 'Anjoman')
+        self.backupFonts = kwargs.get('backupFonts', 'vazirmatn')
         self.fontWeight = kwargs.get('fontWeight', {})
         self.fontSize = kwargs.get('fontSize', {})
 
@@ -889,7 +1119,7 @@ class FirstPage(LinePage):
             'firstInfo',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("firstPageTitle", self.lineHeight*self.daysHeight*4)/self.scale}px;'
             f'text-anchor:{"start" if loc=="left" else "end"};'
         )
@@ -899,7 +1129,7 @@ class FirstPage(LinePage):
             'secondInfo',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("firstPageOther", 9)/self.scale}px;'
             f'text-anchor:{"start" if loc=="left" else "end"};'
         )
@@ -909,7 +1139,7 @@ class FirstPage(LinePage):
             'turnOfYear',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("turnOfYear", 7)/self.scale}px;'
             f'text-anchor:{"start" if loc=="right" else "end"};'
             'direction:rtl;'
@@ -961,7 +1191,7 @@ class FirstPage(LinePage):
             'name',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("name", 79)/self.scale}px;'
             f'text-anchor:{"start" if loc=="right" else "end"};'
             'direction:rtl;'
@@ -972,7 +1202,7 @@ class FirstPage(LinePage):
             'sentence',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("sentence", 9)/self.scale}px;'
             f'text-anchor:{"start" if loc=="right" else "end"};'
             'direction:rtl;'
@@ -1009,7 +1239,7 @@ class FirstPage(LinePage):
 
 class HolidaysPage(LinePageWithTitle):
     def __init__(self, year, title, shiftDownHolidays=1, name='Untitle-LinePage', **kwargs) -> None:
-        super().__init__(title, name, **kwargs)
+        super().__init__(title=title, name=name, **kwargs)
         self.daysJson = kwargs.get('daysJson', '')
         self.eventJson = kwargs.get('eventJson', '')
         self.calNamesJson = kwargs.get('calNamesJson', '')
@@ -1045,7 +1275,7 @@ class HolidaysPage(LinePageWithTitle):
             'holiday',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("holidaysPage", 7)/self.scale}px;'
             'text-anchor:start;'
             'direction:rtl;'
@@ -1055,7 +1285,7 @@ class HolidaysPage(LinePageWithTitle):
             'holiday',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("holidaysPage", 7)/self.scale}px;'
             'text-anchor:start;'
             'direction:rtl;'
@@ -1065,7 +1295,7 @@ class HolidaysPage(LinePageWithTitle):
             'holidayNo',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("holidaysPageNo", 7)/self.scale}px;'
             'text-anchor:middle;'
             'direction:rtl;'
@@ -1126,7 +1356,7 @@ class HolidaysPage(LinePageWithTitle):
 
 class OneYearPage(LinePageWithTitle):
     def __init__(self, year, title, name='Untitle-LinePage', **kwargs) -> None:
-        super().__init__(title, name, **kwargs)
+        super().__init__(title=title, name=name, **kwargs)
         self.daysJson = kwargs.get('daysJson', '')
         self.eventJson = kwargs.get('eventJson', '')
         self.calNamesJson = kwargs.get('calNamesJson', '')
@@ -1135,6 +1365,7 @@ class OneYearPage(LinePageWithTitle):
         self.weekend = kwargs.get('weekend', [])
         self.secondColor = kwargs.get('secondColor', '#ddd')
         self.showHolidays = kwargs.get('showHolidays', True)
+        self.xPadding = kwargs.get('xPadding', 2)
 
         self.holidays = []
         if self.showHolidays:
@@ -1169,7 +1400,7 @@ class OneYearPage(LinePageWithTitle):
             'onePageYear',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("onePageYear", 7)/self.scale}px;'
             'text-anchor:middle;'
             'direction:rtl;'
@@ -1180,7 +1411,7 @@ class OneYearPage(LinePageWithTitle):
             'onePageYearHolidays',
             f'fill:{self.secondColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("onePageYearHolidays", 7)/self.scale}px;'
             'text-anchor:middle;'
             'direction:rtl;'
@@ -1191,12 +1422,12 @@ class OneYearPage(LinePageWithTitle):
             'onePageYearMonth',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}";'
+            f'font-family:"{font}",{self.backupFonts};'
             f'font-size:{self.fontSize.get("onePageYearMonth", 7)/self.scale}px;'
             'text-anchor:start;'
             'direction:rtl;'
         )
-        xLeft, xRight = self.xloc(loc, 2*self.lineHeight)
+        xLeft, xRight = self.xloc(loc, self.xPadding*self.lineHeight)
         yTop = self.margin['top']+self.padding['top']
         yBottom = self.margin['top'] + self.height - self.padding['bottom']
 
@@ -1291,3 +1522,251 @@ class OneYearPage(LinePageWithTitle):
             transform=f' scale({self.scale}) translate({xLeft+w-colWidth/2+monthH/2} {yTop+1}) rotate(-90)',
             class_='onePageYearMonth'
         )
+
+
+class OneMonthPage(LinePageWithTitle):
+    def __init__(self, month, year, cal='sh', name='Untitle-LinePage', **kwargs) -> None:
+        self.calNamesJson = kwargs.get('calNamesJson', '')
+        super().__init__(name=name, **kwargs)
+        self.daysJson = kwargs.get('daysJson', '')
+        self.eventJson = kwargs.get('eventJson', '')
+        self.month = month
+        self.year = year
+        self.cal = cal
+        self.startWeekday = kwargs.get('startWeekday', 'Sat')
+        self.weekend = kwargs.get('weekend', [])
+        self.secondColor = kwargs.get('secondColor', '#ddd')
+        self.showHolidays = kwargs.get('showHolidays', True)
+
+        self.xPadding = kwargs.get('xPadding', 2)
+        self.monthScaleX = kwargs.get('monthScaleX', 1)
+        self.monthScaleY = kwargs.get('monthScaleY', 1)
+        self.shiftDay = kwargs.get('shiftDay', 2)
+
+        self.holidays = []
+        if self.showHolidays:
+            for day in self.daysJson.keys():
+                y, m, d = self.daysJson[day]['sh']
+                if y == year and m == month:
+                    todaySh = self.daysJson[day]["sh"]
+                    todayIc = self.daysJson[day]["ic"]
+                    todayWc = self.daysJson[day]["wc"]
+
+                    events = []
+                    events += self.eventJson.get(
+                        f"sh-{todaySh[1]}-{todaySh[2]}", [])
+                    events += self.eventJson.get(
+                        f"ic-{todayIc[1]}-{todayIc[2]}", [])
+                    events += self.eventJson.get(
+                        f"wc-{todayWc[1]}-{todayWc[2]}", [])
+
+                    for e in events:
+                        if e['dayoff'] == True:
+                            self.holidays.append(day)
+                            break
+
+    def makePages(self):
+        super().makePages()
+        for loc in ['right', 'left']:
+            self.addMonths(loc)
+
+    def addMonths(self, loc):
+        # 'onePageMonth': 'Black',
+        # 'onePageMonthHolidays': 'Medium',
+        # 'onePageMonthDays': '',
+        font = ' '.join([self.fontFamily, self.fontWeight.get("onePageMonth", "")]).strip()  # nopep8
+        self.pages[loc].addStyle(
+            'onePageMonth',
+            f'fill:{self.primaryColor};'
+            f'stroke:None;'
+            f'font-family:"{font}",{self.backupFonts};'
+            f'font-size:{self.fontSize.get("onePageMonth", 7)/self.scale}px;'
+            'text-anchor:start;'
+            'direction:rtl;'
+        )
+
+        font = ' '.join([self.fontFamily, self.fontWeight.get("onePageMonthHolidays", "")]).strip()  # nopep8
+        self.pages[loc].addStyle(
+            'onePageMonthHolidays',
+            f'fill:{self.secondColor};'
+            f'stroke:None;'
+            f'font-family:"{font}",{self.backupFonts};'
+            f'font-size:{self.fontSize.get("onePageMonthHolidays", 7)/self.scale}px;'
+            'text-anchor:start;'
+            'direction:rtl;'
+        )
+
+        font = ' '.join([self.fontFamily, self.fontWeight.get("onePageMonthDays", "")]).strip()  # nopep8
+        self.pages[loc].addStyle(
+            'onePageMonthDays',
+            f'fill:{self.primaryColor};'
+            f'stroke:None;'
+            f'font-family:"{font}",{self.backupFonts};'
+            f'font-size:{self.fontSize.get("onePageMonthDays", 7)/self.scale}px;'
+            'text-anchor:start;'
+            'direction:rtl;'
+        )
+        xLeft, xRight = self.xloc(loc, self.xPadding*self.lineHeight)
+        yTop = self.margin['top']+self.padding['top']
+        yBottom = self.margin['top'] + self.height - self.padding['bottom']
+
+        w = (xRight-xLeft)
+        h = (((yBottom-yTop)*self.monthScaleY) //
+             self.lineHeight)*self.lineHeight
+
+        weekDays = ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri']
+        weekShift = weekDays.index(self.startWeekday)
+        weekDays = weekDays[weekShift:] + weekDays[:weekShift]
+
+        calKeysDict = {}
+        monthList = {}
+        for date_ in self.daysJson:
+            day = self.daysJson[date_][self.cal]
+
+            if day[0] == self.year:
+                if day[2] == 1:
+                    monthList[day[1]] = self.calNamesJson[self.cal]['month'][str(
+                        day[1])]
+                    calKeysDict[day[1]] = [date_]
+                else:
+                    calKeysDict[day[1]].append(date_)
+
+        self.addMonth(
+            loc,
+            xLeft=xLeft,
+            yTop=yTop,
+            w=w,
+            h=h,
+            monthName=monthList[self.month],
+            days=calKeysDict[self.month],
+            weekDays=weekDays
+        )
+
+    def addMonth(self, loc, xLeft, yTop, w, h, monthName, days, weekDays):
+        # colWidth = self.lineHeight if self.lineHeight <= w/7 else w/7
+        colWidth = self.monthScaleX*w/6
+
+        day1 = self.daysJson[days[0]]
+        wd1 = str(day1['weekday'])
+        b1 = weekDays.index(self.calNamesJson['wc']['weekday-short'][wd1])
+
+        dayE = self.daysJson[days[-1]]
+        wdE = str(dayE['weekday'])
+        bE = weekDays.index(self.calNamesJson['wc']['weekday-short'][wdE])
+
+        col = 6 if bE < b1 else 5
+        if b1 > self.shiftDay or col == 6:
+            dx = w - colWidth*col
+        else:
+            dx = 0
+
+        if False:
+            lineHeight = self.lineHeight
+            self.pages[loc].addRect(
+                xLeft+w-colWidth,
+                yTop+1,
+                colWidth,
+                h-2-lineHeight,
+                transform=f'scale({self.scale})',
+                fill="white",
+            )
+        else:
+            # lineHeight = (((h-self.lineHeight)/7) //
+            #               self.lineHeight)*self.lineHeight
+
+            lineHeight = self.lineHeight*self.daysHeight
+
+            # self.pages[loc].addRect(
+            #     xLeft+dx, yTop-1, w-dx, 7*lineHeight-1,
+            #     transform=f'scale({self.scale})',
+            #     fill="white",
+            # )
+
+        calH = self.fontHeightScl * \
+            self.fontSize.get("onePageMonthDays", 7)/self.scale
+
+        # a = -1 if col == 6 else 0
+        a = 0
+        for date_ in days:
+            day = self.daysJson[date_]
+            # b = weekDays.index(day['wc']['weekday'][0])
+            wd = str(day['weekday'])
+            b = weekDays.index(self.calNamesJson['wc']['weekday-short'][wd])
+
+            x = xLeft + w - colWidth * (self.monthScaleX*a + 1.5) + dx
+            y = yTop + lineHeight * (self.monthScaleY*b + 0.5) + calH/2
+
+            isHoliday = (date_ in self.holidays)
+            # or (
+            #     day['weekday'] in self.weekend)
+            cellW = colWidth * self.monthScaleX
+            cellH = lineHeight * self.monthScaleY
+
+            y2 = yTop + cellH*b
+            x2 = xLeft + (col-a-1)*cellW + dx
+
+            self.pages[loc].addRect(
+                x2, y2-1, cellW+0.2, cellH+0.2,
+                transform=f'scale({self.scale})',
+                fill="white",
+            )
+            self.pages[loc].addPolyline(
+                points=[
+                    [x2+1, y2],
+                    [x2+cellW-1, y2],
+                    [x2+cellW-1, y2+cellH-2],
+                ],
+                transform=f'scale({self.scale})',
+                class_='line'
+            )
+
+            self.pages[loc].addText(
+                x2+cellW-2,
+                y2 + calH+2,
+                perNo(day['sh'][2]),
+                transform=f'scale({self.scale})',
+                class_='onePageMonthHolidays' if isHoliday else 'onePageMonthDays'
+            )
+            a += 1 if b == 6 else 0
+
+        monthH = self.fontHeightScl * \
+            self.fontSize.get("onePageMonthDays", 7)/self.scale
+
+        self.pages[loc].addText(
+            0,
+            0,
+            monthName,
+            transform=f' scale({self.scale}) translate({xLeft+w-colWidth/2+monthH/2} {yTop+self.lineHeight/2}) rotate(-90)',
+            class_='onePageMonth'
+        )
+
+
+class SquarePage(LinePageWithTitle):
+    def __init__(self, name='Untitle-DotPage', **kwargs) -> None:
+        super().__init__(name=name, **kwargs)
+
+    def makePages(self):
+        super().makePages()
+        for loc in ['right', 'left']:
+            self.addVerticalLines(loc)
+
+    def addVerticalLines(self, loc):
+        y = self.margin['top'] + self.padding['top']
+        yTop = y
+        while y <= self.svgHeight - self.margin['bottom'] - self.padding['bottom']:
+            yBottom = y
+            y += self.lineHeight
+
+        self.pages[loc].openGroup()
+
+        xLeft, xRight = self.xloc(loc, self.lineHeight)
+        x = xLeft
+        while x <= xRight:
+            self.pages[loc].addLine(
+                x, yTop, x, yBottom,
+                transform=f'scale({self.scale})',
+                class_='line'
+            )
+            x += self.lineHeight
+
+        self.pages[loc].closeGroup()

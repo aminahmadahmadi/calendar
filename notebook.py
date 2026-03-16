@@ -54,8 +54,16 @@ class Notebook():
         page = LinePage(**self.__dict__)
         self.pages.append(page)
 
-    def addDotPage(self):
-        page = DotPage(**self.__dict__)
+    def addLinePageWithTitle(self, **kwargs):
+        page = LinePageWithTitle(**self.__dict__, **kwargs)
+        self.pages.append(page)
+
+    def addSquarePage(self, **kwargs):
+        page = SquarePage(**self.__dict__, **kwargs)
+        self.pages.append(page)
+
+    def addDotPage(self, **kwargs):
+        page = DotPage(**self.__dict__, **kwargs)
         self.pages.append(page)
 
     def addChecklistPage(self, **kwargs):
@@ -66,7 +74,7 @@ class Notebook():
         page = OneYearPage(year, title, **self.__dict__, **kwargs)
         self.pages.append(page)
 
-    def toHTML(self, Dir=''):
+    def toHTML(self, Dir='', previewMargin=False):
         if not os.path.exists(os.path.join(Dir, self.name)):
             os.mkdir(os.path.join(Dir, self.name))
 
@@ -74,16 +82,18 @@ class Notebook():
             os.mkdir(os.path.join(Dir, self.name, 'pages'))
 
         _direction = "rtl" if self.rtl else "ltr"
-        htmlTxt = f'<html>\n<head>\n<style>\nhtml,body{{margin:0;padding:0;direction:{_direction};}}\n</style>\n</head>\n<body>\n'
+        htmlTxt = f'<html>\n<head>\n<style>\nhtml,body{{margin:0;padding:0;direction:{_direction};}}\nbody{{display:flex;flex-wrap:wrap;}}\n</style>\n</head>\n<body>\n'
         for i in range(len(self.pages)):
             if i % 2 == 0 ^ self.rtl:
                 pageDir = 'right'
+                pageOneMargin = 'left'
             else:
                 pageDir = 'left'
+                pageOneMargin = 'right'
             print(
                 f'#{i+1:>3}: {str(self.pages[i].__class__)[8:-2].split(".")[-1]}({pageDir[:1]})')
 
-            svg = self.pages[i].page[pageDir]
+            svg: Svg = self.pages[i].page[pageDir]
             svg.name = f'p{i:03}'
             svg.save(
                 "/".join([Dir, self.name, 'pages']),
@@ -92,7 +102,11 @@ class Notebook():
             )
             path = "/".join(['pages', f"{svg.name}.svg"])
 
-            htmlTxt += f'<img src="{path}" >\n'
+            styleTxt = ''
+            if i == 0 and previewMargin:
+                styleTxt += f'style="margin-{pageOneMargin}:{self.pages[i].svgWidth}mm;"'
+
+            htmlTxt += f'<img src="{path}" {styleTxt} >\n'
 
         htmlTxt += '</body>\n</html>'
 
@@ -107,7 +121,7 @@ class Notebook():
             os.mkdir(os.path.join(Dir, self.name, 'pages'))
 
         _direction = "rtl" if self.rtl else "ltr"
-        htmlTxt = f'<html>\n<head>\n<style>\nhtml,body{{margin:0;padding:0;direction:{_direction};}}\n</style>\n</head>\n<body>\n'
+        htmlTxt = f'<html>\n<head>\n<style>\nhtml,body{{margin:0;padding:0;direction:{_direction};}}\nbody{{display:flex;flex-wrap:wrap;}}\n</style>\n</head>\n<body>\n'
 
         for i in range(len(self.pages)):
             if i % 2 == 0 ^ self.rtl:
