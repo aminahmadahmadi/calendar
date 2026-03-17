@@ -50,36 +50,37 @@ class Calendar(Notebook):
 
         fontWeight = kwargs.get('fontWeight', {})
         defaultFontWeight = {
-            'firstCal': 'Thin',
-            'holiday': 'Thin',
-            'firstCalWeekdays': 'ExtraLight',
-            'firstCalWeekdaysHoliday': 'ExtraLight',
-            'secondCal': 'Thin',
-            'holidaysPage': 'Thin',
-            'holidaysPageNo': 'Medium',
-            'thirdCal': 'Thin',
-            'monthAndWeek': 'Light',
-            'events': 'ExtraLight',
-            'time': 'Regular',
-            'firstPageTitle': 'Thin',
-            'turnOfYear':  'Thin',
-            'firstPageOther': 'Light',
-            'name': 'Black',
-            'sentence': 'Light',
-            'onePageYear': 'Light',
-            'onePageYearHolidays': 'Medium',
-            'onePageYearMonth': 'Black',
-            'onePageMonth': 'Black',
-            'onePageMonthHolidays': 'Medium',
-            'onePageMonthDays': '',
-            'personalEvents': 'ExtraLight'
+            'default': 400,
+            'firstCal': 100,
+            'holiday': 100,
+            'firstCalWeekdays': 200,
+            'firstCalWeekdaysHoliday': 200,
+            'secondCal': 100,
+            'holidaysPage': 100,
+            'holidaysPageNo': 500,
+            'thirdCal': 100,
+            'monthAndWeek': 300,
+            'events': 200,
+            'time': 400,
+            'firstPageTitle': 100,
+            'turnOfYear':  100,
+            'firstPageOther': 300,
+            'name': 800,
+            'sentence': 300,
+            'onePageYear': 300,
+            'onePageYearHolidays': 500,
+            'onePageYearMonth': 800,
+            'onePageMonth': 800,
+            'onePageMonthHolidays': 500,
+            'onePageMonthDays': 400,
+            'personalEvents': 200
         }
-        self.fontWeight = {}
-        for k, v in defaultFontWeight.items():
-            self.fontWeight[k] = fontWeight.get(k, v)
+        defaultFontWeight.update(fontWeight)
+        self.fontWeight = defaultFontWeight
 
         fontSize = kwargs.get('fontSize', {})
         defaultFontSize = {
+            'default': 7,
             'firstCal':  self.lineHeight * self.daysHeight * 2,
             'holiday':  self.lineHeight * self.daysHeight * 2,
             'firstCalWeekdays': 7,
@@ -104,9 +105,11 @@ class Calendar(Notebook):
             'onePageMonthDays': 7,
             'personalEvents': 6
         }
-        self.fontSize = {}
-        for k, v in defaultFontSize.items():
-            self.fontSize[k] = fontSize.get(k, v)
+
+        self.fontOtherCSS = kwargs.get('fontOtherCSS', {'default': ''})
+
+        defaultFontSize.update(fontSize)
+        self.fontSize = defaultFontSize
 
         # colors
         self.primaryColor = kwargs.get('primaryColor', '#000')

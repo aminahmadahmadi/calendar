@@ -245,6 +245,11 @@ class WeekPage(LinePage):
         self.backupFonts = kwargs.get('backupFonts', 'vazirmatn')
         self.fontWeight = kwargs.get('fontWeight', {})
         self.fontSize = kwargs.get('fontSize', {})
+        self.fontOtherCSS = kwargs.get('fontOtherCSS', {})
+
+        self.defaultFontWeight = self.fontWeight['default']
+        self.defaultFontSize = self.fontSize['default']
+        self.defaultFontOtherCSS = self.fontOtherCSS['default']
 
         # colors
         self.primaryColor = kwargs.get('primaryColor', '#000')
@@ -355,42 +360,52 @@ class WeekPage(LinePage):
     def addFirstCal(self, loc):
         calID = self.calendarOrder[0]
 
-        font = ' '.join([self.fontFamily, self.fontWeight.get("firstCal", "")]).strip()  # nopep8
+        fontWeight = self.fontWeight.get("firstCal", self.defaultFontWeight)
+        fontOtherCSS = self.fontOtherCSS.get(
+            "firstCal", self.defaultFontOtherCSS)
         self.pages[loc].addStyle(
             'firstCal',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}",{self.backupFonts};'
+            f'font-family:"{self.fontFamily}",{self.backupFonts};'
+            f'font-weight:{fontWeight};{fontOtherCSS}'
             f'font-size:{self.fontSize.get("firstCal", self.lineHeight * self.daysHeight * 2)/self.scale}px;'
             'text-anchor:middle;'
         )
 
-        font = ' '.join([self.fontFamily, self.fontWeight.get("holiday", "")]).strip()  # nopep8
+        fontWeight = self.fontWeight.get("holiday", self.defaultFontWeight)
+        fontOtherCSS = self.fontOtherCSS.get(
+            "holiday", self.defaultFontOtherCSS)
         self.pages[loc].addStyle(
             'holiday',
             f'fill:{self.secondColor};'
             f'stroke:None;'
-            f'font-family:"{font}",{self.backupFonts};'
+            f'font-family:"{self.fontFamily}",{self.backupFonts};'
+            f'font-weight:{fontWeight};{fontOtherCSS}'
             f'font-size:{self.fontSize.get("holiday", self.lineHeight * self.daysHeight * 2)/self.scale}px;'
             'text-anchor:middle;'
         )
 
-        font = ' '.join([self.fontFamily, self.fontWeight.get("firstCalWeekdays", "")]).strip()  # nopep8
+        fontWeight = self.fontWeight.get("firstCalWeekdays", self.defaultFontWeight)  # noqa
+        fontOtherCSS = self.fontOtherCSS.get("firstCalWeekdays", self.defaultFontOtherCSS)  # noqa
         self.pages[loc].addStyle(
             'firstCalWeekdays',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}",{self.backupFonts};'
+            f'font-family:"{self.fontFamily}",{self.backupFonts};'
+            f'font-weight:{fontWeight};{fontOtherCSS}'
             f'font-size:{self.fontSize.get("firstCalWeekdays", 8)/self.scale}px;'
             'text-anchor:middle;'
         )
 
-        font = ' '.join([self.fontFamily, self.fontWeight.get("firstCalWeekdaysHoliday", "")]).strip()  # nopep8
+        fontWeight = self.fontWeight.get("firstCalWeekdaysHoliday", self.defaultFontWeight)  # noqa
+        fontOtherCSS = self.fontOtherCSS.get("firstCalWeekdaysHoliday", self.defaultFontOtherCSS)  # noqa
         self.pages[loc].addStyle(
             'firstCalWeekdaysHoliday',
             f'fill:{self.secondColor};'
             f'stroke:None;'
-            f'font-family:"{font}",{self.backupFonts};'
+            f'font-family:"{self.fontFamily}",{self.backupFonts};'
+            f'font-weight:{fontWeight};{fontOtherCSS}'
             f'font-size:{self.fontSize.get("firstCalWeekdaysHoliday", 8)/self.scale}px;'
             'text-anchor:middle;'
         )
@@ -483,12 +498,14 @@ class WeekPage(LinePage):
         # print('addPersonalEvents(', loc, ')')
         startAnchor = self.layout == "left"
 
-        font = ' '.join([self.fontFamily, self.fontWeight.get("personalEvents", "")]).strip()  # nopep8
+        fontWeight = self.fontWeight.get("personalEvents", self.defaultFontWeight)  # noqa
+        fontOtherCSS = self.fontOtherCSS.get("personalEvents", self.defaultFontOtherCSS)  # noqa
         self.pages[loc].addStyle(
             'personalEvents',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}",{self.backupFonts};'
+            f'font-family:"{self.fontFamily}",{self.backupFonts};'
+            f'font-weight:{fontWeight};{fontOtherCSS}'
             f'font-size:{self.fontSize.get("personalEvents", 7)/self.scale}px;'
             f'text-anchor:{"start" if startAnchor else "end"};'
             'direction:rtl;'
@@ -704,14 +721,14 @@ class WeekPage(LinePage):
         if not self.showTime:
             return
 
-        font = ' '.join([self.fontFamily, self.fontWeight.get("time", "")]).strip()  # nopep8
-
+        fontWeight = self.fontWeight.get("time", self.defaultFontWeight)
+        fontOtherCSS = self.fontOtherCSS.get("time", self.defaultFontOtherCSS)
         self.pages[loc].addStyle(
             'time',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-
-            f'font-family:"{font}",{self.backupFonts};'
+            f'font-family:"{self.fontFamily}",{self.backupFonts};'
+            f'font-weight:{fontWeight};{fontOtherCSS}'
             f'font-size:{self.fontSize.get("time", 5)/self.scale}px;'
             'text-anchor:middle;'
         )
@@ -766,12 +783,14 @@ class WeekPage(LinePage):
         try:
             startAnchor = (self.layout == "right") ^ (calID == "wc")
 
-            font = ' '.join([self.fontFamily, self.fontWeight.get(order, "")]).strip()  # nopep8
+            fontWeight = self.fontWeight.get(order, self.defaultFontWeight)  # noqa
+            fontOtherCSS = self.fontOtherCSS.get(order, self.defaultFontOtherCSS)  # noqa
             self.pages[loc].addStyle(
                 order,
                 f'fill:{self.primaryColor};'
                 f'stroke:None;'
-                f'font-family:"{font}",{self.backupFonts};'
+                f'font-family:"{self.fontFamily}",{self.backupFonts};'
+                f'font-weight:{fontWeight};{fontOtherCSS}'
                 f'font-size:{self.fontSize.get(order, 8)/self.scale}px;'
                 f'text-anchor:{"start" if startAnchor else "end"};'
                 f'direction:{"ltr" if calID=="wc" else "rtl"};'
@@ -811,12 +830,14 @@ class WeekPage(LinePage):
 
     def addEventOfDays(self, loc):
 
-        font = ' '.join([self.fontFamily, self.fontWeight.get("events", "")]).strip()  # nopep8
+        fontWeight = self.fontWeight.get("events", self.defaultFontWeight)  # noqa
+        fontOtherCSS = self.fontOtherCSS.get("events", self.defaultFontOtherCSS)  # noqa
         self.pages[loc].addStyle(
             'events',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}",{self.backupFonts};'
+            f'font-family:"{self.fontFamily}",{self.backupFonts};'
+            f'font-weight:{fontWeight};{fontOtherCSS}'
             f'font-size:{self.fontSize.get("events", 5)/self.scale}px;'
             'text-anchor:start;'
             'direction: rtl;'
@@ -901,12 +922,14 @@ class WeekPage(LinePage):
 
     def addMonthandWeek(self, loc):
 
-        font = ' '.join([self.fontFamily, self.fontWeight.get("monthAndWeek", "")]).strip()  # nopep8
+        fontWeight = self.fontWeight.get("monthAndWeek", self.defaultFontWeight)  # noqa
+        fontOtherCSS = self.fontOtherCSS.get("monthAndWeek", self.defaultFontOtherCSS)  # noqa
         self.pages[loc].addStyle(
             'monthAndWeek',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}",{self.backupFonts};'
+            f'font-family:"{self.fontFamily}",{self.backupFonts};'
+            f'font-weight:{fontWeight};{fontOtherCSS}'
             f'font-size:{self.fontSize.get("monthAndWeek", 8)/self.scale}px;'
             f'text-anchor:{"end" if self.layout=="left" else "start"};'
             'direction: rtl;'
@@ -973,6 +996,11 @@ class LinePageWithTitle(LinePage):
         self.backupFonts = kwargs.get('backupFonts', 'vazirmatn')
         self.fontWeight = kwargs.get('fontWeight', {})
         self.fontSize = kwargs.get('fontSize', {})
+        self.fontOtherCSS = kwargs.get('fontOtherCSS', {})
+
+        self.defaultFontWeight = self.fontWeight['default']
+        self.defaultFontSize = self.fontSize['default']
+        self.defaultFontOtherCSS = self.fontOtherCSS['default']
 
     def makePages(self):
         super().makePages()
@@ -982,12 +1010,14 @@ class LinePageWithTitle(LinePage):
                 self.addMoreText(loc)
 
     def addMoreText(self, loc):
-        font = ' '.join([self.fontFamily, self.fontWeight.get("personalEvents", "")]).strip()  # nopep8
+        fontWeight = self.fontWeight.get("personalEvents", self.defaultFontWeight)  # noqa
+        fontOtherCSS = self.fontOtherCSS.get("personalEvents", self.defaultFontOtherCSS)  # noqa
         self.pages[loc].addStyle(
             'personalEvents',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}",{self.backupFonts};'
+            f'font-family:"{self.fontFamily}",{self.backupFonts};'
+            f'font-weight:{fontWeight};{fontOtherCSS}'
             f'font-size:{self.fontSize.get("monthAndWeek", 8)/self.scale}px;'
             'text-anchor:start;'
             'direction:rtl;'
@@ -1013,12 +1043,14 @@ class LinePageWithTitle(LinePage):
             eventY += self.lineHeight
 
     def addTitle(self, loc):
-        font = ' '.join([self.fontFamily, self.fontWeight.get("monthAndWeek", "")]).strip()  # nopep8
+        fontWeight = self.fontWeight.get("monthAndWeek", self.defaultFontWeight)  # noqa
+        fontOtherCSS = self.fontOtherCSS.get("monthAndWeek", self.defaultFontOtherCSS)  # noqa
         self.pages[loc].addStyle(
             'titleofpage',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}",{self.backupFonts};'
+            f'font-family:"{self.fontFamily}",{self.backupFonts};'
+            f'font-weight:{fontWeight};{fontOtherCSS}'
             f'font-size:{self.fontSize.get("monthAndWeek", 8)/self.scale}px;'
             'text-anchor:start;'
             'direction:rtl;'
@@ -1098,6 +1130,11 @@ class FirstPage(LinePage):
         self.backupFonts = kwargs.get('backupFonts', 'vazirmatn')
         self.fontWeight = kwargs.get('fontWeight', {})
         self.fontSize = kwargs.get('fontSize', {})
+        self.fontOtherCSS = kwargs.get('fontOtherCSS', {})
+
+        self.defaultFontWeight = self.fontWeight['default']
+        self.defaultFontSize = self.fontSize['default']
+        self.defaultFontOtherCSS = self.fontOtherCSS['default']
 
         self.daysHeight = kwargs.get('daysHeight', 4)
 
@@ -1114,32 +1151,38 @@ class FirstPage(LinePage):
     def addYears(self, loc):
         first, second, third = tuple(self.years)
 
-        font = ' '.join([self.fontFamily, self.fontWeight.get("firstPageTitle", "")]).strip()  # nopep8
+        fontWeight = self.fontWeight.get("firstPageTitle", self.defaultFontWeight)  # noqa
+        fontOtherCSS = self.fontOtherCSS.get("firstPageTitle", self.defaultFontOtherCSS)  # noqa
         self.pages[loc].addStyle(
             'firstInfo',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}",{self.backupFonts};'
+            f'font-family:"{self.fontFamily}",{self.backupFonts};'
+            f'font-weight:{fontWeight};{fontOtherCSS}'
             f'font-size:{self.fontSize.get("firstPageTitle", self.lineHeight*self.daysHeight*4)/self.scale}px;'
             f'text-anchor:{"start" if loc=="left" else "end"};'
         )
 
-        font = ' '.join([self.fontFamily, self.fontWeight.get("firstPageOther", "")]).strip()  # nopep8
+        fontWeight = self.fontWeight.get("firstPageOther", self.defaultFontWeight)  # noqa
+        fontOtherCSS = self.fontOtherCSS.get("firstPageOther", self.defaultFontOtherCSS)  # noqa
         self.pages[loc].addStyle(
             'secondInfo',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}",{self.backupFonts};'
+            f'font-family:"{self.fontFamily}",{self.backupFonts};'
+            f'font-weight:{fontWeight};{fontOtherCSS}'
             f'font-size:{self.fontSize.get("firstPageOther", 9)/self.scale}px;'
             f'text-anchor:{"start" if loc=="left" else "end"};'
         )
 
-        font = ' '.join([self.fontFamily, self.fontWeight.get("turnOfYear", "")]).strip()  # nopep8
+        fontWeight = self.fontWeight.get("turnOfYear", self.defaultFontWeight)  # noqa
+        fontOtherCSS = self.fontOtherCSS.get("turnOfYear", self.defaultFontOtherCSS)  # noqa
         self.pages[loc].addStyle(
             'turnOfYear',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}",{self.backupFonts};'
+            f'font-family:"{self.fontFamily}",{self.backupFonts};'
+            f'font-weight:{fontWeight};{fontOtherCSS}'
             f'font-size:{self.fontSize.get("turnOfYear", 7)/self.scale}px;'
             f'text-anchor:{"start" if loc=="right" else "end"};'
             'direction:rtl;'
@@ -1186,23 +1229,27 @@ class FirstPage(LinePage):
 
     def addNameSentence(self, loc):
 
-        font = ' '.join([self.fontFamily, self.fontWeight.get("name", "")]).strip()  # nopep8
+        fontWeight = self.fontWeight.get("name", self.defaultFontWeight)
+        fontOtherCSS = self.fontOtherCSS.get("name", self.defaultFontOtherCSS)
         self.pages[loc].addStyle(
             'name',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}",{self.backupFonts};'
+            f'font-family:"{self.fontFamily}",{self.backupFonts};'
+            f'font-weight:{fontWeight};{fontOtherCSS}'
             f'font-size:{self.fontSize.get("name", 79)/self.scale}px;'
             f'text-anchor:{"start" if loc=="right" else "end"};'
             'direction:rtl;'
         )
 
-        font = ' '.join([self.fontFamily, self.fontWeight.get("sentence", "")]).strip()  # nopep8
+        fontWeight = self.fontWeight.get("sentence", self.defaultFontWeight)  # noqa
+        fontOtherCSS = self.fontOtherCSS.get("sentence", self.defaultFontOtherCSS)  # noqa
         self.pages[loc].addStyle(
             'sentence',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}",{self.backupFonts};'
+            f'font-family:"{self.fontFamily}",{self.backupFonts};'
+            f'font-weight:{fontWeight};{fontOtherCSS}'
             f'font-size:{self.fontSize.get("sentence", 9)/self.scale}px;'
             f'text-anchor:{"start" if loc=="right" else "end"};'
             'direction:rtl;'
@@ -1270,32 +1317,38 @@ class HolidaysPage(LinePageWithTitle):
             self.addHolidays(loc)
 
     def addHolidays(self, loc):
-        font = ' '.join([self.fontFamily, self.fontWeight.get("holidaysPage", "")]).strip()  # nopep8
+        fontWeight = self.fontWeight.get("holidaysPage", self.defaultFontWeight)  # noqa
+        fontOtherCSS = self.fontOtherCSS.get("holidaysPage", self.defaultFontOtherCSS)  # noqa
         self.pages[loc].addStyle(
             'holiday',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}",{self.backupFonts};'
+            f'font-family:"{self.fontFamily}",{self.backupFonts};'
+            f'font-weight:{fontWeight};{fontOtherCSS}'
             f'font-size:{self.fontSize.get("holidaysPage", 7)/self.scale}px;'
             'text-anchor:start;'
             'direction:rtl;'
         )
-        font = ' '.join([self.fontFamily, self.fontWeight.get("holidaysPage", "")]).strip()  # nopep8
+        fontWeight = self.fontWeight.get("holidaysPage", self.defaultFontWeight)  # noqa
+        fontOtherCSS = self.fontOtherCSS.get("holidaysPage", self.defaultFontOtherCSS)  # noqa
         self.pages[loc].addStyle(
             'holiday',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}",{self.backupFonts};'
+            f'font-family:"{self.fontFamily}",{self.backupFonts};'
+            f'font-weight:{fontWeight};{fontOtherCSS}'
             f'font-size:{self.fontSize.get("holidaysPage", 7)/self.scale}px;'
             'text-anchor:start;'
             'direction:rtl;'
         )
-        font = ' '.join([self.fontFamily, self.fontWeight.get("holidaysPageNo", "")]).strip()  # nopep8
+        fontWeight = self.fontWeight.get("holidaysPageNo", self.defaultFontWeight)  # noqa
+        fontOtherCSS = self.fontOtherCSS.get("holidaysPageNo", self.defaultFontOtherCSS)  # noqa
         self.pages[loc].addStyle(
             'holidayNo',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}",{self.backupFonts};'
+            f'font-family:"{self.fontFamily}",{self.backupFonts};'
+            f'font-weight:{fontWeight};{fontOtherCSS}'
             f'font-size:{self.fontSize.get("holidaysPageNo", 7)/self.scale}px;'
             'text-anchor:middle;'
             'direction:rtl;'
@@ -1395,34 +1448,40 @@ class OneYearPage(LinePageWithTitle):
 
     def addMonths(self, loc):
 
-        font = ' '.join([self.fontFamily, self.fontWeight.get("onePageYear", "")]).strip()  # nopep8
+        fontWeight = self.fontWeight.get("onePageYear", self.defaultFontWeight)  # noqa
+        fontOtherCSS = self.fontOtherCSS.get("onePageYear", self.defaultFontOtherCSS)  # noqa
         self.pages[loc].addStyle(
             'onePageYear',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}",{self.backupFonts};'
+            f'font-family:"{self.fontFamily}",{self.backupFonts};'
+            f'font-weight:{fontWeight};{fontOtherCSS}'
             f'font-size:{self.fontSize.get("onePageYear", 7)/self.scale}px;'
             'text-anchor:middle;'
             'direction:rtl;'
         )
 
-        font = ' '.join([self.fontFamily, self.fontWeight.get("onePageYearHolidays", "")]).strip()  # nopep8
+        fontWeight = self.fontWeight.get("onePageYearHolidays", self.defaultFontWeight)  # noqa
+        fontOtherCSS = self.fontOtherCSS.get("onePageYearHolidays", self.defaultFontOtherCSS)  # noqa
         self.pages[loc].addStyle(
             'onePageYearHolidays',
             f'fill:{self.secondColor};'
             f'stroke:None;'
-            f'font-family:"{font}",{self.backupFonts};'
+            f'font-family:"{self.fontFamily}",{self.backupFonts};'
+            f'font-weight:{fontWeight};{fontOtherCSS}'
             f'font-size:{self.fontSize.get("onePageYearHolidays", 7)/self.scale}px;'
             'text-anchor:middle;'
             'direction:rtl;'
         )
 
-        font = ' '.join([self.fontFamily, self.fontWeight.get("onePageYearMonth", "")]).strip()  # nopep8
+        fontWeight = self.fontWeight.get("onePageYearMonth", self.defaultFontWeight)  # noqa
+        fontOtherCSS = self.fontOtherCSS.get("onePageYearMonth", self.defaultFontOtherCSS)  # noqa
         self.pages[loc].addStyle(
             'onePageYearMonth',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}",{self.backupFonts};'
+            f'font-family:"{self.fontFamily}",{self.backupFonts};'
+            f'font-weight:{fontWeight};{fontOtherCSS}'
             f'font-size:{self.fontSize.get("onePageYearMonth", 7)/self.scale}px;'
             'text-anchor:start;'
             'direction:rtl;'
@@ -1574,34 +1633,40 @@ class OneMonthPage(LinePageWithTitle):
         # 'onePageMonth': 'Black',
         # 'onePageMonthHolidays': 'Medium',
         # 'onePageMonthDays': '',
-        font = ' '.join([self.fontFamily, self.fontWeight.get("onePageMonth", "")]).strip()  # nopep8
+        fontWeight = self.fontWeight.get("onePageMonth", self.defaultFontWeight)  # noqa
+        fontOtherCSS = self.fontOtherCSS.get("onePageMonth", self.defaultFontOtherCSS)  # noqa
         self.pages[loc].addStyle(
             'onePageMonth',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}",{self.backupFonts};'
+            f'font-family:"{self.fontFamily}",{self.backupFonts};'
+            f'font-weight:{fontWeight};{fontOtherCSS}'
             f'font-size:{self.fontSize.get("onePageMonth", 7)/self.scale}px;'
             'text-anchor:start;'
             'direction:rtl;'
         )
 
-        font = ' '.join([self.fontFamily, self.fontWeight.get("onePageMonthHolidays", "")]).strip()  # nopep8
+        fontWeight = self.fontWeight.get("onePageMonthHolidays", self.defaultFontWeight)  # noqa
+        fontOtherCSS = self.fontOtherCSS.get("onePageMonthHolidays", self.defaultFontOtherCSS)  # noqa
         self.pages[loc].addStyle(
             'onePageMonthHolidays',
             f'fill:{self.secondColor};'
             f'stroke:None;'
-            f'font-family:"{font}",{self.backupFonts};'
+            f'font-family:"{self.fontFamily}",{self.backupFonts};'
+            f'font-weight:{fontWeight};{fontOtherCSS}'
             f'font-size:{self.fontSize.get("onePageMonthHolidays", 7)/self.scale}px;'
             'text-anchor:start;'
             'direction:rtl;'
         )
 
-        font = ' '.join([self.fontFamily, self.fontWeight.get("onePageMonthDays", "")]).strip()  # nopep8
+        fontWeight = self.fontWeight.get("onePageMonthDays", self.defaultFontWeight)  # noqa
+        fontOtherCSS = self.fontOtherCSS.get("onePageMonthDays", self.defaultFontOtherCSS)  # noqa
         self.pages[loc].addStyle(
             'onePageMonthDays',
             f'fill:{self.primaryColor};'
             f'stroke:None;'
-            f'font-family:"{font}",{self.backupFonts};'
+            f'font-family:"{self.fontFamily}",{self.backupFonts};'
+            f'font-weight:{fontWeight};{fontOtherCSS}'
             f'font-size:{self.fontSize.get("onePageMonthDays", 7)/self.scale}px;'
             'text-anchor:start;'
             'direction:rtl;'
