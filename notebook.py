@@ -83,6 +83,14 @@ class Notebook():
         page = OneYearPage(year, title, **self.__dict__, **kwargs)
         self.pages.append(page)
 
+    def addOneMonthPage(self, month, year, title='', **kwargs):
+        page = OneMonthPage(
+            month=month,
+            year=year,
+            **self.__dict__, **kwargs
+        )
+        self.pages.append(page)
+
     def toHTML(self, Dir='', previewMargin=False):
 
         if not os.path.exists(self.mainDirectory(Dir)):

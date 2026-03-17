@@ -1,6 +1,7 @@
 ﻿from pages import *
 from notebook import Notebook
 import json
+from fontStyle import FontStyle
 
 
 class Calendar(Notebook):
@@ -45,10 +46,7 @@ class Calendar(Notebook):
         # font style
         self.fontHeightScl = kwargs.get('fontHeightScl', 0.67)
         self.fontWidthScl = kwargs.get('fontWidthScl', 7.2)
-        self.fontFamily = kwargs.get('fontFamily', 'Anjoman')
-        self.backupFonts = kwargs.get('backupFonts', 'vazirmatn')
 
-        fontWeight = kwargs.get('fontWeight', {})
         defaultFontWeight = {
             'default': 400,
             'firstCal': 100,
@@ -75,10 +73,20 @@ class Calendar(Notebook):
             'onePageMonthDays': 400,
             'personalEvents': 200
         }
-        defaultFontWeight.update(fontWeight)
-        self.fontWeight = defaultFontWeight
+        fontWeight = kwargs.get('fontWeight', {})
+        self.fontWeight = FontStyle(** defaultFontWeight)
+        self.fontWeight.update(fontWeight)
 
-        fontSize = kwargs.get('fontSize', {})
+        fontFamily = kwargs.get('fontFamily', 'Anjoman')
+        if type(fontFamily) == str:
+            fontFamily = {'default': fontFamily}
+        self.fontFamily = FontStyle(** fontFamily, appendix=self.fontWeight)
+
+        backupFonts = kwargs.get('backupFonts', 'vazirmatn')
+        if type(backupFonts) == str:
+            backupFonts = {'default': backupFonts}
+        self.backupFonts = FontStyle(** backupFonts)
+
         defaultFontSize = {
             'default': 7,
             'firstCal':  self.lineHeight * self.daysHeight * 2,
@@ -105,11 +113,14 @@ class Calendar(Notebook):
             'onePageMonthDays': 7,
             'personalEvents': 6
         }
+        fontSize = kwargs.get('fontSize', {})
+        self.fontSize = FontStyle(** defaultFontSize)
+        self.fontSize.update(fontSize)
 
-        self.fontOtherCSS = kwargs.get('fontOtherCSS', {'default': ''})
-
-        defaultFontSize.update(fontSize)
-        self.fontSize = defaultFontSize
+        fontOtherCSS = kwargs.get('fontOtherCSS', {})
+        defaultFontOtherCSS = {'default': ''}
+        self.fontOtherCSS = FontStyle(** defaultFontOtherCSS)
+        self.fontOtherCSS.update(fontOtherCSS)
 
         # colors
         self.primaryColor = kwargs.get('primaryColor', '#000')
