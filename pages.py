@@ -273,6 +273,7 @@ class WeekPage(LinePage):
 
     def makePages(self):
         for loc in ['right', 'left']:
+            print(self.layout, loc)
             self.definePage(loc)
             self.drawlines(loc)
             self.addFirstCal(loc)
@@ -288,6 +289,7 @@ class WeekPage(LinePage):
             self.drawTrimMark(loc)
 
     def drawlines(self, loc):
+        pageSvg: Svg = self.pages[loc]
         self.pages[loc].addStyle(
             'line',
             'fill:none;'
@@ -313,10 +315,40 @@ class WeekPage(LinePage):
                 if self.monthFilter != None and self.monthFilter != self.daysJson[dayKey][self.calendarOrder[0]][1]:
                     xl, xr = xLeft, xRight
 
-                elif self.layout == 'left':
-                    xl, xr = xLeftSpace, xRight
-                else:
+                elif (self.layout == 'left') ^ (loc == 'left'):
                     xl, xr = xLeft, xRightSpace
+                else:
+                    xl, xr = xLeftSpace, xRight
+
+            # pageSvg.addCircle(
+            #     xLeft, y, 1.5, fill="white", stroke=("red" if loc == 'left' else 'blue'),
+            #     **{"stroke-width": 0.2},
+            #     transform=f'scale({self.scale})',
+            # )
+            # pageSvg.addCircle(
+            #     xLeftSpace, y, 1.5, fill="green", stroke=("red" if loc == 'left' else 'blue'),
+            #     **{"stroke-width": 0.2},
+            #     transform=f'scale({self.scale})',
+            # )
+            # pageSvg.addCircle(
+            #     xRight, y, 1.5, fill="gray", stroke=("red" if loc == 'left' else 'blue'),
+            #     **{"stroke-width": 0.2},
+            #     transform=f'scale({self.scale})',
+            # )
+            # pageSvg.addCircle(
+            #     xRightSpace, y, 1.5, fill="orange", stroke=("red" if loc == 'left' else 'blue'),
+            #     **{"stroke-width": 0.2},
+            #     transform=f'scale({self.scale})',
+            # )
+
+            # pageSvg.addCircle(
+            #     xl, y, 1, fill="black",
+            #     transform=f'scale({self.scale})',
+            # )
+            # pageSvg.addCircle(
+            #     xr, y, 1, fill="black",
+            #     transform=f'scale({self.scale})',
+            # )
 
             self.pages[loc].addLine(
                 xl, y, xr, y,
@@ -387,8 +419,8 @@ class WeekPage(LinePage):
         )
         space = self.lineHeight * self.daysHeight * 0.55
         xLeftSpace, xRightSpace = self.xloc(loc, space)
-
-        x = xLeftSpace if self.layout == 'left' else xRightSpace
+        xlocParam = (self.layout == 'left') ^ (loc == 'left')
+        x = xLeftSpace if not xlocParam else xRightSpace
         for i in range(len(self.weekKeys)):
             dayKey = self.weekKeys[i]
 
@@ -469,7 +501,7 @@ class WeekPage(LinePage):
 
         }
         # print('addPersonalEvents(', loc, ')')
-        startAnchor = self.layout == "left"
+        startAnchor = (self.layout == "left") ^ (loc == 'right')
         addTextStyle(
             self,
             loc=loc,
@@ -509,14 +541,19 @@ class WeekPage(LinePage):
             eventY = self.daysY[i]+self.lineHeight / 2 + eventH/2 + _translateTextY  # noqa
             eventIconY = self.daysY[i] + (self.lineHeight-iconSize)/2 + _translateY  # noqa
 
-            space = self.lineHeight+iconSize if self.layout == 'left' else self.lineHeight
+            xlocParam = ((self.layout == 'left') ^ (loc == 'right'))
+
+            space = self.lineHeight + iconSize if xlocParam else self.lineHeight  # noqa
 
             Txtspace = self.lineHeight+iconSize*1.2 if _icon else space
-            xLeftSpace, xRightSpace = self.xloc(loc, space+0.5+_translateX)
-            xLeftSpaceTxt, xRightSpaceTxt = self.xloc(loc, Txtspace+0.5+_translateTextX)  # noqa
+            xLeftSpace, xRightSpace = self.xloc(loc, space+0.5)
+            xLeftSpaceTxt, xRightSpaceTxt = self.xloc(loc, Txtspace+0.5)  # noqa
 
-            xSpace = xRightSpace if self.layout == 'left' else xLeftSpace
-            xSpaceTxt = xRightSpaceTxt if self.layout == 'left' else xLeftSpaceTxt
+            xSpace = xRightSpace if xlocParam else xLeftSpace  # noqa
+            xSpaceTxt = xRightSpaceTxt if xlocParam else xLeftSpaceTxt  # noqa
+
+            xSpace += _translateX
+            xSpaceTxt += _translateTextX
 
             if _icon:
                 try:
@@ -613,11 +650,12 @@ class WeekPage(LinePage):
 
             space = self.lineHeight*self.daysHeight
             xLeftSpace, xRightSpace = self.xloc(loc, space)
-            xSpace = xRightSpace if self.layout == 'right' else xLeftSpace
+            xLocParam = (self.layout == 'right') ^ (loc == 'right')
             thisPage: Svg = self.pages[loc]
 
             r = self.lineHeight*self.moonScale/2
-            cx = xSpace+r/2+1
+            xSpace = xRightSpace-r/2-1 if xLocParam else xLeftSpace+r/2+1
+            cx = xSpace
             cy = eventIconY+self.lineHeight/2
 
             moonAngle = 360*calDay/29.5
@@ -695,11 +733,12 @@ class WeekPage(LinePage):
             fill=self.primaryColor,
             anchor='middle'
         )
-        xLeft, xRight = self.xloc(loc, margin=True)
-        space = self.lineHeight*self.daysHeight*1.75
+        xLocParam = (self.layout == 'left') ^ (loc == 'right')
+        space = self.lineHeight*self.daysHeight * 1.75
+        xLeft, xRight = self.xloc(loc, margin=True, space=1.75)
         xLeftSpace, xRightSpace = self.xloc(loc, space)
 
-        if self.layout == 'left':
+        if xLocParam:
             xl, xr = xLeftSpace, xRight
         else:
             xl, xr = xLeft, xRightSpace
@@ -715,8 +754,12 @@ class WeekPage(LinePage):
             y2 = y1+1
             y3 = y2 + calH + 0.5
 
-            for i in range(17):
-                x = xl + (xr-xl)*i/17
+            startTime = 6
+            endTime = 22
+            _t = startTime
+            i = 0
+            while _t <= endTime:
+                x = xl + (xr-xl)*(i+1)/(endTime-startTime+2)
                 self.pages[loc].addLine(
                     x, y1, x, y2,
                     transform=f'scale({self.scale})',
@@ -726,10 +769,12 @@ class WeekPage(LinePage):
                     self.pages[loc].addText(
                         x,
                         y3,
-                        perNo(i+6),
+                        perNo(_t),
                         transform=f'scale({self.scale})',
                         class_='time',
                     )
+                _t += 1
+                i += 1
 
     def addOtherCal(self, loc, order):
         if order == 'secondCal':
@@ -743,7 +788,8 @@ class WeekPage(LinePage):
             downH = 1.5
 
         try:
-            startAnchor = (self.layout == "right") ^ (calID == "wc")
+            startAnchor = ((self.layout == "right") ^
+                           (calID == "wc")) ^ (loc == "right")
 
             addTextStyle(
                 self,
@@ -767,6 +813,7 @@ class WeekPage(LinePage):
                 space = self.lineHeight*self.daysHeight
                 xLeftSpace, xRightSpace = self.xloc(loc, space+0.5)
                 x = xLeftSpace if self.layout == "left" else xRightSpace
+                x = xLeftSpace if (self.layout == "left") ^ (loc == "right") else xRightSpace  # noqa
 
                 isfull = self.showFullCalendar or cal[2] == 1 or i == 0
                 self.pages[loc].addText(
@@ -786,15 +833,17 @@ class WeekPage(LinePage):
         self.addOtherCal(loc, 'thirdCal')
 
     def addEventOfDays(self, loc):
+        xlocParam = (self.layout == 'left') ^ (loc == 'right')
 
         addTextStyle(
             self,
             loc=loc,
             name="events",
             fill=self.primaryColor,
-            anchor="start",
+            anchor="start" if xlocParam else "end",
             direction="rtl",
         )
+
         for i in range(len(self.weekKeys)):
             dayKey = self.weekKeys[i]
             if self.monthFilter != None and self.monthFilter != self.daysJson[dayKey][self.calendarOrder[0]][1]:
@@ -858,14 +907,17 @@ class WeekPage(LinePage):
                 et.append(eventText)
 
             # x and y location
-            space = self.lineHeight if self.layout == 'left' else self.daysHeight*self.lineHeight
-            _, xRightSpace = self.xloc(loc, space+0.5)
+            xlocParam = (self.layout == 'left') ^ (loc == 'right')
+            xLeft, xRight = self.xloc(loc, space=self.lineHeight)
+            space = self.lineHeight if xlocParam else self.daysHeight*self.lineHeight
+            xLeftSpace, xRightSpace = self.xloc(loc, space+0.5)
+            x_ = xLeft if not xlocParam else xRightSpace
             calH = self.fontHeightScl * self.fontSize.get('events')/self.scale  # noqa
 
             for en in range(len(et)):
                 y = self.daysY[i+1] - self.lineHeight * (en+0.5) + calH/2
                 self.pages[loc].addText(
-                    xRightSpace,
+                    x_,
                     y,
                     perNo(et[en]),
                     transform=f'scale({self.scale})',
@@ -873,13 +925,13 @@ class WeekPage(LinePage):
                 )
 
     def addMonthandWeek(self, loc):
-
+        xLocParam = ((self.layout == "left") ^ (loc == "right"))
         addTextStyle(
             self,
             loc=loc,
             name="monthAndWeek",
             fill=self.primaryColor,
-            anchor="end" if self.layout == "left" else "start",
+            anchor="end" if xLocParam else "start",
             direction="rtl",
         )
         calID = self.calendarOrder[0]
@@ -911,7 +963,7 @@ class WeekPage(LinePage):
         y = self.daysY[0] - self.lineHeight * 0.5 + calH/2
         space = self.lineHeight*self.daysHeight
         xLeftSpace, xRightSpace = self.xloc(loc, space+0.5)
-        x = xLeftSpace if self.layout == "left" else xRightSpace
+        x = xLeftSpace if xLocParam else xRightSpace  # noqa
 
         self.pages[loc].addText(
             x,
