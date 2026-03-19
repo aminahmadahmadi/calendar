@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 580 178.58294999999998" xml:space="preserve" version="1.1" xmlns="http://www.w3.org/2000/svg"
+<svg viewBox="0 0 566.93 178.58294999999998" xml:space="preserve" version="1.1" xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <style type="text/css">
@@ -17,7 +17,7 @@
             .bmhgr-firstCal {
                 fill: white;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 100;
                 font-size: 17.638861940627592px;
                 text-anchor: middle;
@@ -26,7 +26,7 @@
             .bmhgr-holiday {
                 fill: #f00;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 100;
                 font-size: 17.638861940627592px;
                 text-anchor: middle;
@@ -35,7 +35,7 @@
             .bmhgr-firstCalWeekdays {
                 fill: white;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 200;
                 font-size: 2.4694406716878627px;
                 text-anchor: middle;
@@ -44,7 +44,7 @@
             .bmhgr-firstCalWeekdaysHoliday {
                 fill: #f00;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 200;
                 font-size: 2.4694406716878627px;
                 text-anchor: middle;
@@ -53,7 +53,7 @@
             .bmhgr-secondCal {
                 fill: white;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 100;
                 font-size: 2.4694406716878627px;
                 text-anchor: start;
@@ -63,7 +63,7 @@
             .bmhgr-thirdCal {
                 fill: white;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 100;
                 font-size: 2.4694406716878627px;
                 text-anchor: end;
@@ -73,7 +73,7 @@
             .bmhgr-events {
                 fill: white;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 200;
                 font-size: 1.763886194062759px;
                 text-anchor: start;
@@ -83,7 +83,7 @@
             .bmhgr-personalEvents {
                 fill: white;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 200;
                 font-size: 2.116663432875311px;
                 text-anchor: start;
@@ -98,7 +98,7 @@
             .bmhgr-monthAndWeek {
                 fill: white;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 300;
                 font-size: 2.4694406716878627px;
                 text-anchor: end;
@@ -119,7 +119,7 @@
             .afsfe-firstCal {
                 fill: #000;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 100;
                 font-size: 17.638861940627592px;
                 text-anchor: middle;
@@ -128,7 +128,7 @@
             .afsfe-holiday {
                 fill: #ccc;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 100;
                 font-size: 17.638861940627592px;
                 text-anchor: middle;
@@ -137,7 +137,7 @@
             .afsfe-firstCalWeekdays {
                 fill: #000;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 200;
                 font-size: 2.4694406716878627px;
                 text-anchor: middle;
@@ -146,7 +146,7 @@
             .afsfe-firstCalWeekdaysHoliday {
                 fill: #ccc;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 200;
                 font-size: 2.4694406716878627px;
                 text-anchor: middle;
@@ -155,7 +155,7 @@
             .afsfe-secondCal {
                 fill: #000;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 100;
                 font-size: 2.4694406716878627px;
                 text-anchor: start;
@@ -165,7 +165,7 @@
             .afsfe-thirdCal {
                 fill: #000;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 100;
                 font-size: 2.4694406716878627px;
                 text-anchor: end;
@@ -175,7 +175,7 @@
             .afsfe-events {
                 fill: #000;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 200;
                 font-size: 1.763886194062759px;
                 text-anchor: start;
@@ -185,7 +185,7 @@
             .afsfe-personalEvents {
                 fill: #000;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 200;
                 font-size: 2.116663432875311px;
                 text-anchor: start;
@@ -200,7 +200,7 @@
             .afsfe-monthAndWeek {
                 fill: #000;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 300;
                 font-size: 2.4694406716878627px;
                 text-anchor: end;
@@ -221,7 +221,7 @@
             .szzim-firstCal {
                 fill: darkBlue;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 100;
                 font-size: 17.638861940627592px;
                 text-anchor: middle;
@@ -230,7 +230,7 @@
             .szzim-holiday {
                 fill: red;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 100;
                 font-size: 17.638861940627592px;
                 text-anchor: middle;
@@ -239,7 +239,7 @@
             .szzim-firstCalWeekdays {
                 fill: darkBlue;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 200;
                 font-size: 2.4694406716878627px;
                 text-anchor: middle;
@@ -248,7 +248,7 @@
             .szzim-firstCalWeekdaysHoliday {
                 fill: red;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 200;
                 font-size: 2.4694406716878627px;
                 text-anchor: middle;
@@ -257,7 +257,7 @@
             .szzim-secondCal {
                 fill: darkBlue;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 100;
                 font-size: 2.4694406716878627px;
                 text-anchor: start;
@@ -267,7 +267,7 @@
             .szzim-thirdCal {
                 fill: darkBlue;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 100;
                 font-size: 2.4694406716878627px;
                 text-anchor: end;
@@ -277,7 +277,7 @@
             .szzim-events {
                 fill: darkBlue;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 200;
                 font-size: 1.763886194062759px;
                 text-anchor: start;
@@ -287,7 +287,7 @@
             .szzim-personalEvents {
                 fill: darkBlue;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 200;
                 font-size: 2.116663432875311px;
                 text-anchor: start;
@@ -302,7 +302,7 @@
             .szzim-monthAndWeek {
                 fill: darkBlue;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 300;
                 font-size: 2.4694406716878627px;
                 text-anchor: end;
@@ -339,7 +339,7 @@
             خرداد</text>
     </g>
 
-    <g transform="translate(400)">
+    <g transform="translate(390)">
         <rect x="0" y="0" width="63" height="63" class="bmhgr-bg" transform="scale(2.83465)" />
         <line x1="0" y1="8" x2="63" y2="8" transform="scale(2.83465)" class="bmhgr-line" />
         <line x1="25" y1="13" x2="63" y2="13" transform="scale(2.83465)" class="bmhgr-line" />
@@ -368,7 +368,7 @@
 
     </g>
 
-    <g transform="translate(200)">
+    <g transform="translate(195)">
         <rect x="0" y="0" width="63" height="63" class="szzim-bg" transform="scale(2.83465)" />
         <line x1="0" y1="8" x2="63" y2="8" transform="scale(2.83465)" class="szzim-line" />
         <line x1="25" y1="13" x2="63" y2="13" transform="scale(2.83465)" class="szzim-line" />

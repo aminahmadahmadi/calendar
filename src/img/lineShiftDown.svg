@@ -17,7 +17,7 @@
             .goneh-firstCal {
                 fill: #000;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 100;
                 font-size: 10.583317164376554px;
                 text-anchor: middle;
@@ -26,7 +26,7 @@
             .goneh-holiday {
                 fill: #f00;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 100;
                 font-size: 10.583317164376554px;
                 text-anchor: middle;
@@ -35,7 +35,7 @@
             .goneh-firstCalWeekdays {
                 fill: #000;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 200;
                 font-size: 2.4694406716878627px;
                 text-anchor: middle;
@@ -44,7 +44,7 @@
             .goneh-firstCalWeekdaysHoliday {
                 fill: #f00;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 200;
                 font-size: 2.4694406716878627px;
                 text-anchor: middle;
@@ -53,7 +53,7 @@
             .goneh-secondCal {
                 fill: #000;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 100;
                 font-size: 2.4694406716878627px;
                 text-anchor: start;
@@ -63,7 +63,7 @@
             .goneh-thirdCal {
                 fill: #000;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 100;
                 font-size: 2.4694406716878627px;
                 text-anchor: end;
@@ -73,7 +73,7 @@
             .goneh-events {
                 fill: #000;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 200;
                 font-size: 1.763886194062759px;
                 text-anchor: start;
@@ -83,7 +83,7 @@
             .goneh-personalEvents {
                 fill: #000;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 200;
                 font-size: 2.116663432875311px;
                 text-anchor: start;
@@ -98,7 +98,7 @@
             .goneh-monthAndWeek {
                 fill: #000;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 300;
                 font-size: 2.4694406716878627px;
                 text-anchor: end;

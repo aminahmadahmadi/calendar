@@ -4,7 +4,7 @@
     <defs>
         <style type="text/css">
             .oovzi-bg {
-                fill: #eee;
+                fill: #f5f5f5;
                 stroke: none;
             }
 
@@ -17,15 +17,17 @@
             .oovzi-firstCal {
                 fill: #000;
                 stroke: None;
-                font-family: "vazirmatn Thin", vazirmatn;
+                font-family: vazirmatn;
+                font-weight: 100;
                 font-size: 17.638861940627592px;
                 text-anchor: middle;
             }
 
             .oovzi-holiday {
-                fill: #f00;
+                fill: #ccc;
                 stroke: None;
-                font-family: "vazirmatn Thin", vazirmatn;
+                font-family: vazirmatn;
+                font-weight: 100;
                 font-size: 17.638861940627592px;
                 text-anchor: middle;
             }
@@ -33,15 +35,17 @@
             .oovzi-firstCalWeekdays {
                 fill: #000;
                 stroke: None;
-                font-family: "vazirmatn ExtraLight", vazirmatn;
+                font-family: vazirmatn;
+                font-weight: 200;
                 font-size: 2.4694406716878627px;
                 text-anchor: middle;
             }
 
             .oovzi-firstCalWeekdaysHoliday {
-                fill: #f00;
+                fill: #ccc;
                 stroke: None;
-                font-family: "vazirmatn ExtraLight", vazirmatn;
+                font-family: vazirmatn;
+                font-weight: 200;
                 font-size: 2.4694406716878627px;
                 text-anchor: middle;
             }
@@ -49,7 +53,8 @@
             .oovzi-secondCal {
                 fill: #000;
                 stroke: None;
-                font-family: "vazirmatn Thin", vazirmatn;
+                font-family: vazirmatn;
+                font-weight: 100;
                 font-size: 2.4694406716878627px;
                 text-anchor: start;
                 direction: ltr;
@@ -58,16 +63,28 @@
             .oovzi-thirdCal {
                 fill: #000;
                 stroke: None;
-                font-family: "vazirmatn Thin", vazirmatn;
+                font-family: vazirmatn;
+                font-weight: 100;
                 font-size: 2.4694406716878627px;
                 text-anchor: end;
+                direction: rtl;
+            }
+
+            .oovzi-events {
+                fill: #000;
+                stroke: None;
+                font-family: vazirmatn;
+                font-weight: 200;
+                font-size: 1.763886194062759px;
+                text-anchor: start;
                 direction: rtl;
             }
 
             .oovzi-personalEvents {
                 fill: #000;
                 stroke: None;
-                font-family: "vazirmatn ExtraLight", vazirmatn;
+                font-family: vazirmatn;
+                font-weight: 200;
                 font-size: 2.116663432875311px;
                 text-anchor: start;
                 direction: rtl;
@@ -102,16 +119,11 @@
             .oovzi-monthAndWeek {
                 fill: #000;
                 stroke: None;
-                font-family: "vazirmatn Light", vazirmatn;
+                font-family: vazirmatn;
+                font-weight: 300;
                 font-size: 2.4694406716878627px;
                 text-anchor: end;
                 direction: rtl;
-            }
-
-            .oovzi-trimMark {
-                fill: none;
-                stroke: #000;
-                stroke-width: 0.05;
             }
         </style>
 

@@ -17,7 +17,7 @@
             .reajt-firstCal {
                 fill: #000;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 100;
                 font-size: 17.638861940627592px;
                 text-anchor: middle;
@@ -26,7 +26,7 @@
             .reajt-holiday {
                 fill: #ccc;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 100;
                 font-size: 17.638861940627592px;
                 text-anchor: middle;
@@ -35,7 +35,7 @@
             .reajt-firstCalWeekdays {
                 fill: #000;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 200;
                 font-size: 2.4694406716878627px;
                 text-anchor: middle;
@@ -44,7 +44,7 @@
             .reajt-firstCalWeekdaysHoliday {
                 fill: #ccc;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 200;
                 font-size: 2.4694406716878627px;
                 text-anchor: middle;
@@ -53,7 +53,7 @@
             .reajt-secondCal {
                 fill: #000;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 100;
                 font-size: 2.4694406716878627px;
                 text-anchor: start;
@@ -63,7 +63,7 @@
             .reajt-thirdCal {
                 fill: #000;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 100;
                 font-size: 2.4694406716878627px;
                 text-anchor: end;
@@ -73,7 +73,7 @@
             .reajt-events {
                 fill: #000;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 200;
                 font-size: 1.763886194062759px;
                 text-anchor: start;
@@ -83,7 +83,7 @@
             .reajt-personalEvents {
                 fill: #000;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 200;
                 font-size: 2.116663432875311px;
                 text-anchor: start;
@@ -119,7 +119,7 @@
             .reajt-monthAndWeek {
                 fill: #000;
                 stroke: None;
-                font-family: "Anjoman", vazirmatn;
+                font-family: vazirmatn;
                 font-weight: 300;
                 font-size: 2.4694406716878627px;
                 text-anchor: end;
