@@ -339,7 +339,7 @@
             خرداد</text>
     </g>
 
-    <g transform="translate(200)">
+    <g transform="translate(400)">
         <rect x="0" y="0" width="63" height="63" class="bmhgr-bg" transform="scale(2.83465)" />
         <line x1="0" y1="8" x2="63" y2="8" transform="scale(2.83465)" class="bmhgr-line" />
         <line x1="25" y1="13" x2="63" y2="13" transform="scale(2.83465)" class="bmhgr-line" />
@@ -368,7 +368,7 @@
 
     </g>
 
-    <g transform="translate(400)">
+    <g transform="translate(200)">
         <rect x="0" y="0" width="63" height="63" class="szzim-bg" transform="scale(2.83465)" />
         <line x1="0" y1="8" x2="63" y2="8" transform="scale(2.83465)" class="szzim-line" />
         <line x1="25" y1="13" x2="63" y2="13" transform="scale(2.83465)" class="szzim-line" />
