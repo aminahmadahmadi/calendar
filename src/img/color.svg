@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 580 178.58294999999998" xml:space="preserve" version="1.1" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <style type="text/css">
+            .bmhgr-bg {
+                fill: #303026;
+                stroke: none;
+            }
+
+            .bmhgr-line {
+                fill: none;
+                stroke: #bbb;
+                stroke-width: 0.05;
+            }
+
+            .bmhgr-firstCal {
+                fill: white;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 17.638861940627592px;
+                text-anchor: middle;
+            }
+
+            .bmhgr-holiday {
+                fill: #f00;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 17.638861940627592px;
+                text-anchor: middle;
+            }
+
+            .bmhgr-firstCalWeekdays {
+                fill: white;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 2.4694406716878627px;
+                text-anchor: middle;
+            }
+
+            .bmhgr-firstCalWeekdaysHoliday {
+                fill: #f00;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 2.4694406716878627px;
+                text-anchor: middle;
+            }
+
+            .bmhgr-secondCal {
+                fill: white;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 2.4694406716878627px;
+                text-anchor: start;
+                direction: ltr;
+            }
+
+            .bmhgr-thirdCal {
+                fill: white;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 2.4694406716878627px;
+                text-anchor: end;
+                direction: rtl;
+            }
+
+            .bmhgr-events {
+                fill: white;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 1.763886194062759px;
+                text-anchor: start;
+                direction: rtl;
+            }
+
+            .bmhgr-personalEvents {
+                fill: white;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 2.116663432875311px;
+                text-anchor: start;
+                direction: rtl;
+            }
+
+            .bmhgr-icon {
+                fill: white;
+                stroke: None;
+            }
+
+            .bmhgr-monthAndWeek {
+                fill: white;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 300;
+                font-size: 2.4694406716878627px;
+                text-anchor: end;
+                direction: rtl;
+            }
+
+            .afsfe-bg {
+                fill: #f5f5f5;
+                stroke: none;
+            }
+
+            .afsfe-line {
+                fill: none;
+                stroke: #999;
+                stroke-width: 0.05;
+            }
+
+            .afsfe-firstCal {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 17.638861940627592px;
+                text-anchor: middle;
+            }
+
+            .afsfe-holiday {
+                fill: #ccc;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 17.638861940627592px;
+                text-anchor: middle;
+            }
+
+            .afsfe-firstCalWeekdays {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 2.4694406716878627px;
+                text-anchor: middle;
+            }
+
+            .afsfe-firstCalWeekdaysHoliday {
+                fill: #ccc;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 2.4694406716878627px;
+                text-anchor: middle;
+            }
+
+            .afsfe-secondCal {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 2.4694406716878627px;
+                text-anchor: start;
+                direction: ltr;
+            }
+
+            .afsfe-thirdCal {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 2.4694406716878627px;
+                text-anchor: end;
+                direction: rtl;
+            }
+
+            .afsfe-events {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 1.763886194062759px;
+                text-anchor: start;
+                direction: rtl;
+            }
+
+            .afsfe-personalEvents {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 2.116663432875311px;
+                text-anchor: start;
+                direction: rtl;
+            }
+
+            .afsfe-icon {
+                fill: #000;
+                stroke: None;
+            }
+
+            .afsfe-monthAndWeek {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 300;
+                font-size: 2.4694406716878627px;
+                text-anchor: end;
+                direction: rtl;
+            }
+
+            .szzim-bg {
+                fill: #f0f1e5;
+                stroke: none;
+            }
+
+            .szzim-line {
+                fill: none;
+                stroke: #6fbbea;
+                stroke-width: 0.05;
+            }
+
+            .szzim-firstCal {
+                fill: darkBlue;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 17.638861940627592px;
+                text-anchor: middle;
+            }
+
+            .szzim-holiday {
+                fill: red;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 17.638861940627592px;
+                text-anchor: middle;
+            }
+
+            .szzim-firstCalWeekdays {
+                fill: darkBlue;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 2.4694406716878627px;
+                text-anchor: middle;
+            }
+
+            .szzim-firstCalWeekdaysHoliday {
+                fill: red;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 2.4694406716878627px;
+                text-anchor: middle;
+            }
+
+            .szzim-secondCal {
+                fill: darkBlue;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 2.4694406716878627px;
+                text-anchor: start;
+                direction: ltr;
+            }
+
+            .szzim-thirdCal {
+                fill: darkBlue;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 2.4694406716878627px;
+                text-anchor: end;
+                direction: rtl;
+            }
+
+            .szzim-events {
+                fill: darkBlue;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 1.763886194062759px;
+                text-anchor: start;
+                direction: rtl;
+            }
+
+            .szzim-personalEvents {
+                fill: darkBlue;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 2.116663432875311px;
+                text-anchor: start;
+                direction: rtl;
+            }
+
+            .szzim-icon {
+                fill: darkBlue;
+                stroke: None;
+            }
+
+            .szzim-monthAndWeek {
+                fill: darkBlue;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 300;
+                font-size: 2.4694406716878627px;
+                text-anchor: end;
+                direction: rtl;
+            }
+        </style>
+
+    </defs>
+    <g>
+        <rect x="0" y="0" width="63" height="63" class="afsfe-bg" transform="scale(2.83465)" />
+        <line x1="0" y1="8" x2="63" y2="8" transform="scale(2.83465)" class="afsfe-line" />
+        <line x1="25" y1="13" x2="63" y2="13" transform="scale(2.83465)" class="afsfe-line" />
+        <line x1="25" y1="18" x2="63" y2="18" transform="scale(2.83465)" class="afsfe-line" />
+        <line x1="25" y1="23" x2="63" y2="23" transform="scale(2.83465)" class="afsfe-line" />
+        <line x1="25" y1="28" x2="63" y2="28" transform="scale(2.83465)" class="afsfe-line" />
+        <line x1="0" y1="33" x2="63" y2="33" transform="scale(2.83465)" class="afsfe-line" />
+        <line x1="25" y1="38" x2="63" y2="38" transform="scale(2.83465)" class="afsfe-line" />
+        <line x1="25" y1="43" x2="63" y2="43" transform="scale(2.83465)" class="afsfe-line" />
+        <line x1="25" y1="48" x2="63" y2="48" transform="scale(2.83465)" class="afsfe-line" />
+        <line x1="25" y1="53" x2="63" y2="53" transform="scale(2.83465)" class="afsfe-line" />
+        <line x1="0" y1="58" x2="63" y2="58" transform="scale(2.83465)" class="afsfe-line" />
+        <text x="13.750000000000002" y="24.67429841426631" transform="scale(2.83465)" class="afsfe-firstCal">۳۰</text>
+        <text x="13.750000000000002" y="28.143739085954174" transform="scale(2.83465)"
+            class="afsfe-firstCalWeekdays">شنبه</text>
+        <text x="13.750000000000002" y="49.67429841426631" transform="scale(2.83465)" class="afsfe-holiday">۳۱</text>
+        <text x="13.750000000000002" y="53.143739085954174" transform="scale(2.83465)"
+            class="afsfe-firstCalWeekdaysHoliday">یک‌شنبه</text>
+        <text x="25.5" y="11.327262625015434" transform="scale(2.83465)" class="afsfe-secondCal">June 20, 2026</text>
+        <text x="25.5" y="36.327262625015436" transform="scale(2.83465)" class="afsfe-secondCal">21</text>
+        <text x="25.5" y="16.327262625015432" transform="scale(2.83465)" class="afsfe-thirdCal">٥ محرم ١٤٤٧</text>
+        <text x="25.5" y="41.327262625015436" transform="scale(2.83465)" class="afsfe-thirdCal">٦</text>
+
+        <text x="25.5" y="6.327262625015434" transform="scale(2.83465)" class="afsfe-monthAndWeek">هفته ۱۴ /
+            خرداد</text>
+    </g>
+
+    <g transform="translate(200)">
+        <rect x="0" y="0" width="63" height="63" class="bmhgr-bg" transform="scale(2.83465)" />
+        <line x1="0" y1="8" x2="63" y2="8" transform="scale(2.83465)" class="bmhgr-line" />
+        <line x1="25" y1="13" x2="63" y2="13" transform="scale(2.83465)" class="bmhgr-line" />
+        <line x1="25" y1="18" x2="63" y2="18" transform="scale(2.83465)" class="bmhgr-line" />
+        <line x1="25" y1="23" x2="63" y2="23" transform="scale(2.83465)" class="bmhgr-line" />
+        <line x1="25" y1="28" x2="63" y2="28" transform="scale(2.83465)" class="bmhgr-line" />
+        <line x1="0" y1="33" x2="63" y2="33" transform="scale(2.83465)" class="bmhgr-line" />
+        <line x1="25" y1="38" x2="63" y2="38" transform="scale(2.83465)" class="bmhgr-line" />
+        <line x1="25" y1="43" x2="63" y2="43" transform="scale(2.83465)" class="bmhgr-line" />
+        <line x1="25" y1="48" x2="63" y2="48" transform="scale(2.83465)" class="bmhgr-line" />
+        <line x1="25" y1="53" x2="63" y2="53" transform="scale(2.83465)" class="bmhgr-line" />
+        <line x1="0" y1="58" x2="63" y2="58" transform="scale(2.83465)" class="bmhgr-line" />
+        <text x="13.750000000000002" y="24.67429841426631" transform="scale(2.83465)" class="bmhgr-firstCal">۳۰</text>
+        <text x="13.750000000000002" y="28.143739085954174" transform="scale(2.83465)"
+            class="bmhgr-firstCalWeekdays">شنبه</text>
+        <text x="13.750000000000002" y="49.67429841426631" transform="scale(2.83465)" class="bmhgr-holiday">۳۱</text>
+        <text x="13.750000000000002" y="53.143739085954174" transform="scale(2.83465)"
+            class="bmhgr-firstCalWeekdaysHoliday">یک‌شنبه</text>
+        <text x="25.5" y="11.327262625015434" transform="scale(2.83465)" class="bmhgr-secondCal">June 20, 2026</text>
+        <text x="25.5" y="36.327262625015436" transform="scale(2.83465)" class="bmhgr-secondCal">21</text>
+        <text x="25.5" y="16.327262625015432" transform="scale(2.83465)" class="bmhgr-thirdCal">٥ محرم ١٤٤٧</text>
+        <text x="25.5" y="41.327262625015436" transform="scale(2.83465)" class="bmhgr-thirdCal">٦</text>
+
+        <text x="25.5" y="6.327262625015434" transform="scale(2.83465)" class="bmhgr-monthAndWeek">هفته ۱۴ /
+            خرداد</text>
+
+    </g>
+
+    <g transform="translate(400)">
+        <rect x="0" y="0" width="63" height="63" class="szzim-bg" transform="scale(2.83465)" />
+        <line x1="0" y1="8" x2="63" y2="8" transform="scale(2.83465)" class="szzim-line" />
+        <line x1="25" y1="13" x2="63" y2="13" transform="scale(2.83465)" class="szzim-line" />
+        <line x1="25" y1="18" x2="63" y2="18" transform="scale(2.83465)" class="szzim-line" />
+        <line x1="25" y1="23" x2="63" y2="23" transform="scale(2.83465)" class="szzim-line" />
+        <line x1="25" y1="28" x2="63" y2="28" transform="scale(2.83465)" class="szzim-line" />
+        <line x1="0" y1="33" x2="63" y2="33" transform="scale(2.83465)" class="szzim-line" />
+        <line x1="25" y1="38" x2="63" y2="38" transform="scale(2.83465)" class="szzim-line" />
+        <line x1="25" y1="43" x2="63" y2="43" transform="scale(2.83465)" class="szzim-line" />
+        <line x1="25" y1="48" x2="63" y2="48" transform="scale(2.83465)" class="szzim-line" />
+        <line x1="25" y1="53" x2="63" y2="53" transform="scale(2.83465)" class="szzim-line" />
+        <line x1="0" y1="58" x2="63" y2="58" transform="scale(2.83465)" class="szzim-line" />
+        <text x="13.750000000000002" y="24.67429841426631" transform="scale(2.83465)" class="szzim-firstCal">۳۰</text>
+        <text x="13.750000000000002" y="28.143739085954174" transform="scale(2.83465)"
+            class="szzim-firstCalWeekdays">شنبه</text>
+        <text x="13.750000000000002" y="49.67429841426631" transform="scale(2.83465)" class="szzim-holiday">۳۱</text>
+        <text x="13.750000000000002" y="53.143739085954174" transform="scale(2.83465)"
+            class="szzim-firstCalWeekdaysHoliday">یک‌شنبه</text>
+        <text x="25.5" y="11.327262625015434" transform="scale(2.83465)" class="szzim-secondCal">June 20, 2026</text>
+        <text x="25.5" y="36.327262625015436" transform="scale(2.83465)" class="szzim-secondCal">21</text>
+        <text x="25.5" y="16.327262625015432" transform="scale(2.83465)" class="szzim-thirdCal">٥ محرم ١٤٤٧</text>
+        <text x="25.5" y="41.327262625015436" transform="scale(2.83465)" class="szzim-thirdCal">٦</text>
+        <text x="25.5" y="6.327262625015434" transform="scale(2.83465)" class="szzim-monthAndWeek">هفته ۱۴ /
+            خرداد</text>
+    </g>
+</svg>

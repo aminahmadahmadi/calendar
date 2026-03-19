@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 900 178.58294999999998" xml:space="preserve" version="1.1" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <style type="text/css">
+            .reajt-bg {
+                fill: #f5f5f5;
+                stroke: none;
+            }
+
+            .reajt-line {
+                fill: none;
+                stroke: #999;
+                stroke-width: 0.05;
+            }
+
+            .reajt-firstCal {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 17.638861940627592px;
+                text-anchor: middle;
+            }
+
+            .reajt-holiday {
+                fill: #ccc;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 17.638861940627592px;
+                text-anchor: middle;
+            }
+
+            .reajt-firstCalWeekdays {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 2.4694406716878627px;
+                text-anchor: middle;
+            }
+
+            .reajt-firstCalWeekdaysHoliday {
+                fill: #ccc;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 2.4694406716878627px;
+                text-anchor: middle;
+            }
+
+            .reajt-secondCal {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 2.4694406716878627px;
+                text-anchor: start;
+                direction: ltr;
+            }
+
+            .reajt-thirdCal {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 2.4694406716878627px;
+                text-anchor: end;
+                direction: rtl;
+            }
+
+            .reajt-events {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 1.763886194062759px;
+                text-anchor: start;
+                direction: rtl;
+            }
+
+            .reajt-personalEvents {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 2.116663432875311px;
+                text-anchor: start;
+                direction: rtl;
+            }
+
+            .reajt-icon {
+                fill: #000;
+                stroke: None;
+            }
+
+            .reajt-moon-back {
+                fill: none;
+                stroke: #ddd;
+                stroke-width: 0.15000000000000002;
+                stroke-linecap: round;
+            }
+
+            .reajt-moon-front {
+                fill: none;
+                stroke: #000;
+                stroke-width: 0.15000000000000002;
+                stroke-linecap: round;
+            }
+
+            .reajt-moon-filler {
+                fill: none;
+                stroke: #000;
+                stroke-width: 0.15000000000000002;
+                stroke-linecap: round;
+            }
+
+            .reajt-monthAndWeek {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 300;
+                font-size: 2.4694406716878627px;
+                text-anchor: end;
+                direction: rtl;
+            }
+        </style>
+
+    </defs>
+
+    <g>
+        <rect x="0" y="0" width="148" height="63" class="reajt-bg" transform="scale(2.83465)" />
+        <line x1="0" y1="8" x2="148" y2="8" transform="scale(2.83465)" class="reajt-line" />
+        <line x1="25" y1="13" x2="148" y2="13" transform="scale(2.83465)" class="reajt-line" />
+        <line x1="25" y1="18" x2="148" y2="18" transform="scale(2.83465)" class="reajt-line" />
+        <line x1="25" y1="23" x2="148" y2="23" transform="scale(2.83465)" class="reajt-line" />
+        <line x1="25" y1="28" x2="148" y2="28" transform="scale(2.83465)" class="reajt-line" />
+        <line x1="0" y1="33" x2="148" y2="33" transform="scale(2.83465)" class="reajt-line" />
+        <line x1="25" y1="38" x2="148" y2="38" transform="scale(2.83465)" class="reajt-line" />
+        <line x1="25" y1="43" x2="148" y2="43" transform="scale(2.83465)" class="reajt-line" />
+        <line x1="25" y1="48" x2="148" y2="48" transform="scale(2.83465)" class="reajt-line" />
+        <line x1="25" y1="53" x2="148" y2="53" transform="scale(2.83465)" class="reajt-line" />
+        <line x1="0" y1="58" x2="148" y2="58" transform="scale(2.83465)" class="reajt-line" />
+        <text x="13.750000000000002" y="24.67429841426631" transform="scale(2.83465)" class="reajt-firstCal">۳۰</text>
+        <text x="13.750000000000002" y="28.143739085954174" transform="scale(2.83465)"
+            class="reajt-firstCalWeekdays">شنبه</text>
+        <text x="13.750000000000002" y="49.67429841426631" transform="scale(2.83465)" class="reajt-firstCal">۳۱</text>
+        <text x="13.750000000000002" y="53.143739085954174" transform="scale(2.83465)"
+            class="reajt-firstCalWeekdays">یک‌شنبه</text>
+        <text x="25.5" y="11.327262625015434" transform="scale(2.83465)" class="reajt-secondCal">June 20, 2026</text>
+        <text x="25.5" y="36.327262625015436" transform="scale(2.83465)" class="reajt-secondCal">21</text>
+        <text x="25.5" y="16.327262625015432" transform="scale(2.83465)" class="reajt-thirdCal">٥ محرم ١٤٤٧</text>
+        <text x="25.5" y="41.327262625015436" transform="scale(2.83465)" class="reajt-thirdCal">٦</text>
+        <text x="142.5" y="31.090901875011024" transform="scale(2.83465)" class="reajt-events">روز جهانی
+            پناهندگان</text>
+        <text x="142.5" y="56.09090187501103" transform="scale(2.83465)" class="reajt-events">شهادت دکتر مصطفی چمران /
+            روز بسیج استادان / نابودی ناوگان تسلیم شده آلمان در اسکاپافلوی بریتانیا / روز جهانی یوگا</text>
+        <text x="25.5" y="6.327262625015434" transform="scale(2.83465)" class="reajt-monthAndWeek">هفته ۱۴ /
+            خرداد</text>
+
+    </g>
+    <g transform="translate(480)">
+        <rect x="0" y="0" width="148" height="63" class="reajt-bg" transform="scale(2.83465)" />
+        <line x1="10" y1="8" x2="138" y2="8" transform="scale(2.83465)" class="reajt-line" />
+        <line x1="35" y1="13" x2="138" y2="13" transform="scale(2.83465)" class="reajt-line" />
+        <line x1="35" y1="18" x2="138" y2="18" transform="scale(2.83465)" class="reajt-line" />
+        <line x1="35" y1="23" x2="138" y2="23" transform="scale(2.83465)" class="reajt-line" />
+        <line x1="35" y1="28" x2="138" y2="28" transform="scale(2.83465)" class="reajt-line" />
+        <line x1="10" y1="33" x2="138" y2="33" transform="scale(2.83465)" class="reajt-line" />
+        <line x1="35" y1="38" x2="138" y2="38" transform="scale(2.83465)" class="reajt-line" />
+        <line x1="35" y1="43" x2="138" y2="43" transform="scale(2.83465)" class="reajt-line" />
+        <line x1="35" y1="48" x2="138" y2="48" transform="scale(2.83465)" class="reajt-line" />
+        <line x1="35" y1="53" x2="138" y2="53" transform="scale(2.83465)" class="reajt-line" />
+        <line x1="10" y1="58" x2="138" y2="58" transform="scale(2.83465)" class="reajt-line" />
+        <text x="23.75" y="24.67429841426631" transform="scale(2.83465)" class="reajt-firstCal">۳۰</text>
+        <text x="23.75" y="28.143739085954174" transform="scale(2.83465)" class="reajt-firstCalWeekdays">شنبه</text>
+        <text x="23.75" y="49.67429841426631" transform="scale(2.83465)" class="reajt-firstCal">۳۱</text>
+        <text x="23.75" y="53.143739085954174" transform="scale(2.83465)" class="reajt-firstCalWeekdays">یک‌شنبه</text>
+        <text x="35.5" y="11.327262625015434" transform="scale(2.83465)" class="reajt-secondCal">June 20, 2026</text>
+        <text x="35.5" y="36.327262625015436" transform="scale(2.83465)" class="reajt-secondCal">21</text>
+        <text x="35.5" y="16.327262625015432" transform="scale(2.83465)" class="reajt-thirdCal">٥ محرم ١٤٤٧</text>
+        <text x="35.5" y="41.327262625015436" transform="scale(2.83465)" class="reajt-thirdCal">٦</text>
+        <text x="132.5" y="31.090901875011024" transform="scale(2.83465)" class="reajt-events">روز جهانی
+            پناهندگان</text>
+        <text x="132.5" y="56.09090187501103" transform="scale(2.83465)" class="reajt-events">شهادت دکتر مصطفی چمران /
+            روز بسیج استادان / نابودی ناوگان تسلیم شده آلمان در اسکاپافلوی بریتانیا / روز جهانی یوگا</text>
+        <text x="35.5" y="6.327262625015434" transform="scale(2.83465)" class="reajt-monthAndWeek">هفته ۱۴ /
+            خرداد</text>
+
+    </g>
+</svg>

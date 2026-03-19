@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 900 595.2764999999999" xml:space="preserve" version="1.1" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <style type="text/css">
+            .goneh-bg {
+                fill: #f5f5f5;
+                stroke: none;
+            }
+
+            .goneh-line {
+                fill: none;
+                stroke: #999;
+                stroke-width: 0.05;
+            }
+
+            .goneh-firstCal {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 10.583317164376554px;
+                text-anchor: middle;
+            }
+
+            .goneh-holiday {
+                fill: #f00;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 10.583317164376554px;
+                text-anchor: middle;
+            }
+
+            .goneh-firstCalWeekdays {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 2.4694406716878627px;
+                text-anchor: middle;
+            }
+
+            .goneh-firstCalWeekdaysHoliday {
+                fill: #f00;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 2.4694406716878627px;
+                text-anchor: middle;
+            }
+
+            .goneh-secondCal {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 2.4694406716878627px;
+                text-anchor: start;
+                direction: ltr;
+            }
+
+            .goneh-thirdCal {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 2.4694406716878627px;
+                text-anchor: end;
+                direction: rtl;
+            }
+
+            .goneh-events {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 1.763886194062759px;
+                text-anchor: start;
+                direction: rtl;
+            }
+
+            .goneh-personalEvents {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 2.116663432875311px;
+                text-anchor: start;
+                direction: rtl;
+            }
+
+            .goneh-icon {
+                fill: #000;
+                stroke: None;
+            }
+
+            .goneh-monthAndWeek {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 300;
+                font-size: 2.4694406716878627px;
+                text-anchor: end;
+                direction: rtl;
+            }
+        </style>
+
+    </defs>
+    <g>
+        <rect x="0" y="0" width="148" height="210" class="goneh-bg" transform="scale(2.83465)" />
+        <line x1="0" y1="25" x2="148" y2="25" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="30" x2="148" y2="30" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="35" x2="148" y2="35" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="40" x2="148" y2="40" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="45" x2="148" y2="45" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="50" x2="148" y2="50" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="55" x2="148" y2="55" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="60" x2="148" y2="60" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="65" x2="148" y2="65" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="70" x2="148" y2="70" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="75" x2="148" y2="75" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="80" x2="148" y2="80" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="85" x2="148" y2="85" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="90" x2="148" y2="90" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="95" x2="148" y2="95" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="100" x2="148" y2="100" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="105" x2="148" y2="105" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="110" x2="148" y2="110" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="115" x2="148" y2="115" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="120" x2="148" y2="120" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="125" x2="148" y2="125" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="130" x2="148" y2="130" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="135" x2="148" y2="135" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="140" x2="148" y2="140" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="145" x2="148" y2="145" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="150" x2="148" y2="150" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="155" x2="148" y2="155" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="160" x2="148" y2="160" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="165" x2="148" y2="165" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="170" x2="148" y2="170" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="175" x2="148" y2="175" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="180" x2="148" y2="180" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="185" x2="148" y2="185" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="190" x2="148" y2="190" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="195" x2="148" y2="195" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="200" x2="148" y2="200" transform="scale(2.83465)" class="goneh-line" />
+        <text x="8.25" y="34.310690914222214" transform="scale(2.83465)" class="goneh-firstCal">۳۰</text>
+        <text x="8.25" y="37.78013158591008" transform="scale(2.83465)" class="goneh-firstCalWeekdays">شنبه</text>
+        <text x="8.25" y="49.310690914222214" transform="scale(2.83465)" class="goneh-firstCal">۳۱</text>
+        <text x="8.25" y="52.78013158591008" transform="scale(2.83465)" class="goneh-firstCalWeekdays">یک‌شنبه</text>
+        <text x="8.25" y="64.31069091422222" transform="scale(2.83465)" class="goneh-firstCal">۱</text>
+        <text x="8.25" y="67.78013158591008" transform="scale(2.83465)" class="goneh-firstCalWeekdays">دوشنبه</text>
+        <text x="8.25" y="79.31069091422222" transform="scale(2.83465)" class="goneh-firstCal">۲</text>
+        <text x="8.25" y="82.78013158591008" transform="scale(2.83465)" class="goneh-firstCalWeekdays">سه‌شنبه</text>
+        <text x="8.25" y="94.31069091422222" transform="scale(2.83465)" class="goneh-holiday">۳</text>
+        <text x="8.25" y="97.78013158591008" transform="scale(2.83465)"
+            class="goneh-firstCalWeekdaysHoliday">چهارشنبه</text>
+        <text x="8.25" y="109.31069091422222" transform="scale(2.83465)" class="goneh-holiday">۴</text>
+        <text x="8.25" y="112.78013158591008" transform="scale(2.83465)"
+            class="goneh-firstCalWeekdaysHoliday">پنج‌شنبه</text>
+        <text x="8.25" y="124.31069091422222" transform="scale(2.83465)" class="goneh-holiday">۵</text>
+        <text x="8.25" y="127.78013158591008" transform="scale(2.83465)"
+            class="goneh-firstCalWeekdaysHoliday">جمعه</text>
+        <text x="15.5" y="28.327262625015432" transform="scale(2.83465)" class="goneh-secondCal">June 20, 2026</text>
+        <text x="15.5" y="43.327262625015436" transform="scale(2.83465)" class="goneh-secondCal">21</text>
+        <text x="15.5" y="58.327262625015436" transform="scale(2.83465)" class="goneh-secondCal">22</text>
+        <text x="15.5" y="73.32726262501544" transform="scale(2.83465)" class="goneh-secondCal">23</text>
+        <text x="15.5" y="88.32726262501544" transform="scale(2.83465)" class="goneh-secondCal">24</text>
+        <text x="15.5" y="103.32726262501544" transform="scale(2.83465)" class="goneh-secondCal">25</text>
+        <text x="15.5" y="118.32726262501544" transform="scale(2.83465)" class="goneh-secondCal">26</text>
+        <text x="15.5" y="33.327262625015436" transform="scale(2.83465)" class="goneh-thirdCal">٥ محرم ١٤٤٧</text>
+        <text x="15.5" y="48.327262625015436" transform="scale(2.83465)" class="goneh-thirdCal">٦</text>
+        <text x="15.5" y="63.327262625015436" transform="scale(2.83465)" class="goneh-thirdCal">٧</text>
+        <text x="15.5" y="78.32726262501544" transform="scale(2.83465)" class="goneh-thirdCal">٨</text>
+        <text x="15.5" y="93.32726262501544" transform="scale(2.83465)" class="goneh-thirdCal">٩</text>
+        <text x="15.5" y="108.32726262501544" transform="scale(2.83465)" class="goneh-thirdCal">١٠</text>
+        <text x="15.5" y="123.32726262501544" transform="scale(2.83465)" class="goneh-thirdCal">١١</text>
+        <text x="142.5" y="38.09090187501103" transform="scale(2.83465)" class="goneh-events">روز جهانی پناهندگان</text>
+        <text x="142.5" y="53.09090187501103" transform="scale(2.83465)" class="goneh-events">شهادت دکتر مصطفی چمران /
+            روز بسیج استادان / نابودی ناوگان تسلیم شده آلمان در اسکاپافلوی بریتانیا / روز جهانی یوگا</text>
+        <text x="142.5" y="68.09090187501103" transform="scale(2.83465)" class="goneh-events">به سمت غرب تا رودخانه
+            ویستولا در آن سوی ورشو در مرکز لهستان پیشروی کردند / آلمان نازی و دیگر نیروهای متحدین (به غیر از بلغارستان)
+            به اتحاد جماهیر شوروی حمله کردند</text>
+        <text x="142.5" y="63.09090187501103" transform="scale(2.83465)" class="goneh-events">روز اصناف / تأسیس سازمان
+            تبلیغات اسلامی / روس‌ها حمله بزرگی را در بلاروس شرقی آغاز کردند و با از بین بردن «مرکز گروهی ارتش آلمان»،
+        </text>
+        <text x="142.5" y="83.09090187501103" transform="scale(2.83465)" class="goneh-events">روز خدمات عمومی سازمان ملل
+            متحد / روز جهانی زنان بیوه</text>
+        <text x="142.5" y="98.09090187501103" transform="scale(2.83465)" class="goneh-events">تاسوعای حسینی</text>
+        <text x="142.5" y="113.09090187501103" transform="scale(2.83465)" class="goneh-events">عاشورای حسینی / روز
+            دریانورد</text>
+        <text x="142.5" y="128.090901875011" transform="scale(2.83465)" class="goneh-events">روز جهانی حمایت از قربانیان
+            شکنجه / روز جهانی مبارزه با مواد مخدر و قاچاق غیر قانونی آن</text>
+        <text x="15.5" y="23.327262625015432" transform="scale(2.83465)" class="goneh-monthAndWeek">هفته ۱۴ / خرداد و
+            تیر</text>
+    </g>
+    <g transform="translate(480)">
+        <rect x="0" y="0" width="148" height="210" class="goneh-bg" transform="scale(2.83465)" />
+        <line x1="0" y1="25" x2="148" y2="25" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="30" x2="148" y2="30" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="35" x2="148" y2="35" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="40" x2="148" y2="40" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="45" x2="148" y2="45" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="50" x2="148" y2="50" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="55" x2="148" y2="55" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="60" x2="148" y2="60" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="65" x2="148" y2="65" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="70" x2="148" y2="70" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="75" x2="148" y2="75" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="80" x2="148" y2="80" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="85" x2="148" y2="85" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="90" x2="148" y2="90" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="95" x2="148" y2="95" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="100" x2="148" y2="100" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="105" x2="148" y2="105" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="110" x2="148" y2="110" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="115" x2="148" y2="115" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="120" x2="148" y2="120" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="125" x2="148" y2="125" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="130" x2="148" y2="130" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="135" x2="148" y2="135" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="140" x2="148" y2="140" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="145" x2="148" y2="145" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="150" x2="148" y2="150" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="155" x2="148" y2="155" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="160" x2="148" y2="160" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="165" x2="148" y2="165" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="170" x2="148" y2="170" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="175" x2="148" y2="175" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="180" x2="148" y2="180" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="185" x2="148" y2="185" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="190" x2="148" y2="190" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="15" y1="195" x2="148" y2="195" transform="scale(2.83465)" class="goneh-line" />
+        <line x1="0" y1="200" x2="148" y2="200" transform="scale(2.83465)" class="goneh-line" />
+        <text x="8.25" y="104.31069091422222" transform="scale(2.83465)" class="goneh-firstCal">۳۰</text>
+        <text x="8.25" y="107.78013158591008" transform="scale(2.83465)" class="goneh-firstCalWeekdays">شنبه</text>
+        <text x="8.25" y="119.31069091422222" transform="scale(2.83465)" class="goneh-firstCal">۳۱</text>
+        <text x="8.25" y="122.78013158591008" transform="scale(2.83465)" class="goneh-firstCalWeekdays">یک‌شنبه</text>
+        <text x="8.25" y="134.31069091422222" transform="scale(2.83465)" class="goneh-firstCal">۱</text>
+        <text x="8.25" y="137.78013158591008" transform="scale(2.83465)" class="goneh-firstCalWeekdays">دوشنبه</text>
+        <text x="8.25" y="149.31069091422222" transform="scale(2.83465)" class="goneh-firstCal">۲</text>
+        <text x="8.25" y="152.78013158591008" transform="scale(2.83465)" class="goneh-firstCalWeekdays">سه‌شنبه</text>
+        <text x="8.25" y="164.31069091422222" transform="scale(2.83465)" class="goneh-holiday">۳</text>
+        <text x="8.25" y="167.78013158591008" transform="scale(2.83465)"
+            class="goneh-firstCalWeekdaysHoliday">چهارشنبه</text>
+        <text x="8.25" y="179.31069091422222" transform="scale(2.83465)" class="goneh-holiday">۴</text>
+        <text x="8.25" y="182.78013158591008" transform="scale(2.83465)"
+            class="goneh-firstCalWeekdaysHoliday">پنج‌شنبه</text>
+        <text x="8.25" y="194.31069091422222" transform="scale(2.83465)" class="goneh-holiday">۵</text>
+        <text x="8.25" y="197.78013158591008" transform="scale(2.83465)"
+            class="goneh-firstCalWeekdaysHoliday">جمعه</text>
+        <text x="15.5" y="98.32726262501544" transform="scale(2.83465)" class="goneh-secondCal">June 20, 2026</text>
+        <text x="15.5" y="113.32726262501544" transform="scale(2.83465)" class="goneh-secondCal">21</text>
+        <text x="15.5" y="128.32726262501544" transform="scale(2.83465)" class="goneh-secondCal">22</text>
+        <text x="15.5" y="143.32726262501544" transform="scale(2.83465)" class="goneh-secondCal">23</text>
+        <text x="15.5" y="158.32726262501544" transform="scale(2.83465)" class="goneh-secondCal">24</text>
+        <text x="15.5" y="173.32726262501544" transform="scale(2.83465)" class="goneh-secondCal">25</text>
+        <text x="15.5" y="188.32726262501544" transform="scale(2.83465)" class="goneh-secondCal">26</text>
+        <text x="15.5" y="103.32726262501544" transform="scale(2.83465)" class="goneh-thirdCal">٥ محرم ١٤٤٧</text>
+        <text x="15.5" y="118.32726262501544" transform="scale(2.83465)" class="goneh-thirdCal">٦</text>
+        <text x="15.5" y="133.32726262501544" transform="scale(2.83465)" class="goneh-thirdCal">٧</text>
+        <text x="15.5" y="148.32726262501544" transform="scale(2.83465)" class="goneh-thirdCal">٨</text>
+        <text x="15.5" y="163.32726262501544" transform="scale(2.83465)" class="goneh-thirdCal">٩</text>
+        <text x="15.5" y="178.32726262501544" transform="scale(2.83465)" class="goneh-thirdCal">١٠</text>
+        <text x="15.5" y="193.32726262501544" transform="scale(2.83465)" class="goneh-thirdCal">١١</text>
+        <text x="142.5" y="108.09090187501103" transform="scale(2.83465)" class="goneh-events">روز جهانی
+            پناهندگان</text>
+        <text x="142.5" y="123.09090187501103" transform="scale(2.83465)" class="goneh-events">شهادت دکتر مصطفی چمران /
+            روز بسیج استادان / نابودی ناوگان تسلیم شده آلمان در اسکاپافلوی بریتانیا / روز جهانی یوگا</text>
+        <text x="142.5" y="138.090901875011" transform="scale(2.83465)" class="goneh-events">به سمت غرب تا رودخانه
+            ویستولا در آن سوی ورشو در مرکز لهستان پیشروی کردند / آلمان نازی و دیگر نیروهای متحدین (به غیر از بلغارستان)
+            به اتحاد جماهیر شوروی حمله کردند</text>
+        <text x="142.5" y="133.090901875011" transform="scale(2.83465)" class="goneh-events">روز اصناف / تأسیس سازمان
+            تبلیغات اسلامی / روس‌ها حمله بزرگی را در بلاروس شرقی آغاز کردند و با از بین بردن «مرکز گروهی ارتش آلمان»،
+        </text>
+        <text x="142.5" y="153.090901875011" transform="scale(2.83465)" class="goneh-events">روز خدمات عمومی سازمان ملل
+            متحد / روز جهانی زنان بیوه</text>
+        <text x="142.5" y="168.090901875011" transform="scale(2.83465)" class="goneh-events">تاسوعای حسینی</text>
+        <text x="142.5" y="183.090901875011" transform="scale(2.83465)" class="goneh-events">عاشورای حسینی / روز
+            دریانورد</text>
+        <text x="142.5" y="198.090901875011" transform="scale(2.83465)" class="goneh-events">روز جهانی حمایت از قربانیان
+            شکنجه / روز جهانی مبارزه با مواد مخدر و قاچاق غیر قانونی آن</text>
+        <text x="15.5" y="93.32726262501544" transform="scale(2.83465)" class="goneh-monthAndWeek">هفته ۱۴ / خرداد و
+            تیر</text>
+
+    </g>
+</svg>

@@ -310,7 +310,7 @@ class WeekPage(LinePage):
             elif lineNo % self.daysHeight == self.lineShiftDown % self.lineHeight:
                 self.daysY.append(y)
                 xl, xr = xLeft, xRight
-            else:
+            elif len(self.weekKeys) >= len(self.daysY) and len(self.daysY) > 0:
                 dayKey = self.weekKeys[len(self.daysY)-1]
                 if self.monthFilter != None and self.monthFilter != self.daysJson[dayKey][self.calendarOrder[0]][1]:
                     xl, xr = xLeft, xRight
