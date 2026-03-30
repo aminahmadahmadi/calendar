@@ -348,12 +348,12 @@ class WeekPage(LinePage):
             #     xr, y, 1, fill="black",
             #     transform=f'scale({self.scale})',
             # )
-
-            self.pages[loc].addLine(
-                xl, y, xr, y,
-                transform=f'scale({self.scale})',
-                class_='line'
-            )
+            if y <= self.svgHeight - self.margin['bottom'] - self.padding['bottom']:
+                self.pages[loc].addLine(
+                    xl, y, xr, y,
+                    transform=f'scale({self.scale})',
+                    class_='line'
+                )
             y += self.lineHeight
             lineNo += 1
 
@@ -424,6 +424,9 @@ class WeekPage(LinePage):
             dayKey = self.weekKeys[i]
 
             if self.monthFilter != None and self.monthFilter != self.daysJson[dayKey][calID][1]:
+                continue
+
+            if self.daysY[i+1] > self.svgHeight - self.margin['bottom'] - self.padding['bottom']:
                 continue
 
             # y location
@@ -519,6 +522,8 @@ class WeekPage(LinePage):
             dayKey = self.weekKeys[i]
 
             if self.monthFilter != None and self.monthFilter != self.daysJson[dayKey][calID][1]:
+                continue
+            if self.daysY[i+1] > self.svgHeight - self.margin['bottom'] - self.padding['bottom']:
                 continue
 
             if dayKey not in self.personalEvents:
@@ -626,6 +631,8 @@ class WeekPage(LinePage):
             dayKey = self.weekKeys[i]
 
             if self.monthFilter != None and self.monthFilter != self.daysJson[dayKey][calID][1]:
+                continue
+            if self.daysY[i+1] > self.svgHeight - self.margin['bottom'] - self.padding['bottom']:
                 continue
 
             cal = self.daysJson[dayKey]['ic']
@@ -746,6 +753,8 @@ class WeekPage(LinePage):
             dayKey = self.weekKeys[dayindex]
             if self.monthFilter != None and self.monthFilter != self.daysJson[dayKey][self.calendarOrder[0]][1]:
                 continue
+            if self.daysY[i+1] > self.svgHeight - self.margin['bottom'] - self.padding['bottom']:
+                continue
 
             calH = self.fontHeightScl * self.fontSize.get('time')/self.scale  # noqa
 
@@ -804,6 +813,9 @@ class WeekPage(LinePage):
                 if self.monthFilter != None and self.monthFilter != self.daysJson[dayKey][self.calendarOrder[0]][1]:
                     continue
 
+                if self.daysY[i+1] > self.svgHeight - self.margin['bottom'] - self.padding['bottom']:
+                    continue
+
                 cal = self.daysJson[dayKey][calID]
 
                 # x and y location
@@ -846,6 +858,8 @@ class WeekPage(LinePage):
         for i in range(len(self.weekKeys)):
             dayKey = self.weekKeys[i]
             if self.monthFilter != None and self.monthFilter != self.daysJson[dayKey][self.calendarOrder[0]][1]:
+                continue
+            if self.daysY[i+1] > self.svgHeight - self.margin['bottom'] - self.padding['bottom']:
                 continue
 
             todaySh = self.daysJson[dayKey]["sh"]
