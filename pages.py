@@ -458,7 +458,14 @@ class WeekPage(LinePage):
                 for e in events:
                     if e["dayoff"] == True:
                         holiday = True
-            if i in self.weekend:
+
+            weekday = self.daysJson[dayKey]['weekday']
+            weekdayName = self.calNamesJson['wc']['weekday'][str(weekday)]
+            weekdayNameShort = self.calNamesJson['wc']['weekday-short'][str(weekday)]  # noqa
+            if ((weekday in self.weekend)
+                or (weekdayName in self.weekend)
+                or (weekdayNameShort in self.weekend)
+                ):
                 holiday = True
 
             # text of cal
