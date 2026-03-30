@@ -35,7 +35,7 @@ class Calendar(Notebook):
         self.showEvents = kwargs.get('showEvents', True)
         self.showHolidays = kwargs.get('showHolidays', True)
         self.showWeekdays = kwargs.get('showWeekdays', False)
-        self.showFullCalendar = kwargs.get('showFullCalendar', False)
+        self.showFullCalendar = kwargs.get('showFullCalendar', None)
         self.showWeekNo = kwargs.get('showWeekNo', True)
         self.showTime = kwargs.get('showTime', False)
         self.showMoon = kwargs.get('showMoon', True)

@@ -463,9 +463,9 @@ class WeekPage(LinePage):
             weekdayName = self.calNamesJson['wc']['weekday'][str(weekday)]
             weekdayNameShort = self.calNamesJson['wc']['weekday-short'][str(weekday)]  # noqa
             if ((weekday in self.weekend)
-                or (weekdayName in self.weekend)
-                or (weekdayNameShort in self.weekend)
-                ):
+                    or (weekdayName in self.weekend)
+                    or (weekdayNameShort in self.weekend)
+                    ):
                 holiday = True
 
             # text of cal
@@ -833,7 +833,13 @@ class WeekPage(LinePage):
                 x = xLeftSpace if self.layout == "left" else xRightSpace
                 x = xLeftSpace if (self.layout == "left") ^ (loc == "right") else xRightSpace  # noqa
 
-                isfull = self.showFullCalendar or cal[2] == 1 or i == 0
+                if self.showFullCalendar is None:
+                    isfull = cal[2] == 1 or i == 0
+                elif self.showFullCalendar:
+                    isfull = True
+                else:
+                    isfull = False
+
                 self.pages[loc].addText(
                     x,
                     y,
