@@ -91,6 +91,9 @@ class Notebook():
         )
         self.pages.append(page)
 
+    def removeLastPage(self):
+        self.pages = self.pages[:-1]
+
     def toHTML(self, Dir='', previewMargin=False):
 
         if not os.path.exists(self.mainDirectory(Dir)):

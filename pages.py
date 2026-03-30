@@ -273,7 +273,6 @@ class WeekPage(LinePage):
 
     def makePages(self):
         for loc in ['right', 'left']:
-            print(self.layout, loc)
             self.definePage(loc)
             self.drawlines(loc)
             self.addFirstCal(loc)
