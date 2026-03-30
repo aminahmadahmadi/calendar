@@ -967,9 +967,19 @@ class WeekPage(LinePage):
             monthes = [self.calNamesJson[calID]
                        ['month'][str(self.monthFilter)]]
 
-        weekText = f'هفته {perNo(self.weekNo)}  {self.divider}  ' if self.showWeekNo else ''
-        monthText = " و ".join(monthes)
-        text = weekText+monthText
+        week = self.calNamesJson[calID]['week']
+        if calID == 'sh':
+            weekNo = perNo(self.weekNo)
+        elif calID == 'ic':
+            weekNo = arbNo(self.weekNo)
+        else:
+            weekNo = self.weekNo
+
+        weekText = f'{week} {weekNo}  {self.divider}  ' if self.showWeekNo else ''
+
+        andChar = '&' if calID == 'wc' else 'و'
+        monthText = f" {andChar} ".join(monthes)
+        text = weekText + monthText
 
         # x and y location
         calH = self.fontHeightScl * self.fontSize.get("monthAndWeek")/self.scale  # noqa
