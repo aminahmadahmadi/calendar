@@ -79,18 +79,6 @@ class Notebook():
         page = ChecklistPage(**self.__dict__, **kwargs)
         self.pages.append(page)
 
-    def addOneYearPage(self, year, title='', **kwargs):
-        page = OneYearPage(year, title, **self.__dict__, **kwargs)
-        self.pages.append(page)
-
-    def addOneMonthPage(self, month, year, title='', **kwargs):
-        page = OneMonthPage(
-            month=month,
-            year=year,
-            **self.__dict__, **kwargs
-        )
-        self.pages.append(page)
-
     def removeLastPage(self):
         self.pages = self.pages[:-1]
 

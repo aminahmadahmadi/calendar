@@ -173,3 +173,15 @@ class Calendar(Notebook):
     def addHolidaysPage(self, year, title, **kwargs):
         page = HolidaysPage(year, title, **self.__dict__, **kwargs)
         self.pages.append(page)
+
+    def addOneYearPage(self, year, title='', **kwargs):
+        page = OneYearPage(year, title, **self.__dict__, **kwargs)
+        self.pages.append(page)
+
+    def addOneMonthPage(self, month, year, title='', **kwargs):
+        page = OneMonthPage(
+            month=month,
+            year=year,
+            **self.__dict__, **kwargs
+        )
+        self.pages.append(page)
