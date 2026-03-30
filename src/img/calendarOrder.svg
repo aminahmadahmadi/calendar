@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 570 178.58294999999998" xml:space="preserve" version="1.1" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <style type="text/css">
+            .udxsl-bg {
+                fill: #f5f5f5;
+                stroke: none;
+            }
+
+            .udxsl-line {
+                fill: none;
+                stroke: #999;
+                stroke-width: 0.05;
+            }
+
+            .udxsl-firstCal {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 17.638861940627592px;
+                text-anchor: middle;
+            }
+
+            .udxsl-holiday {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 17.638861940627592px;
+                text-anchor: middle;
+            }
+
+            .udxsl-firstCalWeekdays {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 2.4694406716878627px;
+                text-anchor: middle;
+            }
+
+            .udxsl-firstCalWeekdaysHoliday {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 2.4694406716878627px;
+                text-anchor: middle;
+            }
+
+            .udxsl-secondCal {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 2.4694406716878627px;
+                text-anchor: start;
+                direction: ltr;
+            }
+
+            .udxsl-thirdCal {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 2.4694406716878627px;
+                text-anchor: end;
+                direction: rtl;
+            }
+
+            .udxsl-personalEvents {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 2.116663432875311px;
+                text-anchor: start;
+                direction: rtl;
+            }
+
+            .udxsl-icon {
+                fill: #000;
+                stroke: None;
+            }
+
+            .udxsl-monthAndWeek {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 300;
+                font-size: 2.4694406716878627px;
+                text-anchor: end;
+                direction: rtl;
+            }
+
+            .xcful-bg {
+                fill: #f5f5f5;
+                stroke: none;
+            }
+
+            .xcful-line {
+                fill: none;
+                stroke: #999;
+                stroke-width: 0.05;
+            }
+
+            .xcful-firstCal {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 17.638861940627592px;
+                text-anchor: middle;
+            }
+
+            .xcful-holiday {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 17.638861940627592px;
+                text-anchor: middle;
+            }
+
+            .xcful-firstCalWeekdays {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 2.4694406716878627px;
+                text-anchor: middle;
+            }
+
+            .xcful-firstCalWeekdaysHoliday {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 2.4694406716878627px;
+                text-anchor: middle;
+            }
+
+            .xcful-secondCal {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 2.4694406716878627px;
+                text-anchor: end;
+                direction: rtl;
+            }
+
+            .xcful-personalEvents {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 2.116663432875311px;
+                text-anchor: start;
+                direction: rtl;
+            }
+
+            .xcful-icon {
+                fill: #000;
+                stroke: None;
+            }
+
+            .xcful-monthAndWeek {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 300;
+                font-size: 2.4694406716878627px;
+                text-anchor: end;
+                direction: rtl;
+            }
+
+            .uumib-bg {
+                fill: #f5f5f5;
+                stroke: none;
+            }
+
+            .uumib-line {
+                fill: none;
+                stroke: #999;
+                stroke-width: 0.05;
+            }
+
+            .uumib-firstCal {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 17.638861940627592px;
+                text-anchor: middle;
+            }
+
+            .uumib-holiday {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 17.638861940627592px;
+                text-anchor: middle;
+            }
+
+            .uumib-firstCalWeekdays {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 2.4694406716878627px;
+                text-anchor: middle;
+            }
+
+            .uumib-firstCalWeekdaysHoliday {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 2.4694406716878627px;
+                text-anchor: middle;
+            }
+
+            .uumib-secondCal {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 100;
+                font-size: 2.4694406716878627px;
+                text-anchor: start;
+                direction: ltr;
+            }
+
+            .uumib-personalEvents {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 200;
+                font-size: 2.116663432875311px;
+                text-anchor: start;
+                direction: rtl;
+            }
+
+            .uumib-icon {
+                fill: #000;
+                stroke: None;
+            }
+
+            .uumib-monthAndWeek {
+                fill: #000;
+                stroke: None;
+                font-family: "Anjoman", vazirmatn;
+                font-weight: 300;
+                font-size: 2.4694406716878627px;
+                text-anchor: end;
+                direction: rtl;
+            }
+        </style>
+
+    </defs>
+    <g>
+        <rect x="0" y="0" width="63" height="63" class="udxsl-bg" transform="scale(2.83465)" />
+        <line x1="0" y1="8" x2="63" y2="8" transform="scale(2.83465)" class="udxsl-line" />
+        <line x1="25" y1="13" x2="63" y2="13" transform="scale(2.83465)" class="udxsl-line" />
+        <line x1="25" y1="18" x2="63" y2="18" transform="scale(2.83465)" class="udxsl-line" />
+        <line x1="25" y1="23" x2="63" y2="23" transform="scale(2.83465)" class="udxsl-line" />
+        <line x1="25" y1="28" x2="63" y2="28" transform="scale(2.83465)" class="udxsl-line" />
+        <line x1="0" y1="33" x2="63" y2="33" transform="scale(2.83465)" class="udxsl-line" />
+        <line x1="25" y1="38" x2="63" y2="38" transform="scale(2.83465)" class="udxsl-line" />
+        <line x1="25" y1="43" x2="63" y2="43" transform="scale(2.83465)" class="udxsl-line" />
+        <line x1="25" y1="48" x2="63" y2="48" transform="scale(2.83465)" class="udxsl-line" />
+        <line x1="25" y1="53" x2="63" y2="53" transform="scale(2.83465)" class="udxsl-line" />
+        <line x1="0" y1="58" x2="63" y2="58" transform="scale(2.83465)" class="udxsl-line" />
+        <text x="13.750000000000002" y="24.67429841426631" transform="scale(2.83465)" class="udxsl-firstCal">۳۰</text>
+        <text x="13.750000000000002" y="28.143739085954174" transform="scale(2.83465)"
+            class="udxsl-firstCalWeekdays">شنبه</text>
+        <text x="13.750000000000002" y="49.67429841426631" transform="scale(2.83465)" class="udxsl-holiday">۳۱</text>
+        <text x="13.750000000000002" y="53.143739085954174" transform="scale(2.83465)"
+            class="udxsl-firstCalWeekdaysHoliday">یک‌شنبه</text>
+        <text x="25.5" y="11.327262625015434" transform="scale(2.83465)" class="udxsl-secondCal">June 20, 2026</text>
+        <text x="25.5" y="36.327262625015436" transform="scale(2.83465)" class="udxsl-secondCal">21</text>
+        <text x="25.5" y="16.327262625015432" transform="scale(2.83465)" class="udxsl-thirdCal">٥ محرم ١٤٤٧</text>
+        <text x="25.5" y="41.327262625015436" transform="scale(2.83465)" class="udxsl-thirdCal">٦</text>
+        <text x="25.5" y="6.327262625015434" transform="scale(2.83465)" class="udxsl-monthAndWeek">هفته ۱۴ /
+            خرداد و تیر</text>
+    </g>
+
+    <g transform="translate(195)">
+        <rect x="0" y="0" width="63" height="63" class="xcful-bg" transform="scale(2.83465)" />
+        <line x1="0" y1="8" x2="63" y2="8" transform="scale(2.83465)" class="xcful-line" />
+        <line x1="25" y1="13" x2="63" y2="13" transform="scale(2.83465)" class="xcful-line" />
+        <line x1="25" y1="18" x2="63" y2="18" transform="scale(2.83465)" class="xcful-line" />
+        <line x1="25" y1="23" x2="63" y2="23" transform="scale(2.83465)" class="xcful-line" />
+        <line x1="25" y1="28" x2="63" y2="28" transform="scale(2.83465)" class="xcful-line" />
+        <line x1="0" y1="33" x2="63" y2="33" transform="scale(2.83465)" class="xcful-line" />
+        <line x1="25" y1="38" x2="63" y2="38" transform="scale(2.83465)" class="xcful-line" />
+        <line x1="25" y1="43" x2="63" y2="43" transform="scale(2.83465)" class="xcful-line" />
+        <line x1="25" y1="48" x2="63" y2="48" transform="scale(2.83465)" class="xcful-line" />
+        <line x1="25" y1="53" x2="63" y2="53" transform="scale(2.83465)" class="xcful-line" />
+        <line x1="0" y1="58" x2="63" y2="58" transform="scale(2.83465)" class="xcful-line" />
+        <text x="13.750000000000002" y="24.67429841426631" transform="scale(2.83465)" class="xcful-firstCal">20</text>
+        <text x="13.750000000000002" y="28.143739085954174" transform="scale(2.83465)"
+            class="xcful-firstCalWeekdays">Saturday</text>
+        <text x="13.750000000000002" y="49.67429841426631" transform="scale(2.83465)" class="xcful-firstCal">21</text>
+        <text x="13.750000000000002" y="53.143739085954174" transform="scale(2.83465)"
+            class="xcful-firstCalWeekdays">Sunday</text>
+        <text x="25.5" y="11.327262625015434" transform="scale(2.83465)" class="xcful-secondCal">۳۰ خرداد ۱۴۰۵</text>
+        <text x="25.5" y="36.327262625015436" transform="scale(2.83465)" class="xcful-secondCal">۳۱</text>
+        <text x="25.5" y="6.327262625015434" transform="scale(2.83465)" class="xcful-monthAndWeek">Week 14 / June</text>
+    </g>
+
+
+    <g transform="translate(390)">
+        <rect x="0" y="0" width="63" height="63" class="uumib-bg" transform="scale(2.83465)" />
+        <line x1="0" y1="8" x2="63" y2="8" transform="scale(2.83465)" class="uumib-line" />
+        <line x1="25" y1="13" x2="63" y2="13" transform="scale(2.83465)" class="uumib-line" />
+        <line x1="25" y1="18" x2="63" y2="18" transform="scale(2.83465)" class="uumib-line" />
+        <line x1="25" y1="23" x2="63" y2="23" transform="scale(2.83465)" class="uumib-line" />
+        <line x1="25" y1="28" x2="63" y2="28" transform="scale(2.83465)" class="uumib-line" />
+        <line x1="0" y1="33" x2="63" y2="33" transform="scale(2.83465)" class="uumib-line" />
+        <line x1="25" y1="38" x2="63" y2="38" transform="scale(2.83465)" class="uumib-line" />
+        <line x1="25" y1="43" x2="63" y2="43" transform="scale(2.83465)" class="uumib-line" />
+        <line x1="25" y1="48" x2="63" y2="48" transform="scale(2.83465)" class="uumib-line" />
+        <line x1="25" y1="53" x2="63" y2="53" transform="scale(2.83465)" class="uumib-line" />
+        <line x1="0" y1="58" x2="63" y2="58" transform="scale(2.83465)" class="uumib-line" />
+        <text x="13.750000000000002" y="24.67429841426631" transform="scale(2.83465)" class="uumib-firstCal">٥</text>
+        <text x="13.750000000000002" y="28.143739085954174" transform="scale(2.83465)"
+            class="uumib-firstCalWeekdays">السبت</text>
+        <text x="13.750000000000002" y="49.67429841426631" transform="scale(2.83465)" class="uumib-firstCal">٦</text>
+        <text x="13.750000000000002" y="53.143739085954174" transform="scale(2.83465)"
+            class="uumib-firstCalWeekdays">الأحد</text>
+        <text x="25.5" y="6.327262625015434" transform="scale(2.83465)" class="uumib-monthAndWeek">اسبوع ١٤ /
+            محرم</text>
+    </g>
+</svg>
