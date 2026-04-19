@@ -4602,12 +4602,6 @@
     ],
     "wc-10-13": [
         {
-            "category": "WorldwideHolidays",
-            "occasion": "جمعه سیزدهم",
-            "dayoff": false,
-            "year": null
-        },
-        {
             "category": "UnitedNations",
             "occasion": "روز جهانی کاهش اثرات بلایای طبیعی",
             "dayoff": false,
@@ -4928,14 +4922,7 @@
             "year": 1320
         }
     ],
-    "wc-1-13": [
-        {
-            "category": "WorldwideHolidays",
-            "occasion": "جمعه سیزدهم",
-            "dayoff": false,
-            "year": null
-        }
-    ],
+    "wc-1-13": [],
     "sh-10-4": [
         {
             "category": "iran",
