@@ -47,7 +47,7 @@ class FontStyle():
             return r
 
 
-def addTextStyle(obj, loc, name, fill, stroke=None, anchor=None, direction=None):
+def addTextStyle(obj, loc, name, fill, stroke=None, anchor=None, direction=None, **kwargs):
     try:
         fontWeight = obj.fontWeight.get(name)  # noqa
         fontOtherCSS = obj.fontOtherCSS.get(name)
@@ -56,14 +56,16 @@ def addTextStyle(obj, loc, name, fill, stroke=None, anchor=None, direction=None)
         fontSize = obj.fontSize.get(name) / obj.scale  # noqa
         textAnchor = '' if anchor is None else f'text-anchor:{anchor};'
         textDir = '' if direction is None else f'direction:{direction};'
+        others = ''.join([f'{k}:{v};' for k, v in kwargs.items()])
+
         obj.pages[loc].addStyle(
             name,
             f'fill:{fill};'
-            f'stroke:None;'
+            f'stroke:{stroke};'
             f'font-family:"{fontFamily}",{backupFonts};'
             f'font-weight:{fontWeight};{fontOtherCSS}'
             f'font-size:{fontSize}px;'
-            f'{textAnchor}{textDir}'
+            f'{textAnchor}{textDir}{others}'
         )
     except:
         print(
