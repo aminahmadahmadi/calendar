@@ -590,15 +590,61 @@ class WeekPage(LinePage):
             return
         downH = len(self.calendarOrder)-1
 
+        def hex_to_rgb(hex_color):
+            """Convert hex color to RGB tuple."""
+            hex_color = hex_color.lstrip('#')
+
+            if len(hex_color) == 3:
+                new_hex = ''
+                for c in hex_color:
+                    new_hex += f'{c}{c}'
+                hex_color = new_hex
+            elif len(hex_color) != 6:
+                return (0, 0, 0)
+
+            return tuple(int(hex_color[i:i + 2], 16) for i in (0, 2, 4))
+
+        def rgb_to_hex(rgb):
+            """Convert RGB tuple to hex color."""
+            return '#{:02x}{:02x}{:02x}'.format(*rgb)
+
+        def blend_with_white(hex_color, opacity):
+            """
+            Convert a hex color with a given opacity to a new hex color
+            that represents the same color when overlaid on a white background.
+
+            Parameters:
+            - hex_color: The original hex color (e.g., '#ff5733').
+            - opacity: Opacity value between 0 (transparent) and 1 (opaque).
+
+            Returns:
+            - A new hex color as a string.
+            """
+            # Convert hex to RGB
+            r, g, b = hex_to_rgb(hex_color)
+
+            # Calculate blended color with white
+            new_r = int((r * opacity) + (255 * (1 - opacity)))
+            new_g = int((g * opacity) + (255 * (1 - opacity)))
+            new_b = int((b * opacity) + (255 * (1 - opacity)))
+
+            # Convert back to hex
+            return rgb_to_hex((new_r, new_g, new_b))
+
+        mainColor = self.primaryColor
+        darkColor = blend_with_white(mainColor, 0.8)  # 333
+        lightColor = blend_with_white(mainColor, 0.2)  # ccc
+        lighterColor = blend_with_white(mainColor, 0.13)  # ddd
+
         if self.moonStyle == 'light':
-            swb, cbf, cbs = 2, '#ccc', '#ccc'
-            swf, cff, cfs = 0, '#fff', '#ccc'
+            swb, cbf, cbs = 2, lightColor, lightColor
+            swf, cff, cfs = 0, '#fff', lightColor
         elif self.moonStyle == 'dark':
-            swb, cbf, cbs = 0, '#333', '#333'
-            swf, cff, cfs = 1,  '#ccc', '#ccc'
+            swb, cbf, cbs = 0, darkColor, darkColor
+            swf, cff, cfs = 1,  lightColor, lightColor
         else:
-            swb, cbf, cbs = 3, 'none', '#ddd'
-            swf, cff, cfs = 3, 'none', '#000'
+            swb, cbf, cbs = 3, 'none', lighterColor
+            swf, cff, cfs = 3, 'none', mainColor
 
         self.pages[loc].addStyle(
             'moon-back',
