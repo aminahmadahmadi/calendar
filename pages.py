@@ -1069,6 +1069,11 @@ class LinePageWithTitle(LinePage):
 
         self.title = title
         self.moretext = moretext
+        self.moretextOnLine = kwargs.get('moretextOnLine', False)
+        self.moretextWhitespace = kwargs.get(
+            'moretextWhitespace',
+            2 if self.moretextOnLine else 0
+        )
 
         self.daysHeight = kwargs.get('daysHeight', 4)
         self.translateTextX = kwargs.get('translateTextX', 0)
@@ -1085,15 +1090,14 @@ class LinePageWithTitle(LinePage):
         self.fontSize = kwargs.get('fontSize', {})
         self.fontOtherCSS = kwargs.get('fontOtherCSS', {})
 
-    def makePages(self):
+    def makePages(self, skipMoretext=False):
         super().makePages()
         for loc in ['right', 'left']:
             self.addTitle(loc)
-            if self.moretext:
+            if self.moretext and not skipMoretext:
                 self.addMoreText(loc)
 
     def addMoreText(self, loc):
-
         addTextStyle(
             self,
             loc=loc,
@@ -1102,28 +1106,52 @@ class LinePageWithTitle(LinePage):
             anchor="start",
             direction="rtl",
         )
-        lineNo = 7 * self.daysHeight - len(self.moretext)
-        y = self.margin['top'] + self.padding['top'] + lineNo*self.lineHeight+self.translateTextY  # noqa
-        eventH = self.fontHeightScl * self.fontSize.get("personalEvents")/self.scale  # noqa
 
-        eventY = y+self.lineHeight / 2 + eventH/2  # noqa
+        if self.moretextWhitespace != 0:
+            bg = 'white' if self.bgColor in ['none', None] else self.bgColor
+
+            self.pages[loc].addStyle(
+                "whitespace",
+                f"fill:{bg};"
+                f"stroke:{bg};"
+                f"stroke-width:{self.moretextWhitespace}px;"
+                "stroke-linecap:round;"
+                "stroke-linejoin:round;"
+            )
+        # lineNo = 7 * self.daysHeight - len(self.moretext)
+
+        lineNo = self.lineCount - len(self.moretext)
+
+        y = self.margin['top'] + self.padding['top'] + lineNo*self.lineHeight+self.translateTextY  # noqa
+        if self.moretextOnLine:
+            eventY = y
+        else:
+            eventH = self.fontHeightScl * self.fontSize.get("personalEvents")/self.scale  # noqa
+            eventY = y - self.lineHeight / 2 + eventH/2  # noqa
 
         space = self.lineHeight*2
         xLeftSpace, xRightSpace = self.xloc(loc, space+0.5)
         x = xRightSpace+self.translateTextX
 
         for _text in self.moretext:
+            if self.moretextWhitespace != 0:
+                self.pages[loc].addText(
+                    x,
+                    eventY,
+                    _text,
+                    transform=f'scale({self.scale})',
+                    class_='personalEvents whitespace',
+                )
             self.pages[loc].addText(
                 x,
                 eventY,
                 _text,
                 transform=f'scale({self.scale})',
-                class_='personalEvents'
+                class_='personalEvents',
             )
             eventY += self.lineHeight
 
     def addTitle(self, loc):
-
         addTextStyle(
             self,
             loc=loc,
@@ -1168,8 +1196,8 @@ class ChecklistPage(LinePageWithTitle):
             f'stroke:{self.lineColor};'
             f'stroke-width:{self.lineWidth};'
         )
-        lines = (self.height-self.padding['top'] -
-                 self.padding['bottom']) // self.lineHeight+1
+        lines = int((self.height-self.padding['top'] -
+                     self.padding['bottom']) // self.lineHeight+1)
         space = self.lineHeight*2
         xLeftSpace, xRightSpace = self.xloc(loc, space+0.5)
         x = xRightSpace
@@ -1779,13 +1807,16 @@ class SquarePage(LinePageWithTitle):
         super().__init__(name=name, **kwargs)
 
     def makePages(self):
-        super().makePages()
+        super().makePages(skipMoretext=True)
         for loc in ['right', 'left']:
             self.addVerticalLines(loc)
+            if self.moretext:
+                self.addMoreText(loc)
 
     def addVerticalLines(self, loc):
         y = self.margin['top'] + self.padding['top']
         yTop = y
+        yBottom = y
         while y <= self.svgHeight - self.margin['bottom'] - self.padding['bottom']:
             yBottom = y
             y += self.lineHeight
