@@ -469,7 +469,7 @@ class WeekPage(LinePage):
             if ((weekday in self.weekend)
                     or (weekdayName in self.weekend)
                     or (weekdayNameShort in self.weekend)
-                    ):
+                ):
                 holiday = True
 
             # text of cal
@@ -810,7 +810,7 @@ class WeekPage(LinePage):
             dayKey = self.weekKeys[dayindex]
             if self.monthFilter != None and self.monthFilter != self.daysJson[dayKey][self.calendarOrder[0]][1]:
                 continue
-            if self.daysY[i+1] > self.svgHeight - self.margin['bottom'] - self.padding['bottom']:
+            if self.daysY[dayindex+1] > self.svgHeight - self.margin['bottom'] - self.padding['bottom']:
                 continue
 
             calH = self.fontHeightScl * self.fontSize.get('time')/self.scale  # noqa
@@ -977,6 +977,9 @@ class WeekPage(LinePage):
                         txt = etTemp
                     else:
                         txt = " ".join(etTemp.split(" ")[1:])
+
+                    if self.divider in txt[:15] and len(txt) != len(etTemp2):
+                        txt = self.divider.join(txt.split(self.divider)[1:])
                     et.append(txt)
                     etTemp2 = etTemp2[:(-1*len(txt))]
             else:
