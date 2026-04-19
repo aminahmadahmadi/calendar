@@ -175,6 +175,7 @@ class LinePage(Page):
             f'stroke:{self.lineColor};'
             f'stroke-width:{self.lineWidth};'
         )
+        countLines = 0
         xLeft, xRight = self.xloc(loc)
         y = self.margin['top'] + self.padding['top']
         while y <= self.svgHeight - self.margin['bottom'] - self.padding['bottom']:
