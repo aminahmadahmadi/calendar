@@ -263,7 +263,10 @@ class WeekPage(LinePage):
         self.showWeekdays = kwargs.get('showWeekdays', False)
         self.showFullCalendar = kwargs.get('showFullCalendar', False)
         self.showWeekNo = kwargs.get('showWeekNo', True)
-        self.showTime = kwargs.get('showTime', False)
+        self.showTimeline = kwargs.get('showTimeline', False)
+        self.timelineStart = kwargs.get('timelineStart', 6)
+        self.timelineEnd = kwargs.get('timelineEnd', 22)
+        self.timelinePattern = kwargs.get('timelinePattern', '01')
         self.showMoon = kwargs.get('showMoon', True)
         self.showJustImpMoon = kwargs.get('showJustImpMoon', True)
         self.moonRotationDeg = kwargs.get('moonRotationDeg', 30)
@@ -469,7 +472,7 @@ class WeekPage(LinePage):
             if ((weekday in self.weekend)
                     or (weekdayName in self.weekend)
                     or (weekdayNameShort in self.weekend)
-                ):
+                    ):
                 holiday = True
 
             # text of cal
@@ -786,8 +789,9 @@ class WeekPage(LinePage):
 
             thisPage.closeGroup()
 
-    def drawTime(self, loc, pattern='01'):
-        if not self.showTime:
+    def drawTime(self, loc):
+        if not self.showTimeline:
+            print('skipped')
             return
         addTextStyle(
             self,
@@ -806,6 +810,8 @@ class WeekPage(LinePage):
         else:
             xl, xr = xLeft, xRightSpace
 
+        pattern = self.timelinePattern
+
         for dayindex, y in enumerate(self.daysY[:-1]):
             dayKey = self.weekKeys[dayindex]
             if self.monthFilter != None and self.monthFilter != self.daysJson[dayKey][self.calendarOrder[0]][1]:
@@ -819,12 +825,11 @@ class WeekPage(LinePage):
             y2 = y1+1
             y3 = y2 + calH + 0.5
 
-            startTime = 6
-            endTime = 22
-            _t = startTime
+            _t = self.timelineStart
             i = 0
-            while _t <= endTime:
-                x = xl + (xr-xl)*(i+1)/(endTime-startTime+2)
+            _n = self.timelineEnd-self.timelineStart+2
+            while _t <= self.timelineEnd:
+                x = xl + (xr-xl)*(i+1)/(_n)
                 self.pages[loc].addLine(
                     x, y1, x, y2,
                     transform=f'scale({self.scale})',

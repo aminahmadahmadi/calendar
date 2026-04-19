@@ -37,7 +37,10 @@ class Calendar(Notebook):
         self.showWeekdays = kwargs.get('showWeekdays', False)
         self.showFullCalendar = kwargs.get('showFullCalendar', None)
         self.showWeekNo = kwargs.get('showWeekNo', True)
-        self.showTime = kwargs.get('showTime', False)
+        self.showTimeline = kwargs.get('showTimeline', False)
+        self.timelineStart = kwargs.get('timelineStart', 6)
+        self.timelineEnd = kwargs.get('timelineEnd', 22)
+        self.timelinePattern = kwargs.get('timelinePattern', '01')
         self.showMoon = kwargs.get('showMoon', True)
         self.showJustImpMoon = kwargs.get('showJustImpMoon', True)
         self.moonRotationDeg = kwargs.get('moonRotationDeg', 45)
@@ -160,9 +163,13 @@ class Calendar(Notebook):
                 break
         return newkeys[(weekNo-1)*7:weekNo*7]
 
-    def addWeekPage(self, weekNo, monthFilter=None):
-        page = WeekPage(weekNo, self.weekKeys(weekNo),
-                        monthFilter=monthFilter, **self.__dict__)
+    def addWeekPage(self, weekNo, monthFilter=None, **kwarg):
+        page = WeekPage(
+            weekNo, self.weekKeys(weekNo),
+            monthFilter=monthFilter,
+            **self.__dict__,
+            **kwarg,
+        )
         self.pages.append(page)
 
     def addFirstPage(self, years, turnOfYear, translateX=0, **kwargs):
@@ -185,3 +192,16 @@ class Calendar(Notebook):
             **self.__dict__, **kwargs
         )
         self.pages.append(page)
+
+
+if __name__ == '__main__':
+    myCalendar = Calendar(
+        daysJsonPath='data.json',
+        startDate='1405-1-1',
+        name="example"
+    )
+
+    for i in range(53):
+        myCalendar.addWeekPage(i+1)
+
+    myCalendar.toHTML()
