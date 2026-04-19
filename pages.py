@@ -183,7 +183,10 @@ class LinePage(Page):
                 transform=f'scale({self.scale})',
                 class_='line'
             )
+            countLines += 1
             y += self.lineHeight
+
+        self.lineCount = countLines
 
     def xloc(self, loc, space=None, margin=False):
         _dir = {
