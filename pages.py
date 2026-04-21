@@ -219,6 +219,138 @@ class LinePage(Page):
 class DotPage(Page):
     def __init__(self, name='Untitle-DotPage', **kwargs) -> None:
         super().__init__(name=name, **kwargs)
+        # margin and padding
+        self.padding = kwargs.get(
+            'padding',
+            {'top': 32, 'outside': 0, 'bottom': 10, 'inside': 0}
+        )
+        if isinstance(self.padding, list):
+            nameList = ['top', 'outside', 'bottom', 'inside']
+            self.padding = dict(zip(nameList, self.padding))
+
+        # line and dot peroperty
+        self.lineHeight = kwargs.get('lineHeight', 6)
+        self.lineWidth = kwargs.get('lineWidth', 0.05)
+
+        # colors
+        self.lineColor = kwargs.get('lineColor', '#999')
+
+        self.dotShape = kwargs.get('dotShape', 'square')
+        self.dotScale = kwargs.get('dotScale', 2)
+        self.dotStyle = kwargs.get('dotStyle', 'fill')
+
+    @property
+    def page(self):
+        self.pages: dict[str:Svg] = {}
+        self.makePages()
+        return self.pages
+
+    def makePages(self):
+        for loc in ['right', 'left']:
+            self.definePage(loc)
+            self.drawDots(loc)
+            self.drawGuide(loc)
+            self.drawTrimMark(loc)
+
+    def drawDot(self, loc, x, y):
+        r = self.dotScale * self.lineWidth
+
+        if self.dotShape == 'square' or self.dotShape == 'rect':
+            self.page[loc].addRect(
+                -r/2, -r/2, r, r,
+                transform=f'scale({self.scale}) translate({x} {y})',
+                class_='dot'
+            )
+        elif self.dotShape == 'circle':
+            self.page[loc].addRect(
+                0, 0, r,
+                transform=f'scale({self.scale}) translate({x} {y})',
+                class_='dot'
+            )
+        else:
+            self.page[loc].addPathByD(
+                self.dotShape,
+                transform=f'scale({self.scale}) translate({x} {y})',
+                class_='dot'
+            )
+
+    def drawDots(self, loc):
+        if self.dotShape == 'square' or self.dotShape == 'rect':
+            func = self.pages[loc].addRect
+        elif self.dotShape == 'circle':
+            func = self.pages[loc].addCircle
+        else:
+            func = self.pages[loc].addPathByD
+
+        if self.dotStyle == 'fill':
+            self.pages[loc].addStyle(
+                'dot',
+                f'fill:{self.lineColor};'
+                'stroke:none;'
+            )
+        else:
+            self.pages[loc].addStyle(
+                'dot',
+                'fill:none;'
+                f'stroke:{self.lineColor};'
+                f'stroke-width:{self.lineWidth/self.dotScale};'
+            )
+
+        countLines = 0
+        xLeft, xRight = self.xloc(loc)
+        y = self.margin['top'] + self.padding['top']
+        while y <= self.svgHeight - self.margin['bottom'] - self.padding['bottom']:
+            r = self.lineWidth
+            prop = {
+                'x': -r,
+                'y': -r,
+                'w': 2*r,
+                'h': 2*r,
+                'cx': 0,
+                'cy': 0,
+                'r': r,
+                'd': self.dotShape,
+            }
+
+            xLeft, xRight = self.xloc(loc, self.lineHeight)
+            x = xLeft
+            while x <= xRight:
+                func(
+                    **prop,
+                    transform=f'scale({self.scale}) translate({x} {y}) scale({self.dotScale})',
+                    class_='dot'
+                )
+                x += self.lineHeight
+            countLines += 1
+            y += self.lineHeight
+
+        self.lineCount = countLines
+
+    def xloc(self, loc, space=None, margin=False):
+        _dir = {
+            'right': ['inside', 'outside'],
+            'left': ['outside', 'inside']
+        }
+        if space:
+            xLeftSpace = self.padding[_dir[loc][0]] + \
+                self.margin[_dir[loc][0]]+space
+            xRightSpace = self.svgWidth - \
+                (self.padding[_dir[loc][1]]+self.margin[_dir[loc][1]]+space)
+            return (xLeftSpace, xRightSpace)
+        elif margin:
+            xLeft = self.margin[_dir[loc][0]] if self.padding[_dir[loc][0]] == 0 else self.padding[_dir[loc][0]] + \
+                self.margin[_dir[loc][0]]
+            xRight = self.svgWidth
+            xRight -= self.margin[_dir[loc][1]] if self.padding[_dir[loc][1]] == 0 else self.padding[_dir[loc][1]] + \
+                self.margin[_dir[loc][1]]
+            return (xLeft, xRight)
+        else:
+            xLeft = 0 if self.padding[_dir[loc][0]] == 0 else self.padding[_dir[loc][0]] + \
+                self.margin[_dir[loc][0]]
+            xRight = self.svgWidth
+            xRight -= 0 if self.padding[_dir[loc][1]] == 0 else self.padding[_dir[loc][1]] + \
+                self.margin[_dir[loc][1]]
+            return (xLeft, xRight)
 
 
 class WeekPage(LinePage):
@@ -791,7 +923,6 @@ class WeekPage(LinePage):
 
     def drawTime(self, loc):
         if not self.showTimeline:
-            print('skipped')
             return
         addTextStyle(
             self,
