@@ -55,28 +55,40 @@ class Notebook():
         return os.path.join(
             self.mainDirectory(Dir), 'pages')
 
-    def addEmptyPage(self):
-        page = Page(**self.__dict__)
+    def addEmptyPage(self, **kwargs):
+        props = self.__dict__.copy()
+        props.update(kwargs)
+        page = Page(**props)
         self.pages.append(page)
 
-    def addLinePage(self):
-        page = LinePage(**self.__dict__)
+    def addLinePage(self, **kwargs):
+        props = self.__dict__.copy()
+        props.update(kwargs)
+        page = LinePage(**props)
         self.pages.append(page)
 
     def addLinePageWithTitle(self, **kwargs):
-        page = LinePageWithTitle(**self.__dict__, **kwargs)
+        props = self.__dict__.copy()
+        props.update(kwargs)
+        page = LinePageWithTitle(**props)
         self.pages.append(page)
 
     def addSquarePage(self, **kwargs):
-        page = SquarePage(**self.__dict__, **kwargs)
+        props = self.__dict__.copy()
+        props.update(kwargs)
+        page = SquarePage(**props)
         self.pages.append(page)
 
     def addDotPage(self, **kwargs):
-        page = DotPage(**self.__dict__, **kwargs)
+        props = self.__dict__.copy()
+        props.update(kwargs)
+        page = DotPage(**props)
         self.pages.append(page)
 
     def addChecklistPage(self, **kwargs):
-        page = ChecklistPage(**self.__dict__, **kwargs)
+        props = self.__dict__.copy()
+        props.update(kwargs)
+        page = ChecklistPage(**props)
         self.pages.append(page)
 
     def removeLastPage(self):
