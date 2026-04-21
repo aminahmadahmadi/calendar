@@ -94,55 +94,12 @@ class Notebook():
     def removeLastPage(self):
         self.pages = self.pages[:-1]
 
-    def toHTML(self, Dir='', previewMargin=False):
-
+    def saveSvgs(self, Dir=''):
         if not os.path.exists(self.mainDirectory(Dir)):
             os.mkdir(self.mainDirectory(Dir))
 
         if not os.path.exists(self.pagesDirectory(Dir)):
             os.mkdir(self.pagesDirectory(Dir))
-
-        _direction = "rtl" if self.rtl else "ltr"
-        htmlTxt = f'<html>\n<head>\n<style>\nhtml,body{{margin:0;padding:0;direction:{_direction};}}\nbody{{display:flex;flex-wrap:wrap;}}\n</style>\n</head>\n<body>\n'
-        for i in range(len(self.pages)):
-            if i % 2 == 0 ^ self.rtl:
-                pageDir = 'right'
-                pageOneMargin = 'left'
-            else:
-                pageDir = 'left'
-                pageOneMargin = 'right'
-            print(
-                f'#{i+1:>3}: {str(self.pages[i].__class__)[8:-2].split(".")[-1]}({pageDir[:1]})')
-
-            svg: Svg = self.pages[i].page[pageDir]
-            svg.name = f'p{i:03}'
-            svg.save(
-                self.pagesDirectory(Dir),
-                width=f'{self.pages[i].svgWidth}mm',
-                height=f'{self.pages[i].svgHeight}mm'
-            )
-            path = "/".join(['pages', f"{svg.name}.svg"])
-
-            styleTxt = ''
-            if i == 0 and previewMargin:
-                styleTxt += f'style="margin-{pageOneMargin}:{self.pages[i].svgWidth}mm;"'
-
-            htmlTxt += f'<img src="{path}" {styleTxt} >\n'
-
-        htmlTxt += '</body>\n</html>'
-
-        with open(os.path.join(self.mainDirectory(Dir), 'index.html'), "w") as f:
-            f.write(htmlTxt)
-
-    def toPrintHTML(self, Dir='', loopPaper=5):
-        if not os.path.exists(self.mainDirectory(Dir)):
-            os.mkdir(self.mainDirectory(Dir))
-
-        if not os.path.exists(self.pagesDirectory(Dir)):
-            os.mkdir(self.pagesDirectory(Dir))
-
-        _direction = "rtl" if self.rtl else "ltr"
-        htmlTxt = f'<html>\n<head>\n<style>\nhtml,body{{margin:0;padding:0;direction:{_direction};}}\nbody{{display:flex;flex-wrap:wrap;}}\n</style>\n</head>\n<body>\n'
 
         for i in range(len(self.pages)):
             if i % 2 == 0 ^ self.rtl:
@@ -160,6 +117,36 @@ class Notebook():
                 height=f'{self.pages[i].svgHeight}mm'
             )
 
+    def toHTML(self, Dir='', previewMargin=False, skipSvgs=False):
+        if not skipSvgs:
+            self.saveSvgs(Dir=Dir)
+
+        _direction = "rtl" if self.rtl else "ltr"
+        pageOneMargin = 'right' if self.rtl else 'left'
+
+        htmlTxt = f'<html>\n<head>\n<style>\nhtml,body{{margin:0;padding:0;direction:{_direction};}}\nbody{{display:flex;flex-wrap:wrap;}}\n</style>\n</head>\n<body>\n'
+
+        for p in range(len(self.pages)):
+            name = f'p{p:03}'
+            path = "/".join(['pages', f"{name}.svg"])
+
+            styleTxt = ''
+            if p == 0 and previewMargin:
+                styleTxt += f'style="margin-{pageOneMargin}:{self.pages[p].svgWidth}mm;"'
+
+            htmlTxt += f'<img src="{path}" {styleTxt} >\n'
+
+        htmlTxt += '</body>\n</html>'
+
+        with open(os.path.join(self.mainDirectory(Dir), 'index.html'), "w") as f:
+            f.write(htmlTxt)
+
+    def toPrintHTML(self, Dir='', loopPaper=5):
+        self.saveSvgs(Dir=Dir)
+
+        _direction = "rtl" if self.rtl else "ltr"
+        htmlTxt = f'<html>\n<head>\n<style>\nhtml,body{{margin:0;padding:0;direction:{_direction};}}\nbody{{display:flex;flex-wrap:wrap;}}\n</style>\n</head>\n<body>\n'
+
         for d in range(0, len(self.pages)-1, loopPaper*4):
             for i in range(0, loopPaper*2, 2):
                 for p in [d+loopPaper*4-i-1, d+i, d+i+1, d+loopPaper*4-i-2]:
@@ -169,8 +156,10 @@ class Notebook():
 
         htmlTxt += '</body>\n</html>'
 
-        with open(os.path.join(self.mainDirectory(Dir), 'index.html'), "w") as f:
+        with open(os.path.join(self.mainDirectory(Dir), 'print.html'), "w") as f:
             f.write(htmlTxt)
+
+        self.toHTML(Dir=Dir, previewMargin=True, skipSvgs=True)
 
     def toPDF(self, Dir='', removeSvgs=True, removePdfs=True):
         try:
