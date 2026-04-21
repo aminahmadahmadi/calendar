@@ -163,34 +163,37 @@ class Calendar(Notebook):
                 break
         return newkeys[(weekNo-1)*7:weekNo*7]
 
-    def addWeekPage(self, weekNo, monthFilter=None, **kwarg):
+    def addWeekPage(self, weekNo, monthFilter=None, **kwargs):
+        props = self.__dict__.copy()
+        props.update(kwargs)
         page = WeekPage(
             weekNo, self.weekKeys(weekNo),
-            monthFilter=monthFilter,
-            **self.__dict__,
-            **kwarg,
+            monthFilter=monthFilter, **props
         )
         self.pages.append(page)
 
     def addFirstPage(self, years, turnOfYear, translateX=0, **kwargs):
-        page = FirstPage(years, turnOfYear,
-                         translateX=translateX, **self.__dict__, **kwargs)
+        props = self.__dict__.copy()
+        props.update(kwargs)
+        page = FirstPage(years, turnOfYear, translateX=translateX, **props)
         self.pages.append(page)
 
     def addHolidaysPage(self, year, title, **kwargs):
-        page = HolidaysPage(year, title, **self.__dict__, **kwargs)
+        props = self.__dict__.copy()
+        props.update(kwargs)
+        page = HolidaysPage(year, title, **props)
         self.pages.append(page)
 
     def addOneYearPage(self, year, title='', **kwargs):
-        page = OneYearPage(year, title, **self.__dict__, **kwargs)
+        props = self.__dict__.copy()
+        props.update(kwargs)
+        page = OneYearPage(year, title, **props)
         self.pages.append(page)
 
-    def addOneMonthPage(self, month, year, title='', **kwargs):
-        page = OneMonthPage(
-            month=month,
-            year=year,
-            **self.__dict__, **kwargs
-        )
+    def addOneMonthPage(self, month, year, **kwargs):
+        props = self.__dict__.copy()
+        props.update(kwargs)
+        page = OneMonthPage(month=month, year=year, **props)
         self.pages.append(page)
 
 
