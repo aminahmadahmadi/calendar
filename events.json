@@ -9,7 +9,7 @@
     ],
     "sh-10-26": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "فرار شاه از ایران",
             "dayoff": false,
             "year": 1357
@@ -45,7 +45,7 @@
             "year": 1325
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز بزرگداشت شیخ کلینی",
             "dayoff": false,
             "year": null
@@ -74,7 +74,7 @@
         },
         {
             "category": "UnitedNations",
-            "occasion": "روز بین‌المللی هوانوردی غیر نظامی",
+            "occasion": "روز جهانی هوانوردی غیر نظامی",
             "dayoff": false,
             "year": null
         },
@@ -95,7 +95,7 @@
     ],
     "wc-9-23": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی دوجنسه‌ها",
             "dayoff": false,
             "year": null
@@ -123,13 +123,13 @@
     ],
     "sh-5-14": [
         {
-            "category": "iran",
+            "category": "iran-history",
             "occasion": "صدور فرمان مشروطیت",
             "dayoff": false,
             "year": 1285
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز حقوق بشر اسلامی و کرامت انسانی",
             "dayoff": false,
             "year": null
@@ -137,7 +137,7 @@
     ],
     "sh-5-31": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز صنعت دفاعی",
             "dayoff": false,
             "year": null
@@ -151,21 +151,21 @@
     ],
     "sh-3-1": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز بزرگداشت ملاصدرا",
             "dayoff": false,
             "year": null
         },
         {
             "category": "iran",
-            "occasion": "روز بهره وری و بهینه سازی مصرف",
+            "occasion": "روز بهره‌وری و بهینه‌سازی مصرف",
             "dayoff": false,
             "year": null
         }
     ],
     "sh-12-25": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "بمباران شیمیایی حلبچه به دست ارتش بعث عراق",
             "dayoff": false,
             "year": 1366
@@ -179,7 +179,7 @@
     ],
     "wc-3-9": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی کلیه",
             "dayoff": false,
             "year": null
@@ -225,7 +225,7 @@
             "year": 1919
         },
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی خط بریل",
             "dayoff": false,
             "year": null
@@ -255,13 +255,13 @@
     ],
     "sh-1-2": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "آغاز عملیات فتح المبین",
             "dayoff": false,
             "year": 1361
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "هجوم مأموران پهلوی به مدرسه فیضیه قم",
             "dayoff": false,
             "year": 1342
@@ -289,7 +289,7 @@
     ],
     "wc-5-20": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی مبارزه با آرتروز اتوایمون",
             "dayoff": false,
             "year": null
@@ -319,7 +319,7 @@
             "year": null
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "آغاز عملیات بیت المقدس",
             "dayoff": false,
             "year": 1361
@@ -365,7 +365,7 @@
     ],
     "sh-3-4": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز دزفول - روز مقاومت و پایداری",
             "dayoff": false,
             "year": null
@@ -390,7 +390,7 @@
     "wc-3-21": [
         {
             "category": "UnitedNations",
-            "occasion": "روز بین‌المللی نوروز",
+            "occasion": "روز جهانی نوروز",
             "dayoff": false,
             "year": null
         },
@@ -408,7 +408,7 @@
         },
         {
             "category": "UnitedNations",
-            "occasion": "روز بین‌المللی رفع تبعیض نژادی",
+            "occasion": "روز جهانی رفع تبعیض نژادی",
             "dayoff": false,
             "year": null
         },
@@ -435,7 +435,7 @@
     ],
     "sh-4-27": [
         {
-            "category": "iran",
+            "category": "iran-history",
             "occasion": "اعلام پذیرش قطعنامه 598 شورای امنیت سازمان ملل از سوی ایران",
             "dayoff": false,
             "year": 1367
@@ -443,7 +443,7 @@
     ],
     "wc-9-4": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی سلامت جنسی",
             "dayoff": false,
             "year": null
@@ -459,7 +459,7 @@
     ],
     "sh-8-26": [
         {
-            "category": "iran",
+            "category": "iran-history-2",
             "occasion": "سالروز آزادسازی سوسنگرد",
             "dayoff": false,
             "year": null
@@ -481,7 +481,7 @@
     ],
     "wc-5-1": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی کارگر",
             "dayoff": false,
             "year": null
@@ -495,8 +495,8 @@
     ],
     "wc-5-4": [
         {
-            "category": "WorldwideHolidays",
-            "occasion": "روز جهانی آتشنشانان",
+            "category": "UnitedNations",
+            "occasion": "روز جهانی آتش‌نشانان",
             "dayoff": false,
             "year": null
         }
@@ -569,7 +569,7 @@
             "year": null
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "رزو بزرگداشت محمد حسین شهریار",
             "dayoff": false,
             "year": null
@@ -585,7 +585,7 @@
     ],
     "wc-10-16": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی کارفرمایان",
             "dayoff": false,
             "year": null
@@ -599,7 +599,7 @@
     ],
     "sh-11-12": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "بازگشت امام خمینی(ره) به ایران و آغاز دهه فجر",
             "dayoff": false,
             "year": 1357
@@ -627,7 +627,7 @@
     ],
     "wc-1-31": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز کودکان خیابانی",
             "dayoff": false,
             "year": null
@@ -644,14 +644,14 @@
     "sh-12-15": [
         {
             "category": "iran",
-            "occasion": "روز درختکاری",
+            "occasion": "روز درخت‌کاری",
             "dayoff": false,
             "year": null
         }
     ],
     "sh-10-19": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "قیام مردم قم",
             "dayoff": false,
             "year": 1356
@@ -695,7 +695,7 @@
     ],
     "wc-11-15": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی نویسندگان زندانی",
             "dayoff": false,
             "year": null
@@ -711,7 +711,7 @@
     ],
     "sh-12-29": [
         {
-            "category": "iran",
+            "category": "iran-history",
             "occasion": "روز ملی شدن صنعت نفت",
             "dayoff": true,
             "year": 1329
@@ -725,7 +725,7 @@
             "year": null
         },
         {
-            "category": "iran",
+            "category": "iran-history",
             "occasion": "حمله به کوی دانشگاه تهران در سال ۱۳۷۸ توسط افراد موسوم به لباس شخصی",
             "dayoff": false,
             "year": 1378
@@ -733,7 +733,7 @@
     ],
     "wc-9-10": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی پیشگیری از خودکشی",
             "dayoff": false,
             "year": null
@@ -749,7 +749,7 @@
     ],
     "sh-3-7": [
         {
-            "category": "iran",
+            "category": "iran-history-2",
             "occasion": "افتتاح اولین دوره مجلس شورای اسلامی",
             "dayoff": false,
             "year": 1359
@@ -765,13 +765,13 @@
     ],
     "sh-4-11": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "شهادت ایت الله صدوقی",
             "dayoff": false,
             "year": 1361
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز بزرگداشت علامه امینی",
             "dayoff": false,
             "year": 1349
@@ -815,7 +815,7 @@
     ],
     "wc-3-15": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی حفاظت از حقوق مصرف کنندگان",
             "dayoff": false,
             "year": null
@@ -823,7 +823,7 @@
     ],
     "sh-9-7": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز نیروی دریای",
             "dayoff": false,
             "year": null
@@ -851,19 +851,13 @@
     ],
     "sh-9-27": [
         {
-            "category": "iran",
-            "occasion": "روز جهان عاری از خشونت و افراطی گری",
-            "dayoff": false,
-            "year": null
-        },
-        {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "شهادت دکتر مفتح",
             "dayoff": false,
             "year": 1358
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز وحدت حوزه و دانشگاه",
             "dayoff": false,
             "year": null
@@ -879,7 +873,7 @@
     ],
     "sh-10-22": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "تشکیل شورای انقلاب",
             "dayoff": false,
             "year": 1357
@@ -910,7 +904,7 @@
     "sh-2-7": [
         {
             "category": "iran",
-            "occasion": "روز ایمنی و حمل و نقل",
+            "occasion": "روز ایمنی و حمل‌ونقل",
             "dayoff": false,
             "year": null
         }
@@ -969,7 +963,7 @@
             "year": null
         },
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی حق دانستن",
             "dayoff": false,
             "year": null
@@ -985,7 +979,7 @@
     ],
     "sh-2-15": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز بزرگداشت شیخ صدوق",
             "dayoff": false,
             "year": null
@@ -1002,7 +996,7 @@
     "wc-2-21": [
         {
             "category": "UnitedNations",
-            "occasion": "روز بین‌المللی زبان مادری",
+            "occasion": "روز جهانی زبان مادری",
             "dayoff": false,
             "year": null
         },
@@ -1032,7 +1026,7 @@
     "wc-3-25": [
         {
             "category": "UnitedNations",
-            "occasion": "روز بین‌المللی یاد بود قربانیان بردگی و تجارت برده",
+            "occasion": "روز جهانی یاد بود قربانیان بردگی و تجارت برده",
             "dayoff": false,
             "year": null
         },
@@ -1051,7 +1045,7 @@
     ],
     "sh-2-27": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز ارتباطات و روابط عمومی",
             "dayoff": false,
             "year": null
@@ -1104,7 +1098,7 @@
     "wc-11-2": [
         {
             "category": "UnitedNations",
-            "occasion": "روز بین‌المللی برای پایان دادن به مصونیت از مجازات برای جرایم علیه روزنامه نگاران",
+            "occasion": "روز جهانی برای پایان دادن به مصونیت از مجازات برای جرایم علیه روزنامه نگاران",
             "dayoff": false,
             "year": null
         }
@@ -1119,7 +1113,7 @@
     ],
     "sh-3-3": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "فتح خرمشهر در عملیات بیت المقدس",
             "dayoff": false,
             "year": 1361
@@ -1135,13 +1129,13 @@
     ],
     "sh-7-7": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز بزرگداشت شمس تبریزی",
             "dayoff": false,
             "year": null
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "رزو بزرگداشت فرماندهان شهید جنگ تحمیلی",
             "dayoff": false,
             "year": null
@@ -1167,7 +1161,7 @@
             "year": 1937
         },
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی شکلات",
             "dayoff": false,
             "year": null
@@ -1191,7 +1185,7 @@
     ],
     "wc-4-18": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی حفاظت از آثار باستانی",
             "dayoff": false,
             "year": null
@@ -1207,7 +1201,7 @@
     ],
     "sh-9-19": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "تشکیل شورای فرهنگی به فرمان امام خمینی(ره)",
             "dayoff": false,
             "year": 1363
@@ -1216,7 +1210,7 @@
     "wc-5-15": [
         {
             "category": "UnitedNations",
-            "occasion": "روز بین‌المللی خانواده‌ها",
+            "occasion": "روز جهانی خانواده‌ها",
             "dayoff": false,
             "year": null
         }
@@ -1229,13 +1223,13 @@
             "year": null
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "حمله به مسجد گوهرشاد توسط رضاخان",
             "dayoff": false,
             "year": 1314
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز عفاف و حجاب",
             "dayoff": false,
             "year": null
@@ -1243,7 +1237,7 @@
     ],
     "sh-11-14": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز فناوری فضایی",
             "dayoff": false,
             "year": null
@@ -1251,7 +1245,7 @@
     ],
     "sh-4-24": [
         {
-            "category": "iran",
+            "category": "iran-history",
             "occasion": "آغاز اعتراضات تابستان ۱۴۰۰ از خوزستان که به علت کم‌آبی و قطع مداوم برق بود",
             "dayoff": false,
             "year": 1400
@@ -1259,7 +1253,7 @@
     ],
     "sh-1-29": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز ارتش جمهوری اسلامی و نیروی زمینی",
             "dayoff": false,
             "year": null
@@ -1343,7 +1337,7 @@
     ],
     "wc-8-13": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی چپ دست‌ها",
             "dayoff": false,
             "year": null
@@ -1383,7 +1377,7 @@
     ],
     "wc-10-12": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی نابینایی و اختلال بینایی",
             "dayoff": false,
             "year": null
@@ -1392,7 +1386,7 @@
     "wc-3-24": [
         {
             "category": "UnitedNations",
-            "occasion": "روز بین‌المللی حق بر صحت و درستی درباره نقض فاحش حقوق بشر و منزلت قربانیان",
+            "occasion": "روز جهانی حق بر صحت و درستی درباره نقض فاحش حقوق بشر و منزلت قربانیان",
             "dayoff": false,
             "year": null
         },
@@ -1413,7 +1407,7 @@
     ],
     "sh-7-10": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز تجلیل از اسرا و مفقودان",
             "dayoff": false,
             "year": null
@@ -1441,13 +1435,13 @@
     ],
     "sh-8-25": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز وقف",
             "dayoff": false,
             "year": null
         },
         {
-            "category": "iran",
+            "category": "iran-history",
             "occasion": "در روز اول اعتراضات آبان خونین ۹۸ اینترنت تلفن همراه در شهرهای مشهد، اهواز، بهبهان و امیدیه مختل شد و از ۲۵ آبان به دستور شورای عالی امنیت ملی قطعی سراسری اینترنت آغاز شد.",
             "dayoff": false,
             "year": 1398
@@ -1469,7 +1463,7 @@
         },
         {
             "category": "UnitedNations",
-            "occasion": "روز بین‌المللی بردباری",
+            "occasion": "روز جهانی بردباری",
             "dayoff": false,
             "year": null
         }
@@ -1484,7 +1478,7 @@
     ],
     "sh-5-28": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "کودتای آمریکا برای بازگرداندن شاه",
             "dayoff": false,
             "year": 1332
@@ -1498,13 +1492,13 @@
             "year": null
         },
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی مبارزه با سرطان تخمدان",
             "dayoff": false,
             "year": null
         },
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی صلیب سرخ و هلال احمر",
             "dayoff": false,
             "year": null
@@ -1512,7 +1506,7 @@
     ],
     "sh-11-19": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز نیروی هوایی",
             "dayoff": false,
             "year": null
@@ -1520,7 +1514,7 @@
     ],
     "sh-5-11": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "شهادت آیت الله شیخ فضل الله نوری",
             "dayoff": false,
             "year": 1288
@@ -1534,7 +1528,7 @@
             "year": 1401
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "حمله هوایی به مرکز فرماندهی حزب‌الله و کشته‌شدن حسن نصراللّه به دست اسرائیل",
             "dayoff": false,
             "year": 1403
@@ -1550,7 +1544,7 @@
     ],
     "sh-2-24": [
         {
-            "category": "iran",
+            "category": "iran-history",
             "occasion": "لغو امتیاز تنباکو به فتوای آیت الله میرزا حسن شیرازی",
             "dayoff": false,
             "year": 1270
@@ -1566,7 +1560,7 @@
     ],
     "sh-2-9": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز شوراها",
             "dayoff": false,
             "year": null
@@ -1574,7 +1568,7 @@
     ],
     "wc-2-2": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی تالاب‌ها",
             "dayoff": false,
             "year": null
@@ -1606,7 +1600,7 @@
     ],
     "sh-10-30": [
         {
-            "category": "iran",
+            "category": "iran-history",
             "occasion": "آتش‌سوزی ساختمان پلاسکو",
             "dayoff": false,
             "year": 1395
@@ -1620,13 +1614,13 @@
             "year": 1938
         },
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی قهوه",
             "dayoff": false,
             "year": null
         },
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی قلب",
             "dayoff": false,
             "year": null
@@ -1634,7 +1628,7 @@
     ],
     "wc-10-14": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی استاندارد",
             "dayoff": false,
             "year": null
@@ -1650,7 +1644,7 @@
     ],
     "wc-10-18": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی وازکتومی",
             "dayoff": false,
             "year": null
@@ -1694,7 +1688,7 @@
     ],
     "sh-9-12": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز قانون اساسی جمهوری اسلامی (تصویب قانون اساسی جمهوری اسلامی)",
             "dayoff": false,
             "year": 1358
@@ -1711,7 +1705,7 @@
     "sh-9-26": [
         {
             "category": "iran",
-            "occasion": "روز حمل و نقل و رانندگان",
+            "occasion": "روز حمل‌ونقل و رانندگان",
             "dayoff": false,
             "year": null
         }
@@ -1745,12 +1739,12 @@
         },
         {
             "category": "UnitedNations",
-            "occasion": "روز بین‌المللی شادی",
+            "occasion": "روز جهانی شادی",
             "dayoff": false,
             "year": null
         },
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی گنجشک‌ها",
             "dayoff": false,
             "year": null
@@ -1795,14 +1789,14 @@
         },
         {
             "category": "UnitedNations",
-            "occasion": "روز بین‌المللی بزرگداشت خاطره قربانیان هولوکاست",
+            "occasion": "روز جهانی بزرگداشت خاطره قربانیان هولوکاست",
             "dayoff": false,
             "year": null
         }
     ],
     "wc-1-7": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی برنامه نویسان کامپیوتری",
             "dayoff": false,
             "year": null
@@ -1810,7 +1804,7 @@
     ],
     "sh-10-20": [
         {
-            "category": "iran",
+            "category": "iran-history",
             "occasion": "شهادت میرزا تقی خان امیر کبیر",
             "dayoff": false,
             "year": 1230
@@ -1866,7 +1860,7 @@
     ],
     "sh-6-19": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "وفات آیت الله محمود طالقانی اولین امام جمعه تهران",
             "dayoff": false,
             "year": 1358
@@ -1874,7 +1868,7 @@
     ],
     "sh-2-3": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز بزرگداشت شیخ بهایی",
             "dayoff": false,
             "year": null
@@ -1882,7 +1876,7 @@
     ],
     "sh-2-5": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "شکست حمله نظامی آمریکا به ایران در طبس",
             "dayoff": false,
             "year": null
@@ -1920,7 +1914,7 @@
     ],
     "wc-10-29": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی پیشگیری از سکته",
             "dayoff": false,
             "year": null
@@ -1957,12 +1951,12 @@
     "sh-8-1": [
         {
             "category": "iran",
-            "occasion": "روز آمار و برنامه ریزی",
+            "occasion": "روز آمار و برنامه‌ریزی",
             "dayoff": false,
             "year": null
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "شهادت آیت الله حاج سید مصطفی خمینی",
             "dayoff": false,
             "year": 1356
@@ -1984,7 +1978,7 @@
     ],
     "wc-5-5": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی مامایی",
             "dayoff": false,
             "year": null
@@ -2000,7 +1994,7 @@
     ],
     "sh-4-26": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "سالروز تأسیس نهاد شورای نگهبان",
             "dayoff": false,
             "year": null
@@ -2030,7 +2024,7 @@
             "year": 1931
         },
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی نظارت بر آب",
             "dayoff": false,
             "year": null
@@ -2046,7 +2040,7 @@
     ],
     "sh-5-21": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز حمایت از صنایع کوچک",
             "dayoff": false,
             "year": null
@@ -2068,13 +2062,13 @@
     ],
     "sh-6-10": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز بانکداری اسلامی",
             "dayoff": false,
             "year": null
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز تشکیل قرارگاه پدافند هوایی حضرت خاتم الانبیا (ص)",
             "dayoff": false,
             "year": null
@@ -2204,7 +2198,7 @@
     ],
     "sh-7-23": [
         {
-            "category": "iran",
+            "category": "iran-history",
             "occasion": "آتش‌سوزی زندان اوین در میانه خیزش زن، زندگی، آزادی این حادثه حداقل ۸ کشته و ۵۷ زخمی به جای گذاشت.",
             "dayoff": false,
             "year": 1401
@@ -2226,13 +2220,13 @@
     ],
     "sh-10-7": [
         {
-            "category": "iran",
+            "category": "iran-history-2",
             "occasion": "تشکیل نهضت سواد آموزی",
             "dayoff": false,
             "year": 1358
         },
         {
-            "category": "iran",
+            "category": "iran-history",
             "occasion": "آغاز اعتراضات دی ۱۳۹۶ از مشهد و شهر‌های بزرگ خراسان",
             "dayoff": false,
             "year": 1396
@@ -2241,7 +2235,7 @@
     "wc-8-23": [
         {
             "category": "UnitedNations",
-            "occasion": "روز بین‌المللی یادبود و الغاء تجارت برده",
+            "occasion": "روز جهانی یادبود و الغاء تجارت برده",
             "dayoff": false,
             "year": null
         },
@@ -2314,7 +2308,7 @@
     ],
     "sh-11-29": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "قیام مردم تبریز",
             "dayoff": false,
             "year": 1356
@@ -2322,13 +2316,13 @@
     ],
     "sh-2-12": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "شهادت استاد مرتضی مطهری",
             "dayoff": false,
             "year": 1358
         },
         {
-            "category": "iran",
+            "category": "ّIRI",
             "occasion": "روز معلم",
             "dayoff": false,
             "year": null
@@ -2336,13 +2330,13 @@
     ],
     "wc-3-1": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی آگاهی در مورد خودآزاری",
             "dayoff": false,
             "year": null
         },
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی دفاع از حقوق مدنی",
             "dayoff": false,
             "year": null
@@ -2404,7 +2398,7 @@
     ],
     "sh-5-30": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز بزرگداشت علامه مجلسی",
             "dayoff": false,
             "year": null
@@ -2414,12 +2408,6 @@
             "occasion": "اشغال ایران توسط نیروهای بریتانیا و روسیه",
             "dayoff": false,
             "year": 1320
-        },
-        {
-            "category": "iran",
-            "occasion": "روز جهانی مسجد",
-            "dayoff": false,
-            "year": null
         }
     ],
     "sh-9-16": [
@@ -2460,13 +2448,13 @@
             "year": null
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "تسخیر سفارت آمریکا",
             "dayoff": false,
             "year": 1358
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "تبعید امام خمینی(ره) از ایران به ترکیه",
             "dayoff": false,
             "year": 1343
@@ -2480,7 +2468,7 @@
     ],
     "sh-6-8": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "انفجار دفتر نخست وزیری و شهادت رجایی و باهنر",
             "dayoff": false,
             "year": 1360
@@ -2488,7 +2476,7 @@
     ],
     "sh-5-8": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز بزرگداشت شیخ شهاب الدین سهروردی",
             "dayoff": false,
             "year": null
@@ -2504,7 +2492,7 @@
     ],
     "wc-8-31": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی آگاهی در مورد مصرف بیش از حد مواد مخدر",
             "dayoff": false,
             "year": null
@@ -2550,7 +2538,7 @@
     ],
     "sh-4-25": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز بهزیستی و تأمین اجتماعی",
             "dayoff": false,
             "year": null
@@ -2589,7 +2577,7 @@
         },
         {
             "category": "UnitedNations",
-            "occasion": "روز صنعتی سازی آفریقا",
+            "occasion": "روز صنعتی‌سازی آفریقا",
             "dayoff": false,
             "year": null
         },
@@ -2672,7 +2660,7 @@
             "year": 1918
         },
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی فلج مغزی",
             "dayoff": false,
             "year": null
@@ -2680,7 +2668,7 @@
     ],
     "sh-6-17": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "قیام 17 شهریور بر علیه حکومت پهلوی",
             "dayoff": false,
             "year": 1357
@@ -2696,7 +2684,7 @@
     ],
     "sh-3-23": [
         {
-            "category": "iran",
+            "category": "iran-history",
             "occasion": "آغاز حمله اسرائیل به جمهوری اسلامی",
             "dayoff": false,
             "year": 1404
@@ -2704,7 +2692,7 @@
     ],
     "sh-3-27": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز جهاد کشاورزی",
             "dayoff": false,
             "year": 1358
@@ -2734,7 +2722,7 @@
     ],
     "sh-6-2": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "آغاز هفته دولت",
             "dayoff": false,
             "year": null
@@ -2750,7 +2738,7 @@
     ],
     "sh-3-29": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "درگذشت دکتر علی شریعتی",
             "dayoff": false,
             "year": 1356
@@ -2758,7 +2746,7 @@
     ],
     "sh-4-12": [
         {
-            "category": "iran",
+            "category": "iran-history",
             "occasion": "حمله ناو آمریکایی به هواپیمای مسافربری جمهوری اسلامی",
             "dayoff": false,
             "year": 1367
@@ -2780,7 +2768,7 @@
     ],
     "wc-7-29": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی ببر",
             "dayoff": false,
             "year": null
@@ -2852,7 +2840,7 @@
     ],
     "wc-11-1": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی گیاه خواری",
             "dayoff": false,
             "year": null
@@ -2877,7 +2865,7 @@
     "wc-4-30": [
         {
             "category": "UnitedNations",
-            "occasion": "روز بین‌المللی موسیقی جاز",
+            "occasion": "روز جهانی موسیقی جاز",
             "dayoff": false,
             "year": null
         },
@@ -2919,13 +2907,13 @@
     ],
     "sh-9-5": [
         {
-            "category": "iran",
+            "category": "iran-history-2",
             "occasion": "سالروز قیام مردم گرگان",
             "dayoff": false,
             "year": null
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز بسیج مستضعفان (تشکیل بسیج مستضعفان به فرمان امام خمینی (ره))",
             "dayoff": false,
             "year": 1358
@@ -3009,7 +2997,7 @@
     ],
     "wc-8-30": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی گمشدگان و مفقودان",
             "dayoff": false,
             "year": null
@@ -3043,7 +3031,7 @@
             "year": 1918
         },
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی گربه",
             "dayoff": false,
             "year": null
@@ -3059,7 +3047,7 @@
     ],
     "sh-10-16": [
         {
-            "category": "iran",
+            "category": "iran-history",
             "occasion": "برخورد کشتی نفت‌کش سانچی با کشتی فله‌بر سی‌اف کریستال در نزدیکی شانگهای که به موجب آن کشتی سانچی غرق شد. بعد از پیدا کردن جسد یک نفر از دریا و ۲ نفر در یک قایق نجات، ۲۹ نفر دیگر پیدا نشدند و فرض بر این شد که تمام ۳۲ خدمه کشتی کشته شده‌اند.",
             "dayoff": false,
             "year": 1396
@@ -3067,20 +3055,20 @@
     ],
     "sh-10-18": [
         {
-            "category": "iran",
+            "category": "iran-history",
             "occasion": "پرواز شماره ۷۵۲ هواپیمایی بین‌المللی اوکراین پروازی مسافربری متعلق به هواپیمایی بین‌المللی اوکراین از مبدأ تهران به مقصد کی‌یف هدف شلیک پدافند هوایی سپاه پاسداران انقلاب اسلامی قرار گرفت و ساقط شد و همه ۱۷۶ سرنشینان این پرواز جان باختند.",
             "dayoff": false,
             "year": 1398
         },
         {
-            "category": "iran",
-            "occasion": "تظاهرات علیه جمهوری اسلامی و کشته‌شدن هزاران عزیز در سرکوب حکومت",
+            "category": "iran-history",
+            "occasion": "تظاهرات علیه جمهوری اسلامی و کشته‌شدن هزاران عزیز در سرکوب حکومت (۱۴۰۴)",
             "dayoff": false,
             "year": 1404
         },
         {
-            "category": "iran",
-            "occasion": "قطعی اینترنت، پیامک و تلفن در پی اعتراضات در ایران",
+            "category": "iran-history",
+            "occasion": "قطعی اینترنت، پیامک و تلفن در پی اعتراضات در ایران (۱۴۰۴)",
             "dayoff": false,
             "year": 1404
         }
@@ -3115,12 +3103,18 @@
             "occasion": "کریسمس",
             "dayoff": false,
             "year": null
+        },
+        {
+            "category": "WorldwideHolidays",
+            "occasion": "ولادت حضرت مسیح",
+            "dayoff": false,
+            "year": null
         }
     ],
     "wc-1-23": [
         {
-            "category": "WorldwideHolidays",
-            "occasion": "روز بین‌المللی آزادی",
+            "category": "UnitedNations",
+            "occasion": "روز جهانی آزادی",
             "dayoff": false,
             "year": null
         }
@@ -3143,13 +3137,13 @@
     ],
     "sh-4-7": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز قوه قضاییه",
             "dayoff": false,
             "year": null
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "انفجار دفتر مرکزی حزب جمهوری اسلامی",
             "dayoff": false,
             "year": 1360
@@ -3208,7 +3202,7 @@
             "year": null
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "تأسیس سازمان تبلیغات اسلامی",
             "dayoff": false,
             "year": 1360
@@ -3224,13 +3218,13 @@
     ],
     "sh-3-31": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "شهادت دکتر مصطفی چمران",
             "dayoff": false,
             "year": 1360
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز بسیج استادان",
             "dayoff": false,
             "year": null
@@ -3238,13 +3232,13 @@
     ],
     "sh-1-20": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز ملی فناوری هسته‌ای",
             "dayoff": false,
             "year": null
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز هنر انقلاب اسلامی (سالروز شهادت مرتضی آوینی)",
             "dayoff": false,
             "year": 1372
@@ -3268,7 +3262,7 @@
     ],
     "sh-9-18": [
         {
-            "category": "iran",
+            "category": "iran-history",
             "occasion": "معرفی عراق به عنوان آغازگر جنگ از سوی سازمان ملل",
             "dayoff": false,
             "year": 1370
@@ -3328,7 +3322,7 @@
     ],
     "wc-11-13": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی مهربانی",
             "dayoff": false,
             "year": null
@@ -3357,7 +3351,7 @@
     "wc-9-5": [
         {
             "category": "UnitedNations",
-            "occasion": "روز بین‌المللی خیریه",
+            "occasion": "روز جهانی خیریه",
             "dayoff": false,
             "year": null
         }
@@ -3370,7 +3364,7 @@
             "year": null
         },
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی پرستار",
             "dayoff": false,
             "year": null
@@ -3467,7 +3461,7 @@
     "wc-5-10": [
         {
             "category": "UnitedNations",
-            "occasion": "روز بین‌المللی پرندگان مهاجر",
+            "occasion": "روز جهانی پرندگان مهاجر",
             "dayoff": false,
             "year": null
         },
@@ -3494,7 +3488,7 @@
     ],
     "wc-11-19": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی مردان",
             "dayoff": false,
             "year": null
@@ -3550,7 +3544,7 @@
             "year": null
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "شهادت آیت الله سید حسن مدرس",
             "dayoff": false,
             "year": 1316
@@ -3558,7 +3552,7 @@
     ],
     "wc-10-28": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی انیمیشن",
             "dayoff": false,
             "year": null
@@ -3594,13 +3588,13 @@
             "year": null
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز بزرگداشت علامه طباطبایی",
             "dayoff": false,
             "year": 1360
         },
         {
-            "category": "iran",
+            "category": "iran-history",
             "occasion": "شروع «اعتراضات آبان ۱۳۹۸ ایران» یا «آبان خونین» مجموعه اعتراضات مردمی و ضد حکومتی در سراسر ایران که پس از انجام مجدد سهمیه‌بندی بنزین در ایران و افزایش ۲۰۰ درصدی قیمت بنزین آغاز شد.",
             "dayoff": false,
             "year": 1398
@@ -3636,7 +3630,7 @@
     ],
     "sh-5-5": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "سالروز عملیات مرصاد",
             "dayoff": false,
             "year": 1367
@@ -3652,7 +3646,7 @@
     ],
     "sh-1-12": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز جمهوری اسلامی",
             "dayoff": true,
             "year": null
@@ -3760,13 +3754,13 @@
     ],
     "wc-5-18": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی واکسن ایدز",
             "dayoff": false,
             "year": null
         },
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی موزه‌ها",
             "dayoff": false,
             "year": null
@@ -3804,7 +3798,7 @@
     ],
     "sh-9-11": [
         {
-            "category": "iran",
+            "category": "iran-history-2",
             "occasion": "شهادت میرزا کوچک خان جنگلی",
             "dayoff": false,
             "year": 1300
@@ -3827,7 +3821,7 @@
     "sh-6-26": [
         {
             "category": "iran-history",
-            "occasion": "رسیدن نیروهای برتانیا و روسیه به یکدیگر در تهران در پی اشغال ایران در جنگ جهانی دوم",
+            "occasion": "رسیدن نیروهای بریتانیا و روسیه به یکدیگر در تهران در پی اشغال ایران در جنگ جهانی دوم",
             "dayoff": false,
             "year": 1320
         }
@@ -3850,18 +3844,10 @@
     ],
     "sh-3-14": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "رحلت امام خمینی(ره) بنیانگزار جمهوری اسلامی",
             "dayoff": true,
             "year": 1368
-        }
-    ],
-    "sh-6-12": [
-        {
-            "category": "iran",
-            "occasion": "روز بهورز",
-            "dayoff": false,
-            "year": null
         }
     ],
     "wc-4-28": [
@@ -3874,7 +3860,7 @@
     ],
     "wc-3-27": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی تئاتر",
             "dayoff": false,
             "year": null
@@ -3912,7 +3898,7 @@
     ],
     "sh-5-16": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "تشکیل جهاد دانشگاهی",
             "dayoff": false,
             "year": 1359
@@ -3920,7 +3906,7 @@
     ],
     "sh-8-8": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز نوجوان و بسیج دانش آموزی",
             "dayoff": false,
             "year": null
@@ -4042,7 +4028,7 @@
     ],
     "wc-11-12": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی آسم",
             "dayoff": false,
             "year": null
@@ -4074,7 +4060,7 @@
     ],
     "sh-4-10": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز بزرگداشت صائب تبریزی",
             "dayoff": false,
             "year": null
@@ -4144,7 +4130,7 @@
     ],
     "wc-11-8": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی رادیولوژی",
             "dayoff": false,
             "year": null
@@ -4196,7 +4182,7 @@
     ],
     "sh-12-3": [
         {
-            "category": "iran",
+            "category": "iran-history",
             "occasion": "کودتای رضاخان",
             "dayoff": false,
             "year": 1299
@@ -4221,7 +4207,7 @@
     "wc-4-4": [
         {
             "category": "UnitedNations",
-            "occasion": "روز بین‌المللی اگاهی از مین و کمک به اقدام علیه مین",
+            "occasion": "روز جهانی اگاهی از مین و کمک به اقدام علیه مین",
             "dayoff": false,
             "year": null
         }
@@ -4252,7 +4238,7 @@
     ],
     "wc-1-28": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "کاهش بین‌المللی انتشار گاز CO2",
             "dayoff": false,
             "year": null
@@ -4296,21 +4282,21 @@
     ],
     "sh-4-23": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "گشایش اولین مجلس خبرگان رهبری",
             "dayoff": false,
             "year": 1362
         },
         {
-            "category": "iran",
-            "occasion": "روز گفت و گو و تعامل سازنده با دنیا",
+            "category": "IRI",
+            "occasion": "روز گفت‌وگو و تعامل سازنده با دنیا",
             "dayoff": false,
             "year": null
         }
     ],
     "wc-8-21": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی مد",
             "dayoff": false,
             "year": null
@@ -4326,13 +4312,13 @@
     ],
     "sh-12-9": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز حمایت از حقوق مصرف کنندگان",
             "dayoff": false,
             "year": null
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "آغاز حمله مشترک آمریکا و اسرائیل علیه جمهوری اسلامی",
             "dayoff": false,
             "year": 1404
@@ -4356,7 +4342,7 @@
     ],
     "sh-7-5": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "شکست حصر آبادان در عملیات ثامن الائمه",
             "dayoff": false,
             "year": 1360
@@ -4370,7 +4356,7 @@
     ],
     "wc-5-9": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز اروپا",
             "dayoff": false,
             "year": null
@@ -4412,7 +4398,7 @@
     ],
     "sh-3-15": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "قیام 15 خرداد",
             "dayoff": true,
             "year": 1342
@@ -4438,7 +4424,7 @@
             "year": null
         },
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی گیاه خواری",
             "dayoff": false,
             "year": null
@@ -4494,7 +4480,7 @@
     ],
     "sh-9-9": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز بزرگداشت شیخ مفید",
             "dayoff": false,
             "year": null
@@ -4618,19 +4604,19 @@
     ],
     "wc-11-17": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی نوزادان نارس",
             "dayoff": false,
             "year": null
         },
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی دانش آموزان",
             "dayoff": false,
             "year": null
         },
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی وکلای مدافع",
             "dayoff": false,
             "year": null
@@ -4710,7 +4696,7 @@
             "year": null
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز بزرگداشت شهدا(تأسیس بنیاد شهید انقلاب اسلامی)",
             "dayoff": false,
             "year": 1358
@@ -4726,13 +4712,13 @@
     ],
     "sh-1-21": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "شهادت امیر سپهبد علی صیاد شیرازی",
             "dayoff": false,
             "year": 1378
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "سالروز افتتاح حساب شماره 100 به فرمان امام خمینی(ره) و تاسیس بنیاد مسکن انقلاب اسلامی",
             "dayoff": false,
             "year": 1358
@@ -4770,7 +4756,7 @@
             "year": 1943
         },
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی فیزیوتراپی",
             "dayoff": false,
             "year": null
@@ -4784,7 +4770,7 @@
             "year": null
         },
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی خدمات جوانان",
             "dayoff": false,
             "year": null
@@ -4806,8 +4792,8 @@
     ],
     "sh-5-26": [
         {
-            "category": "iran",
-            "occasion": "آغاز بازگشت اسرای جنگی به ایران",
+            "category": "iran-history",
+            "occasion": "آغاز بازگشت اسرای جنگ عراق و ایران",
             "dayoff": false,
             "year": 1369
         }
@@ -4830,13 +4816,13 @@
     ],
     "sh-6-31": [
         {
-            "category": "iran",
-            "occasion": "آغاز جنگ تحمیلی",
+            "category": "iran-history",
+            "occasion": "حمله عراق به ایران و آغاز جنگ تحمیلی (۱۳۵۹)",
             "dayoff": false,
             "year": 1359
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "آغاز هفته دفاع مقدس",
             "dayoff": false,
             "year": null
@@ -4850,13 +4836,13 @@
     ],
     "sh-7-13": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "روز نیروی انتظامی",
             "dayoff": false,
             "year": null
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "هجرت امام خمینی (ره) از عراق به پاریس",
             "dayoff": false,
             "year": 1357
@@ -4870,13 +4856,13 @@
     ],
     "sh-2-2": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "سالروز اعلام انقلاب فرهنگی",
             "dayoff": false,
             "year": 1359
         },
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "تأسیس سپاه پاسداران انقلاب اسلامی",
             "dayoff": false,
             "year": 1358
@@ -4916,24 +4902,15 @@
     ],
     "sh-6-3": [
         {
-            "category": "iran",
+            "category": "iran-history",
             "occasion": "اشغال ایران توسط متفقین و فرار رضاخان",
             "dayoff": false,
             "year": 1320
         }
     ],
-    "wc-1-13": [],
-    "sh-10-4": [
-        {
-            "category": "iran",
-            "occasion": "ولادت حضرت مسیح(ع)",
-            "dayoff": false,
-            "year": null
-        }
-    ],
     "wc-1-29": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی مبارزه با جزام",
             "dayoff": false,
             "year": null
@@ -4949,7 +4926,7 @@
     ],
     "wc-1-15": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی مذاهب",
             "dayoff": false,
             "year": null
@@ -4971,14 +4948,14 @@
     ],
     "wc-2-11": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی همدردی با بیماران",
             "dayoff": false,
             "year": null
         },
         {
             "category": "UnitedNations",
-            "occasion": "روز بین‌المللی مشارکت زنان و دختران در علوم",
+            "occasion": "روز جهانی مشارکت زنان و دختران در علوم",
             "dayoff": false,
             "year": null
         }
@@ -4993,13 +4970,13 @@
     ],
     "wc-1-26": [
         {
-            "category": "WorldwideHolidays",
-            "occasion": "روز بین‌المللی آموزش حفاظت از محیط زیست",
+            "category": "UnitedNations",
+            "occasion": "روز جهانی آموزش حفاظت از محیط زیست",
             "dayoff": false,
             "year": null
         },
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی گمرک",
             "dayoff": false,
             "year": null
@@ -5013,7 +4990,7 @@
             "year": null
         },
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی کتاب کودک",
             "dayoff": false,
             "year": null
@@ -5021,7 +4998,7 @@
     ],
     "sh-11-22": [
         {
-            "category": "iran",
+            "category": "IRI",
             "occasion": "پیروزی انقلاب اسلامی",
             "dayoff": true,
             "year": 1357
@@ -5053,7 +5030,7 @@
     ],
     "wc-9-13": [
         {
-            "category": "WorldwideHolidays",
+            "category": "UnitedNations",
             "occasion": "روز جهانی برنامه‌نویسان کامپیوتر",
             "dayoff": false,
             "year": null
