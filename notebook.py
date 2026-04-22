@@ -85,6 +85,13 @@ class Notebook():
         page = DotPage(**props)
         self.pages.append(page)
 
+    def addPatternPage(self, patternUnit, **kwargs):
+        props = self.__dict__.copy()
+        props.update(kwargs)
+        page = PatternPage(patternUnit=patternUnit, **props)
+        self.pages.append(page)
+        return page
+
     def addChecklistPage(self, **kwargs):
         props = self.__dict__.copy()
         props.update(kwargs)

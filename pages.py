@@ -380,6 +380,191 @@ class DotPage(Page):
         self.lineCount = countLines
 
 
+class PatternPage(Page):
+    def __init__(self, patternUnit, name='Untitle-PatternPage', **kwargs) -> None:
+        '''
+        define patternUnit like this:
+        ```
+        def patternUnit(svgObj: Svg, w, h):
+            svgObj.addCircle(0,0,1)
+            ...
+        ```
+        '''
+        super().__init__(name=name, **kwargs)
+        # margin and padding
+        self.padding = kwargs.get(
+            'padding',
+            {'top': 32, 'outside': 0, 'bottom': 10, 'inside': 0}
+        )
+        if isinstance(self.padding, list):
+            nameList = ['top', 'outside', 'bottom', 'inside']
+            self.padding = dict(zip(nameList, self.padding))
+
+        # # line and dot peroperty
+        self.lineHeight = kwargs.get('lineHeight', 6)
+        self.lineWidth = kwargs.get('lineWidth', 0.05)
+
+        # colors
+        self.lineColor = kwargs.get('lineColor', '#999')
+
+        # self.dotShape = kwargs.get('dotShape', 'square')
+        # self.dotScale = kwargs.get('dotScale', 2)
+        # self.dotStyle = kwargs.get('dotStyle', 'fill')
+
+        self.patternCrop = kwargs.get('patternCrop', False)
+        self.patternMargin = kwargs.get('patternMargin', False)
+        self.patternPadding = kwargs.get('patternPadding', False)
+        self.patternSpaceX = kwargs.get('patternSpaceX', 0)
+        self.patternSpaceY = kwargs.get('patternSpaceY', 0)
+
+        self.patternVerticalDx = kwargs.get('patternVerticalDx', 0)
+        self.patternVerticalDy = kwargs.get('patternVerticalDy', 0)
+
+        self.patternHorizontalDx = kwargs.get('patternHorizontalDx', 0)
+        self.patternHorizontalDy = kwargs.get('patternHorizontalDy', 0)
+
+        self.patternW = kwargs.get('patternW', self.lineHeight)
+        self.patternH = kwargs.get('patternH',  self.lineHeight)
+
+        self.patternUnit = patternUnit
+
+    @property
+    def page(self):
+        self.pages: dict[str:Svg] = {}
+        self.makePages()
+        return self.pages
+
+    def makePages(self):
+        for loc in ['right', 'left']:
+            self.definePage(loc)
+            self.drawPattern(loc)
+            self.drawCrop(loc)
+            self.drawGuide(loc)
+            self.drawTrimMark(loc)
+
+    def drawCrop(self, loc):
+        if not self.patternCrop:
+            return
+        if not (self.patternMargin or self.patternPadding):
+            return
+
+        bgColor = 'white' if self.bgColor == "none" else self.bgColor
+        self.pages[loc].addStyle(
+            'bgFiller',
+            f'fill:{bgColor};'
+            'stroke:none;'
+        )
+
+        ox, ex = self.xloc(
+            loc,
+            space=self.patternSpaceX,
+            margin=self.patternMargin,
+            padding=self.patternPadding,
+        )
+        oy, ey = self.yloc(
+            space=self.patternSpaceY,
+            margin=self.patternMargin,
+            padding=self.patternPadding,
+        )
+
+        self.pages[loc].addRect(
+            0, 0, self.svgWidth, oy,
+            transform=f'scale({self.scale})',
+            class_='bgFiller',
+        )
+        self.pages[loc].addRect(
+            0, 0, ox, self.svgHeight,
+            transform=f'scale({self.scale})',
+            class_='bgFiller',
+        )
+        self.pages[loc].addRect(
+            ex, 0, self.svgWidth, self.svgHeight,
+            transform=f'scale({self.scale})',
+            class_='bgFiller',
+        )
+
+        self.pages[loc].addRect(
+            0, ey, self.svgWidth, self.svgHeight,
+            transform=f'scale({self.scale})',
+            class_='bgFiller',
+        )
+
+        pass
+
+    def showUnit(self, x, y, ox, oy, ex, ey):
+        xCheck = ox-2*self.patternW <= x < ex
+        yCheck = oy-2*self.patternH <= y < ey
+
+        return xCheck and yCheck
+
+    def drawPattern(self, loc):
+        self.pages[loc].addStyle(
+            'line',
+            'fill:none;'
+            f'stroke:{self.lineColor};'
+            f'stroke-width:{self.lineWidth};'
+        )
+
+        ox, ex = self.xloc(
+            loc,
+            space=self.patternSpaceX,
+            margin=self.patternMargin,
+            padding=self.patternPadding,
+        )
+        oy, ey = self.yloc(
+            space=self.patternSpaceY,
+            margin=self.patternMargin,
+            padding=self.patternPadding,
+        )
+
+        odx = self.patternW+self.patternHorizontalDx
+        ody = self.patternH+self.patternVerticalDy
+        _ox = ox
+        _oy = oy
+        x = ox
+        y = oy
+
+        i = 0
+        j = 0
+
+        while True:
+            drawRow = False
+            while x < ex:
+                if self.showUnit(x, y, ox, oy, ex, ey):
+                    self.pages[loc].openGroup(
+                        transform=f'scale({self.scale}) translate({x} {y})'
+                    )
+                    self.patternUnit(
+                        self.pages[loc], self.patternW, self.patternH)
+                    self.pages[loc].closeGroup()
+                    self.pages[loc].save('output-UntitleCalendar/pages')
+                    drawRow = True
+
+                x += (odx)
+                y += self.patternHorizontalDy
+                while y > _oy:
+                    y -= (ody)
+                    x -= self.patternVerticalDx
+
+                i += 1
+
+            if not drawRow:
+                break
+
+            i = 0
+            j += 1
+
+            _oy += ody
+            _ox += self.patternVerticalDx
+
+            while _ox > ox:
+                _ox -= odx
+                _oy -= self.patternHorizontalDy
+
+            y = _oy
+            x = _ox
+
+
 class WeekPage(LinePage):
     def __init__(self, weekNo, weekKeys, name='Untitle-WeekPage', **kwargs) -> None:
         super().__init__(name=name, **kwargs)
