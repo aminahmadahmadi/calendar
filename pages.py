@@ -139,14 +139,21 @@ class Page():
             'right': ['inside', 'outside'],
             'left': ['outside', 'inside']
         }
+
         _pl = self.padding[_dir[loc][0]] if padding else 0
         _pr = self.padding[_dir[loc][1]] if padding else 0
 
-        _ml = self.margin[_dir[loc][0]] if margin or space else 0
-        _mr = self.margin[_dir[loc][1]] if margin or space else 0
+        _ml = self.margin[_dir[loc][0]]
+        _mr = self.margin[_dir[loc][1]]
 
-        xLeft = _pl + _ml + space if space else _pl + _ml
-        xRight = self.svgWidth - (_pr + _mr + space if space else _pr + _mr)
+        if space is None:
+            space = 0
+            if not margin:
+                _ml = 0 if _pl == 0 else _ml
+                _mr = 0 if _pr == 0 else _mr
+
+        xLeft = _pl + _ml + space
+        xRight = self.svgWidth - (_pr + _mr + space)
 
         return (xLeft, xRight)
 
@@ -154,11 +161,17 @@ class Page():
         _pt = self.padding['top'] if padding else 0
         _pb = self.padding['bottom'] if padding else 0
 
-        _mt = self.margin['top'] if margin else 0
-        _mb = self.margin['bottom'] if margin else 0
+        _mt = self.margin['top']
+        _mb = self.margin['bottom']
 
-        yTop = _mt+_pt+space if space else _mt+_pt
-        yBottom = self.svgHeight - (_mb + _pb + space if space else _mb + _pb)
+        if space is None:
+            space = 0
+            if not margin:
+                _mt = 0 if _pt == 0 else _mt
+                _mb = 0 if _pb == 0 else _mb
+
+        yTop = _mt + _pt + space
+        yBottom = self.svgHeight - (_mb + _pb + space)
 
         return (yTop, yBottom)
 

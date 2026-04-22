@@ -116,7 +116,7 @@ class Calendar(Notebook):
             'onePageMonthHolidays': 7,
             'onePageMonthDays': 7,
             'personalEvents': 6,
-            'moretext': 6
+            'moretext': 6,
         }
         fontSize = kwargs.get('fontSize', {})
         self.fontSize = FontStyle(** defaultFontSize)
