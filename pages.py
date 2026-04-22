@@ -134,6 +134,34 @@ class Page():
                 transform=f'scale({self.scale})'
             )
 
+    def xloc(self, loc, space=None, margin=False, padding=True):
+        _dir = {
+            'right': ['inside', 'outside'],
+            'left': ['outside', 'inside']
+        }
+        _pl = self.padding[_dir[loc][0]] if padding else 0
+        _pr = self.padding[_dir[loc][1]] if padding else 0
+
+        _ml = self.margin[_dir[loc][0]] if margin or space else 0
+        _mr = self.margin[_dir[loc][1]] if margin or space else 0
+
+        xLeft = _pl + _ml + space if space else _pl + _ml
+        xRight = self.svgWidth - (_pr + _mr + space if space else _pr + _mr)
+
+        return (xLeft, xRight)
+
+    def yloc(self, space=None, margin=False, padding=True):
+        _pt = self.padding['top'] if padding else 0
+        _pb = self.padding['bottom'] if padding else 0
+
+        _mt = self.margin['top'] if margin else 0
+        _mb = self.margin['bottom'] if margin else 0
+
+        yTop = _mt+_pt+space if space else _mt+_pt
+        yBottom = self.svgHeight - (_mb + _pb + space if space else _mb + _pb)
+
+        return (yTop, yBottom)
+
 
 class LinePage(Page):
     def __init__(self, name='Untitle-LinePage', **kwargs) -> None:
@@ -155,6 +183,17 @@ class LinePage(Page):
         # colors
         self.lineColor = kwargs.get('lineColor', '#999')
 
+        self.verticalLine = kwargs.get('verticalLine', False)
+        self.verticalLineLoc = kwargs.get('verticalLineLoc', 'right')
+        if self.verticalLineLoc not in ['left', 'right']:
+            raise ValueError(
+                f"Invalid value for verticalLineLoc: '{self.verticalLineLoc}'. Expected 'left' or 'right'.")
+
+        self.verticalLineSpace = kwargs.get('verticalLineSpace', 2*self.lineHeight)  # noqa
+
+        self.verticalLineColor = kwargs.get('verticalLineColor', self.lineColor)  # noqa
+        self.verticalLineWidth = kwargs.get('verticalLineWidth', self.lineWidth)  # noqa
+
     @property
     def page(self):
         self.pages: dict[str:Svg] = {}
@@ -165,6 +204,7 @@ class LinePage(Page):
         for loc in ['right', 'left']:
             self.definePage(loc)
             self.drawlines(loc)
+            self.drawVerticalLine(loc)
             self.drawGuide(loc)
             self.drawTrimMark(loc)
 
@@ -189,31 +229,31 @@ class LinePage(Page):
 
         self.lineCount = countLines
 
-    def xloc(self, loc, space=None, margin=False):
-        _dir = {
-            'right': ['inside', 'outside'],
-            'left': ['outside', 'inside']
-        }
-        if space:
-            xLeftSpace = self.padding[_dir[loc][0]] + \
-                self.margin[_dir[loc][0]]+space
-            xRightSpace = self.svgWidth - \
-                (self.padding[_dir[loc][1]]+self.margin[_dir[loc][1]]+space)
-            return (xLeftSpace, xRightSpace)
-        elif margin:
-            xLeft = self.margin[_dir[loc][0]] if self.padding[_dir[loc][0]] == 0 else self.padding[_dir[loc][0]] + \
-                self.margin[_dir[loc][0]]
-            xRight = self.svgWidth
-            xRight -= self.margin[_dir[loc][1]] if self.padding[_dir[loc][1]] == 0 else self.padding[_dir[loc][1]] + \
-                self.margin[_dir[loc][1]]
-            return (xLeft, xRight)
+    def drawVerticalLine(self, loc):
+        if not self.verticalLine:
+            return
+        self.pages[loc].addStyle(
+            'vline',
+            'fill:none;'
+            f'stroke:{self.verticalLineColor};'
+            f'stroke-width:{self.verticalLineWidth};'
+        )
+
+        xLeft, xRight = self.xloc(loc, space=self.verticalLineSpace)
+        yTop, yBottom = self.yloc(margin=False, padding=False)
+
+        if self.verticalLineLoc == 'right':
+            x = xRight
+        elif self.verticalLineLoc == 'left':
+            x = xLeft
         else:
-            xLeft = 0 if self.padding[_dir[loc][0]] == 0 else self.padding[_dir[loc][0]] + \
-                self.margin[_dir[loc][0]]
-            xRight = self.svgWidth
-            xRight -= 0 if self.padding[_dir[loc][1]] == 0 else self.padding[_dir[loc][1]] + \
-                self.margin[_dir[loc][1]]
-            return (xLeft, xRight)
+            return
+
+        self.pages[loc].addLine(
+            x, yTop, x, yBottom,
+            transform=f'scale({self.scale})',
+            class_='vline'
+        )
 
 
 class DotPage(Page):
@@ -325,32 +365,6 @@ class DotPage(Page):
             y += self.lineHeight
 
         self.lineCount = countLines
-
-    def xloc(self, loc, space=None, margin=False):
-        _dir = {
-            'right': ['inside', 'outside'],
-            'left': ['outside', 'inside']
-        }
-        if space:
-            xLeftSpace = self.padding[_dir[loc][0]] + \
-                self.margin[_dir[loc][0]]+space
-            xRightSpace = self.svgWidth - \
-                (self.padding[_dir[loc][1]]+self.margin[_dir[loc][1]]+space)
-            return (xLeftSpace, xRightSpace)
-        elif margin:
-            xLeft = self.margin[_dir[loc][0]] if self.padding[_dir[loc][0]] == 0 else self.padding[_dir[loc][0]] + \
-                self.margin[_dir[loc][0]]
-            xRight = self.svgWidth
-            xRight -= self.margin[_dir[loc][1]] if self.padding[_dir[loc][1]] == 0 else self.padding[_dir[loc][1]] + \
-                self.margin[_dir[loc][1]]
-            return (xLeft, xRight)
-        else:
-            xLeft = 0 if self.padding[_dir[loc][0]] == 0 else self.padding[_dir[loc][0]] + \
-                self.margin[_dir[loc][0]]
-            xRight = self.svgWidth
-            xRight -= 0 if self.padding[_dir[loc][1]] == 0 else self.padding[_dir[loc][1]] + \
-                self.margin[_dir[loc][1]]
-            return (xLeft, xRight)
 
 
 class WeekPage(LinePage):
@@ -601,10 +615,11 @@ class WeekPage(LinePage):
             weekday = self.daysJson[dayKey]['weekday']
             weekdayName = self.calNamesJson['wc']['weekday'][str(weekday)]
             weekdayNameShort = self.calNamesJson['wc']['weekday-short'][str(weekday)]  # noqa
-            if ((weekday in self.weekend)
-                    or (weekdayName in self.weekend)
-                    or (weekdayNameShort in self.weekend)
-                    ):
+            if (
+                (weekday in self.weekend)
+                or (weekdayName in self.weekend)
+                or (weekdayNameShort in self.weekend)
+            ):
                 holiday = True
 
             # text of cal
@@ -1265,7 +1280,7 @@ class LinePageWithTitle(LinePage):
             eventH = self.fontHeightScl * self.fontSize.get("personalEvents")/self.scale  # noqa
             eventY = y - self.lineHeight / 2 + eventH/2  # noqa
 
-        space = self.lineHeight*2
+        space = self.verticalLineSpace
         xLeftSpace, xRightSpace = self.xloc(loc, space+0.5)
         x = xRightSpace+self.translateTextX
 
@@ -1300,7 +1315,7 @@ class LinePageWithTitle(LinePage):
         calH = self.fontHeightScl * self.fontSize.get("monthAndWeek")/self.scale  # noqa
         y = self.margin['top']+self.padding['top'] - \
             self.lineHeight * 0.5 + calH/2
-        space = self.lineHeight*2
+        space = self.verticalLineSpace
         xLeftSpace, xRightSpace = self.xloc(loc, space+0.5)
         x = xRightSpace
 
@@ -1334,10 +1349,10 @@ class ChecklistPage(LinePageWithTitle):
         )
         lines = int((self.height-self.padding['top'] -
                      self.padding['bottom']) // self.lineHeight+1)
-        space = self.lineHeight*2
-        xLeftSpace, xRightSpace = self.xloc(loc, space+0.5)
-        x = xRightSpace
         w = self.lineHeight*self.checkboxscale
+        space = self.verticalLineSpace-0.5*w
+        xLeftSpace, xRightSpace = self.xloc(loc, space)
+        x = xRightSpace if self.verticalLineLoc == 'right' else xLeftSpace
         for i in range(lines):
             if self.pattern[i % len(self.pattern)] == '1':
                 y = self.margin['top'] + \
