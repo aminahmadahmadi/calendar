@@ -1252,7 +1252,7 @@ class LinePageWithTitle(LinePage):
         addTextStyle(
             self,
             loc=loc,
-            name="personalEvents",
+            name="moretext",
             fill=self.primaryColor,
             anchor="start",
             direction="rtl",
@@ -1277,7 +1277,7 @@ class LinePageWithTitle(LinePage):
         if self.moretextOnLine:
             eventY = y
         else:
-            eventH = self.fontHeightScl * self.fontSize.get("personalEvents")/self.scale  # noqa
+            eventH = self.fontHeightScl * self.fontSize.get("moretext")/self.scale  # noqa
             eventY = y - self.lineHeight / 2 + eventH/2  # noqa
 
         space = self.verticalLineSpace
@@ -1291,14 +1291,14 @@ class LinePageWithTitle(LinePage):
                     eventY,
                     _text,
                     transform=f'scale({self.scale})',
-                    class_='personalEvents whitespace',
+                    class_='moretext whitespace',
                 )
             self.pages[loc].addText(
                 x,
                 eventY,
                 _text,
                 transform=f'scale({self.scale})',
-                class_='personalEvents',
+                class_='moretext',
             )
             eventY += self.lineHeight
 

@@ -28,6 +28,7 @@ class FontStyle():
         self.onePageMonthHolidays = kwargs.get('onePageMonthHolidays', None)  # noqa
         self.onePageMonthDays = kwargs.get('onePageMonthDays', None)  # noqa
         self.personalEvents = kwargs.get('personalEvents', None)  # noqa
+        self.moretext = kwargs.get('moretext', None)  # noqa
 
     def update(self, fontStyleDict: dict = {}):
         for k, v in fontStyleDict.items():

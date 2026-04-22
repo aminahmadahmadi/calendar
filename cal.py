@@ -74,7 +74,8 @@ class Calendar(Notebook):
             'onePageMonth': 800,
             'onePageMonthHolidays': 500,
             'onePageMonthDays': 400,
-            'personalEvents': 200
+            'personalEvents': 200,
+            'moretext': 200,
         }
         fontWeight = kwargs.get('fontWeight', {})
         self.fontWeight = FontStyle(** defaultFontWeight)
@@ -114,7 +115,8 @@ class Calendar(Notebook):
             'onePageMonth': 7,
             'onePageMonthHolidays': 7,
             'onePageMonthDays': 7,
-            'personalEvents': 6
+            'personalEvents': 6,
+            'moretext': 6
         }
         fontSize = kwargs.get('fontSize', {})
         self.fontSize = FontStyle(** defaultFontSize)
