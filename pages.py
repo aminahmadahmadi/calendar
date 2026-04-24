@@ -2,6 +2,7 @@
 from replaceText import perNo, arbNo
 import math
 from fontStyle import FontStyle, addTextStyle
+from typing import Callable
 
 
 class Page():
@@ -381,7 +382,11 @@ class DotPage(Page):
 
 
 class PatternPage(Page):
-    def __init__(self, patternUnit, name='Untitle-PatternPage', **kwargs) -> None:
+    def __init__(
+        self,
+        patternUnit: Callable[[Svg, float, float, int, int, float, float], None],
+        name='Untitle-PatternPage', **kwargs
+    ) -> None:
         '''
         define patternUnit like this:
         ```
