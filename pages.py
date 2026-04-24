@@ -1706,12 +1706,14 @@ class FirstPage(LinePage):
 
 
 class HolidaysPage(LinePageWithTitle):
-    def __init__(self, year, title, shiftDownHolidays=1, name='Untitle-LinePage', **kwargs) -> None:
+    def __init__(self, year, title, shiftDownHolidays=1, hideEventText=False, name='Untitle-LinePage', **kwargs) -> None:
         super().__init__(title=title, name=name, **kwargs)
         self.daysJson = kwargs.get('daysJson', '')
         self.eventJson = kwargs.get('eventJson', '')
         self.calNamesJson = kwargs.get('calNamesJson', '')
         self.shiftDownHolidays = shiftDownHolidays
+        self.hideEventText = hideEventText
+        print(self.hideEventText)
         self.holidays = []
         for day in self.daysJson.keys():
             if self.daysJson[day]['sh'][0] == year:
@@ -1796,13 +1798,14 @@ class HolidaysPage(LinePageWithTitle):
                 transform=f'scale({self.scale})',
                 class_='holidaysPage'
             )
-            self.pages[loc].addText(
-                x4,
-                y,
-                perNo(event),
-                transform=f'scale({self.scale})',
-                class_='holidaysPage'
-            )
+            if not self.hideEventText:
+                self.pages[loc].addText(
+                    x4,
+                    y,
+                    perNo(event),
+                    transform=f'scale({self.scale})',
+                    class_='holidaysPage'
+                )
             y += self.lineHeight
 
 
