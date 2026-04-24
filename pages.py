@@ -385,7 +385,7 @@ class PatternPage(Page):
         '''
         define patternUnit like this:
         ```
-        def patternUnit(svgObj: Svg, w, h):
+        def patternUnit(svgObj: Svg, w, h, i, j, x, y):
             svgObj.addCircle(0,0,1)
             ...
         ```
@@ -535,7 +535,11 @@ class PatternPage(Page):
                         transform=f'scale({self.scale}) translate({x} {y})'
                     )
                     self.patternUnit(
-                        self.pages[loc], self.patternW, self.patternH)
+                        self.pages[loc],
+                        self.patternW, self.patternH,
+                        i, j,
+                        x, y,
+                    )
                     self.pages[loc].closeGroup()
                     self.pages[loc].save('output-UntitleCalendar/pages')
                     drawRow = True
