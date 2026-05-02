@@ -46,7 +46,14 @@ class Calendar(Notebook):
         self.moonRotationDeg = kwargs.get('moonRotationDeg', 45)
         self.moonStyle = kwargs.get('moonStyle', 'stroke')
 
+        # colors
+        self.primaryColor = kwargs.get('primaryColor', '#000')
+        self.secondColor = kwargs.get('secondColor', '#ddd')
+
         # font style
+        self.updateFonts(**kwargs)
+
+    def updateFonts(self, **kwargs):
         self.fontHeightScl = kwargs.get('fontHeightScl', 0.67)
         self.fontWidthScl = kwargs.get('fontWidthScl', 7.2)
 
@@ -126,10 +133,6 @@ class Calendar(Notebook):
         defaultFontOtherCSS = {'default': ''}
         self.fontOtherCSS = FontStyle(** defaultFontOtherCSS)
         self.fontOtherCSS.update(fontOtherCSS)
-
-        # colors
-        self.primaryColor = kwargs.get('primaryColor', '#000')
-        self.secondColor = kwargs.get('secondColor', '#ddd')
 
     def readDaysJson(self):
         try:
