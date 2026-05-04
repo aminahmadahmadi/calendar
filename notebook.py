@@ -202,32 +202,32 @@ class Notebook():
         _previewSvg.addObjectText(
             '<mask id="paperLeft" mask-type="luminance">'
             f'<rect rx="{radius}" x="{padding}" y="{padding}" width="{self.width}" height="{self.height}" fill="white" transform="scale({scl})" />'
-            f'<rect  x={padding+self.width-radius} y={padding} width={radius} height={radius} fill="white" transform="scale({scl})" />'
-            f'<rect  x={padding+self.width-radius} y={padding+self.height-radius} width={radius} height={radius} fill="white" transform="scale({scl})" />'
+            f'<rect  x="{padding+self.width-radius}" y="{padding}" width="{radius}" height="{radius}" fill="white" transform="scale({scl})" />'
+            f'<rect  x="{padding+self.width-radius}" y="{padding+self.height-radius}" width="{radius}" height="{radius}" fill="white" transform="scale({scl})" />'
             '</mask>'
         )
 
         _previewSvg.addObjectText(
             '<mask id="paperRight" mask-type="luminance">'
             f'<rect rx="{radius}" x="{padding+self.width}" y="{padding}" width="{self.width}" height="{self.height}" fill="white" transform="scale({scl})" />'
-            f'<rect  x={padding+self.width} y={padding} width={radius} height={radius} fill="white" transform="scale({scl})" />'
-            f'<rect  x={padding+self.width} y={padding+self.height-radius} width={radius} height={radius} fill="white" transform="scale({scl})" />'
+            f'<rect  x="{padding+self.width}" y="{padding}" width="{radius}" height="{radius}" fill="white" transform="scale({scl})" />'
+            f'<rect  x="{padding+self.width}" y="{padding+self.height-radius}" width="{radius}" height="{radius}" fill="white" transform="scale({scl})" />'
             '</mask>'
         )
 
         _previewSvg.addObjectText(
             '<mask id="coverLeft" mask-type="luminance">'
             f'<rect rx="{radius+jeld}" x="{padding-jeld}" y="{padding-jeld}" width="{self.width+jeld}" height="{self.height+2*jeld}" fill="white" transform="scale({scl})" />'
-            f'<rect rx="{jeld}" x={padding+self.width-2*radius} y={padding-jeld} width={2*radius} height={2*radius} fill="white" transform="scale({scl})" />'
-            f'<rect  rx="{jeld}"  x={padding+self.width-2*radius} y={padding+self.height+jeld-2*radius} width={2*radius} height={2*radius} fill="white" transform="scale({scl})" />'
+            f'<rect rx="{jeld}" x="{padding+self.width-2*radius}" y="{padding-jeld}" width="{2*radius}" height="{2*radius}" fill="white" transform="scale({scl})" />'
+            f'<rect  rx="{jeld}"  x="{padding+self.width-2*radius}" y="{padding+self.height+jeld-2*radius}" width="{2*radius}" height="{2*radius}" fill="white" transform="scale({scl})" />'
             '</mask>'
         )
 
         _previewSvg.addObjectText(
             '<mask id="coverRight" mask-type="luminance">'
             f'<rect rx="{radius+jeld}" x="{padding+self.width}" y="{padding-jeld}" width="{self.width+jeld}" height="{self.height+2*jeld}" fill="white" transform="scale({scl})" />'
-            f'<rect rx="{jeld}"  x={padding+self.width} y={padding-jeld} width={2*radius} height={2*radius} fill="white" transform="scale({scl})" />'
-            f'<rect rx="{jeld}"  x={padding+self.width} y={padding+self.height+jeld-2*radius} width={2*radius} height={2*radius} fill="white" transform="scale({scl})" />'
+            f'<rect rx="{jeld}"  x="{padding+self.width}" y="{padding-jeld}" width="{2*radius}" height="{2*radius}" fill="white" transform="scale({scl})" />'
+            f'<rect rx="{jeld}"  x="{padding+self.width}" y="{padding+self.height+jeld-2*radius}" width="{2*radius}" height="{2*radius}" fill="white" transform="scale({scl})" />'
             '</mask>'
         )
         _previewSvg.addRect(
