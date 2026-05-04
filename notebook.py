@@ -1,5 +1,6 @@
 ﻿from pages import *
 import os
+import base64
 
 
 class Notebook():
@@ -167,6 +168,141 @@ class Notebook():
             f.write(htmlTxt)
 
         self.toHTML(Dir=Dir, previewMargin=True, skipSvgs=True)
+
+    def previewSvg(self, pageLeft=None, pageRight=None, Dir='', padding=20, radius=10, previewScl=4, save=False):
+        scl = self.scale * previewScl
+        w = self.pages[-1].svgWidth
+        h = self.pages[-1].svgHeight
+
+        jeld = 1
+
+        name = f"preview-{'e' if pageLeft is None else pageLeft}-{'e' if pageRight is None else pageRight}"
+
+        _previewSvg = Svg(
+            name,
+            (self.width+padding)*2*scl,
+            (self.height+padding*2)*scl,
+        )
+
+        _previewSvg.addDefs(
+            '<linearGradient id="leftG" x1="0" x2="1" y1="0" y2="0">'
+            '<stop offset="80%" stop-color="black" stop-opacity="0" />'
+            '<stop offset="100%" stop-color="black" stop-opacity=".03" />'
+            '</linearGradient>'
+        )
+        _previewSvg.addDefs(
+            '<linearGradient id="rightG" x1="0" x2="1" y1="0" y2="0">'
+            '<stop offset="0%" stop-color="black" stop-opacity=".2" />'
+            '<stop offset="1%   " stop-color="black" stop-opacity=".1" />'
+            '<stop offset="3%" stop-color="black" stop-opacity=".03" />'
+            '<stop offset="80%" stop-color="black" stop-opacity="0" />'
+            '</linearGradient>'
+        )
+
+        _previewSvg.addObjectText(
+            '<mask id="paperLeft" mask-type="luminance">'
+            f'<rect rx="{radius}" x="{padding}" y="{padding}" width="{self.width}" height="{self.height}" fill="white" transform="scale({scl})" />'
+            f'<rect  x={padding+self.width-radius} y={padding} width={radius} height={radius} fill="white" transform="scale({scl})" />'
+            f'<rect  x={padding+self.width-radius} y={padding+self.height-radius} width={radius} height={radius} fill="white" transform="scale({scl})" />'
+            '</mask>'
+        )
+
+        _previewSvg.addObjectText(
+            '<mask id="paperRight" mask-type="luminance">'
+            f'<rect rx="{radius}" x="{padding+self.width}" y="{padding}" width="{self.width}" height="{self.height}" fill="white" transform="scale({scl})" />'
+            f'<rect  x={padding+self.width} y={padding} width={radius} height={radius} fill="white" transform="scale({scl})" />'
+            f'<rect  x={padding+self.width} y={padding+self.height-radius} width={radius} height={radius} fill="white" transform="scale({scl})" />'
+            '</mask>'
+        )
+
+        _previewSvg.addObjectText(
+            '<mask id="coverLeft" mask-type="luminance">'
+            f'<rect rx="{radius+jeld}" x="{padding-jeld}" y="{padding-jeld}" width="{self.width+jeld}" height="{self.height+2*jeld}" fill="white" transform="scale({scl})" />'
+            f'<rect rx="{jeld}" x={padding+self.width-2*radius} y={padding-jeld} width={2*radius} height={2*radius} fill="white" transform="scale({scl})" />'
+            f'<rect  rx="{jeld}"  x={padding+self.width-2*radius} y={padding+self.height+jeld-2*radius} width={2*radius} height={2*radius} fill="white" transform="scale({scl})" />'
+            '</mask>'
+        )
+
+        _previewSvg.addObjectText(
+            '<mask id="coverRight" mask-type="luminance">'
+            f'<rect rx="{radius+jeld}" x="{padding+self.width}" y="{padding-jeld}" width="{self.width+jeld}" height="{self.height+2*jeld}" fill="white" transform="scale({scl})" />'
+            f'<rect rx="{jeld}"  x={padding+self.width} y={padding-jeld} width={2*radius} height={2*radius} fill="white" transform="scale({scl})" />'
+            f'<rect rx="{jeld}"  x={padding+self.width} y={padding+self.height+jeld-2*radius} width={2*radius} height={2*radius} fill="white" transform="scale({scl})" />'
+            '</mask>'
+        )
+        _previewSvg.addRect(
+            x=0, y=0, w="100%", h="100%", fill="white"
+        )
+
+        _previewSvg.addRect(
+            x=0, y=0, w="100%", h="100%", fill="#b58a69",
+            mask="url(#coverLeft)"
+        )
+        _previewSvg.addRect(
+            x=0, y=0, w="100%", h="100%", fill="#b58a69",
+            mask="url(#coverRight)"
+        )
+        if pageLeft is not None:
+            leftSvg: Svg = self.pages[pageLeft].page['left']
+            base64_svg = base64.b64encode(leftSvg.text().encode('utf-8')).decode('utf-8')  # noqa
+
+            path = "/".join(['pages', f"p{pageLeft:03}.svg"])
+            base64_path = f"data:image/svg+xml;base64,{base64_svg}"
+            _x = (padding-self.margin["outside"])*scl
+            _y = (padding-self.margin["top"])*scl
+            _w = w*scl
+            _h = h*scl
+
+            _previewSvg.addDefs(
+                '<filter id="pageLEFT">'
+                f'<feImage x="{_x}" y="{_y}" width="{_w}" height="{_h}" href="{base64_path}" result="pageL" />'
+                '<feBlend in="SourceGraphic" in2="pageL" mode="multiply" />'
+                '</filter>'
+            )
+
+            _previewSvg.addRect(
+                x=0, y=0, w="100%", h="100%", fill="#eeeee6",
+                filter="url(#pageLEFT)", mask="url(#paperLeft)",
+            )
+
+            _previewSvg.addRect(
+                x=0, y=0, w="50%", h="100%", fill="url(#leftG)",
+                mask="url(#paperLeft)"
+            )
+
+        if pageRight is not None:
+            rightSvg = self.pages[pageRight].page['right']
+            base64_svg = base64.b64encode(rightSvg.text().encode('utf-8')).decode('utf-8')  # noqa
+
+            path = "/".join(['pages', f"p{pageRight:03}.svg"])
+            base64_path = f"data:image/svg+xml;base64,{base64_svg}"
+
+            _x = (self.width+padding-self.margin["inside"])*scl
+            _y = (padding-self.margin["top"])*scl
+            _w = w*scl
+            _h = h*scl
+
+            _previewSvg.addDefs(
+                '<filter id="pageRIGHT">'
+                f'<feImage x="{_x}" y="{_y}" width="{_w}" height="{_h}" href="{base64_path}" result="pageR" />'
+                '<feBlend in="SourceGraphic" in2="pageR" mode="multiply" />'
+                '</filter>'
+            )
+
+            _previewSvg.addRect(
+                x=0, y=0, w="100%", h="100%", fill="#eeeee6",
+                filter="url(#pageRIGHT)", mask="url(#paperRight)"
+            )
+
+            _previewSvg.addRect(
+                x="50%", y=0, w="50%", h="100%", fill="url(#rightG)",
+                mask="url(#paperRight)"
+            )
+
+        if save:
+            _previewSvg.save(self.mainDirectory(Dir))
+
+        return _previewSvg.text()
 
     def toPDF(self, Dir='', removeSvgs=True, removePdfs=True):
         try:
