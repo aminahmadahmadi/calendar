@@ -1548,9 +1548,10 @@ class ChecklistPage(LinePageWithTitle):
             self.addCheckBox(loc)
 
     def addCheckBox(self, loc):
+        bg = 'white' if self.bgColor in ['none', None] else self.bgColor
         self.pages[loc].addStyle(
             'checkbox',
-            'fill:white;'
+            f'fill:{bg};'
             f'stroke:{self.lineColor};'
             f'stroke-width:{self.lineWidth};'
         )
@@ -1924,7 +1925,7 @@ class OneYearPage(LinePageWithTitle):
 
     def addMonth(self, loc, xLeft, yTop, w, h, monthName, days, weekDays):
         colWidth = self.lineHeight if self.lineHeight <= w/7 else w/7
-
+        bg = 'white' if self.bgColor in ['none', None] else self.bgColor
         if self.lineHeight <= h/8:
             lineHeight = self.lineHeight
             self.pages[loc].addRect(
@@ -1933,14 +1934,14 @@ class OneYearPage(LinePageWithTitle):
                 colWidth,
                 h-2-lineHeight,
                 transform=f'scale({self.scale})',
-                fill="white",
+                fill=bg,
             )
         else:
             lineHeight = (h-self.lineHeight)/7
             self.pages[loc].addRect(
                 xLeft, yTop+1, w, h-self.lineHeight-2,
                 transform=f'scale({self.scale})',
-                fill="white",
+                fill=bg,
             )
 
         calH = self.fontHeightScl * self.fontSize.get("onePageYear")/self.scale  # noqa
@@ -2127,11 +2128,11 @@ class OneMonthPage(LinePageWithTitle):
 
             y2 = yTop + cellH*b
             x2 = xLeft + (col-a-1)*cellW + dx
-
+            bg = 'white' if self.bgColor in ['none', None] else self.bgColor
             self.pages[loc].addRect(
                 x2, y2-1, cellW+0.2, cellH+0.2,
                 transform=f'scale({self.scale})',
-                fill="white",
+                fill=bg,
             )
             self.pages[loc].addPolyline(
                 points=[
