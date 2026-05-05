@@ -1,2 +1,2 @@
-aaaSvg==0.1.5
+aaaSvg @ git+https://github.com/aminahmadahmadi/aaaSvg.git
 numpy==1.22.2
