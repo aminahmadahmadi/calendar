@@ -1,4 +1,4 @@
-﻿﻿from .pages import *
+﻿from .pages import *
 from .notebook import Notebook
 import json
 from .fontStyle import FontStyle
