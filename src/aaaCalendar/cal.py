@@ -1,7 +1,7 @@
-﻿from pages import *
-from notebook import Notebook
+﻿﻿from .pages import *
+from .notebook import Notebook
 import json
-from fontStyle import FontStyle
+from .fontStyle import FontStyle
 
 
 class Calendar(Notebook):
