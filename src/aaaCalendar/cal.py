@@ -1,4 +1,4 @@
-﻿from .pages import *
+﻿﻿from .pages import *
 from .notebook import Notebook
 import json
 from .fontStyle import FontStyle
@@ -13,9 +13,9 @@ class Calendar(Notebook):
         # general
         self.name = kwargs.get('name', 'Untitle-Calendar')
         self.daysJsonPath = daysJsonPath
-        self.eventJsonPath = kwargs.get('eventJsonPath', 'events.json')
+        self.eventJsonPath = kwargs.get('eventJsonPath', None)
         self.eventFilter = kwargs.get('eventFilter', [])
-        self.calNamesJsonPath = kwargs.get('calNamesJsonPath', 'calNames.json')
+        self.calNamesJsonPath = kwargs.get('calNamesJsonPath', None)
         self.readDaysJson()
         self.readEventJson()
         self.readCalNamesJson()
