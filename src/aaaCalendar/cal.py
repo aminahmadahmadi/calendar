@@ -2,10 +2,13 @@
 from .notebook import Notebook
 import json
 from .fontStyle import FontStyle
+from .days import days
+from .events import events
+from .calNames import calNames
 
 
 class Calendar(Notebook):
-    def __init__(self, daysJsonPath, startDate, **kwargs) -> None:
+    def __init__(self, startDate, daysJsonPath=None, **kwargs) -> None:
         super().__init__(**kwargs)
         # general
         self.name = kwargs.get('name', 'Untitle-Calendar')
@@ -136,24 +139,33 @@ class Calendar(Notebook):
 
     def readDaysJson(self):
         try:
-            with open(self.daysJsonPath) as f:
-                self.daysJson = json.load(f)
+            if self.daysJsonPath is None:
+                self.daysJson = days
+            else:
+                with open(self.daysJsonPath) as f:
+                    self.daysJson = json.load(f)
         except:
             print('JSON file is not exist.')
             exit()
 
     def readEventJson(self):
         try:
-            with open(self.eventJsonPath) as f:
-                self.eventJson = json.load(f)
+            if self.eventJsonPath is None:
+                self.eventJson = events
+            else:
+                with open(self.eventJsonPath) as f:
+                    self.eventJson = json.load(f)
         except:
             print('JSON file is not exist.')
             exit()
 
     def readCalNamesJson(self):
         try:
-            with open(self.calNamesJsonPath) as f:
-                self.calNamesJson = json.load(f)
+            if self.calNamesJsonPath is None:
+                self.calNamesJson = calNames
+            else:
+                with open(self.calNamesJsonPath) as f:
+                    self.calNamesJson = json.load(f)
         except:
             print('JSON file is not exist.')
             exit()
