@@ -130,6 +130,8 @@ class Notebook():
             )
 
     def toHTML(self, Dir='', previewMargin=False, skipSvgs=False):
+        print(f'{self.name}')
+
         if not skipSvgs:
             self.saveSvgs(Dir=Dir)
 
@@ -188,58 +190,46 @@ class Notebook():
 
         name = f"preview-{'e' if pageLeft is None else pageLeft}-{'e' if pageRight is None else pageRight}"
 
-        _previewSvg = Svg(
+        _previewSvg = Svg2(
             name,
             (self.width+padding)*2*scl,
             (self.height+padding*2)*scl,
         )
 
-        _previewSvg.addDefs(
-            '<linearGradient id="leftG" x1="0" x2="1" y1="0" y2="0">'
-            '<stop offset="80%" stop-color="black" stop-opacity="0" />'
-            '<stop offset="100%" stop-color="black" stop-opacity=".03" />'
-            '</linearGradient>'
-        )
-        _previewSvg.addDefs(
-            '<linearGradient id="rightG" x1="0" x2="1" y1="0" y2="0">'
-            '<stop offset="0%" stop-color="black" stop-opacity=".2" />'
-            '<stop offset="1%   " stop-color="black" stop-opacity=".1" />'
-            '<stop offset="3%" stop-color="black" stop-opacity=".03" />'
-            '<stop offset="80%" stop-color="black" stop-opacity="0" />'
-            '</linearGradient>'
-        )
+        g1 = _previewSvg.addLinearGradient('leftG', x1=0, x2=1, y1=0, y2=0)
+        _previewSvg.addGradientStop(g1, "80%", "black", 0)
+        _previewSvg.addGradientStop(g1, "100%", "black", 0.03)
 
-        _previewSvg.addObjectText(
-            '<mask id="paperLeft" mask-type="luminance">'
-            f'<rect rx="{radius}" x="{padding}" y="{padding}" width="{self.width}" height="{self.height}" fill="white" transform="scale({scl})" />'
-            f'<rect  x="{padding+self.width-radius}" y="{padding}" width="{radius}" height="{radius}" fill="white" transform="scale({scl})" />'
-            f'<rect  x="{padding+self.width-radius}" y="{padding+self.height-radius}" width="{radius}" height="{radius}" fill="white" transform="scale({scl})" />'
-            '</mask>'
-        )
+        g2 = _previewSvg.addLinearGradient('leftG', x1=0, x2=1, y1=0, y2=0)
+        _previewSvg.addGradientStop(g2, "0%", "black", 0.2)
+        _previewSvg.addGradientStop(g2, "1%", "black", 0.1)
+        _previewSvg.addGradientStop(g2, "3%", "black", 0.03)
+        _previewSvg.addGradientStop(g2, "80%", "black", 0)
 
-        _previewSvg.addObjectText(
-            '<mask id="paperRight" mask-type="luminance">'
-            f'<rect rx="{radius}" x="{padding+self.width}" y="{padding}" width="{self.width}" height="{self.height}" fill="white" transform="scale({scl})" />'
-            f'<rect  x="{padding+self.width}" y="{padding}" width="{radius}" height="{radius}" fill="white" transform="scale({scl})" />'
-            f'<rect  x="{padding+self.width}" y="{padding+self.height-radius}" width="{radius}" height="{radius}" fill="white" transform="scale({scl})" />'
-            '</mask>'
-        )
+        _previewSvg.openMask("paperLeft")
+        _previewSvg.addRect(padding, padding, self.width, self.height, rx=radius, fill='white', transform=f"scale({scl})")  # noqa
+        _previewSvg.addRect(padding+self.width-radius, padding, radius, radius, fill='white', transform=f"scale({scl})")  # noqa
+        _previewSvg.addRect(padding+self.width-radius, padding+self.height-radius, radius, radius, fill='white', transform=f"scale({scl})")  # noqa
+        _previewSvg.closeMask()
 
-        _previewSvg.addObjectText(
-            '<mask id="coverLeft" mask-type="luminance">'
-            f'<rect rx="{radius+jeld}" x="{padding-jeld}" y="{padding-jeld}" width="{self.width+jeld}" height="{self.height+2*jeld}" fill="white" transform="scale({scl})" />'
-            f'<rect rx="{jeld}" x="{padding+self.width-2*radius}" y="{padding-jeld}" width="{2*radius}" height="{2*radius}" fill="white" transform="scale({scl})" />'
-            f'<rect  rx="{jeld}"  x="{padding+self.width-2*radius}" y="{padding+self.height+jeld-2*radius}" width="{2*radius}" height="{2*radius}" fill="white" transform="scale({scl})" />'
-            '</mask>'
-        )
+        _previewSvg.openMask("paperRight")
+        _previewSvg.addRect(padding+self.width, padding, self.width, self.height, rx=radius, fill='white', transform=f"scale({scl})")  # noqa
+        _previewSvg.addRect(padding+self.width, padding, radius, radius, fill='white', transform=f"scale({scl})")  # noqa
+        _previewSvg.addRect(padding+self.width, padding+self.height-radius, radius, radius, fill='white', transform=f"scale({scl})")  # noqa
+        _previewSvg.closeMask()
 
-        _previewSvg.addObjectText(
-            '<mask id="coverRight" mask-type="luminance">'
-            f'<rect rx="{radius+jeld}" x="{padding+self.width}" y="{padding-jeld}" width="{self.width+jeld}" height="{self.height+2*jeld}" fill="white" transform="scale({scl})" />'
-            f'<rect rx="{jeld}"  x="{padding+self.width}" y="{padding-jeld}" width="{2*radius}" height="{2*radius}" fill="white" transform="scale({scl})" />'
-            f'<rect rx="{jeld}"  x="{padding+self.width}" y="{padding+self.height+jeld-2*radius}" width="{2*radius}" height="{2*radius}" fill="white" transform="scale({scl})" />'
-            '</mask>'
-        )
+        _previewSvg.openMask("coverLeft")
+        _previewSvg.addRect(padding-jeld, padding-jeld, self.width+jeld, self.height+2*jeld, rx=radius+jeld, fill='white', transform=f"scale({scl})")  # noqa
+        _previewSvg.addRect(padding+self.width-2*radius, padding-jeld, 2*radius, 2*radius, rx=jeld, fill='white', transform=f"scale({scl})")  # noqa
+        _previewSvg.addRect(padding+self.width-2*radius, padding+self.height+jeld-2*radius, 2*radius, 2*radius, rx=jeld, fill='white', transform=f"scale({scl})")  # noqa
+        _previewSvg.closeMask()
+
+        _previewSvg.openMask("coverRight")
+        _previewSvg.addRect(padding+self.width, padding-jeld, self.width+jeld, self.height+2*jeld, rx=radius+jeld, fill='white', transform=f"scale({scl})")  # noqa
+        _previewSvg.addRect(padding+self.width, padding-jeld, 2*radius, 2*radius, rx=jeld, fill='white', transform=f"scale({scl})")  # noqa
+        _previewSvg.addRect(padding+self.width, padding+self.height+jeld-2*radius, 2*radius, 2*radius, rx=jeld, fill='white', transform=f"scale({scl})")  # noqa
+        _previewSvg.closeMask()
+
         _previewSvg.addRect(
             x=0, y=0, w="100%", h="100%", fill="white"
         )
@@ -253,7 +243,7 @@ class Notebook():
             mask="url(#coverRight)"
         )
         if pageLeft is not None:
-            leftSvg: Svg = self.pages[pageLeft].page['left']
+            leftSvg: Svg2 = self.pages[pageLeft].page['left']
             base64_svg = base64.b64encode(leftSvg.text().encode('utf-8')).decode('utf-8')  # noqa
 
             path = "/".join(['pages', f"p{pageLeft:03}.svg"])
@@ -263,12 +253,9 @@ class Notebook():
             _w = w*scl
             _h = h*scl
 
-            _previewSvg.addDefs(
-                '<filter id="pageLEFT">'
-                f'<feImage x="{_x}" y="{_y}" width="{_w}" height="{_h}" href="{base64_path}" result="pageL" />'
-                '<feBlend in="SourceGraphic" in2="pageL" mode="multiply" />'
-                '</filter>'
-            )
+            f1 = _previewSvg.addFilter("pageLEFT")
+            _previewSvg.addFeImage(f1, _x, _y, _w, _h, base64_path, "pageL")
+            _previewSvg.addFeBlend(f1, "SourceGraphic", "pageL", "multiply")
 
             _previewSvg.addRect(
                 x=0, y=0, w="100%", h="100%", fill="#eeeee6",
@@ -292,12 +279,9 @@ class Notebook():
             _w = w*scl
             _h = h*scl
 
-            _previewSvg.addDefs(
-                '<filter id="pageRIGHT">'
-                f'<feImage x="{_x}" y="{_y}" width="{_w}" height="{_h}" href="{base64_path}" result="pageR" />'
-                '<feBlend in="SourceGraphic" in2="pageR" mode="multiply" />'
-                '</filter>'
-            )
+            f2 = _previewSvg.addFilter("pageRIGHT")
+            _previewSvg.addFeImage(f2, _x, _y, _w, _h, base64_path, "pageR")
+            _previewSvg.addFeBlend(f2, "SourceGraphic", "pageR", "multiply")
 
             _previewSvg.addRect(
                 x=0, y=0, w="100%", h="100%", fill="#eeeee6",

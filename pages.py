@@ -1,4 +1,4 @@
-﻿from aaaSvg import Svg
+﻿from aaaSvg import Svg2
 from replaceText import perNo, arbNo
 import math
 from fontStyle import FontStyle, addTextStyle
@@ -40,7 +40,7 @@ class Page():
 
     @property
     def page(self):
-        self.pages: dict[str:Svg] = {}
+        self.pages: dict[str:Svg2] = {}
         self.makePages()
         return self.pages
 
@@ -51,7 +51,7 @@ class Page():
             self.drawTrimMark(loc)
 
     def definePage(self, loc):
-        self.pages[loc] = Svg(
+        self.pages[loc] = Svg2(
             self.name+'-'+loc, self.svgWidth*self.scale, self.svgHeight*self.scale)
 
         self.pages[loc].addStyle(
@@ -210,7 +210,7 @@ class LinePage(Page):
 
     @property
     def page(self):
-        self.pages: dict[str:Svg] = {}
+        self.pages: dict[str:Svg2] = {}
         self.makePages()
         return self.pages
 
@@ -295,7 +295,7 @@ class DotPage(Page):
 
     @property
     def page(self):
-        self.pages: dict[str:Svg] = {}
+        self.pages: dict[str:Svg2] = {}
         self.makePages()
         return self.pages
 
@@ -384,13 +384,13 @@ class DotPage(Page):
 class PatternPage(Page):
     def __init__(
         self,
-        patternUnit: Callable[[Svg, float, float, int, int, float, float], None],
+        patternUnit: Callable[[Svg2, float, float, int, int, float, float], None],
         name='Untitle-PatternPage', **kwargs
     ) -> None:
         '''
         define patternUnit like this:
         ```
-        def patternUnit(svgObj: Svg, w, h, i, j, x, y):
+        def patternUnit(svgObj: Svg2, w, h, i, j, x, y):
             svgObj.addCircle(0,0,1)
             ...
         ```
@@ -435,7 +435,7 @@ class PatternPage(Page):
 
     @property
     def page(self):
-        self.pages: dict[str:Svg] = {}
+        self.pages: dict[str:Svg2] = {}
         self.makePages()
         return self.pages
 
@@ -521,11 +521,11 @@ class PatternPage(Page):
         #                 margin=_margin,
         #                 padding=_padding,
         #             )
-        #             s: Svg = self.pages[loc]
+        #             s: Svg2 = self.pages[loc]
 
         #             s.addComment(f's: {_space} m: {_margin} p: {_padding}')
         #             s.addPolygon(
-        #                 points=[[ox, oy], [ox, ey], [ex, ey], [ex, oy]], fill='none', style='stroke-width:0.3;', stroke=Svg.rgb2hex([i*126, j*255, k*255]), opacity=0.5, transform=f'scale({self.scale})'
+        #                 points=[[ox, oy], [ox, ey], [ex, ey], [ex, oy]], fill='none', style='stroke-width:0.3;', stroke=Svg2.rgb2hex([i*126, j*255, k*255]), opacity=0.5, transform=f'scale({self.scale})'
         #             )
 
         self.pages[loc].addStyle(
@@ -655,7 +655,7 @@ class WeekPage(LinePage):
 
     @property
     def page(self):
-        self.pages: dict[str:Svg] = {}
+        self.pages: dict[str:Svg2] = {}
         self.makePages()
         return self.pages
 
@@ -676,7 +676,7 @@ class WeekPage(LinePage):
             self.drawTrimMark(loc)
 
     def drawlines(self, loc):
-        pageSvg: Svg = self.pages[loc]
+        pageSvg: Svg2 = self.pages[loc]
         self.pages[loc].addStyle(
             'line',
             'fill:none;'
@@ -1099,7 +1099,7 @@ class WeekPage(LinePage):
             space = self.lineHeight*self.daysHeight
             xLeftSpace, xRightSpace = self.xloc(loc, space)
             xLocParam = (self.layout == 'right') ^ (loc == 'right')
-            thisPage: Svg = self.pages[loc]
+            thisPage: Svg2 = self.pages[loc]
 
             r = self.lineHeight*self.moonScale/2
             xSpace = xRightSpace-r/2-1 if xLocParam else xLeftSpace+r/2+1
