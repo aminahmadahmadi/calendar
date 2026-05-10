@@ -419,8 +419,8 @@ class PatternPage(Page):
         self.patternCrop = kwargs.get('patternCrop', False)
         self.patternMargin = kwargs.get('patternMargin', False)
         self.patternPadding = kwargs.get('patternPadding', False)
-        self.patternSpaceX = kwargs.get('patternSpaceX', 0)
-        self.patternSpaceY = kwargs.get('patternSpaceY', 0)
+        self.patternSpaceX = kwargs.get('patternSpaceX', None)
+        self.patternSpaceY = kwargs.get('patternSpaceY', None)
 
         self.patternVerticalDx = kwargs.get('patternVerticalDx', 0)
         self.patternVerticalDy = kwargs.get('patternVerticalDy', 0)
@@ -498,11 +498,36 @@ class PatternPage(Page):
 
     def showUnit(self, x, y, ox, oy, ex, ey):
         xCheck = ox-2*self.patternW <= x < ex
-        yCheck = oy-2*self.patternH <= y < ey
+        if self.patternCrop:
+            yCheck = oy-2*self.patternH <= y < ey
+        else:
+            yCheck = oy-2*self.patternH <= y < ey-self.patternH+0.1
 
         return xCheck and yCheck
 
     def drawPattern(self, loc):
+        # for i, _space in enumerate([None, 0, self.lineHeight]):
+        #     for j, _margin in enumerate([False, True]):
+        #         for k, _padding in enumerate([False, True]):
+        #             ox, ex = self.xloc(
+        #                 loc,
+        #                 space=_space,
+        #                 margin=_margin,
+        #                 padding=_padding,
+        #             )
+
+        #             oy, ey = self.yloc(
+        #                 space=_space,
+        #                 margin=_margin,
+        #                 padding=_padding,
+        #             )
+        #             s: Svg = self.pages[loc]
+
+        #             s.addComment(f's: {_space} m: {_margin} p: {_padding}')
+        #             s.addPolygon(
+        #                 points=[[ox, oy], [ox, ey], [ex, ey], [ex, oy]], fill='none', style='stroke-width:0.3;', stroke=Svg.rgb2hex([i*126, j*255, k*255]), opacity=0.5, transform=f'scale({self.scale})'
+        #             )
+
         self.pages[loc].addStyle(
             'line',
             'fill:none;'
@@ -520,6 +545,9 @@ class PatternPage(Page):
             space=self.patternSpaceY,
             margin=self.patternMargin,
             padding=self.patternPadding,
+        )
+        self.pages[loc].addPolygon(
+            points=[[ox, oy], [ox, ey], [ex, ey], [ex, oy]], fill='none', style='stroke-width:0.3;', stroke='red', opacity=0.5, transform=f'scale({self.scale})'
         )
 
         odx = self.patternW+self.patternHorizontalDx
@@ -1456,6 +1484,9 @@ class LinePageWithTitle(LinePage):
                 self.addMoreText(loc)
 
     def addMoreText(self, loc):
+        if self.moretext == []:
+            return
+
         addTextStyle(
             self,
             loc=loc,
@@ -1510,6 +1541,8 @@ class LinePageWithTitle(LinePage):
             eventY += self.lineHeight
 
     def addTitle(self, loc):
+        if self.title in ['', None]:
+            return
         addTextStyle(
             self,
             loc=loc,

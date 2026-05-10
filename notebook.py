@@ -56,6 +56,10 @@ class Notebook():
         return os.path.join(
             self.mainDirectory(Dir), 'pages')
 
+    def pagePreviewDirectory(self, Dir):
+        return os.path.join(
+            self.mainDirectory(Dir), 'pagePreview')
+
     def addEmptyPage(self, **kwargs):
         props = self.__dict__.copy()
         props.update(kwargs)
@@ -170,6 +174,12 @@ class Notebook():
         self.toHTML(Dir=Dir, previewMargin=True, skipSvgs=True)
 
     def previewSvg(self, pageLeft=None, pageRight=None, Dir='', padding=20, radius=10, previewScl=4, save=False):
+        if not os.path.exists(self.mainDirectory(Dir)):
+            os.mkdir(self.mainDirectory(Dir))
+
+        if not os.path.exists(self.pagePreviewDirectory(Dir)):
+            os.mkdir(self.pagePreviewDirectory(Dir))
+
         scl = self.scale * previewScl
         w = self.pages[-1].svgWidth
         h = self.pages[-1].svgHeight
@@ -300,7 +310,7 @@ class Notebook():
             )
 
         if save:
-            _previewSvg.save(self.mainDirectory(Dir))
+            _previewSvg.save(self.pagePreviewDirectory(Dir))
 
         return _previewSvg.text()
 
