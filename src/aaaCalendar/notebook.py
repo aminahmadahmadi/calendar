@@ -1,4 +1,4 @@
-﻿from .pages import *
+from .pages import *
 import os
 import base64
 

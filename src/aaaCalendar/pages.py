@@ -1,4 +1,4 @@
-﻿from .fontStyle import FontStyle, addTextStyle
+from .fontStyle import FontStyle, addTextStyle
 from .replaceText import perNo, arbNo
 from typing import Callable
 from aaaSvg import Svg2

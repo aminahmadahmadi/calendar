@@ -1,4 +1,4 @@
-﻿def perNo(txt):
+def perNo(txt):
     txt = str(txt)
 
     perTxt = [
